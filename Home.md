@@ -1,5 +1,10 @@
 # UCengine
 
-[[API|api]]
+## Install and deploy
 
-[[Javascript widgets|widgets]]
+* [[Installations|install]]
+
+## Create bricks and applications
+
+* [[API|api]]
+* [[Javascript widgets|widgets]]
