@@ -1,5 +1,5 @@
 # UCengine
 
-[[api|API]]
+[[API|api]]
 
-[[widgets|Javascript widgets]]
+[[Javascript widgets|widgets]]
