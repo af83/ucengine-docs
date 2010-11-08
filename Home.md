@@ -6,7 +6,8 @@
 
 ## Create bricks and applications
 
-* [[API|api]]
+* [[REST API|api]]
+* [[Javscript API|ucejs]]
 
 ### Javascript widgets
 
