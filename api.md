@@ -212,7 +212,7 @@ Dans l'URL :
 
 	- org :	    Organisation auquel sera rattaché la sesssion ;
 	- uid :    Identifiant unique de l'utilisateur.
-     
+
 Encodés :
 
     - auth :      Méthode d'authentification utilisée (anonymous, password, token) ;
@@ -229,9 +229,9 @@ Succès :
 Erreur :
 
     - 400 { "error": "bad_parameters" } : au moins un paramètre est manquant ou erroné ;
-    
+
     - 403 { "error": "bad_credentials" } : l'authentification a échoué ;
-    
+
 # Déconnexion
 
 ### URL
@@ -245,7 +245,7 @@ Dans l'URL :
 	- org :	    Organisation auquel sera rattaché la sesssion ;
 	- uid :    Identifiant unique de l'utilisateur.
 	- sid :    Identifiant de presence de l'utilisateur.
-     
+
 Encodés :
 
     - uid:	    Identifiant unique de l'utilisateur courant ;
@@ -260,7 +260,7 @@ Succès :
 Erreur :
 
     - 400 { "error": "bad_parameters" } : au moins un paramètre est manquant ou erroné ;
-    
+
     - 401 { "error": "unauthorized" } : l'utilisateur n'est pas authorisé à déconnecté cette presence ;
 
     - 404 { "error": "not_found" } : la presence n'existe pas.
@@ -532,7 +532,7 @@ Erreur :
 					meetings de cette organisation ;
 
     - 404 { "error": "not_found" } : l'organisation n'existe pas.
-    
+
 ## Récupérer les informations d'un meeting
 
 ### URL
@@ -638,7 +638,7 @@ Encodés (optionels) :
     - _from		Émetteur de l'évènement			     uid_63444326443_50150
     - _limit		Nombre d'évènement à retourner			42
     - _wait		Temps maximum à attendre en seconde (defaut: 0)		42
-    
+
 ### Valeurs de retour
 
 Succès :
@@ -796,7 +796,7 @@ Erreur :
     - 401 { "error": "unauthorized" } : l'utilisateur n'est pas authorisé à créer des organisations ;
 
     - 404 { "error": "not_found" } : l'organisation n'existe pas.
-    
+
 ## Récupérer les informations d'une organisation
 
 ### URL
@@ -837,6 +837,13 @@ Erreur :
 ### URL
 
     GET /org/
+
+### Parametres
+
+Encodés :
+
+    - uid:         Identifiant de l'utilisateur.         uid_63444326443_50150
+    - sid:         Identifiant de presence.               330249245470504
 
 ### Valeurs de retour
 
@@ -1008,7 +1015,7 @@ Parametres:
 
 Succès :
 
-    200 {"result": "true"} : 
+    200 {"result": "true"} :
 
     200 {"result": "false"}
 
