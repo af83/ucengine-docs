@@ -755,7 +755,7 @@ Encodés :
 
 Succès :
 
-    - 201 { "result": { "ok" }}
+    - 201 { "result": "created" }
 
 Erreur :
 
@@ -787,7 +787,7 @@ Encodés :
 
 Succès :
 
-    200 { "result": { "ok" }}
+    200 { "result": "ok" }
 
 Erreur :
 
