@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # API Interne UC-Engine
 
 # Informations transversales à l'API
@@ -972,54 +973,52 @@ Erreur :
     500 { "error": "unexpected_error" }
 
 
-## Lister les ACLs pour un utilisateur
+## Vérifier les droits d'un utilisateur
 
 ### URL
 
-    GET /acl/{uid}
-    GET /acl/{uid}/{domain}
+    GET /user/{uid}/acl/{object}/{action}
 
 ### Parametres
 
 Dans l'URL :
 
     - uid:         Identifiant de l'utilisateur.     uid_42
-    - domain:       Domaine de l'ACL			    af83/demo
+    - object:      Object sur lequel s'applique le droit.       meeting, org, event, ...
+    - action:      Action authorisée par le droit.              add, delete, join, ...
 
 Encodés :
 
     - uid:         Identifiant de l'utilisateur.     uid_63444326443_50150
     - sid:         Identifiant de presence.           330249245470504
+    - conditions:  Tableau contenant les conditions à satisfaire pour ce droit.
+
+### Exemples
+
+Si l'utilisateur 'romain' veut vérifier que un utilisateur 'toto' à le droit de rejoindre le meeting 'ucengine' de l'organisation 'af83' la requête sera :
+
+Chemin : GET /user/toto/acl/meeting/join
+Parametres:
+        - uid=romain
+        - sid=40324302840329843809543
+        - conditions[org]=af83
+        - conditions[meeting]=ucengine
 
 ### Valeurs de retour
 
 Succès :
 
-    200 {"result":[{	"uid":"participant",
-			"action":"add",
-			"object":"presence",
-			"domain":["af83"]
-		   },
-		   {	"uid":"participant",
-			"action":"get",
-			"object":"user",
-			"domain":[]
-		   },
-		   {	"uid":"participant",
-			"action":"list",
-			"object":"acl",
-			"domain":[]
-		}, ...]}
+    200 {"result": "true"} : 
+
+    200 {"result": "false"}
 
 Erreur :
 
-    400 { "error": "bad_parameters" }
+    400 { "error": "bad_parameters" } : au moins un paramètre est manquant ou erroné ;
 
-    401 { "error": "unauthorized" }
+    401 { "error": "unauthorized" } : l'utilisateur n'est pas authorisé à vérifier les droits de cet utilisateur;
 
-    404 { "error": "not_found" }
-
-    500 { "error": "unexpected_error" }
+    404 { "error": "not_found" } : l'utilisateur n'existe pas
 
 ## Ajouter un droit à un utilisateur
 
@@ -1031,31 +1030,29 @@ Erreur :
 
 Dans l'URL :
 
-    - uid:         Identifiant de l'utilisateur à modifier.     uid_42
-    - conditions:   tableau contenant les conditions à satisfaire pour effectuer 
+    - uid:         Identifiant de l'utilisateur.     uid_42
+    - object:      Object sur lequel s'applique le droit.       meeting, org, event, ...
+    - action:      Action authorisée par le droit.              add, delete, join, ...
 
 Encodés :
 
     - uid:         Identifiant de l'utilisateur.     uid_63444326443_50150
     - sid:         Identifiant de presence.           330249245470504
-    - _action:       Action				    push
-    - _object	     Ressource concernée	            event
+    - conditions:   tableau contenant les conditions à satisfaire pour effectuer l'action sur l'object.
 
 ### Valeurs de retour
 
 Succès :
 
-    201 { "result": "ok" }
+    201 { "result": "ok" } : le droit à été correctement ajouté.
 
 Erreur :
 
-    400 { "error": "bad_parameters" }
+    400 { "error": "bad_parameters" } : au moins un paramètre est manquant ou erroné ;
 
-    401 { "error": "unauthorized" }
+    401 { "error": "unauthorized" } : l'utilisateur n'est pas authorisé à ajouter un droit de cet utilisateur;
 
-    401 { "error": "not_found" }
-
-    500 { "error": "unexpected_error" }
+    401 { "error": "not_found" } : l'utilisateur n'existe pas
 
 ## Supprimer un droit à un utilisateur
 
@@ -1068,25 +1065,26 @@ Erreur :
 Dans l'URL :
 
     - uid:         Identifiant de l'utilisateur.     uid_42
-    - domain:       Domaine de l'ACL			    af83/demo
+    - object:      Object sur lequel s'applique le droit.       meeting, org, event, ...
+    - action:      Action authorisée par le droit.              add, delete, join, ...
 
 Encodés :
 
     - uid:         Identifiant de l'utilisateur.     uid_63444326443_50150
     - sid:         Identifiant de presence.           330249245470504
-    - action:       Action				    push
-    - object	     Ressource concernée	            event
+    - conditions:   tableau contenant les conditions à satisfaire pour effectuer l'action sur l'object.
 
 ### Valeurs de retour
 
 Succès :
 
-    200 { "result": "ok" }
+    200 { "result": "ok" } : le droit à été correctement supprimé.
 
 Erreur :
 
-    401 { "error": "unauthorized" }
+    400 { "error": "bad_parameters" } : au moins un paramètre est manquant ou erroné ;
 
-    404 { "error", "not_found" }
+    401 { "error": "unauthorized" } : l'utilisateur n'est pas authorisé à supprimer un droit de cet utilisateur;
 
-    500 { "error": "unexpected_error" }
+    404 { "error", "not_found" } : l'utilisateur n'existe pas.
+
