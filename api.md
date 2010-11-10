@@ -623,7 +623,7 @@ Dans l'URL :
     - org:          Organisation.           af83
     - meeting:      Meeting.                demo
 
-Dans l'URL (optionels) :
+Dans l'URL :
 
 Encodés :
 
@@ -632,12 +632,17 @@ Encodés :
 
 Encodés (optionels) :
 
-    - _type:         Type de l'événement.				join_meeting_event
-    - _start		Début de la fenêtre d'événements.           63444430100
-    - _end		Fin de la fenêtre d'événements.             63444430300
-    - _from		Émetteur de l'évènement			     uid_63444326443_50150
-    - _limit		Nombre d'évènement à retourner			42
-    - _wait		Temps maximum à attendre en seconde (defaut: 0)		42
+    - type         Type de l'événement.				join_meeting_event
+    - start		Début de la fenêtre d'événements.           63444430100
+    - end		Fin de la fenêtre d'événements.             63444430300
+    - from		Émetteur de l'évènement			     uid_63444326443_50150
+    - count		Nombre d'évènement à retourner			42
+    - page
+    - order
+    - search
+    - parent
+    - _async             *no* ou *lp*. Si *_async* vaut *lp* alors le serveur ne répondra que lorsqu'il aura de nouveaux énévements. Si *no*, le serveur répond immédiatement.
+
 
 ### Valeurs de retour
 
