@@ -1,9 +1,8 @@
-# -*- coding: utf-8 -*-
 # API Interne UC-Engine
 
 # Informations transversales à l'API
 
-L'URL de base de L'API est la suivante : http://encre-test.af83.com:5280/api/0.1/
+L'URL de base de L'API est la suivante : http://demo.ucengine.org/api/0.1/
 
 Toutes les autres URL d'appel à cette API sont relative à cette première.
 
