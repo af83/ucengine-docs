@@ -3,6 +3,7 @@
 ## Options
 
 * domain
+* stream
 * width
 * height
 
