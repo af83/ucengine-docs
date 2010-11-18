@@ -1,5 +1,7 @@
 # File
 
+Upload file in current meeting and list upload files.
+
 ## Options
 
 * ucemeeting: current meeting
@@ -7,8 +9,8 @@
 
 ## Methods
 
-* clear
-* destroy
+* clear: rinit widget
+* destroy: destroy widget
 
 ## Theming
 
