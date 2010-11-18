@@ -16,11 +16,13 @@ UC Engine (Unified Collaboration Engine), provides developers with the tools to 
 
 TODO
 
-### Javascript
+### HTML/Javascript applications
 
 * [[Javascript API|ucejs]]
 
 #### Javascript widgets
+
+We provide some [jQuery UI widgets](http://jqueryui.com/).
 
 * [[activity]]
 * [[chat]]
