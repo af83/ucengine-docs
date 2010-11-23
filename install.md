@@ -2,6 +2,7 @@
 
 ## Dependencies
 
+* erlang (R14A)
 * yaws
 * mnesia or mongodb
 * inets
