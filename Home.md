@@ -46,5 +46,5 @@ We provide some [jQuery UI widgets](http://jqueryui.com/).
 Contributions are welcome !
 
 * [Fork us](https://github.com/AF83/ucengine)
-* Create your patch in a topic branche
+* Create your patch in a topic branch
 * Send pull request
