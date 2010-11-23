@@ -1,9 +1,8 @@
-# -*- coding: utf-8 -*-
-# API Interne UC-Engine
+# API Interne UCengine
 
 # Informations transversales à l'API
 
-L'URL de base de L'API est la suivante : http://encre-test.af83.com:5280/api/0.1/
+L'URL de base de L'API est la suivante : http://demo.ucengine.org/api/0.1/
 
 Toutes les autres URL d'appel à cette API sont relative à cette première.
 
@@ -53,7 +52,7 @@ Encodés :
 
 Succès :
 
-200 {"result": [{	"uid":"romain.gauthier@af83.com",
+    200 {"result": [{	"uid":"romain.gauthier@af83.com",
 			"auth":"password",
 			"metadata":{
 				"nickname":"abel_1284046072075"
@@ -212,7 +211,7 @@ Dans l'URL :
 
 	- org :	    Organisation auquel sera rattaché la sesssion ;
 	- uid :    Identifiant unique de l'utilisateur.
-     
+
 Encodés :
 
     - auth :      Méthode d'authentification utilisée (anonymous, password, token) ;
@@ -229,9 +228,9 @@ Succès :
 Erreur :
 
     - 400 { "error": "bad_parameters" } : au moins un paramètre est manquant ou erroné ;
-    
+
     - 403 { "error": "bad_credentials" } : l'authentification a échoué ;
-    
+
 # Déconnexion
 
 ### URL
@@ -245,7 +244,7 @@ Dans l'URL :
 	- org :	    Organisation auquel sera rattaché la sesssion ;
 	- uid :    Identifiant unique de l'utilisateur.
 	- sid :    Identifiant de presence de l'utilisateur.
-     
+
 Encodés :
 
     - uid:	    Identifiant unique de l'utilisateur courant ;
@@ -260,7 +259,7 @@ Succès :
 Erreur :
 
     - 400 { "error": "bad_parameters" } : au moins un paramètre est manquant ou erroné ;
-    
+
     - 401 { "error": "unauthorized" } : l'utilisateur n'est pas authorisé à déconnecté cette presence ;
 
     - 404 { "error": "not_found" } : la presence n'existe pas.
@@ -532,7 +531,7 @@ Erreur :
 					meetings de cette organisation ;
 
     - 404 { "error": "not_found" } : l'organisation n'existe pas.
-    
+
 ## Récupérer les informations d'un meeting
 
 ### URL
@@ -623,7 +622,7 @@ Dans l'URL :
     - org:          Organisation.           af83
     - meeting:      Meeting.                demo
 
-Dans l'URL (optionels) :
+Dans l'URL :
 
 Encodés :
 
@@ -632,13 +631,18 @@ Encodés :
 
 Encodés (optionels) :
 
-    - _type:         Type de l'événement.				join_meeting_event
-    - _start		Début de la fenêtre d'événements.           63444430100
-    - _end		Fin de la fenêtre d'événements.             63444430300
-    - _from		Émetteur de l'évènement			     uid_63444326443_50150
-    - _limit		Nombre d'évènement à retourner			42
-    - _wait		Temps maximum à attendre en seconde (defaut: 0)		42
-    
+    - type         Type de l'événement.				join_meeting_event
+    - start		Début de la fenêtre d'événements.           63444430100
+    - end		Fin de la fenêtre d'événements.             63444430300
+    - from		Émetteur de l'évènement			     uid_63444326443_50150
+    - count		Nombre d'évènement à retourner			42
+    - page
+    - order
+    - search
+    - parent
+    - _async             *no* ou *lp*. Si *_async* vaut *lp* alors le serveur ne répondra que lorsqu'il aura de nouveaux énévements. Si *no*, le serveur répond immédiatement.
+
+
 ### Valeurs de retour
 
 Succès :
@@ -755,7 +759,7 @@ Encodés :
 
 Succès :
 
-    - 201 { "result": { "ok" }}
+    - 201 { "result": "created" }
 
 Erreur :
 
@@ -787,7 +791,7 @@ Encodés :
 
 Succès :
 
-    200 { "result": { "ok" }}
+    200 { "result": "ok" }
 
 Erreur :
 
@@ -796,7 +800,7 @@ Erreur :
     - 401 { "error": "unauthorized" } : l'utilisateur n'est pas authorisé à créer des organisations ;
 
     - 404 { "error": "not_found" } : l'organisation n'existe pas.
-    
+
 ## Récupérer les informations d'une organisation
 
 ### URL
@@ -837,6 +841,13 @@ Erreur :
 ### URL
 
     GET /org/
+
+### Parametres
+
+Encodés :
+
+    - uid:         Identifiant de l'utilisateur.         uid_63444326443_50150
+    - sid:         Identifiant de presence.               330249245470504
 
 ### Valeurs de retour
 
@@ -1008,7 +1019,7 @@ Parametres:
 
 Succès :
 
-    200 {"result": "true"} : 
+    200 {"result": "true"} :
 
     200 {"result": "false"}
 

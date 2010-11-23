@@ -41,16 +41,25 @@
               * var disqus_identifier; [Optional but recommended: Define a unique identifier (e.g. post id or slug) for this thread] 
               */
               (function() {
-              //var disqus_url   = '{{ wiki.base_path }}';
               var disqus_title = '{{ page.title }}';
               var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-              dsq.src = 'http://encretest.disqus.com/embed.js';
+              dsq.src = 'http://ucengine-docs.disqus.com/embed.js';
               (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
               })();
           </script>
-          <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript=encretest">comments powered by Disqus.</a></noscript>
+          <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript=ucengine-docs">comments powered by Disqus.</a></noscript>
         </div>
       </div>
     </div>
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-1725781-24']);
+        _gaq.push(['_trackPageview']);
+        (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
   </body>
 </html>
