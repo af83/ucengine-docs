@@ -3,7 +3,7 @@
 ## Dependencies
 
 * yaws
-* mnesia
+* mnesia or mongodb
 * inets
 
 * enunit (for testing only)
