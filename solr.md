@@ -1,11 +1,10 @@
 # Solr
 
-Using the Apache-Solr connector is the more efficient way to handle full-text search queries.
+Using the [Apache-Solr](http://lucene.apache.org/solr/) connector is the more efficient way to handle full-text search queries.
 
 ## Installation
 
-* Take a look at the Solr tutorial page to install it:
-  http://lucene.apache.org/solr/tutorial.html
+* Take a look at the [Solr tutorial](http://lucene.apache.org/solr/tutorial.html) page to install it.
 
 * Use the XML schema located at ucengine/contrib/solr_schema.xml
 
