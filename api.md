@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
-# API Interne UCengine
+# UCengine API
+
+**Translation in progress**
 
 # Informations transversales à l'API
 

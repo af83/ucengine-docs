@@ -61,7 +61,7 @@ Attach presence used in all next requests.
 
 ```javascript
 uce.presence.create("password", "pwd", "yourorg", "foo@example.net", "foo bar", function(err, result) {
-    var session = uce.attachPresence(presence);
+    var session = uce.attachPresence(result);
 });
 ```
 
