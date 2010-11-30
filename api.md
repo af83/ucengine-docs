@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # API Interne UCengine
 
 # Informations transversales à l'API
@@ -203,19 +204,18 @@ Erreur :
 
 ### URL
 
-    PUT /presence/{org}/{uid}
+    PUT /presence/{uid}
 
 ### Parametres
 
 Dans l'URL :
 
-	- org :	    Organisation auquel sera rattaché la sesssion ;
-	- uid :    Identifiant unique de l'utilisateur.
+    - uid :    Identifiant unique de l'utilisateur.
 
 Encodés :
 
     - auth :      Méthode d'authentification utilisée (anonymous, password, token) ;
-    - _credential :   Élement secret utilisé pour l'authentification (mot de passe, token) ;
+    - credential :   Élement secret utilisé pour l'authentification (mot de passe, token) ;
     - metadata :	Tableau contenant les métadonnés (ex. metadata[key]=value).
 
 ### Valeurs de retour
@@ -241,7 +241,6 @@ Erreur :
 
 Dans l'URL :
 
-	- org :	    Organisation auquel sera rattaché la sesssion ;
 	- uid :    Identifiant unique de l'utilisateur.
 	- sid :    Identifiant de presence de l'utilisateur.
 
@@ -988,7 +987,7 @@ Erreur :
 
 ### URL
 
-    GET /user/{uid}/acl/{object}/{action}
+    GET /user/{uid}/acl/{object}/{action}/{org}/{meeting}
 
 ### Parametres
 
@@ -997,6 +996,8 @@ Dans l'URL :
     - uid:         Identifiant de l'utilisateur.     uid_42
     - object:      Object sur lequel s'applique le droit.       meeting, org, event, ...
     - action:      Action authorisée par le droit.              add, delete, join, ...
+    - org:         Organisation (facultafif).                   af83
+    - meeting:     Meeting (facultatif).                        demo
 
 Encodés :
 
@@ -1008,12 +1009,10 @@ Encodés :
 
 Si l'utilisateur 'romain' veut vérifier que un utilisateur 'toto' à le droit de rejoindre le meeting 'ucengine' de l'organisation 'af83' la requête sera :
 
-Chemin : GET /user/toto/acl/meeting/join
+Chemin : GET /user/toto/acl/meeting/join/af83/ucengine
 Parametres:
         - uid=romain
         - sid=40324302840329843809543
-        - conditions[org]=af83
-        - conditions[meeting]=ucengine
 
 ### Valeurs de retour
 
@@ -1035,7 +1034,7 @@ Erreur :
 
 ### URL
 
-    PUT /user/{uid}/acl/{object}/{action}
+    PUT /user/{uid}/acl/{object}/{action}/{org}/{meeting}
 
 ### Parametres
 
@@ -1044,6 +1043,8 @@ Dans l'URL :
     - uid:         Identifiant de l'utilisateur.     uid_42
     - object:      Object sur lequel s'applique le droit.       meeting, org, event, ...
     - action:      Action authorisée par le droit.              add, delete, join, ...
+    - org:         Organisation (facultafif).                   af83
+    - meeting:     Meeting (facultatif).                        demo
 
 Encodés :
 
@@ -1069,7 +1070,7 @@ Erreur :
 
 ### URL
 
-    DELETE /acl/{uid}/{domain}
+    DELETE /acl/{uid}/{domain}/{org}/{meeting}
 
 ### Parametres
 
@@ -1078,6 +1079,8 @@ Dans l'URL :
     - uid:         Identifiant de l'utilisateur.     uid_42
     - object:      Object sur lequel s'applique le droit.       meeting, org, event, ...
     - action:      Action authorisée par le droit.              add, delete, join, ...
+    - org:         Organisation (facultafif).                   af83
+    - meeting:     Meeting (facultatif).                        demo
 
 Encodés :
 
