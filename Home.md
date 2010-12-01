@@ -22,7 +22,6 @@ TODO
 ### HTML/Javascript applications
 
 * [[Javascript API|ucejs]]
-* Running javascript tests
 
 #### Javascript widgets
 

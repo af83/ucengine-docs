@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # UCengine API
 
 **Translation in progress**
