@@ -2,6 +2,7 @@
 
 ## Dependencies
 
+* make
 * erlang (R14A)
 * yaws
 * mnesia or mongodb
@@ -11,7 +12,7 @@
 
 ### Debian
 
-        aptitude install erlang erlang-yaws
+        aptitude install erlang erlang-yaws make
 
 ## Get source code
 
