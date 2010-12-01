@@ -445,7 +445,7 @@ Encodés :
 
 Succès :
 
-200 {"result":[{	"uid":"abel.fournier_1284046072075@af83.com",
+    200 {"result":[{	"uid":"abel.fournier_1284046072075@af83.com",
 			"auth":"password",
 			"metadata":{
 				"nickname":"abel_1284046072075"}
@@ -461,7 +461,7 @@ Succès :
 				"nickname":"abel_1284114120882"}
 	       },
 	       ...
-]}
+    ]}
 
 Erreur :
 
@@ -521,7 +521,7 @@ Succès:
 			"roster":["blah4"],
 			"metadata":{"description":"Meeting agoroom"}
 		}
-]}
+    ]}
 
 Erreur :
 
@@ -674,7 +674,7 @@ Succès :
 					"language":"en"}
 		},
 		...
-]}
+    ]}
 
 Erreur :
 
