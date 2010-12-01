@@ -27,15 +27,7 @@ TODO
 
 We provide some [jQuery UI widgets](http://jqueryui.com/).
 
-* [[activity]]
-* [[chat]]
-* [[file]]
-* [[player]]
-* [[replay]]
-* [[results]]
-* [[search]]
-* [[video]]
-* [[whiteboard]]
+* **Widgets :** [[activity]] - [[chat]] - [[file]] - [[player]] - [[replay]] - [[results]] - [[search]] - [[video]] - [[whiteboard]]
 
 ## Help/Discuss
 
