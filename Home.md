@@ -32,6 +32,7 @@ We provide some [jQuery UI widgets](http://jqueryui.com/).
 ## Help/Discuss
 
 * [ucengine mailing-list](http://groups.google.com/group/ucengine)
+* IRC: [#af83-ucengine](irc:af83-ucengine@irc.freenode.net) on freenode.
 
 ## Contribute
 
