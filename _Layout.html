@@ -43,8 +43,9 @@
               /**
               * var disqus_identifier; [Optional but recommended: Define a unique identifier (e.g. post id or slug) for this thread] 
               */
+              var disqus_title      = '{{ page.title }}';
+              var disqus_identifier = '{{ page.path }}';
               (function() {
-              var disqus_title = '{{ page.title }}';
               var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
               dsq.src = 'http://ucengine-docs.disqus.com/embed.js';
               (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
