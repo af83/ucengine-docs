@@ -22,3 +22,5 @@
 ## Run
 
         make run
+
+Go to [localhost:5280](http://localhost:5280/)
