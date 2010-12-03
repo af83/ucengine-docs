@@ -17,6 +17,7 @@
 ## Get source code
 
         git clone git://github.com/AF83/ucengine.git
+        git submodule update --init
 
 ## Run
 
