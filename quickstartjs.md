@@ -27,12 +27,21 @@ Create a folder *chat* in *priw/www*, with an index.html:
 **priv/www/chat/index.html**
 
 ```html
-<script type="text/javascript" src="../lib/jquery-1.4.4.min.js"></script>
-<script type="text/javascript" src="../lib/jquery-ui-1.8.4.custom.min.js"></script>
-<script type="text/javascript" src="../lib/uce.js"></script>
-<script type="text/javascript" src="../lib/video.ui.js"></script>
-<script type="text/javascript" src="../lib/chat.ui.js"></script>
-<script type="text/javascript" src="js/yourchat.js"></script>
+<!DOCTYPE html>
+<html>
+  <head>
+    <script type="text/javascript" src="../lib/jquery-1.4.4.min.js"></script>
+    <script type="text/javascript" src="../lib/jquery-ui-1.8.4.custom.min.js"></script>
+    <script type="text/javascript" src="../lib/uce.js"></script>
+    <script type="text/javascript" src="../lib/video.ui.js"></script>
+    <script type="text/javascript" src="../lib/chat.ui.js"></script>
+    <script type="text/javascript" src="js/yourchat.js"></script>
+    <title>Your chat</title>
+  </head>
+  <body>
+
+  </body>
+</html>
 ```
 
 **priv/www/chat/js/yourchat.js**
