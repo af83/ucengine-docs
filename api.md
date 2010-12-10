@@ -216,9 +216,8 @@ Dans l'URL :
 
 Encodés :
 
-    - auth :      Méthode d'authentification utilisée (anonymous, password, token) ;
     - credential :   Élement secret utilisé pour l'authentification (mot de passe, token) ;
-    - metadata :	Tableau contenant les métadonnés (ex. metadata[key]=value).
+    - metadata :     Tableau contenant les métadonnés (ex. metadata[key]=value).
 
 ### Valeurs de retour
 
