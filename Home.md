@@ -17,7 +17,8 @@ UC Engine (Unified Collaboration Engine), provides developers with the tools to 
 
 ### Ruby
 
-TODO
+* [[Installation|ruby_install]]
+* [API](http://rdoc.info/github/AF83/ucengine.rb/master/frames)
 
 ### HTML/Javascript applications
 
