@@ -7,6 +7,7 @@ UC Engine (Unified Collaboration Engine), provides developers with the tools to 
 ## Topics
 
 * [[Installation|install]]
+* [[Frequently asked questions|faq]]
 * **Databases:** [[mongodb]] - [[mnesia]]
 * **Full text Search:** [[Solr|solr]]
 * **Video:** [[erlyvideo]] - [[red5]]
