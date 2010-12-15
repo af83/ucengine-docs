@@ -1,6 +1,4 @@
-# UCengine API
-
-**Translation in progress**
+# UC Engine ReST API
 
 # General informations about the API
 
