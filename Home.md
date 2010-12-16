@@ -6,8 +6,7 @@ UC Engine (Unified Collaboration Engine), provides developers with the tools to 
 
 ## Topics
 
-* [[Installation|install]]
-* [[Frequently asked questions|faq]]
+* [[Installation|install]] - [[Frequently asked questions|faq]]
 * **Databases:** [[mongodb]] - [[mnesia]]
 * **Full text Search:** [[Solr|solr]]
 * **Video:** [[erlyvideo]] - [[red5]]
@@ -28,6 +27,7 @@ UC Engine (Unified Collaboration Engine), provides developers with the tools to 
 
 We provide some [jQuery UI widgets](http://jqueryui.com/).
 
+*  [[Guide|widgets]]
 * **Widgets :** [[activity]] - [[chat]] - [[file]] - [[player]] - [[replay]] - [[results]] - [[search]] - [[video]] - [[whiteboard]]
 
 ## Help/Discuss
