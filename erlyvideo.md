@@ -4,12 +4,6 @@
 
 [erlyvideo_ucengine](https://github.com/AF83/erlyvideo-ucengine) is a plugin to bind Erlyvideo events and UCengine events, it allows UCengine clients to connect to Erlyvideo through UCengine events.
 
-## Docs
-
-### UCengine
-
-[docs.ucengine.org](http://docs.ucengine.org)
-
 ## Configuration
 
 Add the following lines to our erlyvideo.conf:
@@ -29,7 +23,7 @@ And replace *trusted_login* by *ucengine_login* in *rtmp_handlers*, like that:
 
 ## Dependencies
 
-        - [ibrowse](https://github.com/dizzyd/ibrowse)
+* [ibrowse](https://github.com/dizzyd/ibrowse)
 
 ## Install it from scratch
 
