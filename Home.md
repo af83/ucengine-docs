@@ -10,6 +10,7 @@ UC Engine (Unified Collaboration Engine), provides developers with the tools to 
 * [[Using mongodb|mongodb]] - [[Using mnesia|mnesia]]
 * [[Full text search with SOLR|solr]]
 * [[Video with erlyvideo|erlyvideo]]
+* [[Administration with ucectl|ucectl]]
 
 ## Create bricks and applications
 
