@@ -230,6 +230,7 @@ Parameter                              | Description                           |
 **URL Parameters**                     |                                       |
 `org`                                  | Organisation id                       | `af83`
 `meeting`                              | Meeting id                            | `demo`
+`uid`                                  | User id                               | `uid_63444326443_50150`
 **Encoded Parameters**                 |                                       |
 `uid`                                  | User id                               | `uid_63444326443_50150`
 `sid`                                  | Session id                            | `330249245470504`
@@ -282,7 +283,6 @@ Parameter                              | Description                           |
 **URL Parameters**                     |                                       |
 `org`                                  | Organisation id                       | `af83`
 `meeting`                              | Meeting id                            | `demo`
-`uid`                                  | User id                               | `uid_63444326443_50150`
 **Encoded Parameters**                 |                                       |
 `uid`                                  | User id                               | `uid_63444326443_50150`
 `sid`                                  | Session id                            | `330249245470504`
@@ -320,7 +320,6 @@ Parameter                              | Description                           |
 **URL Parameters**                     |                                       |
 `org`                                  | Organisation id                       | `af83`
 `meeting`                              | Meeting id                            | `demo`
-`uid`                                  | User id                               | `uid_63444326443_50150`
 **Encoded Parameters**                 |                                       |
 `uid`                                  | User id                               | `uid_63444326443_50150`
 `sid`                                  | Session id                            | `330249245470504`
@@ -352,7 +351,6 @@ Parameter                              | Description                           |
 `org`                                  | Organisation id                       | `af83`
 `meeting`                              | Meeting id                            | `demo`
 **Encoded Parameters**                 |                                       |
-`uid`                                  | User id                               | `uid_63444326443_50150`
 `sid`                                  | Session id                            | `330249245470504`
 
 ### Returned values
