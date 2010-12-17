@@ -27,6 +27,20 @@ Example:
 ### internal.presence.add
 ### internal.presence.delete
 ### internal.roster.add
+
+Sent by UC Engine. It notifies that a new user entered the current meeting.
+
+Example:
+
+    { "type"     : "internal.roster.add",
+      "datetime" : 1292594897416,
+      "id"       : "30387772929242810120613023014654",
+      "org"      : "af83",
+      "meeting"  : "demo",
+      "from"     : "uid_63444326443_50150",
+      "metadata" : {}
+    }
+
 ### internal.roster.delete
 ### internal.user.add
 ### internal.user.update
