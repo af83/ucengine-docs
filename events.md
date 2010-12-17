@@ -41,7 +41,15 @@ Metadata       | Description
 ---------------|------------------------------------------
 broadcaster    |
 
-### video.stream.stop
+### video.stream.lost
+
+Send by [[erlyvideo]] when source have been lost
+
+Metadata       | Description
+---------------|------------------------------------------
+broadcaster    |
+
+### video.stream.stop
 
 Send by [[erlyvideo]] when a user stop publishing video/webcam
 
