@@ -69,7 +69,7 @@ produce a ̀`twitter.tweet.new` event.
 
 Metadata       | Description
 ---------------|-------------------------------------------------------------------------------------------------------
-`hashtag`      | The hashtag to minitor
+hashtag        | The hashtag to minitor
 
 Example:
 
@@ -90,9 +90,9 @@ Sent by the twitter brick, it notifies that a new twitter message was posted.
 
 Metadata       | Description
 ---------------|-------------------------------------------------------------------------------------------------------
-`text`         | The tweet message
-`from`         | The twitter user
-`hashtags`     | The hashtags presents in the message
+text           | The tweet message
+from           | The twitter user
+hashtags       | The hashtags presents in the message
 
 Example:
 
@@ -117,8 +117,8 @@ Sent by a user. It allow to post a new message on a chatroom
 
 Metadata       | Description
 ---------------|-------------------------------------------------------------------------------------------------------
-`text`         | The message content
-`lang`         | The language of the message
+text           | The message content
+lang           | The language of the message
 
 Example:
 
@@ -141,9 +141,9 @@ been translated.
 
 Metadata       | Description
 ---------------|-------------------------------------------------------------------------------------------------------
-`text`         | The message content
-`lang`         | The language of the message
-`from`         | The original sender of the non translated message
+text           | The message content
+lang           | The language of the message
+from           | The original sender of the non translated message
 
 Example:
 
