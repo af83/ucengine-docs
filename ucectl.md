@@ -52,16 +52,33 @@ ucectl - UCengine control
     Create an new meeting with name <name> in the organisation <org> with optional starting and ending dates (see the FORMAT section for date formatting).
 
   - `meeting` `update` `--org` <org> `--name` <name> [`--start` <date> `--end` <date>] [`--<metadata>` <value>] .. :
-    Update the meeting with name <name> in the organisation <org> with optional starting and ending dates (see the FORMAT section for date formatting).
+    Update the meeting with name <name> in the organisation <org>.
 
   - `meeting` `get` `--org` <org> `--name` <name>:
-    Get all on informations about the meeting <name> in the organisation <org>.
+    Get all informations about the meeting <name> in the organisation <org>.
   
   - `meeting` `delete` `--org` <org> `--name` <name>:
     Delete the meeting with name <name> in the organisation <org>.
   
   - `meeting` `list` `--org` <org> [`--status` <status>]:
     List all meetings with an optional status <status>, meeting status can be any of: `upcoming`|`opened`|`closed` or `all` (default).
+
+### Users
+
+  - `user` `add` `--uid` <uid> `--auth` <auth> `--credential` <credential> [`--<metadata>` <value>] ... :
+    Create an new user with identifier <uid> where <auth> is a method to authenticate (currently only 'password' and 'token' are supported) and <credential> the secret to authenticate the user.
+
+  - `user` `update` `--uid` <uid> `--auth` <auth> `--credential` <credential> [`--<metadata>` <value>] ... :
+    Update the user with identifier <uid>.
+
+  - `user` `get` `--uid` <uid>
+    Get all informations about the user with identifier <uid>.
+  
+  - `user` `delete` `--uid` <uid>:
+    Delete the user with identifier <uid>.
+  
+  - `user` `list`
+    List all users.
 
 ## FORMAT
 
@@ -94,10 +111,12 @@ Only keep the closed|opened|upcoming meetings:
 	ucectl meeting list --org 'AF83' --status upcoming
 
 Create a new meeting 'Christmas dinner' in the organisation 'AF83':
-	ucectl meeting add --org 'AF83' --name 'Christmas dinner' --start '2010-24-12 20:30:00' --end '2010-25-12 03:00:00' --appetizer 'Chips'
+	ucectl meeting add --org 'AF83' --name 'Christmas dinner' --start '2010-24-12 20:30:00'
+                --end '2010-25-12 03:00:00' --appetizer 'Chips'
 
 Make it frenchier:
-	ucectl meeting update --org 'AF83' --name 'Christmas dinner' --start '2010-24-12 20:30:00' --end '2010-25-12 07:00:00' --appetizer 'Snails'
+	ucectl meeting update --org 'AF83' --name 'Christmas dinner' --start '2010-24-12 20:30:00'
+                --end '2010-25-12 07:00:00' --appetizer 'Snails'
 
 And delete it:
 	ucectl meeting delete --org 'AF83' --name 'Christmas dinner'
