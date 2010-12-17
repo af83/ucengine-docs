@@ -3,6 +3,26 @@
 ## Internals
 
 ### internal.file.add
+
+Sent by UC Engine. It notifies that a new file have been added.
+
+Metadata       | Description
+---------------|-------------------------------------------------------------------------------------------------------
+id             | The id of the file. This id is unique for each uploaded file (even if the file is the same).
+
+Example:
+
+    { "type"     : "internal.file.add",
+      "datetime" : 1292597388050,
+      "id"       : "74647005885125029457242944483441",
+      "org"      : "af83",
+      "meeting"  : "demo",
+      "from"     : "root",
+      "metadata" : {
+        "id":"Eben-Moglen-2010-12-2-privacy-testimony_34891938863969335648238193223131.pdf"
+      }
+    }
+
 ### internal.org.add
 ### internal.presence.add
 ### internal.presence.delete
@@ -20,7 +40,7 @@ hashtag. When a message will be retrieved from the twitter stream it will
 produce a ̀`twitter.tweet.new` event.
 
 Metadata       | Description
----------------|------------------------------------------
+---------------|-------------------------------------------------------------------------------------------------------
 `hashtag`      | The hashtag to minitor
 
 Example:
@@ -38,10 +58,10 @@ Example:
 
 ### twitter.tweet.new
 
-Sent by the twitter brick, it notifies of a new twitter message.
+Sent by the twitter brick, it notifies that a new twitter message was posted.
 
 Metadata       | Description
----------------|------------------------------------------
+---------------|-------------------------------------------------------------------------------------------------------
 `text`         | The tweet message
 `from`         | The twitter user
 `hashtags`     | The hashtags presents in the message
@@ -73,7 +93,7 @@ Example:
 Sent by [[erlyvideo]] with token and channel for viewing and publishing video.
 
 Metadata       | Description
----------------|------------------------------------------
+---------------|-------------------------------------------------------------------------------------------------------
 token          |
 channel        |
 
@@ -83,7 +103,7 @@ channel        |
 Sent by [[erlyvideo]] when a user start publishing video/webcam
 
 Metadata       | Description
----------------|------------------------------------------
+---------------|-------------------------------------------------------------------------------------------------------
 broadcaster    |
 
 ### video.stream.lost
@@ -91,7 +111,7 @@ broadcaster    |
 Send by [[erlyvideo]] when source have been lost
 
 Metadata       | Description
----------------|------------------------------------------
+---------------|-------------------------------------------------------------------------------------------------------
 broadcaster    |
 
 ### video.stream.stop
@@ -99,6 +119,6 @@ broadcaster    |
 Sent by [[erlyvideo]] when a user stop publishing video/webcam
 
 Metadata       | Description
----------------|------------------------------------------
+---------------|-------------------------------------------------------------------------------------------------------
 broadcaster    |
 
