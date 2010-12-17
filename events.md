@@ -17,7 +17,7 @@ Example:
       "id"       : "74647005885125029457242944483441",
       "org"      : "af83",
       "meeting"  : "demo",
-      "from"     : "root",
+      "from"     : "uid_63444326443_50150",
       "metadata" : {
         "id":"Eben-Moglen-2010-12-2-privacy-testimony_34891938863969335648238193223131.pdf"
       }
@@ -52,7 +52,7 @@ Example:
       "id"       : "05214339923220971091870275941078",
       "org"      : "af83",
       "meeting"  : "demo",
-      "from"     : "root",
+      "from"     : "uid_63444326443_50150",
       "metadata" : {}
     }
 
@@ -112,6 +112,28 @@ Example:
 ## Chat
 
 ## chat.message.new
+
+Sent by a user. It allow to post a new message on a chatroom
+
+Metadata       | Description
+---------------|-------------------------------------------------------------------------------------------------------
+`text`         | The message content
+`lang`         | The language of the message
+
+Example:
+
+    { "type"     : "chat.message.new",
+      "datetime" : 1292601125202,
+      "id"       : "91918360913598370296768635184375",
+      "org"      : "af83",
+      "meeting"  : "demo",
+      "from"     : "uid_63444326443_50150",
+      "metadata" : {
+        "text":"Bienvenue sur UC Engine",
+        "lang":"fr"
+      }
+    }
+
 ## chat.translation.new
 
 ## Video
