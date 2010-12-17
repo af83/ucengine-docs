@@ -8,15 +8,15 @@
 
 Fig.1 connection workflow: how the plugin allows users to connect to erlyvideo from ucengine. 
 
-[Fig.1 connection workflow](./static/img/uce_erlyvideo_wf1.png Fig.1)
+![Fig.1 connection workflow](./static/img/uce_erlyvideo_wf1.png)
 
 Fig.2 publish/play stream workflow: how the plugin manages events publish and play stream.
 
-[Fig.2 publis/play stream workflow](./static/img/uce_erlyvideo_wf2.png Fig.2) 
+![Fig.2 publis/play stream workflow](./static/img/uce_erlyvideo_wf2.png)
 
 Fig.3 close/lost stream workflow: how the plugin manages events close and lost stream.
 
-[Fig.3 close/lost stream workflow](./static/img/uce_erlyvideo_wf3.png Fig.3) 
+![Fig.3 close/lost stream workflow](./static/img/uce_erlyvideo_wf3.png)
 
 ## Configuration
 
