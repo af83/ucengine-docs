@@ -14,7 +14,52 @@
 ## Twitter
 
 ### twitter.hashtag.add
+
+Sent by a user, it indicates the twitter brick to watch for the corresponding
+hashtag. When a message will be retrieved from the twitter stream it will
+produce a ̀`twitter.tweet.new` event.
+
+Metadata       | Description
+---------------|------------------------------------------
+`hashtag`      | The hashtag to minitor
+
+Example:
+
+    { "type"    : "twitter.hashtag.add",
+      "datetime": 1292593766682,
+      "id"      : "44099145822544409583064798111089",
+      "org"     : "af83",
+      "meeting" : "demo",
+      "from"    : "uid_63444326443_50150",
+      "metadata": {
+        "hashtag": "#TED"
+      }
+    }
+
 ### twitter.tweet.new
+
+Sent by the twitter brick, it notifies of a new twitter message.
+
+Metadata       | Description
+---------------|------------------------------------------
+`text`         | The tweet message
+`from`         | The twitter user
+`hashtags`     | The hashtags presents in the message
+
+Example:
+
+    { "type"     : "twitter.tweet.new",
+      "datetime" : 1292595423660,
+      "id"       : "58605572364308395079869070527396",
+      "org"      : "af83",
+      "meeting"  : "demo",
+      "from"     : "twitter",
+      "metadata" : {
+        "text"     : "#UCEngine is so cooool !",
+        "from"     : "ucengine",
+        "hashtags" : "#UCEngine"
+      }
+    }
 
 ## Chat
 
@@ -25,7 +70,7 @@
 
 ### video.stream.new
 
-Send by [[erlyvideo]] with token and channel for viewing and publishing video.
+Sent by [[erlyvideo]] with token and channel for viewing and publishing video.
 
 Metadata       | Description
 ---------------|------------------------------------------
@@ -35,7 +80,7 @@ channel        |
 
 ### video.stream.start
 
-Send by [[erlyvideo]] when a user start publishing video/webcam
+Sent by [[erlyvideo]] when a user start publishing video/webcam
 
 Metadata       | Description
 ---------------|------------------------------------------
@@ -51,7 +96,7 @@ broadcaster    |
 
 ### video.stream.stop
 
-Send by [[erlyvideo]] when a user stop publishing video/webcam
+Sent by [[erlyvideo]] when a user stop publishing video/webcam
 
 Metadata       | Description
 ---------------|------------------------------------------
