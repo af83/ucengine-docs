@@ -1,0 +1,215 @@
+.\" generated with Ronn/v0.7.3
+.\" http://github.com/rtomayko/ronn/tree/0.7.3
+.
+.TH "UCECTL" "" "December 2010" "" ""
+.
+.SH "NAME"
+ucectl \- UCengine control
+.
+.SH "SYNOPSYS"
+\fBucectl\fR (run|start|debug|stop|tests)
+.
+.br
+\fBucectl\fR \fB\-\-help\fR
+.
+.br
+\fBucectl\fR \fIobject\fR \fIaction\fR [\fB\-\-<parameter>\fR \fIvalue\fR]
+.
+.br
+.
+.SH "DESCRIPTION"
+\fBUcectl\fR is the main administration tool for UCengine\.
+.
+.SH "OPTIONS"
+.
+.SS "Server administration"
+.
+.TP
+\fBrun\fR
+Start UCengine in foreground\.
+.
+.TP
+\fBstart\fR
+Start UCengine in background\.
+.
+.TP
+\fBstop\fR
+Stop UCengine when launched in background\.
+.
+.TP
+\fBtests\fR
+Run unit tests\.
+.
+.SS "Organisations"
+.
+.TP
+\fBorg\fR \fBadd\fR \fB\-\-name\fR \fIname\fR [\fB\-\-<metadata>\fR \fIvalue\fR] \.\.\.
+Create a new organisation with name \fIname\fR\.
+.
+.TP
+\fBorg\fR \fBupdate\fR \fB\-\-name\fR \fIname\fR [\fB\-\-<metadata>\fR \fIvalue\fR] \.\.\.
+Update the organisation with name \fIname\fR\.
+.
+.TP
+\fBorg\fR \fBget\fR \fB\-\-name\fR \fIname\fR
+Display all informations about the organisation \fIname\fR\.
+.
+.TP
+\fBorg\fR \fBdelete\fR \fB\-\-name\fR \fIname\fR
+Delete the organisation with name \fIname\fR
+.
+.TP
+\fBorg\fR \fBlist\fR
+Display all informations about all organisations\.
+.
+.SS "Meetings"
+.
+.TP
+\fBmeeting\fR \fBadd\fR \fB\-\-org\fR \fIorg\fR \fB\-\-name\fR \fIname\fR [\fB\-\-start\fR \fIdate\fR \fB\-\-end\fR \fIdate\fR] [\fB\-\-<metadata>\fR \fIvalue\fR] \.\.\.
+Create an new meeting with name \fIname\fR in the organisation \fIorg\fR with optional starting and ending dates (see the FORMAT section for date formatting)\.
+.
+.TP
+\fBmeeting\fR \fBupdate\fR \fB\-\-org\fR \fIorg\fR \fB\-\-name\fR \fIname\fR [\fB\-\-start\fR \fIdate\fR \fB\-\-end\fR \fIdate\fR] [\fB\-\-<metadata>\fR \fIvalue\fR] \.\.
+Update the meeting with name \fIname\fR in the organisation \fIorg\fR with optional starting and ending dates (see the FORMAT section for date formatting)\.
+.
+.TP
+\fBmeeting\fR \fBget\fR \fB\-\-org\fR \fIorg\fR \fB\-\-name\fR \fIname\fR
+Get all on informations about the meeting \fIname\fR in the organisation \fIorg\fR\.
+.
+.TP
+\fBmeeting\fR \fBdelete\fR \fB\-\-org\fR \fIorg\fR \fB\-\-name\fR \fIname\fR
+Delete the meeting with name \fIname\fR in the organisation \fIorg\fR\.
+.
+.TP
+\fBmeeting\fR \fBlist\fR \fB\-\-org\fR \fIorg\fR [\fB\-\-status\fR \fIstatus\fR]
+List all meetings with an optional status \fIstatus\fR, meeting status can be any of: \fBupcoming\fR|\fBopened\fR|\fBclosed\fR or \fBall\fR (default)\.
+.
+.SH "FORMAT"
+.
+.TP
+\fB<date>\fR
+ISO8601 formatted date (ex\. \'2010\-25\-12 00:00:01\')\.
+.
+.TP
+\fBmetadata\fR
+Organisations and meetings can hold an unlimited amount of metadata as a \fBkey\fR=\fIvalue\fR store\. Any arguments of the command line which are not mandatory are automatically added to the metadata of the object\.
+.
+.SH "EXAMPLES"
+List all organisations:
+.
+.IP "" 4
+.
+.nf
+
+ucectl org list
+.
+.fi
+.
+.IP "" 0
+.
+.P
+Create a new organisation \'AF83\' with two metadata (\'description\' and \'owner\'):
+.
+.IP "" 4
+.
+.nf
+
+ucectl org add \-\-name \'AF83\' \-\-description "Crazy Solid" \-\-owner "Chuck Norris"
+.
+.fi
+.
+.IP "" 0
+.
+.P
+Oops, a mistake on the owner field, let\'s update it:
+.
+.IP "" 4
+.
+.nf
+
+ucectl org update \-\-name \'AF83\' \-\-description "Crazy Solid" \-\-owner "Louis Montagne"
+.
+.fi
+.
+.IP "" 0
+.
+.P
+And delete it:
+.
+.IP "" 4
+.
+.nf
+
+ucectl org delete \-\-name \'AF83\'
+.
+.fi
+.
+.IP "" 0
+.
+.P
+List all meetings at \'AF83\':
+.
+.IP "" 4
+.
+.nf
+
+ucectl meeting list \-\-org \'AF83\'
+.
+.fi
+.
+.IP "" 0
+.
+.P
+Only keep the closed|opened|upcoming meetings:
+.
+.IP "" 4
+.
+.nf
+
+ucectl meeting list \-\-org \'AF83\' \-\-status closed
+ucectl meeting list \-\-org \'AF83\' \-\-status opened
+ucectl meeting list \-\-org \'AF83\' \-\-status upcoming
+.
+.fi
+.
+.IP "" 0
+.
+.P
+Create a new meeting \'Christmas dinner\' in the organisation \'AF83\':
+.
+.IP "" 4
+.
+.nf
+
+ucectl meeting add \-\-org \'AF83\' \-\-name \'Christmas dinner\' \-\-start \'2010\-24\-12 20:30:00\' \-\-end \'2010\-25\-12 03:00:00\' \-\-appetizer \'Chips\'
+.
+.fi
+.
+.IP "" 0
+.
+.P
+Make it frenchier:
+.
+.IP "" 4
+.
+.nf
+
+ucectl meeting update \-\-org \'AF83\' \-\-name \'Christmas dinner\' \-\-start \'2010\-24\-12 20:30:00\' \-\-end \'2010\-25\-12 07:00:00\' \-\-appetizer \'Snails\'
+.
+.fi
+.
+.IP "" 0
+.
+.P
+And delete it:
+.
+.IP "" 4
+.
+.nf
+
+ucectl meeting delete \-\-org \'AF83\' \-\-name \'Christmas dinner\'
+.
+.fi
+.
+.IP "" 0
+
