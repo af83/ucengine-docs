@@ -24,7 +24,7 @@ See [[ucectl]] for learning how to do it.
 
 Create a folder *chat* in *priw/www*, with an index.html:
 
-    $> mkdir priv/www/chat
+    $> mkdir -p priv/www/chat/js
 
 **priv/www/chat/index.html**
 
@@ -52,14 +52,18 @@ Create a folder *chat* in *priw/www*, with an index.html:
 ```javascript
 var password = "mypwd";
 var uid = "john";
-uce.presence.create("password", password, "myorg", uid, uid, function(err, result, xhr) {
+uce.presence.create(password, "myorg", uid, uid, function(err, result, xhr) {
   if (err) {
     return;
   }
   var meeting = uce.attachPresence(result).org("myorg").meeting("demo");
   $("<div>").appendTo($("body")).video({domain : "localhost/ucengine",
-                                        ucemeeting: ucemeeting});
+                                        ucemeeting: meeting});
   $("<div>").appendTo($("body")).chat({ucemeeting : meeting});
   meeting.startLoop();
 });
 ```
+
+## Test
+
+Go to [[localhost:5280/chat|http://localhost:5280/chat/]].
