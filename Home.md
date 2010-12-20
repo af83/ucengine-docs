@@ -6,11 +6,10 @@ UC Engine (Unified Collaboration Engine), provides developers with the tools to 
 
 ## Topics
 
-* [[Installation|install]] - [[Frequently asked questions|faq]]
+* [[Installation|install]] - [[Administration with ucectl|ucectl]] - [[Frequently asked questions|faq]]
 * **Databases:** [[mongodb]] - [[mnesia]]
 * **Full text Search:** [[Solr|solr]]
 * **Video:** [[erlyvideo]] - [[red5]]
-* [[Administration with ucectl|ucectl]]
 * [[ReST API|api]] - [[ACL|acl]] - [[events]]
 
 ## Create bricks and applications
@@ -22,6 +21,7 @@ UC Engine (Unified Collaboration Engine), provides developers with the tools to 
 
 ### HTML/Javascript applications
 
+* [[Quickstart with a video/chat application|quickstartjs]]
 * [[Javascript API|ucejs]]
 
 #### Javascript widgets
@@ -36,7 +36,9 @@ We provide some [jQuery UI widgets](http://jqueryui.com/).
 * [ucengine mailing-list](http://groups.google.com/group/ucengine)
 * IRC: [#af83-ucengine](irc:af83-ucengine@irc.freenode.net) on freenode.
 
-## Contribute
+## Development and contributions
+
+See [[roadmap]].
 
 Contributions are welcome !
 
