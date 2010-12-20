@@ -18,6 +18,8 @@ See [[erlyvideo]].
 * meeting:  *demo*
 * User: *john* - password: *mypwd*
 
+See [[ucectl]] for learning how to do it.
+
 ## Start hacking
 
 Create a folder *chat* in *priw/www*, with an index.html:
