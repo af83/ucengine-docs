@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>{{ page.title }}</title>
+    <title>{{ page.title }} - UC Engine</title>
     <link rel="stylesheet" href="{{ wiki.base_path }}static/css/screen.css" type="text/css" charset="utf-8" />
     <link rel="stylesheet" href="{{ wiki.base_path }}static/css/gollum.css" type="text/css" charset="utf-8" />
     <link rel="stylesheet" href="{{ wiki.base_path }}static/css/syntax.css" type="text/css" charset="utf-8" />
@@ -43,8 +43,9 @@
               /**
               * var disqus_identifier; [Optional but recommended: Define a unique identifier (e.g. post id or slug) for this thread] 
               */
+              var disqus_title      = '{{ page.title }}';
+              var disqus_identifier = '{{ page.path }}';
               (function() {
-              var disqus_title = '{{ page.title }}';
               var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
               dsq.src = 'http://ucengine-docs.disqus.com/embed.js';
               (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
@@ -54,6 +55,9 @@
         </div>
       </div>
     </div>
+    <a class="forkme" href="https://github.com/AF83/ucengine">
+        <img alt="Fork us on GitHub" src="static/img/fork-us.png">
+    </a>
     <script type="text/javascript">
         var _gaq = _gaq || [];
         _gaq.push(['_setAccount', 'UA-1725781-24']);

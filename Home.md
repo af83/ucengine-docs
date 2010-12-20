@@ -1,20 +1,19 @@
-# UCengine
+# UC Engine
 
 UC Engine (Unified Collaboration Engine), provides developers with the tools to help them build realtime applications or integrate realtime features to existing applications.
 
 **This documentation is under construction.**
 
-## Install and deploy
+## Topics
 
-* [[Installation|install]]
-* [[Using mongodb|mongodb]] - [[Using mnesia|mnesia]]
-* [[Full text search with SOLR|solr]]
-* [[Video with erlyvideo|erlyvideo]]
+* [[Installation|install]] - [[Frequently asked questions|faq]]
+* **Databases:** [[mongodb]] - [[mnesia]]
+* **Full text Search:** [[Solr|solr]]
+* **Video:** [[erlyvideo]] - [[red5]]
 * [[Administration with ucectl|ucectl]]
+* [[ReST API|api]] - [[ACL|acl]] - [[events]]
 
 ## Create bricks and applications
-
-* [[REST API|api]]
 
 ### Ruby
 
@@ -29,19 +28,13 @@ UC Engine (Unified Collaboration Engine), provides developers with the tools to 
 
 We provide some [jQuery UI widgets](http://jqueryui.com/).
 
-* [[activity]]
-* [[chat]]
-* [[file]]
-* [[player]]
-* [[replay]]
-* [[results]]
-* [[search]]
-* [[video]]
-* [[whiteboard]]
+*  [[Guide|widgets]]
+* **Widgets :** [[activity]] - [[chat]] - [[file]] - [[player]] - [[replay]] - [[results]] - [[search]] - [[video]] - [[whiteboard]]
 
 ## Help/Discuss
 
 * [ucengine mailing-list](http://groups.google.com/group/ucengine)
+* IRC: [#af83-ucengine](irc:af83-ucengine@irc.freenode.net) on freenode.
 
 ## Contribute
 

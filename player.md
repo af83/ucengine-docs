@@ -29,9 +29,14 @@ $("<div>").player({src    : "example",
 
 ```html
 <div class="ui-widget ui-player">
-  <video height="400" width="600" class="ui-player-video" preload="auto" tabindex="0">
-    <source src=example.mp4" name="mp4" type="video/mp4" codecs="avc1.42E01E, mp4a.40.2" />
-    <source src="example.webm" name="webm" type="video/webm" codecs="vp8, vorbis" />
+  <div class="ui-widget-header">
+    <span>Video</span>
+  </div>
+  <div class="ui-widget-content">
+    <video height="400" width="600" class="ui-player-video" preload="auto" tabindex="0">
+      <source src=example.mp4" name="mp4" type="video/mp4" codecs="avc1.42E01E, mp4a.40.2" />
+      <source src="example.webm" name="webm" type="video/webm" codecs="vp8, vorbis" />
     </video>
+  </div>
 </div>
 ```

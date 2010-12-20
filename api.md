@@ -1,169 +1,137 @@
-# -*- coding: utf-8 -*-
-# UCengine API
+# UC Engine ReST API
 
-**Translation in progress**
+# General informations about the API
 
-# Informations transversales à l'API
+The base URL is `http://demo.ucengine.org/api/0.1/`
+All the others API URLs are relative to this one.
 
-L'URL de base de L'API est la suivante : http://demo.ucengine.org/api/0.1/
+For most of the API calls, there are recurrent parameters :
 
-Toutes les autres URL d'appel à cette API sont relative à cette première.
+Parameter                              | Description                           | Example
+---------------------------------------|---------------------------------------|------------------------------------------------------------
+**Encoded Parameters**                 |                                       |
+`uid`                                  | User id                               | `uid_63444326443_50150`
+`sid`                                  | Session id                            | `330249245470504`
 
-Pour pratiquement chaque appel à une méthode de l'API, certains paramètres sont
-récurrents :
+Moreover, you have to consider a few conventions :
 
-    - uid:         Identifiant ucengine de l'utilisateur      uid_63444326443_50150
-    - sid:         Identifiant de session ucengine.           330249245470504
+- The `PUT` and `DELETE` methods can be simulated when your client could not
+  support these. To do so, you have to use the `_method` parameter.  For
+  example, to be able to do a `PUT` request, you will send a `POST` request
+  with the following parameter: `_method=PUT`.
 
-Certaines conventions sont à prendre en compte :
+# Time
+## Retrieve current server's timestamp
 
-- Les méthodes `PUT` et `DELETE` peuvent être simulées dans le cas de clients
-  ne supportants pas ces méthodes avec le paramètre `_method`. Par exemple,
-  pour simuler un `PUT`, nous effectuerons un `POST` avec le paramètre
-  `_method=PUT`.
-
-# Temps
-# Récupérer l'heure du serveur
-
-### URL
+### Request
 
     GET /time
 
-### Valeur de retour
+### Returned values
 
-200 {"result": 1284046082844}
+    200 {"result": 1284046082844}
 
-### Remarque
+### Notes
 
-Le timestamp est exprimé en millisecondes depuis Epoch (1 janvier 1970).
+The timestamp is the number of milliseconds elapsed since EPOCH (1970-01-01).
 
-# Utilisateur
-## Lister les utilisateurs
+# User
+## List users
 
-### URL
+### Request
 
     GET /user/
 
-### Parametres
+### Returned values
 
-Encodés :
-
-    - uid:         Identifiant de l'utilisateur.     uid_63444326443_50150
-    - sid:         Identifiant de presence.           330249245470504
-
-### Valeurs de retour
-
-Succès :
-
-    200 {"result": [{	"uid":"romain.gauthier@af83.com",
-			"auth":"password",
-			"metadata":{
-				"nickname":"abel_1284046072075"
-			}
-		},
-		{	"uid":"victor.goya@af83.com",
-			"auth":"password",
-			"metadata":{
-				"nickname":"phorque"
-			}
-		}]}
-
-Erreur :
+    200 {"result": [{   "uid":"romain.gauthier@af83.com",
+                        "auth":"password",
+                        "metadata":{
+                            "nickname":"abel_1284046072075"
+                        }
+                    },
+                    {   "uid":"victor.goya@af83.com",
+                        "auth":"password",
+                        "metadata":{
+                            "nickname":"phorque"
+                        }
+                    }]}
 
     401 { "error": "unauthorized" }
 
     500 { "error": "unexpected_error" }
 
-## Enregistrer un nouvel utilisateur
+## Register users
 
-### URL
+### Request
 
     PUT /user/{uid}
 
-### Parametres
+Parameter                              | Description                           | Example
+---------------------------------------|---------------------------------------|------------------------------------------------------------
+**URL Parameters**                     |                                       |
+`uid`                                  | User id                               | `uid_63444326443_50150`
+**Encoded Parameters**                 |                                       |
+`auth`                                 | Authentication method                 | `anonymous` or `password` or `token`
+`credential`                           | Password or token                     | `dWlkXzYzNDQ0MzI2NDQzXzUwMTUwCg`
+`metadata`                             | Array containing metadata             | `metadata[key]=value`
 
-Dans l'URL :
-
-    - uid:		Identifiant de l'utilisateur.    ex: romain.gauthier@af83.com
-
-Encodés :
-
-    - auth :      Méthode d'authentification utilisée (anonymous, password, token) ;
-    - credential :   Élement secret utilisé pour l'authentification (mot de passe, token).
-    - metadata :	Tableau contenant les métadonnés (ex. metadata[key]=value).
-
-### Valeurs de retour
-
-Succès :
+### Returned values:
 
     201 { "result": "created" }
 
-Erreur :
-
     401 { "error": "unauthorized" }
 
     500 { "error": "unexpected_error" }
 
-## Modifier les informations d'un utilisateur
+## Modify user's informations
 
-### URL
+### Request
 
     POST /user/{uid}
 
-### Parametres
+Parameter                              | Description                           | Example
+---------------------------------------|---------------------------------------|------------------------------------------------------------
+**URL Parameters**                     |                                       |
+`uid`                                  | User id                               | `uid_63444326443_50150`
+**Encoded Parameters**                 |                                       |
+`uid`                                  | User id                               | `uid_63444326443_50150`
+`sid`                                  | Session id                            | `330249245470504`
+`auth`                                 | Authentication method                 | `anonymous` or `password` or `token`
+`credential`                           | Password or token                     | `dWlkXzYzNDQ0MzI2NDQzXzUwMTUwCg`
+`metadata`                             | Array containing metadata             | `metadata[key]=value`
 
-Dans l'URL :
-
-    - uid:		Identifiant de l'utilisateur.    ex: romain.gauthier@af83.com
-
-Encodés :
-
-    - uid:         Identifiant de l'utilisateur.     uid_63444326443_50150
-    - sid:         Identifiant de presence.           330249245470504
-    - auth :      Méthode d'authentification utilisée (anonymous, password, token) ;
-    - credential :   Élement secret utilisé pour l'authentification (mot de passe, token).
-    - metadata :	Tableau contenant les métadonnés (ex. metadata[key]=value).
-
-### Valeurs de retour
-
-Succès :
+### Returned values
 
     200 { "result": "ok" }
-
-Erreur :
 
     401 { "error": "unauthorized" }
 
     500 { "error": "unexpected_error" }
 
-## Récupérer les informations d'un utilisateur
+## Retrieve user's informations
 
-### URL
+### Request
 
     GET /user/{uid}
 
-### Parametres
+Parameter                              | Description                           | Example
+---------------------------------------|---------------------------------------|------------------------------------------------------------
+**URL Parameters**                     |                                       |
+`uid`                                  | User id                               | `uid_63444326443_50150`
+`sid`                                  | Session id                            | `330249245470504`
+**Encoded Parameters**                 |                                       |
+`uid`                                  | User id                               | `uid_63444326443_50150`
+`sid`                                  | Session id                            | `330249245470504`
 
-Dans l'URL :
+### Returned values
 
-    - uid:		Identifiant de l'utilisateur.    ex: romain.gauthier@af83.com
-
-Encodés :
-
-    - uid:         Identifiant de l'utilisateur.     uid_63444326443_50150
-    - sid:         Identifiant de presence.           330249245470504
-
-### Valeurs de retour
-
-Succès :
-
-        200 {"result": {uid":"romain.gauthier@af83.com",
-			"auth":"password",
-			"metadata":{
-				"nickname":"abel_1284046072075"
-			}
-		}}
-Erreur :
+     200 {"result": {    "uid":"romain.gauthier@af83.com",
+                         "auth":"password",
+                         "metadata":{
+                            "nickname":"abel_1284046072075"
+                         }
+                    }}
 
     401 { "error": "unauthorized" }
 
@@ -171,30 +139,23 @@ Erreur :
 
     500 { "error": "unexpected_error" }
 
-## Supprimer un utilisateur
+## Delete a user
 
-### URL
+### Request
 
     DELETE /user/{uid}
 
-### Parametres
+Parameter                              | Description                           | Example
+---------------------------------------|---------------------------------------|------------------------------------------------------------
+**URL Parameters**                     |                                       |
+`uid`                                  | User id                               | `uid_63444326443_50150`
+**Encoded Parameters**                 |                                       |
+`uid`                                  | User id                               | `uid_63444326443_50150`
+`sid`                                  | Session id                            | `330249245470504`
 
-Dans l'URL :
-
-    - uid:		Identifiant de l'utilisateur.    ex: romain.gauthier@af83.com
-
-Encodés :
-
-    - uid:         Identifiant de l'utilisateur.     uid_63444326443_50150
-    - sid:         Identifiant de presence.           330249245470504
-
-### Valeurs de retour
-
-Succès :
+### Returned values
 
     200 { "result": "ok" }
-
-Erreur :
 
     401 { "error": "unauthorized" }
 
@@ -204,248 +165,197 @@ Erreur :
 
 # Authentification
 
-### URL
+### Request
 
     PUT /presence/{uid}
 
-### Parametres
+Parameter                              | Description                           | Example
+---------------------------------------|---------------------------------------|------------------------------------------------------------
+**URL Parameters**                     |                                       |
+`uid`                                  | User id                               | `uid_63444326443_50150`
+**Encoded Parameters**                 |                                       |
+`credential`                           | Password or token                     | `dWlkXzYzNDQ0MzI2NDQzXzUwMTUwCg`
+`metadata`                             | Array containing metadata             | `metadata[key]=value`
 
-Dans l'URL :
+### Returned values
 
-    - uid :    Identifiant unique de l'utilisateur.
+    200 { "result": "409832095702309473209" } // the result is a valid sid
 
-Encodés :
+    400 { "error": "bad_parameters" } // at least one paremeter is missing or wrong
 
-    - credential :   Élement secret utilisé pour l'authentification (mot de passe, token) ;
-    - metadata :     Tableau contenant les métadonnés (ex. metadata[key]=value).
+    403 { "error": "bad_credentials" } // the authentification has failed
 
-### Valeurs de retour
+# Disconnect users
 
-Succès :
-
-    - 200 { "result": "409832095702309473209" }} : identifiant de
-      presence (sid).
-
-Erreur :
-
-    - 400 { "error": "bad_parameters" } : au moins un paramètre est manquant ou erroné ;
-
-    - 403 { "error": "bad_credentials" } : l'authentification a échoué ;
-
-# Déconnexion
-
-### URL
+### Request
 
     DELETE /presence/{org}/{uid}/{sid}
 
 ### Paramètres
 
-Dans l'URL :
+Parameter                              | Description                           | Example
+---------------------------------------|---------------------------------------|------------------------------------------------------------
+**URL Parameters**                     |                                       |
+`uid`                                  | User id                               | `uid_63444326443_50150`
+`sid`                                  | Session id                            | `330249245470504`
+**Encoded Parameters**                 |                                       |
+`uid`                                  | User id                               | `uid_63444326443_50150`
+`sid`                                  | Session id                            | `330249245470504`
 
-	- uid :    Identifiant unique de l'utilisateur.
-	- sid :    Identifiant de presence de l'utilisateur.
+### Returned values
 
-Encodés :
+    200 { "result": "ok" }}.
 
-    - uid:	    Identifiant unique de l'utilisateur courant ;
-    - sid:	    Identifiant de presence.
+    400 { "error": "bad_parameters" } // at least one paremeter is missing or wrong
 
-### Valeurs de retour
+    401 { "error": "unauthorized" } // the user is not authorized to disconnect this presence
 
-Succès :
+    404 { "error": "not_found" } // the presence resource doesn't exists
 
-    - 200 { "result": "ok" }}.
+### Notes
 
-Erreur :
-
-    - 400 { "error": "bad_parameters" } : au moins un paramètre est manquant ou erroné ;
-
-    - 401 { "error": "unauthorized" } : l'utilisateur n'est pas authorisé à déconnecté cette presence ;
-
-    - 404 { "error": "not_found" } : la presence n'existe pas.
-
-### Remarques
-
-L'identifiant de l'utilisateur passé dans l'URL n'est pas forcément
-identique à l'uid passé dans les paramètres. Il est donc possible,
-pour un utilisateur authorisé, de déconnecter un autre utilisateur.
+The user given as an URL parameter is not necessarily the same than the one
+passed as an encoded parameter. Thus you can disconnect another user (if the
+ACLs allow it of course).
 
 # Meeting
-## Rejoindre un meeting
+## Join a meeting
 
-### URL
+### Request
 
     PUT /meeting/{org}/all/{meeting}/roster/{uid}
 
-### Parametres
+Parameter                              | Description                           | Example
+---------------------------------------|---------------------------------------|------------------------------------------------------------
+**URL Parameters**                     |                                       |
+`org`                                  | Organisation id                       | `af83`
+`meeting`                              | Meeting id                            | `demo`
+`uid`                                  | User id                               | `uid_63444326443_50150`
+**Encoded Parameters**                 |                                       |
+`uid`                                  | User id                               | `uid_63444326443_50150`
+`sid`                                  | Session id                            | `330249245470504`
 
-Dans l'URL :
+### Returned values
 
-    - org:          Nom de l'organisation ;
-    - meeting:      Nom du meeting ;
-    - uid:	    Identifiant de l'utilisateur.
+    200 { "result": "ok" }
 
-Encodés :
+    400 { "error": "bad_parameters" } // at least one paremeter is missing or wrong
 
-    - uid:         Identifiant de l'utilisateur      uid_63444326443_50150
-    - sid:         Identifiant de presence.           330249245470504
+    401 { "error": "unauthorized" } // the user is not authorized to join the meeting
 
-### Valeurs de retour
+    404 { "error": "not_found" } // the meeting doesn't exists
 
-Succès :
+## Quit a meeting
 
-    - 200 { "result": "ok" }
-
-Erreur :
-
-    - 400 { "error": "bad_parameters" } : au moins un paramètre est manquant ou erroné ;
-
-    - 401 { "error": "unauthorized" } : l'utilisateur n'est pas authorisé à rejoindre le meeting ;
-
-    - 404 { "error": "not_found" } : le meeting n'existe pas.
-
-## Quitter un meeting
-
-### URL
+### Request
 
     DELETE /meeting/{org}/all/{meeting}/roster/{uid}
 
-### Parametres
+Parameter                              | Description                           | Example
+---------------------------------------|---------------------------------------|------------------------------------------------------------
+**URL Parameters**                     |                                       |
+`org`                                  | Organisation id                       | `af83`
+`meeting`                              | Meeting id                            | `demo`
+`uid`                                  | User id                               | `uid_63444326443_50150`
+**Encoded Parameters**                 |                                       |
+`uid`                                  | User id                               | `uid_63444326443_50150`
+`sid`                                  | Session id                            | `330249245470504`
 
-Dans l'URL :
-
-    - org:          Nom de l'organisation ;
-    - meeting:      Nom du meeting ;
-    - uid:	    Identifiant de l'utilisateur.
-
-Encodés :
-
-    - uid:         Identifiant de l'utilisateur      uid_63444326443_50150
-    - sid:         Identifiant de presence.           330249245470504
-
-### Valeurs de retour
-
-Succès :
+### Returned values
 
     200 { "result": "ok" }
 
-Erreur :
+    400 { "error": "bad_parameters" } // at least one paremeter is missing or wrong
 
-    - 400 { "error": "bad_parameters" } : au moins un paramètre est manquant ou erroné ;
+    401 { "error": "unauthorized" } // the user is not authorized to quit the meeting
 
-    - 401 { "error": "unauthorized" } : l'utilisateur n'est pas authorisé à quitter le meeting ;
-
-    - 404 { "error": "not_found" } : le meeting n'existe pas.
+    404 { "error": "not_found" } // the meeting doesn't exists
 
 
-## Créer un meeting
+## Create a meeting
 
-### URL
+### Request
 
     PUT /meeting/{org}/all/{meeting}
 
-### Parametres
+Parameter                              | Description                           | Example
+---------------------------------------|---------------------------------------|------------------------------------------------------------
+**URL Parameters**                     |                                       |
+`org`                                  | Organisation id                       | `af83`
+`meeting`                              | Meeting id                            | `demo`
+**Encoded Parameters**                 |                                       |
+`uid`                                  | User id                               | `uid_63444326443_50150`
+`sid`                                  | Session id                            | `330249245470504`
+**Optional Encoded Parameters**        |                                       |
+`_start`                               | opening Timestamp of the meeting      | `63444430100`
+`_end`                                 | ending Timestamp of the meeting       | `63444430800`
+`metadata`                             | Array containing metadata             | `metadata[key]=value`
 
-Dans l'URL :
+### Notes
 
-    - org:              Organisation.                               af83
-    - meeting:          Meeting.                                    demo
+- The timestamps are the number of milliseconds elapsed since EPOCH (1970-01-01).
+- If the '_end' parameter is missing, the the meeting has no end date.
+- if the '_start' and 'end' parameters are missing, the meeting starts
+  immediatly and has no end date
 
-Encodés :
+### Returned values
 
-    - uid:             Identifiant de l'utilisateur.         uid_63444326443_50150
-    - sid:             Identifiant de presence.               330249245470504
+    201 { "result": "ok" }
 
-Encodés (optionels) :
+    400 { "error": "bad_parameters" } // at least one paremeter is missing or wrong
 
-    - _start   Date et heure d'ouverture du meeting.       63444430100
-    - _end     Date et heure de fermeture du meeting.      63444430800
-    - metadata :	Tableau contenant les métadonnés (ex. metadata[key]=value).
+    401 { "error": "unauthorized" } // the user is not authorized to create a meeting
 
-### Remarques
-
-    - Les dates sont exprimés en millisecondes depuis epoch (1 janvier 1970).
-    - Si '_end' est absent, le meeting n'a pas de date de fermeture.
-    - Si '_start' et 'end' sont absents, l'ouverture du meeting
-      est immédiate, et n'a pas de date de fermeture.
-
-### Valeurs de retours
-
-Succès :
-
-    - 201 { "result": "ok" }
-
-Erreur :
-
-    - 400 { "error": "bad_parameters" } : au moins un paramètre est manquant ou erroné ;
-
-    - 401 { "error": "unauthorized" } : l'utilisateur n'est pas authorisé à créer un meeting ;
-
-    - 409 { "error": "conflict" } : le meeting existe déjà.
+    409 { "error": "conflict" } : // the meeting already exists
 
 
-## Modifier un meeting
+## Modify a meeting
 
-### URL
+### Request
 
     POST /meeting/{org}/all/{meeting}
 
-### Parametres
+Parameter                              | Description                           | Example
+---------------------------------------|---------------------------------------|------------------------------------------------------------
+**URL Parameters**                     |                                       |
+`org`                                  | Organisation id                       | `af83`
+`meeting`                              | Meeting id                            | `demo`
+**Encoded Parameters**                 |                                       |
+`uid`                                  | User id                               | `uid_63444326443_50150`
+`sid`                                  | Session id                            | `330249245470504`
+**Optional Encoded Parameters**        |                                       |
+`_start`                               | opening Timestamp of the meeting      | `63444430100`
+`_end`                                 | ending Timestamp of the meeting       | `63444430800`
+`metadata`                             | Array containing metadata             | `metadata[key]=value`
 
-Dans l'URL :
-
-    - org:              Organisation.                               af83
-    - meeting:          Meeting.                                    demo
-
-Encodés :
-
-    - uid:             Identifiant de l'utilisateur.         uid_63444326443_50150
-    - sid:             Identifiant de presence.               330249245470504
-
-Encodés (optionels) :
-
-    - _start   Date et heure d'ouverture du meeting.       63444430100
-    - _end     Date et heure de fermeture du meeting.      63444430800
-    - metadata :	Tableau contenant les métadonnés (ex. metadata[key]=value).
-
-### Valeurs de retours
-
-Succès :
+### Returned values
 
     200 { "result": "ok" }
 
-Erreur :
+    400 { "error": "bad_parameters" } // at least one paremeter is missing or wrong
 
-    - 400 { "error": "bad_parameters" } : au moins un paramètre est manquant ou erroné ;
+    401 { "error": "unauthorized" } // the user is not authorized to delete the meeting
 
-    - 401 { "error": "unauthorized" } : l'utilisateur n'est pas authorisé à supprimer le meeting ;
-
-    - 404 { "error": "not_found" } : le meeting n'existe pas.
+    404 { "error": "not_found" } // the meeting doesn't exists
 
 
-## Liste des utilisateurs connectés au meeting (roster)
+## List users connected to a meeting (roster)
 
-### URL
+### Request
 
     GET /meeting/{org}/all/{meeting}/roster
 
-### Parametres
+Parameter                              | Description                           | Example
+---------------------------------------|---------------------------------------|------------------------------------------------------------
+**URL Parameters**                     |                                       |
+`org`                                  | Organisation id                       | `af83`
+`meeting`                              | Meeting id                            | `demo`
+**Encoded Parameters**                 |                                       |
+`sid`                                  | Session id                            | `330249245470504`
 
-Dans l'URL :
+### Returned values
 
-    - org:              Organisation.       af83
-    - meeting:          Meeting.            demo
-
-Encodés :
-
-    - uid:             Identifiant de l'utilisateur.         uid_63444326443_50150
-    - sid:             Identifiant de presence.               330249245470504
-
-### Valeurs de retours
-
-Succès :
-
-200 {"result":[{	"uid":"abel.fournier_1284046072075@af83.com",
+    200 {"result":[{	"uid":"abel.fournier_1284046072075@af83.com",
 			"auth":"password",
 			"metadata":{
 				"nickname":"abel_1284046072075"}
@@ -461,43 +371,33 @@ Succès :
 				"nickname":"abel_1284114120882"}
 	       },
 	       ...
-]}
+    ]}
 
-Erreur :
+    400 { "error": "bad_parameters" } // at least one paremeter is missing or wrong
 
-    - 400 { "error": "bad_parameters" } : au moins un paramètre est manquant ou erroné ;
+    401 { "error": "unauthorized" } // the user is not authorized to list the users of this meeting
 
-    - 401 { "error": "unauthorized" } : l'utilisateur n'est pas authorisé à lister les
-					utilisateur de ce meeting ;
+    404 { "error": "not_found" } // the meeting doesn't exists
 
-    - 404 { "error": "not_found" } : le meeting n'existe pas.
+## List the meetings
 
-## Liste des meetings
-
-### URL
+### Request
 
     GET /meeting/{org}
 
     GET /meeting/{org}/{status}
 
-### Parametres
 
-Dans l'URL :
+Parameter                              | Description                           | Example
+---------------------------------------|---------------------------------------|------------------------------------------------------------
+**URL Parameters**                     |                                       |
+`org`                                  | Organisation id                       | `af83`
+`status`                               | Status of the meeting                 | `upcoming` or `opened` or `closed` or `all`
+**Encoded Parameters**                 |                                       |
+`uid`                                  | User id                               | `uid_63444326443_50150`
+`sid`                                  | Session id                            | `330249245470504`
 
-    - org:          Organisation.           af83
-
-Dans l'URL (optionel) :
-
-    - status:       Status du meeting.      upcoming | opened | closed | all
-
-Encodés :
-
-    - uid:             Identifiant de l'utilisateur.         uid_63444326443_50150
-    - sid:             Identifiant de presence.               330249245470504
-
-### Valeurs de retour
-
-Succès:
+### Returned values
 
     200 {"result":[{	"org":"af83",
 			"name":"demo",
@@ -521,38 +421,32 @@ Succès:
 			"roster":["blah4"],
 			"metadata":{"description":"Meeting agoroom"}
 		}
-]}
+    ]}
 
-Erreur :
+    400 { "error": "bad_parameters" } // at least one paremeter is missing or wrong
 
-    - 400 { "error": "bad_parameters" } : au moins un paramètre est manquant ou erroné ;
+    401 { "error": "unauthorized" } // the user is not authorized to list the meetings of this organisation
 
-    - 401 { "error": "unauthorized" } : l'utilisateur n'est pas authorisé à lister les
-					meetings de cette organisation ;
+    404 { "error": "not_found" } // the organisation doesn't exists
 
-    - 404 { "error": "not_found" } : l'organisation n'existe pas.
+## Retrieve meeting's informations
 
-## Récupérer les informations d'un meeting
-
-### URL
+### Request
 
     GET /meeting/{org}/all/{meeting}
 
-### Parametres
+### Parameters
 
-Dans l'URL :
+Parameter                              | Description                           | Example
+---------------------------------------|---------------------------------------|------------------------------------------------------------
+**URL Parameters**                     |                                       |
+`org`                                  | Organisation id                       | `af83`
+`meeting`                              | Meeting id                            | `demo`
+**Encoded Parameters**                 |                                       |
+`uid`                                  | User id                               | `uid_63444326443_50150`
+`sid`                                  | Session id                            | `330249245470504`
 
-    - org:          Organisation.           af83
-    - meeting:          Meeting.            demo
-
-Encodés :
-
-    - uid:             Identifiant de l'utilisateur.         uid_63444326443_50150
-    - sid:             Identifiant de presence.               330249245470504
-
-### Valeurs de retour
-
-Succès:
+### Returned values
 
     200 {"result":{	"org":"af83",
 			"name":"demo",
@@ -563,51 +457,43 @@ Succès:
 			"metadata":{	"description":"UCengine demo meetup"}
 		}}
 
-Erreur :
+    400 { "error": "bad_parameters" } // at least one paremeter is missing or wrong
 
-    - 400 { "error": "bad_parameters" } : au moins un paramètre est manquant ou erroné ;
+    401 { "error": "unauthorized" } // the users is not authorized to retrieve the meeting's informations
 
-    - 401 { "error": "unauthorized" } : l'utilisateur n'est pas authorisé à lister les
-					meetings de cette organisation ;
+    404 { "error": "not_found" } // the organisation doesn't exists
 
-    - 404 { "error": "not_found" } : l'organisation n'existe pas.
+## Delete a meeting
 
-## Supprimer un meeting
+### Request
 
-### URL
+    DELETE /meeting/{org}/all/{meeting}
 
-   DELETE /meeting/{org}/all/{meeting}
+### Parameters
 
-### Parametres
+Parameter                              | Description                           | Example
+---------------------------------------|---------------------------------------|------------------------------------------------------------
+**URL Parameters**                     |                                       |
+`org`                                  | Organisation id                       | `af83`
+`meeting`                              | Meeting id                            | `demo`
+**Encoded Parameters**                 |                                       |
+`uid`                                  | User id                               | `uid_63444326443_50150`
+`sid`                                  | Session id                            | `330249245470504`
 
-Dans l'URL :
-
-    - org:              Organisation.                               af83
-    - meeting:          Meeting.                                    demo
-
-Encodés :
-
-    - uid:             Identifiant de l'utilisateur.         uid_63444326443_50150
-    - sid:             Identifiant de presence.               330249245470504
-
-### Valeurs de retours
-
-Succès :
+### Returned values
 
     200 { "result": "ok" }
 
-Erreur :
+    400 { "error": "bad_parameters" } // at least one paremeter is missing or wrong
 
-    - 400 { "error": "bad_parameters" } : au moins un paramètre est manquant ou erroné ;
+    401 { "error": "unauthorized" } // the user is not authorized to delete the meeting
 
-    - 401 { "error": "unauthorized" } : l'utilisateur n'est pas authorisé à supprimer le meeting ;
+    404 { "error": "not_found" } // the meeting doesn't exists
 
-    - 404 { "error": "not_found" } : le meeting n'existe pas.
+# Events
+## Retrieve the events
 
-# Evènements
-## Récupérer la liste des événements
-
-### URL
+### Request
 
     GET /event/
 
@@ -615,37 +501,28 @@ Erreur :
 
     GET /event/{org}/{meeting}
 
-### Parametres
+Parameter                              | Description                           | Example
+---------------------------------------|---------------------------------------|------------------------------------------------------------
+**URL Parameters**                     |                                       |
+`org`                                  | Organisation id                       | `af83`
+`meeting`                              | Meeting id                            | `demo`
+`uid`                                  | User id                               | `uid_63444326443_50150`
+**Encoded Parameters**                 |                                       |
+`uid`                                  | User id                               | `uid_63444326443_50150`
+`sid`                                  | Session id                            | `330249245470504`
+**Optional Encoded Parameters**        |                                       |
+`type`                                 | The event's type                      | `internal.meeting.add`
+`start`                                | Start of the event's frame            | `63444430100`
+`end`                                  | End of the event's frame              | `63444430300`
+`from`                                 | The sender of the event               | `uid_63444326443_50150`
+`count`                                | Number of events to return            | `42`
+`page`                                 |                                       |
+`order`                                |                                       |
+`search`                               |                                       |
+`parent`                               |                                       |
+`_async`                               | Method used to retrieve the events    | `no` or `lp`
 
-Dans l'URL :
-
-    - org:          Organisation.           af83
-    - meeting:      Meeting.                demo
-
-Dans l'URL :
-
-Encodés :
-
-    - uid:             Identifiant de l'utilisateur.         uid_63444326443_50150
-    - sid:             Identifiant de presence.               330249245470504
-
-Encodés (optionels) :
-
-    - type         Type de l'événement.				join_meeting_event
-    - start		Début de la fenêtre d'événements.           63444430100
-    - end		Fin de la fenêtre d'événements.             63444430300
-    - from		Émetteur de l'évènement			     uid_63444326443_50150
-    - count		Nombre d'évènement à retourner			42
-    - page
-    - order
-    - search
-    - parent
-    - _async             *no* ou *lp*. Si *_async* vaut *lp* alors le serveur ne répondra que lorsqu'il aura de nouveaux énévements. Si *no*, le serveur répond immédiatement.
-
-
-### Valeurs de retour
-
-Succès :
+### Returned values
 
     200 {"result": [{	"type":"join_meeting_event",
 			"datetime":1284046079374,
@@ -674,153 +551,126 @@ Succès :
 					"language":"en"}
 		},
 		...
-]}
+    ]}
 
-Erreur :
+    400 { "error": "bad_parameters" } // at least one paremeter is missing or wrong
 
-    - 400 { "error": "bad_parameters" } : au moins un paramètre est manquant ou erroné ;
+    401 { "error": "unauthorized" } // the user is not authorized to list the events of this meeting
 
-    - 401 { "error": "unauthorized" } : l'utilisateur n'est pas authorisé à lister les
-					évènements de ce meeting ;
+    404 { "error": "not_found" } // the meeting doesn't exists
 
-    - 404 { "error": "not_found" } : le meeting n'existe pas.
+### Notes
 
-### Remarques
+'_start' and '_end' parameters allow you to frame the events :
 
-'_start' et '_end' permettent de fenêtrer les événements à récuperer :
+- If '_end' is missing: return all the events from `_start` to the end of the timeline.
+- If '_start' and '_end' are missing: return all the events of the timeline.
+- The `_limit` option can be negative. For instance, `_limit=-2` will return the 2 last events of the frame.
+  Limit can also take the `last` value which is equivalent to `_limit=-1`
+- The `_wait` option allow you to return the events to the client in real time with a long polling method.
 
-- Si '_end' est absent : récupère tous les événements à partir de
-  timestamp_start jusqu'à la fin de la timeline.
-- Si '_start' et '_end' sont absents : récupère tous les événements de la timeline.
-- L'option _limit peut prendre être négative, auquel cas la méthode retournera le
-	nombre d'évènement indiqué depuis la fin de la liste. Par exemple _limit=-2 retournera
-	les deux derniers évènements. Il est possible de mettre _limit à "last", ceci-est
-	équivalent à _limit=-1.
-- L'option _wait permet l'envoie de messages au client en temps réel en utilisant
-	la technique du long-polling. Il suffit d'utilisé cette option _wait
-	couplé avec _start pour obtenir une boucle active de réception des
-	messages.
+## Send an event to UCengine
 
-## Envoyer un événement à UCengine
-
-## URL
+### Request
 
     PUT /event/
+
     PUT /event/{org}
+
     PUT /event/{org}/{meeting}
 
-## Parametres
+Parameter                              | Description                           | Example
+---------------------------------------|---------------------------------------|------------------------------------------------------------
+**URL Parameters**                     |                                       |
+`org`                                  | Organisation id                       | `af83`
+`meeting`                              | Meeting id                            | `demo`
+**Encoded Parameters**                 |                                       |
+`uid`                                  | User id                               | `uid_63444326443_50150`
+`sid`                                  | Session id                            | `330249245470504`
+`_type`                                | The event's type                      | `internal.meeting.add`
+**Optional Encoded Parameters**        |                                       |
+Any other parameter                    | These will be part of the metadata    |
 
-Dans l'URL :
+### Returned values
 
-    - org:              Organisation.                                     af83
-    - meeting:          Meeting.                                          demo
+    201 {"result": "24653994823933231622695570265810"}
 
-Encodés :
+    400 { "error": "bad_parameters" } // at least one paremeter is missing or wrong
 
-    - uid:         Identifiant de l'utilisateur.         uid_63444326443_50150
-    - sid:         Identifiant de presence.               330249245470504
-    - _type:	     Type de l'événement.			join_meeting_event
-    - Tout les autres parametres encodés sont placé dans les métadonnés.
+    401 { "error": "unauthorized" } // the user is not authorized to send events to this meeting
 
-Succès :
-
-    - 201 {"result": "24653994823933231622695570265810"}
-
-Erreur :
-
-    - 400 { "error": "bad_parameters" } : au moins un paramètre est manquant ou erroné ;
-
-    - 401 { "error": "unauthorized" } : l'utilisateur n'est pas authorisé à envoyer des
-					évènements sur ce meeting ou cette organisation ;
-
-    - 404 { "error": "not_found" } : le meeting ou l'organisation n'existe pas.
+    404 { "error": "not_found" } // the meeting or this organisation doesn't exists
 
 # Organisation
-## Créer une nouvelle organisation
+## Create a new organisation
 
-### URL
+### Request
 
     PUT /org/{name}
 
-### Parametres
+Parameter                              | Description                           | Example
+---------------------------------------|---------------------------------------|------------------------------------------------------------
+**URL Parameters**                     |                                       |
+`name`                                 | Organisation id                       | `af83`
+**Encoded Parameters**                 |                                       |
+`uid`                                  | User id                               | `uid_63444326443_50150`
+`sid`                                  | Session id                            | `330249245470504`
+**Optional Encoded Parameters**        |                                       |
+Any other parameter                    | These will be part of the metadata    |
 
-Dans l'URL :
 
-    - name:         Nom de la nouvelle organisation.            af83
+### Returned values
 
-Encodés :
+    201 { "result": "created" }
 
-    - uid:         Identifiant de l'utilisateur.         uid_63444326443_50150
-    - sid:         Identifiant de presence.               330249245470504
-    - Tout les autres parametres encodés sont placé dans les métadonnés.
+    400 { "error": "bad_parameters" } // at least one paremeter is missing or wrong
 
-### Valeurs de retour
+    401 { "error": "unauthorized" } // the user is not authorized to create organisations
 
-Succès :
+    409 { "error": "conflict" } : // the organisation already exists
 
-    - 201 { "result": "created" }
+## Modify an organisation
 
-Erreur :
-
-    - 400 { "error": "bad_parameters" } : au moins un paramètre est manquant ou erroné ;
-
-    - 401 { "error": "unauthorized" } : l'utilisateur n'est pas authorisé à créer des organisations ;
-
-    - 409 { "error": "conflict" } : l'organisation existe déjà.
-
-## Modifier une organisation
-
-### URL
+### Request
 
     POST /org/{name}
 
-### Parametres
+Parameter                              | Description                           | Example
+---------------------------------------|---------------------------------------|------------------------------------------------------------
+**URL Parameters**                     |                                       |
+`name`                                 | Organisation id                       | `af83`
+**Encoded Parameters**                 |                                       |
+`uid`                                  | User id                               | `uid_63444326443_50150`
+`sid`                                  | Session id                            | `330249245470504`
+**Optional Encoded Parameters**        |                                       |
+Any other parameter                    | These will be part of the metadata    |
 
-Dans l'URL :
 
-    - name:         Nom de l'organisation.            af83
-
-Encodés :
-
-    - uid:         Identifiant de l'utilisateur.         uid_63444326443_50150
-    - sid:         Identifiant de presence.               330249245470504
-    - Tout les autres parametres encodés sont placé dans les métadonnés.
-
-### Valeurs de retour
-
-Succès :
+### Returned values
 
     200 { "result": "ok" }
 
-Erreur :
+    400 { "error": "bad_parameters" } // at least one paremeter is missing or wrong
 
-    - 400 { "error": "bad_parameters" } : au moins un paramètre est manquant ou erroné ;
+    401 { "error": "unauthorized" } // the user is not authorized to modify this organisation
 
-    - 401 { "error": "unauthorized" } : l'utilisateur n'est pas authorisé à créer des organisations ;
+    404 { "error": "not_found" } // the organisation doesn't exists
 
-    - 404 { "error": "not_found" } : l'organisation n'existe pas.
+## Retrieve the organisation's informations
 
-## Récupérer les informations d'une organisation
-
-### URL
+### Request
 
     GET /org/{name}
 
-### Parametres
+Parameter                              | Description                           | Example
+---------------------------------------|---------------------------------------|------------------------------------------------------------
+**URL Parameters**                     |                                       |
+`name`                                 | Organisation id                       | `af83`
+**Encoded Parameters**                 |                                       |
+`uid`                                  | User id                               | `uid_63444326443_50150`
+`sid`                                  | Session id                            | `330249245470504`
 
-Dans l'URL :
-
-    - name:         Nom de l'organisation.            af83
-
-Encodés :
-
-    - uid:         Identifiant de l'utilisateur.         uid_63444326443_50150
-    - sid:         Identifiant de presence.               330249245470504
-
-### Valeurs de retour
-
-Succès :
+### Returned values
 
     200 { "result": {	"name": "af83",
 			"metadata":{
@@ -828,30 +678,26 @@ Succès :
 			}
 	}}
 
-Erreur :
+    400 { "error": "bad_parameters" } // at least one paremeter is missing or wrong
 
-    - 400 { "error": "bad_parameters" } : au moins un paramètre est manquant ou erroné ;
+    401 { "error": "unauthorized" } // the user is not authorized to retrieve the organisation's informations
 
-    - 401 { "error": "unauthorized" } : l'utilisateur n'est pas authorisé à créer des organisations ;
+    404 { "error": "not_found" } // the organisation doesn't exists
 
-    - 404 { "error": "not_found" } : l'organisation n'existe pas.
+## List organisations
 
-## Lister les organisation
-
-### URL
+### Request
 
     GET /org/
 
-### Parametres
 
-Encodés :
+Parameter                              | Description                           | Example
+---------------------------------------|---------------------------------------|------------------------------------------------------------
+**Encoded Parameters**                 |                                       |
+`uid`                                  | User id                               | `uid_63444326443_50150`
+`sid`                                  | Session id                            | `330249245470504`
 
-    - uid:         Identifiant de l'utilisateur.         uid_63444326443_50150
-    - sid:         Identifiant de presence.               330249245470504
-
-### Valeurs de retour
-
-Succès :
+### Returned values
 
     200 { "result": [{	"name": "af83",
 			"metadata":{
@@ -865,77 +711,63 @@ Succès :
 		    ...
 	}]}
 
-# Fichiers
-## Uploader un fichier
+# Files
+## Upload a file
 
-### URL
+### Request
 
     PUT /file/{org}/{meeting}
 
     PUT /file/{org}/{meeting}/{filename}
 
-### Parametres
 
-Dans l'URL :
+Parameter                              | Description                           | Example
+---------------------------------------|---------------------------------------|------------------------------------------------------------
+**URL Parameters**                     |                                       |
+`org`                                  | Organisation id                       | `af83`
+`meeting`                              | Meeting id                            | `demo`
+**Optional URL Parameters**            |                                       |
+`filename`                             | Fielname                              | `ucengine.odp`
+**Encoded Parameters**                 |                                       |
+`uid`                                  | User id                               | `uid_63444326443_50150`
+`sid`                                  | Session id                            | `330249245470504`
+**Optional Encoded Parameters**        |                                       |
+`_filename`                            | Filname                               | `ucengine.odp`
 
-    - org:          Organisation.                           af83
-    - meeting:      Meeting.                                demo
+### Returned values
 
-Dans l'URL (optionels) :
+    201 { "result": "ucengine_4534543543.odp"} // the file id
 
-    - filename:     Nom du fichier.                         ucengine.odp
+    400 { "error": "bad_parameters" } // at least one paremeter is missing or wrong
 
-Encodés :
+    401 { "error": "unauthorized" } // the user is not authorized to upload files in this meeting
 
-    - uid:         Identifiant de l'utilisateur.     uid_63444326443_50150
-    - sid:         Identifiant de presence.           330249245470504
+    404 { "error": "not_found" } // the meeting doesn't exists
 
-Encodés (optionels) :
+### Notes
 
-    - _filename:  Nom du fichier	                 ucengine.odp
+- You are able to force the filename if it is specified in the url or in
+  the request's body (this second case is often handled by the browser).
+- To avoid conflicts between files UC Engine generate a unique id which is returned in the result.
 
-### Valeurs de retour
+## List files
 
-Succès :
-
-    - 201 { "result": "ucengine_4534543543.odp"}
-
-Erreur :
-    - 400 { "error": "bad_parameters" } : au moins un paramètre est manquant ou erroné ;
-
-    - 401 { "error": "unauthorized" } : l'utilisateur n'est pas authorisé à créer des organisations ;
-
-    - 404 { "error": "not_found" } : le meeting n'existe pas.
-
-### Remarques
-
-- Il est possible de spécifier le nom du fichier en passant le parametre dans l'url,
-dans le corps de la requète ou dans les donnés du corps de la requète (ce dernier cas
-est généralement géré automatiquement par le navigateur).
-- Pour éviter les conflits entre les fichiers UCengine génère un identifiant de fichier aléatoire
- retourné par la requete.
-
-## Lister les fichiers
-
-### URL
+### Request
 
     GET /file/{org}/{meeting}
 
-### Parametres
+### Parameters
 
-Dans l'URL :
+Parameter                              | Description                           | Example
+---------------------------------------|---------------------------------------|------------------------------------------------------------
+**URL Parameters**                     |                                       |
+`org`                                  | Organisation id                       | `af83`
+`meeting`                              | Meeting id                            | `demo`
+**Encoded Parameters**                 |                                       |
+`uid`                                  | User id                               | `uid_63444326443_50150`
+`sid`                                  | Session id                            | `330249245470504`
 
-    - org:          Organisation.                           af83
-    - meeting:      Meeting.                                demo
-
-Encodés :
-
-    - uid:         Identifiant de l'utilisateur.     uid_63444326443_50150
-    - sid:         Identifiant de presence.           330249245470504
-
-### Valeurs de retour
-
-Succès :
+### Returned values
 
     200 { "result": [ { "filename": "UCengine.odp"
                       , "token": "42314657480629893636680972"
@@ -944,38 +776,29 @@ Succès :
                     , ...
                     ]}
 
-Erreur :
-
     401 { "error": "unauthorized" }
 
     500 { "error": "unexpected_error" }
 
-## Récupérer un fichier
+## Download a file
 
-### URL
+### Request
 
     GET /file/{org}/{meeting}/{filename}
 
-### Parametres
+Parameter                              | Description                           | Example
+---------------------------------------|---------------------------------------|------------------------------------------------------------
+**URL Parameters**                     |                                       |
+`org`                                  | Organisation id                       | `af83`
+`meeting`                              | Meeting id                            | `demo`
+`filename`                             | Fielname                              | `ucengine.odp`
+**Encoded Parameters**                 |                                       |
+`uid`                                  | User id                               | `uid_63444326443_50150`
+`sid`                                  | Session id                            | `330249245470504`
 
-Dans l'URL :
+### Returned values
 
-    - org:          Organisation.                           af83
-    - meeting:      Meeting.                                demo
-    - filename:     Nom du fichier.                         UCengine.odp
-
-Encodés :
-
-    - uid:         Identifiant de l'utilisateur.     uid_63444326443_50150
-    - sid:         Identifiant de presence.           330249245470504
-
-### Valeurs de retour
-
-Succès :
-
-    200 Le fichier à télécharger
-
-Erreur :
+    200 The file to download
 
     401 { "error": "unauthorized" }
 
@@ -984,46 +807,40 @@ Erreur :
     500 { "error": "unexpected_error" }
 
 
-## Vérifier les droits d'un utilisateur
+## Check user's rights
 
-### URL
+### Request
+
+    GET /user/{uid}/acl/{object}/{action}
+
+    GET /user/{uid}/acl/{object}/{action}/{org}
 
     GET /user/{uid}/acl/{object}/{action}/{org}/{meeting}
 
-### Parametres
+Parameter                              | Description                           | Example
+---------------------------------------|---------------------------------------|------------------------------------------------------------
+**URL Parameters**                     |                                       |
+`uid`                                  | User id                               | `uid_63444326443_50150`
+`object`                               | The object on which the right apply   | `meeting`  or `org` or `event`
+`action`                               | Authorized action for this right      | `add` or `deletè or `join` ...
+`org`                                  | Organisation id                       | `af83`
+`meeting`                              | Meeting id                            | `demo`
+**Encoded Parameters**                 |                                       |
+`uid`                                  | User id                               | `uid_63444326443_50150`
+`sid`                                  | Session id                            | `330249245470504`
+`condition`                            | Array of conditions to satisfy        |
 
-Dans l'URL :
+### Examples
 
-    - uid:         Identifiant de l'utilisateur.     uid_42
-    - object:      Object sur lequel s'applique le droit.       meeting, org, event, ...
-    - action:      Action authorisée par le droit.              add, delete, join, ...
-    - org:         Organisation (facultafif).                   af83
-    - meeting:     Meeting (facultatif).                        demo
+If the 'romain' user wants to verify that the 'toto' user has the right to join the 'ucengine' meeting of the 'af83' organisation, the request will be :
 
-Encodés :
+        GET /user/toto/acl/meeting/join/af83/ucengine?uid=romain&sid=40324302840329843809543
 
-    - uid:         Identifiant de l'utilisateur.     uid_63444326443_50150
-    - sid:         Identifiant de presence.           330249245470504
-    - conditions:  Tableau contenant les conditions à satisfaire pour ce droit.
+### Returned values
 
-### Exemples
-
-Si l'utilisateur 'romain' veut vérifier que un utilisateur 'toto' à le droit de rejoindre le meeting 'ucengine' de l'organisation 'af83' la requête sera :
-
-Chemin : GET /user/toto/acl/meeting/join/af83/ucengine
-Parametres:
-        - uid=romain
-        - sid=40324302840329843809543
-
-### Valeurs de retour
-
-Succès :
-
-    200 {"result": "true"} :
+    200 {"result": "true"}
 
     200 {"result": "false"}
-
-Erreur :
 
     400 { "error": "bad_parameters" } : au moins un paramètre est manquant ou erroné ;
 
@@ -1031,75 +848,71 @@ Erreur :
 
     404 { "error": "not_found" } : l'utilisateur n'existe pas
 
-## Ajouter un droit à un utilisateur
+## Add a right to a user
 
-### URL
+### Request
+
+    PUT /user/{uid}/acl/{object}/{action}
+
+    PUT /user/{uid}/acl/{object}/{action}/{org}
 
     PUT /user/{uid}/acl/{object}/{action}/{org}/{meeting}
 
-### Parametres
+Parameter                              | Description                           | Example
+---------------------------------------|---------------------------------------|------------------------------------------------------------
+**URL Parameters**                     |                                       |
+`uid`                                  | User id                               | `uid_63444326443_50150`
+`object`                               | The object on which the right apply   | `meeting`  or `org` or `event`
+`action`                               | Authorized action for this right      | `add` or `deletè or `join` ...
+`org`                                  | Organisation id                       | `af83`
+`meeting`                              | Meeting id                            | `demo`
+**Encoded Parameters**                 |                                       |
+`uid`                                  | User id                               | `uid_63444326443_50150`
+`sid`                                  | Session id                            | `330249245470504`
+`condition`                            | Array of conditions to satisfy        |
 
-Dans l'URL :
+### Returned values
 
-    - uid:         Identifiant de l'utilisateur.     uid_42
-    - object:      Object sur lequel s'applique le droit.       meeting, org, event, ...
-    - action:      Action authorisée par le droit.              add, delete, join, ...
-    - org:         Organisation (facultafif).                   af83
-    - meeting:     Meeting (facultatif).                        demo
+    201 { "result": "ok" } // the right has been successfully added
 
-Encodés :
+    400 { "error": "bad_parameters" } // at least one paremeter is missing or wrong
 
-    - uid:         Identifiant de l'utilisateur.     uid_63444326443_50150
-    - sid:         Identifiant de presence.           330249245470504
-    - conditions:   tableau contenant les conditions à satisfaire pour effectuer l'action sur l'object.
+    401 { "error": "unauthorized" } // the user is not authorized to add this right
 
-### Valeurs de retour
+    404 { "error": "not_found" } // the user doesn't exists
 
-Succès :
+## Delete a right
 
-    201 { "result": "ok" } : le droit à été correctement ajouté.
+### Request
 
-Erreur :
+    DELETE /acl/{uid}/{domain}
 
-    400 { "error": "bad_parameters" } : au moins un paramètre est manquant ou erroné ;
-
-    401 { "error": "unauthorized" } : l'utilisateur n'est pas authorisé à ajouter un droit de cet utilisateur;
-
-    401 { "error": "not_found" } : l'utilisateur n'existe pas
-
-## Supprimer un droit à un utilisateur
-
-### URL
+    DELETE /acl/{uid}/{domain}/{org}
 
     DELETE /acl/{uid}/{domain}/{org}/{meeting}
 
-### Parametres
+### Parameters
 
-Dans l'URL :
+Parameter                              | Description                           | Example
+---------------------------------------|---------------------------------------|------------------------------------------------------------
+**URL Parameters**                     |                                       |
+`uid`                                  | User id                               | `uid_63444326443_50150`
+`object`                               | The object on which the right apply   | `meeting`  or `org` or `event`
+`action`                               | Authorized action for this right      | `add` or `deletè or `join` ...
+`org`                                  | Organisation id                       | `af83`
+`meeting`                              | Meeting id                            | `demo`
+**Encoded Parameters**                 |                                       |
+`uid`                                  | User id                               | `uid_63444326443_50150`
+`sid`                                  | Session id                            | `330249245470504`
+`condition`                            | Array of conditions to satisfy        |
 
-    - uid:         Identifiant de l'utilisateur.     uid_42
-    - object:      Object sur lequel s'applique le droit.       meeting, org, event, ...
-    - action:      Action authorisée par le droit.              add, delete, join, ...
-    - org:         Organisation (facultafif).                   af83
-    - meeting:     Meeting (facultatif).                        demo
+### Returned values
 
-Encodés :
+    200 { "result": "ok" } // the right has been successfully deleted
 
-    - uid:         Identifiant de l'utilisateur.     uid_63444326443_50150
-    - sid:         Identifiant de presence.           330249245470504
-    - conditions:   tableau contenant les conditions à satisfaire pour effectuer l'action sur l'object.
+    400 { "error": "bad_parameters" } // at least one paremeter is missing or wrong
 
-### Valeurs de retour
+    401 { "error": "unauthorized" } // the user is not authorized to delete this right
 
-Succès :
-
-    200 { "result": "ok" } : le droit à été correctement supprimé.
-
-Erreur :
-
-    400 { "error": "bad_parameters" } : au moins un paramètre est manquant ou erroné ;
-
-    401 { "error": "unauthorized" } : l'utilisateur n'est pas authorisé à supprimer un droit de cet utilisateur;
-
-    404 { "error", "not_found" } : l'utilisateur n'existe pas.
+    404 { "error", "not_found" } // the users doesn't exists
 

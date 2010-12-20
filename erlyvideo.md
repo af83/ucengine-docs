@@ -1,14 +1,22 @@
-# Video with erlyvideo
+# UCengine plugin for Erlyvideo
 
 ## Introduction
 
 [erlyvideo_ucengine](https://github.com/AF83/erlyvideo-ucengine) is a plugin to bind Erlyvideo events and UCengine events, it allows UCengine clients to connect to Erlyvideo through UCengine events.
 
-## Docs
+## How it works?
 
-### UCengine
+Fig.1 connection workflow: how the plugin allows users to connect to erlyvideo from ucengine. 
 
-[docs.ucengine.org](http://docs.ucengine.org)
+![Fig.1 connection workflow](./static/img/uce_erlyvideo_wf1.png)
+
+Fig.2 publish/play stream workflow: how the plugin manages events publish and play stream.
+
+![Fig.2 publis/play stream workflow](./static/img/uce_erlyvideo_wf2.png)
+
+Fig.3 close/lost stream workflow: how the plugin manages events close and lost stream.
+
+![Fig.3 close/lost stream workflow](./static/img/uce_erlyvideo_wf3.png)
 
 ## Configuration
 
@@ -23,9 +31,13 @@ And don't forget to add 'ucengine' in our module list:
 
         {modules, [ucengine]}.
 
+And replace *trusted_login* by *ucengine_login* in *rtmp_handlers*, like that:
+
+        {rtmp_handlers, [{auth_users_limit, 200}, ucengine_login, apps_push, apps_streaming, apps_recording]},
+
 ## Dependencies
 
-        - [ibrowse](https://github.com/dizzyd/ibrowse)
+* [ibrowse](https://github.com/dizzyd/ibrowse)
 
 ## Install it from scratch
 
