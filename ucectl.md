@@ -97,8 +97,8 @@ ucectl - UCengine control
     ISO8601 formatted date (ex. '2010-25-12 00:00:01').
 
   - `metadata`:
-    Organisations and meetings can hold an unlimited amount of metadata as a `key`=<value> store. Any arguments of the command line which are not mandatory are automatically added to the metadata of the object.
-    
+    Organisations and meetings can hold an unlimited amount of metadata as a `key`=<value> store. Any arguments of the command line which are not part of the expected parameters are automatically added to the metadata of the object.
+
   - `conditions`:
     Just like `metadata` a list of conditions is created with all the command line arguments that are not used by the method itself. The list of conditions that can be used depend on the `object` and `action` used.
 
