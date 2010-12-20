@@ -1,6 +1,6 @@
 # Roadmap
 
-## Version 0.3
+## Version 0.3 - January 2011
 
 * remove organisations
 * add domain/virtualhost
