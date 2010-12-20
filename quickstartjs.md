@@ -34,6 +34,7 @@ Create a folder *chat* in *priw/www*, with an index.html:
   <head>
     <script type="text/javascript" src="../lib/jquery-1.4.4.min.js"></script>
     <script type="text/javascript" src="../lib/jquery-ui-1.8.4.custom.min.js"></script>
+    <script type="text/javascript" src="../lib/jquery.tmpl.min.js"></script>
     <script type="text/javascript" src="../lib/uce.js"></script>
     <script type="text/javascript" src="../lib/ucewidget.js"></script>
     <script type="text/javascript" src="../lib/video.ui.js"></script>
@@ -44,7 +45,7 @@ Create a folder *chat* in *priw/www*, with an index.html:
     <title>My video/chat application</title>
   </head>
   <body>
-
+    <h1>Welcome !</h1>
   </body>
 </html>
 ```
