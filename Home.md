@@ -36,10 +36,12 @@ We provide some [jQuery UI widgets](http://jqueryui.com/).
 * [ucengine mailing-list](http://groups.google.com/group/ucengine)
 * IRC: [#af83-ucengine](irc:af83-ucengine@irc.freenode.net) on freenode.
 
-## Contribute
+## Developement and contribution
 
 Contributions are welcome !
 
 * [Fork us](https://github.com/AF83/ucengine)
 * Create your patch in a topic branch
 * Send pull request
+
+* See [[roadmap]]
