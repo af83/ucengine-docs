@@ -3,6 +3,9 @@
 ## Options
 
 * ucemeeting: current meeting
+* title
+* lang
+* langs
 
 ## Methods
 
