@@ -2,8 +2,6 @@
 
 UC Engine (Unified Collaboration Engine), provides developers with the tools to help them build realtime applications or integrate realtime features to existing applications.
 
-**This documentation is under construction.**
-
 ## Topics
 
 * [[Installation|install]] - [[Administration with ucectl|ucectl]] - [[Frequently asked questions|faq]]
