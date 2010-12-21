@@ -885,11 +885,11 @@ Parameter                              | Description                           |
 
 ### Request
 
-    DELETE /acl/{uid}/{domain}
+    DELETE /acl/{uid}/{object}/{action}
 
-    DELETE /acl/{uid}/{domain}/{org}
+    DELETE /acl/{uid}/{object}/{action}/{org}
 
-    DELETE /acl/{uid}/{domain}/{org}/{meeting}
+    DELETE /acl/{uid}/{object}/{action}/{org}/{meeting}
 
 ### Parameters
 
