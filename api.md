@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # UC Engine ReST API
 
 # General informations about the API
@@ -587,7 +588,7 @@ Parameter                              | Description                           |
 **Encoded Parameters**                 |                                       |
 `uid`                                  | User id                               | `uid_63444326443_50150`
 `sid`                                  | Session id                            | `330249245470504`
-`_type`                                | The event's type                      | `internal.meeting.add`
+`type`                                 | The event's type                      | `internal.meeting.add`
 **Optional Encoded Parameters**        |                                       |
 Any other parameter                    | These will be part of the metadata    |
 
