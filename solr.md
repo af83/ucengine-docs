@@ -11,7 +11,7 @@ Using the [Apache-Solr](http://lucene.apache.org/solr/) connector is the more ef
 ## Use it in UCEngine
 
 * Open the configuration file at etc/uce.cfg
-* Add or change the search_engine option with:
-  {search_engine, solr}.
+* Add or change the *search* option with:
+  {search, solr}.
 * Add the solr configuration:
   {solr, [{host, "http://localhost:8983/solr"}]}.
