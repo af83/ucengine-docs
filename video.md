@@ -36,9 +36,9 @@ $("#demo").video({domain: "video.ucengine.org", ucemeeting: meeting});
 
 ```html
 <div class="ui-widget ui-video">
-  <div class="ui-widget-header">
-      <a href="#" class="ui-button ui-widget">Publish</a>
+  <div class="ui-widget-header ui-corner-all ui-helper-clearfix">
       <span class="ui-video-title">Video</span>
+      <a href="#" class="ui-button ui-widget">Publish</a>
   </div>
   <div class="ui-widget-content">
       <embed height="" width="" wmode="transparent" src="/publish_video.swf" flashvars="" quality="75" type="application/x-shockwave-flash">

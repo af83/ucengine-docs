@@ -34,15 +34,18 @@ Create a folder *chat* in *priw/www*, with an index.html:
   <head>
     <script type="text/javascript" src="../lib/jquery-1.4.4.min.js"></script>
     <script type="text/javascript" src="../lib/jquery-ui-1.8.4.custom.min.js"></script>
+    <script type="text/javascript" src="../lib/jquery.tmpl.min.js"></script>
     <script type="text/javascript" src="../lib/uce.js"></script>
     <script type="text/javascript" src="../lib/ucewidget.js"></script>
     <script type="text/javascript" src="../lib/video.ui.js"></script>
     <script type="text/javascript" src="../lib/chat.ui.js"></script>
     <script type="text/javascript" src="js/yourchat.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/widgets.css"  />
+    <link href="../demo/stylesheets/ui-lightness/jquery-ui-1.8.4.custom.css" media="screen" rel="stylesheet" type="text/css" />
     <title>My video/chat application</title>
   </head>
   <body>
-
+    <h1>Welcome !</h1>
   </body>
 </html>
 ```
@@ -59,7 +62,7 @@ uce.presence.create(password, "myorg", uid, uid, function(err, result, xhr) {
   var meeting = uce.attachPresence(result).org("myorg").meeting("demo");
   $("<div>").appendTo($("body")).video({domain : "localhost/ucengine",
                                         ucemeeting: meeting});
-  $("<div>").appendTo($("body")).chat({ucemeeting : meeting});
+  $("<div>").appendTo($("body")).chat({ucemeeting : meeting}).chat('toggleMode', 'big');
   meeting.startLoop();
 });
 ```
