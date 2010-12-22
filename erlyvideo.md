@@ -20,7 +20,7 @@ Fig.3 close/lost stream workflow: how the plugin manages events close and lost s
 
 ## Configuration
 
-Add the following lines to our erlyvideo.conf:
+Add the following lines to our *priv/erlyvideo.conf*:
 
         {ucengine, [{host, "localhost"},
             {port, 5280},
