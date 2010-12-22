@@ -18,6 +18,9 @@ See [[erlyvideo]].
 * meeting:  *demo*
 * User: *john* - password: *mypwd*
 
+
+* * *
+
     $> bin/ucectl org add --name "myorg"
     $> bin/ucectl meeting add --org "myorg" --name "demo"
     $> bin/ucectl user add --uid 'john' --auth 'password' --credential 'mypwd'
