@@ -18,7 +18,15 @@ See [[erlyvideo]].
 * meeting:  *demo*
 * User: *john* - password: *mypwd*
 
-See [[ucectl]] for learning how to do it.
+    $> bin/ucectl org add --name "myorg"
+    $> bin/ucectl meeting add --org "myorg" --name "demo"
+    $> bin/ucectl user add --uid 'john' --auth 'password' --credential 'mypwd'
+    $> bin/ucectl acl add --uid 'john' --org 'myorg' --meeting 'demo' --object 'roster' --action 'add'
+    $> bin/ucectl acl add --uid 'john' --object 'presence' --action 'add'
+    $> bin/ucectl acl add --uid 'john' --object 'event' --action 'list'
+    $> bin/ucectl acl add --uid 'john' --object 'event' --action 'add'
+
+See [[ucectl]] for more informations.
 
 ## Start hacking
 
@@ -63,6 +71,7 @@ uce.presence.create(password, "myorg", uid, uid, function(err, result, xhr) {
   $("<div>").appendTo($("body")).video({domain : "localhost/ucengine",
                                         ucemeeting: meeting});
   $("<div>").appendTo($("body")).chat({ucemeeting : meeting}).chat('toggleMode', 'big');
+  meeting.join(function(){});
   meeting.startLoop();
 });
 ```
