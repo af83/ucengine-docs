@@ -73,7 +73,7 @@ Parameter                              | Description                           |
 **URL Parameters**                     |                                       |
 `uid`                                  | User id                               | `uid_63444326443_50150`
 **Encoded Parameters**                 |                                       |
-`auth`                                 | Authentication method                 | `anonymous` or `password` or `token`
+`auth`                                 | Authentication method                 | `password` or `token`
 `credential`                           | Password or token                     | `dWlkXzYzNDQ0MzI2NDQzXzUwMTUwCg`
 `metadata`                             | Array containing metadata             | `metadata[key]=value`
 
@@ -98,7 +98,7 @@ Parameter                              | Description                           |
 **Encoded Parameters**                 |                                       |
 `uid`                                  | User id                               | `uid_63444326443_50150`
 `sid`                                  | Session id                            | `330249245470504`
-`auth`                                 | Authentication method                 | `anonymous` or `password` or `token`
+`auth`                                 | Authentication method                 | `password` or `token`
 `credential`                           | Password or token                     | `dWlkXzYzNDQ0MzI2NDQzXzUwMTUwCg`
 `metadata`                             | Array containing metadata             | `metadata[key]=value`
 
@@ -288,15 +288,15 @@ Parameter                              | Description                           |
 `uid`                                  | User id                               | `uid_63444326443_50150`
 `sid`                                  | Session id                            | `330249245470504`
 **Optional Encoded Parameters**        |                                       |
-`_start`                               | opening Timestamp of the meeting      | `63444430100`
-`_end`                                 | ending Timestamp of the meeting       | `63444430800`
+`start`                                | opening Timestamp of the meeting      | `63444430100`
+`end`                                  | ending Timestamp of the meeting       | `63444430800`
 `metadata`                             | Array containing metadata             | `metadata[key]=value`
 
 ### Notes
 
 - The timestamps are the number of milliseconds elapsed since EPOCH (1970-01-01).
-- If the '_end' parameter is missing, the the meeting has no end date.
-- if the '_start' and 'end' parameters are missing, the meeting starts
+- If the 'end' parameter is missing, the the meeting has no end date.
+- if the 'start' and 'end' parameters are missing, the meeting starts
   immediatly and has no end date
 
 ### Returned values
@@ -325,8 +325,8 @@ Parameter                              | Description                           |
 `uid`                                  | User id                               | `uid_63444326443_50150`
 `sid`                                  | Session id                            | `330249245470504`
 **Optional Encoded Parameters**        |                                       |
-`_start`                               | opening Timestamp of the meeting      | `63444430100`
-`_end`                                 | ending Timestamp of the meeting       | `63444430800`
+`start`                                | opening Timestamp of the meeting      | `63444430100`
+`end`                                  | ending Timestamp of the meeting       | `63444430800`
 `metadata`                             | Array containing metadata             | `metadata[key]=value`
 
 ### Returned values
@@ -562,13 +562,13 @@ Parameter                              | Description                           |
 
 ### Notes
 
-'_start' and '_end' parameters allow you to frame the events :
+'start' and 'end' parameters allow you to frame the events :
 
-- If '_end' is missing: return all the events from `_start` to the end of the timeline.
-- If '_start' and '_end' are missing: return all the events of the timeline.
-- The `_limit` option can be negative. For instance, `_limit=-2` will return the 2 last events of the frame.
-  Limit can also take the `last` value which is equivalent to `_limit=-1`
-- The `_wait` option allow you to return the events to the client in real time with a long polling method.
+- If 'end' is missing: return all the events from `start` to the end of the timeline.
+- If 'start' and 'end' are missing: return all the events of the timeline.
+- The `limit` option can be negative. For instance, `limit=-2` will return the 2 last events of the frame.
+  Limit can also take the `last` value which is equivalent to `limit=-1`
+- The `_async` option allow you to return the events to the client in real time.
 
 ## Send an event to UCengine
 
