@@ -10,7 +10,7 @@
         require 'ucengine'
 
         uce = UCEngine.new("localhost", 4567)
-        uce.connect("bibi", :password => 'abcd') do |uce|
+        uce.connect("uce@example.org", :credential => 'pwd') do |uce|
                 uce.subscribe(["af83"], :type => 'chat.message.new', :search => 'HTML5') do |event|
                         uce.push(:location => [event['org'], event['meeting']]
                                  :from => 'bot',
