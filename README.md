@@ -16,9 +16,9 @@ To generate the documentation, use the following command:
     > make doc
 
 When you are editing the doc, you probably want to see your work. To do so, use
-gollum-site (don't forget to commit before serving the new version) :
+gollum-site :
 
-    > gollum-site serve
+    > gollum-site generate --working && gollum-site serve
 
 ## License
 
