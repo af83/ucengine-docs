@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # Events
 
 ## Internals
@@ -136,7 +137,7 @@ Example:
 
 ## chat.translation.new
 
-Send by the translation brick. It notifies that a precedent text message has
+Sent by the translation brick. It notifies that an earlier text message has
 been translated.
 
 Metadata       | Description
@@ -195,3 +196,19 @@ Sent by [[erlyvideo]] when a user stop publishing video/webcam
 Metadata       | Description
 ---------------|-------------------------------------------------------------------------------------------------------
 broadcaster    | uid of the user who triggered the action
+
+
+## Document
+
+The brick listen for `internal.file.add` events. When the uploaded file is a pdf the brick will convert it to images. These images will be send back to UCEngine and a `document.conversion.done` event will be send to the meeting where the original `internal.file.add` came from.
+
+### document.conversion.done
+
+Sent by the document brick after a document conversion was successfuly completed. The metadata contains all the generated images id's with a numeric key as index. The `internal.file.add` event at the origin of the conversion is set as parent id. 
+
+ Metadata | Description
+---------------|-------------------------------------------------------------------------------------------------------
+ 0    | First image
+ 2    | Second image
+ ...  | ...
+ n    | nth image
