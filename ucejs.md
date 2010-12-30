@@ -34,11 +34,10 @@ alert("user created");
 
 ## Create presence
 
-*uce.presence.create(auth, credential, org, uid, nickname, callback)*
+*uce.presence.create(credential, org, uid, nickname, callback)*
 
 ### Params
 
-* auth: string "password"
 * credential: password
 * org: organization
 * uid: your login
@@ -48,7 +47,7 @@ alert("user created");
 ### Example
 
 ```javascript
-var ucengine = uce.presence.create("password", "pwd", "yourorg", "foo@example.net", "foo bar", function(err, result) {
+var ucengine = uce.presence.create("pwd", "yourorg", "foo@example.net", "foo bar", function(err, result) {
 // do something
 });
 ```

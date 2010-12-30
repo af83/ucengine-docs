@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # UC Engine ReST API
 
 # General informations about the API
