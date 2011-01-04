@@ -10,6 +10,9 @@ Sent by UC Engine. It notifies that a new file have been added.
 Metadata       | Description
 ---------------|-------------------------------------------------------------------------------------------------------
 id             | The id of the file. This id is unique for each uploaded file (even if the file is the same).
+mime           | mime type of the file
+name           | original name of the file
+size           | size of the file
 
 Example:
 
@@ -20,7 +23,10 @@ Example:
       "meeting"  : "demo",
       "from"     : "uid_63444326443_50150",
       "metadata" : {
-        "id":"Eben-Moglen-2010-12-2-privacy-testimony_34891938863969335648238193223131.pdf"
+        "id":"Eben-Moglen-2010-12-2-privacy-testimony_34891938863969335648238193223131.pdf",
+        "mime": "application/pdf",
+        "name": "Eben-Moglen-2010-12-2-privacy-testimony.pdf",
+        "size" : "123456789"
       }
     }
 
