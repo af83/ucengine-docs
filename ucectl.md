@@ -5,7 +5,7 @@ ucectl - UCengine control
 
 ## SYNOPSYS
 
-`ucectl` (run|start|debug|stop|tests) <br />
+`ucectl` (run|start|debug|stop|tests) [node [-c path]] <br />
 `ucectl` `--help` <br />
 `ucectl` *object* <action> [`--<parameter>` <value>] <br />
 
@@ -28,6 +28,14 @@ ucectl - UCengine control
     
   * `tests`:
     Run unit tests.
+
+The following options are available:
+
+  * node:
+    The name of the Erlang node (ex. 'node1', 'node1@localhost' or 'node1@myhost.mydomain').
+
+  * -c <path>
+    Path to the configuration file.
 
 ### Organisations
 
