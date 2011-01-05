@@ -7,27 +7,25 @@ UC Engine (Unified Collaboration Engine), provides developers with the tools to 
 * [[Installation|install]] - [[Administration with ucectl|ucectl]] - [[Frequently asked questions|faq]]
 * **Databases:** [[mongodb]] - [[mnesia]]
 * **Full text Search:** [[Solr|solr]]
-* **Video:** [[erlyvideo]] - [[red5]]
 * [[ReST API|api]] - [[ACL|acl]] - [[events]]
 
+## Bricks and widgets
+
+* **Video:** [[erlyvideo]] - [[red5]] - [[video widget|widget_video]]
+* **Standalone widgets :** [[activity|widget_activity]] - [[chat|widget_chat]] - [[file|widget_file]] - [[player|widget_player]] - [[replay|widget_replay]] - [[results|widget_results]] - [[search|widget_search]]  - [[whiteboard|widget_whiteboard]]
+
 ## Create bricks and applications
-
-### Ruby
-
-* [[Installation|ruby_install]]
-* [API](http://rdoc.info/github/AF83/ucengine.rb/master/frames)
 
 ### HTML/Javascript applications
 
 * [[Quickstart with a video/chat application|quickstartjs]]
 * [[Javascript API|ucejs]]
+* [[Guide for creating widget|widgets]]
 
-#### Javascript widgets
+### Ruby
 
-We provide some [jQuery UI widgets](http://jqueryui.com/).
-
-*  [[Guide|widgets]]
-* **Widgets :** [[activity]] - [[chat]] - [[file]] - [[player]] - [[replay]] - [[results]] - [[search]] - [[video]] - [[whiteboard]]
+* [[Installation|ruby_install]]
+* [API](http://rdoc.info/github/AF83/ucengine.rb/master/frames)
 
 ## Help/Discuss
 

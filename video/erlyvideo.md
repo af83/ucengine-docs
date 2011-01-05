@@ -64,4 +64,46 @@ And replace *trusted_login* by *ucengine_login* in *rtmp_handlers*, like that:
 
 ## Use it with video widget
 
-See [[video widget documentation|video]].
+See [[video widget documentation|widget_video]].
+
+## Events
+
+### video.stream.new
+
+Sent by [[erlyvideo]] with token and channel for viewing and publishing video. It's a private message, sent by erlyvideo each time you join a meeting.
+
+ Metadata | Description
+----------|-----------------------------------------------------
+ token    | secret token shared between [[erlyvideo]] and user
+ channel  | stream name of the current meeting in [[erlyvideo]]
+
+### video.stream.start
+
+Sent by [[erlyvideo]] when a user start publishing video/webcam
+
+Metadata       | Description
+---------------|-------------------------------------------------------------------------------------------------------
+broadcaster    | uid of the user who triggered the action
+
+### video.stream.lost
+
+Send by [[erlyvideo]] when source have been lost
+
+Metadata       | Description
+---------------|-------------------------------------------------------------------------------------------------------
+broadcaster    | uid of the user who triggered the action
+
+### video.stream.stop
+
+Sent by [[erlyvideo]] when a user stop publishing video/webcam
+
+Metadata       | Description
+---------------|-------------------------------------------------------------------------------------------------------
+broadcaster    | uid of the user who triggered the action
+
+## ACL
+
+Object         | Action       | Description
+---------------|--------------|----------------------------------------------------------------------------------------
+video          | view         | Allow video stream view with [[erlyvideo]]
+video          | publish      | Allow video stream publishing view with [[erlyvideo]]
