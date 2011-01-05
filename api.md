@@ -218,6 +218,40 @@ The user given as an URL parameter is not necessarily the same than the one
 passed as an encoded parameter. Thus you can disconnect another user (if the
 ACLs allow it of course).
 
+# Infos
+
+## Get current domain informations
+
+### Request
+
+    GET /infos
+
+### Returned values
+
+    200 { "result": {} }
+
+## Update current domain informations
+
+### Request
+
+    POST /infos
+
+Parameter                              | Description                           | Example
+---------------------------------------|---------------------------------------|------------------------------------------------------------
+**URL Parameters**                     |                                       |
+`metadata`                             | Array containing metadata             | `metadata[key]=value`
+**Encoded Parameters**                 |                                       |
+`uid`                                  | User id                               | `uid_63444326443_50150`
+`sid`                                  | Session id                            | `330249245470504`
+
+### Returned values
+
+    200 { "result": "ok" }
+
+    400 { "error": "bad_parameters" } // at least one paremeter is missing or wrong
+
+    401 { "error": "unauthorized" } // the user is not authorized to updated informations
+
 # Meeting
 ## Join a meeting
 
