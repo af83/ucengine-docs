@@ -63,6 +63,27 @@ uce.presence.create("password", "pwd", "foo@example.net", "foo bar", function(er
 });
 ```
 
+## Get domain informations
+
+*uce.infos.get(callback)*
+
+```javascript
+uce.infos.get(function(err, result) {
+    if (err) throw err;
+    else console.log(result);
+});
+```
+
+## Update domain informations
+
+*uce.infos.post(metadata, callback)*
+
+```javascript
+uce.infos.post({description: 'my desc'}, function(err, result) {
+    if (err) throw err;
+});
+```
+
 ## Get meeting
 
 *uce.meeting(meetingname)*
