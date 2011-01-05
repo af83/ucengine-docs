@@ -12,6 +12,7 @@ UC Engine (Unified Collaboration Engine), provides developers with the tools to 
 ## Bricks and widgets
 
 * **Video:** [[erlyvideo]] - [[red5]] - [[video widget|widget_video]]
+* **File sharing:** [[brick|brick_filesharing]]
 * **Standalone widgets :** [[activity|widget_activity]] - [[chat|widget_chat]] - [[file|widget_file]] - [[player|widget_player]] - [[replay|widget_replay]] - [[results|widget_results]] - [[search|widget_search]]  - [[whiteboard|widget_whiteboard]]
 
 ## Create bricks and applications
