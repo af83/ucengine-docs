@@ -35,7 +35,8 @@ UC Engine (Unified Collaboration Engine), provides developers with the tools to 
 
 ## Development and contributions
 
-See [[roadmap]].
+* [[Roadmap|roadmap]]
+* [[History|history]]
 
 Contributions are welcome !
 

@@ -34,12 +34,11 @@ alert("user created");
 
 ## Create presence
 
-*uce.presence.create(credential, org, uid, nickname, callback)*
+*uce.presence.create(credential, uid, nickname, callback)*
 
 ### Params
 
 * credential: password
-* org: organization
 * uid: your login
 * nickname: visible nickname
 * callback
@@ -47,7 +46,7 @@ alert("user created");
 ### Example
 
 ```javascript
-var ucengine = uce.presence.create("pwd", "yourorg", "foo@example.net", "foo bar", function(err, result) {
+var ucengine = uce.presence.create("pwd", "foo@example.net", "foo bar", function(err, result) {
 // do something
 });
 ```
@@ -59,11 +58,32 @@ Attach presence used in all next requests.
 *uce.attachPresence(presence)*
 
 ```javascript
-uce.presence.create("password", "pwd", "yourorg", "foo@example.net", "foo bar", function(err, result) {
+uce.presence.create("password", "pwd", "foo@example.net", "foo bar", function(err, result) {
     var session = uce.attachPresence(result);
+});
+```
+
+## Get domain informations
+
+*uce.infos.get(callback)*
+
+```javascript
+uce.infos.get(function(err, result) {
+    if (err) throw err;
+    else console.log(result);
+});
+```
+
+## Update domain informations
+
+*uce.infos.post(metadata, callback)*
+
+```javascript
+uce.infos.post({description: 'my desc'}, function(err, result) {
+    if (err) throw err;
 });
 ```
 
 ## Get meeting
 
-*uce.org(name).meeting(meetingname)*
+*uce.meeting(meetingname)*

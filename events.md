@@ -18,7 +18,6 @@ Example:
     { "type"     : "internal.file.add",
       "datetime" : 1292597388050,
       "id"       : "74647005885125029457242944483441",
-      "org"      : "af83",
       "meeting"  : "demo",
       "from"     : "uid_63444326443_50150",
       "metadata" : {
@@ -29,7 +28,6 @@ Example:
       }
     }
 
-### internal.org.add
 ### internal.presence.add
 ### internal.presence.delete
 ### internal.roster.add
@@ -41,7 +39,6 @@ Example:
     { "type"     : "internal.roster.add",
       "datetime" : 1292594897416,
       "id"       : "30387772929242810120613023014654",
-      "org"      : "af83",
       "meeting"  : "demo",
       "from"     : "uid_63444326443_50150",
       "metadata" : {}
@@ -56,7 +53,6 @@ Example:
     { "type"     : "internal.roster.delete",
       "datetime" : 1292600689363,
       "id"       : "05214339923220971091870275941078",
-      "org"      : "af83",
       "meeting"  : "demo",
       "from"     : "uid_63444326443_50150",
       "metadata" : {}
@@ -82,7 +78,6 @@ Example:
     { "type"    : "twitter.hashtag.add",
       "datetime": 1292593766682,
       "id"      : "44099145822544409583064798111089",
-      "org"     : "af83",
       "meeting" : "demo",
       "from"    : "uid_63444326443_50150",
       "metadata": {
@@ -105,7 +100,6 @@ Example:
     { "type"     : "twitter.tweet.new",
       "datetime" : 1292595423660,
       "id"       : "58605572364308395079869070527396",
-      "org"      : "af83",
       "meeting"  : "demo",
       "from"     : "twitter",
       "metadata" : {
@@ -131,7 +125,6 @@ Example:
     { "type"     : "chat.message.new",
       "datetime" : 1292601125202,
       "id"       : "91918360913598370296768635184375",
-      "org"      : "af83",
       "meeting"  : "demo",
       "from"     : "uid_63444326443_50150",
       "metadata" : {
@@ -156,7 +149,6 @@ Example:
     { "type"     : "chat.translation.new",
       "datetime" : 1292603078834,
       "id"       : "55807763603614612180220217695833",
-      "org"      : "af83",
       "meeting"  : "demo",
       "from"     : "translation",
       "parent"   : "96383203370218539842143583984667",
