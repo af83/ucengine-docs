@@ -25,9 +25,17 @@ ucectl - UCengine control
 
   * `stop`:
     Stop UCengine when launched in background.
-    
+
   * `tests`:
     Run unit tests.
+
+### Domain information
+
+  * `infos` `update` [`--<metadata>` <value>] ... :
+    Update current domain informations with arbitrary values
+
+  * `infos` `get`
+    Get current domain informations
 
 ### Meetings
 
@@ -39,10 +47,10 @@ ucectl - UCengine control
 
   * `meeting` `get` `--name` <name>:
     Get all informations about the meeting <name>.
-  
+
   * `meeting` `delete` `--name` <name>:
     Delete the meeting with name <name>.
-  
+
   * `meeting` `list` [`--status` <status>]:
     List all meetings with an optional status <status>, meeting status can be any of: `upcoming`|`opened`|`closed` or `all` (default).
 
@@ -56,10 +64,10 @@ ucectl - UCengine control
 
   * `user` `get` `--uid` <uid>:
     Get all informations about the user with identifier <uid>.
-  
+
   * `user` `delete` `--uid` <uid>:
     Delete the user with identifier <uid>.
-  
+
   * `user` `list`:
     List all users.
 
@@ -70,7 +78,7 @@ ucectl - UCengine control
 
   * `acl` `delete` `--uid` <uid> `--object` *object* `--action` <action> [`--meeting` <meeting>] [`--condition` <value>] ... :
     Remove the right for an user <uid> to do <action> on <object> in an optional meeting <meeting> with some <conditions>.
-    
+
   * `acl` `check` `--uid` <uid> `--object` *object* `--action` <action> [`--meeting` <meeting>] [`--condition` <value>] ... :
     Check that the user <uid> has the right to do <action> on <object> in an optional meeting <meeting> with some <conditions>.
 
@@ -109,7 +117,7 @@ And delete it:
 Create a new user 'Chuck' with a password set to 'Norris' with his nickname in the metadata:
 	ucectl user add --uid 'Chuck' --auth 'password' --credential 'Norris'
 		--nickname 'Colonel Braddock'
-	
+
 Update the user with a stronger password and a different nickname:
 	ucectl user update --uid 'Chuck' --auth 'password' --credential '835dc9b5fa0ffa8'
 		--nickname 'Cordell Walker'
