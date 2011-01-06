@@ -36,7 +36,8 @@ We provide some [jQuery UI widgets](http://jqueryui.com/).
 
 ## Development and contributions
 
-See [[roadmap]].
+* [[Roadmap|roadmap]]
+* [[History|history]]
 
 Contributions are welcome !
 
