@@ -2,7 +2,7 @@
 
 ## Introduction
 
-The twitter subscribe to meetings hashtags and send tweets to the meeting.
+The twitter brick subscribe to meetings hashtags and send tweets to the meeting.
 
 ## Dependencies
 
