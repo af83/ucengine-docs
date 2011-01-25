@@ -5,20 +5,22 @@
 The base URL is `http://demo.ucengine.org/api/0.2/`
 All the others API URLs are relative to this one.
 
-For most of the API calls, there are recurrent parameters :
+You have to consider a few conventions :
+
+- The `PUT` and `DELETE` methods can be simulated when your client could not
+  support these. To do so, you have to use the `_method` parameter.  For
+  example, to be able to do a `PUT` request, you will send a `POST` request
+  with the following parameter: `_method=PUT`.
+
+# Authentication
+
+If an API method need authentication, there are recurrent parameters :
 
 Parameter                              | Description                           | Example
 ---------------------------------------|---------------------------------------|------------------------------------------------------------
 **Encoded Parameters**                 |                                       |
 `uid`                                  | User id                               | `uid_63444326443_50150`
 `sid`                                  | Session id                            | `330249245470504`
-
-Moreover, you have to consider a few conventions :
-
-- The `PUT` and `DELETE` methods can be simulated when your client could not
-  support these. To do so, you have to use the `_method` parameter.  For
-  example, to be able to do a `PUT` request, you will send a `POST` request
-  with the following parameter: `_method=PUT`.
 
 # Time
 ## Retrieve current server's timestamp
@@ -76,7 +78,7 @@ Parameter                              | Description                           |
 `credential`                           | Password or token                     | `dWlkXzYzNDQ0MzI2NDQzXzUwMTUwCg`
 `metadata`                             | Array containing metadata             | `metadata[key]=value`
 
-### Returned values:
+### Returned values:
 
     201 { "result": "created" }
 
@@ -95,13 +97,15 @@ Parameter                              | Description                           |
 **URL Parameters**                     |                                       |
 `uid`                                  | User id                               | `uid_63444326443_50150`
 **Encoded Parameters**                 |                                       |
-`uid`                                  | User id                               | `uid_63444326443_50150`
-`sid`                                  | Session id                            | `330249245470504`
 `auth`                                 | Authentication method                 | `password` or `token`
 `credential`                           | Password or token                     | `dWlkXzYzNDQ0MzI2NDQzXzUwMTUwCg`
 `metadata`                             | Array containing metadata             | `metadata[key]=value`
 
-### Returned values
+### Require authentication:
+
+yes
+
+## Returned values
 
     200 { "result": "ok" }
 
@@ -119,10 +123,10 @@ Parameter                              | Description                           |
 ---------------------------------------|---------------------------------------|------------------------------------------------------------
 **URL Parameters**                     |                                       |
 `uid`                                  | User id                               | `uid_63444326443_50150`
-`sid`                                  | Session id                            | `330249245470504`
-**Encoded Parameters**                 |                                       |
-`uid`                                  | User id                               | `uid_63444326443_50150`
-`sid`                                  | Session id                            | `330249245470504`
+
+### Require authentication:
+
+yes
 
 ### Returned values
 
@@ -149,9 +153,10 @@ Parameter                              | Description                           |
 ---------------------------------------|---------------------------------------|------------------------------------------------------------
 **URL Parameters**                     |                                       |
 `uid`                                  | User id                               | `uid_63444326443_50150`
-**Encoded Parameters**                 |                                       |
-`uid`                                  | User id                               | `uid_63444326443_50150`
-`sid`                                  | Session id                            | `330249245470504`
+
+### Require authentication:
+
+yes
 
 ### Returned values
 
@@ -198,9 +203,10 @@ Parameter                              | Description                           |
 **URL Parameters**                     |                                       |
 `uid`                                  | User id                               | `uid_63444326443_50150`
 `sid`                                  | Session id                            | `330249245470504`
-**Encoded Parameters**                 |                                       |
-`uid`                                  | User id                               | `uid_63444326443_50150`
-`sid`                                  | Session id                            | `330249245470504`
+
+### Require authentication:
+
+yes
 
 ### Returned values
 
@@ -240,9 +246,10 @@ Parameter                              | Description                           |
 ---------------------------------------|---------------------------------------|------------------------------------------------------------
 **URL Parameters**                     |                                       |
 `metadata`                             | Array containing metadata             | `metadata[key]=value`
-**Encoded Parameters**                 |                                       |
-`uid`                                  | User id                               | `uid_63444326443_50150`
-`sid`                                  | Session id                            | `330249245470504`
+
+### Require authentication:
+
+yes
 
 ### Returned values
 
@@ -264,9 +271,10 @@ Parameter                              | Description                           |
 **URL Parameters**                     |                                       |
 `meeting`                              | Meeting id                            | `demo`
 `uid`                                  | User id                               | `uid_63444326443_50150`
-**Encoded Parameters**                 |                                       |
-`uid`                                  | User id                               | `uid_63444326443_50150`
-`sid`                                  | Session id                            | `330249245470504`
+
+### Require authentication:
+
+yes
 
 ### Returned values
 
@@ -289,9 +297,10 @@ Parameter                              | Description                           |
 **URL Parameters**                     |                                       |
 `meeting`                              | Meeting id                            | `demo`
 `uid`                                  | User id                               | `uid_63444326443_50150`
-**Encoded Parameters**                 |                                       |
-`uid`                                  | User id                               | `uid_63444326443_50150`
-`sid`                                  | Session id                            | `330249245470504`
+
+### Require authentication:
+
+yes
 
 ### Returned values
 
@@ -314,13 +323,14 @@ Parameter                              | Description                           |
 ---------------------------------------|---------------------------------------|------------------------------------------------------------
 **URL Parameters**                     |                                       |
 `meeting`                              | Meeting id                            | `demo`
-**Encoded Parameters**                 |                                       |
-`uid`                                  | User id                               | `uid_63444326443_50150`
-`sid`                                  | Session id                            | `330249245470504`
 **Optional Encoded Parameters**        |                                       |
 `start`                                | opening Timestamp of the meeting      | `63444430100`
 `end`                                  | ending Timestamp of the meeting       | `63444430800`
 `metadata`                             | Array containing metadata             | `metadata[key]=value`
+
+### Require authentication:
+
+yes
 
 ### Notes
 
@@ -350,13 +360,14 @@ Parameter                              | Description                           |
 ---------------------------------------|---------------------------------------|------------------------------------------------------------
 **URL Parameters**                     |                                       |
 `meeting`                              | Meeting id                            | `demo`
-**Encoded Parameters**                 |                                       |
-`uid`                                  | User id                               | `uid_63444326443_50150`
-`sid`                                  | Session id                            | `330249245470504`
 **Optional Encoded Parameters**        |                                       |
 `start`                                | opening Timestamp of the meeting      | `63444430100`
 `end`                                  | ending Timestamp of the meeting       | `63444430800`
 `metadata`                             | Array containing metadata             | `metadata[key]=value`
+
+### Require authentication:
+
+yes
 
 ### Returned values
 
@@ -379,8 +390,7 @@ Parameter                              | Description                           |
 ---------------------------------------|---------------------------------------|------------------------------------------------------------
 **URL Parameters**                     |                                       |
 `meeting`                              | Meeting id                            | `demo`
-**Encoded Parameters**                 |                                       |
-`sid`                                  | Session id                            | `330249245470504`
+
 
 ### Returned values
 
@@ -421,9 +431,10 @@ Parameter                              | Description                           |
 ---------------------------------------|---------------------------------------|------------------------------------------------------------
 **URL Parameters**                     |                                       |
 `status`                               | Status of the meeting                 | `upcoming` or `opened` or `closed` or `all`
-**Encoded Parameters**                 |                                       |
-`uid`                                  | User id                               | `uid_63444326443_50150`
-`sid`                                  | Session id                            | `330249245470504`
+
+### Require authentication:
+
+yes
 
 ### Returned values
 
@@ -464,9 +475,10 @@ Parameter                              | Description                           |
 ---------------------------------------|---------------------------------------|------------------------------------------------------------
 **URL Parameters**                     |                                       |
 `meeting`                              | Meeting id                            | `demo`
-**Encoded Parameters**                 |                                       |
-`uid`                                  | User id                               | `uid_63444326443_50150`
-`sid`                                  | Session id                            | `330249245470504`
+
+### Require authentication:
+
+yes
 
 ### Returned values
 
@@ -495,9 +507,10 @@ Parameter                              | Description                           |
 ---------------------------------------|---------------------------------------|------------------------------------------------------------
 **URL Parameters**                     |                                       |
 `meeting`                              | Meeting id                            | `demo`
-**Encoded Parameters**                 |                                       |
-`uid`                                  | User id                               | `uid_63444326443_50150`
-`sid`                                  | Session id                            | `330249245470504`
+
+### Require authentication:
+
+yes
 
 ### Returned values
 
@@ -522,10 +535,6 @@ Parameter                              | Description                           |
 ---------------------------------------|---------------------------------------|------------------------------------------------------------
 **URL Parameters**                     |                                       |
 `meeting`                              | Meeting id                            | `demo`
-`uid`                                  | User id                               | `uid_63444326443_50150`
-**Encoded Parameters**                 |                                       |
-`uid`                                  | User id                               | `uid_63444326443_50150`
-`sid`                                  | Session id                            | `330249245470504`
 **Optional Encoded Parameters**        |                                       |
 `type`                                 | The event's type                      | `internal.meeting.add`
 `start`                                | Start of the event's frame            | `63444430100`
@@ -537,6 +546,10 @@ Parameter                              | Description                           |
 `search`                               |                                       |
 `parent`                               |                                       |
 `_async`                               | Method used to retrieve the events    | `no` or `lp`
+
+### Require authentication:
+
+yes
 
 ### Returned values
 
@@ -595,11 +608,13 @@ Parameter                              | Description                           |
 **URL Parameters**                     |                                       |
 `meeting`                              | Meeting id                            | `demo`
 **Encoded Parameters**                 |                                       |
-`uid`                                  | User id                               | `uid_63444326443_50150`
-`sid`                                  | Session id                            | `330249245470504`
 `type`                                 | The event's type                      | `internal.meeting.add`
 **Optional Encoded Parameters**        |                                       |
 Any other parameter                    | These will be part of the metadata    |
+
+### Require authentication:
+
+yes
 
 ### Returned values
 
@@ -627,11 +642,12 @@ Parameter                              | Description                           |
 `meeting`                              | Meeting id                            | `demo`
 **Optional URL Parameters**            |                                       |
 `filename`                             | Fielname                              | `ucengine.odp`
-**Encoded Parameters**                 |                                       |
-`uid`                                  | User id                               | `uid_63444326443_50150`
-`sid`                                  | Session id                            | `330249245470504`
 **Optional Encoded Parameters**        |                                       |
 `_filename`                            | Filname                               | `ucengine.odp`
+
+### Require authentication:
+
+yes
 
 ### Returned values
 
@@ -661,9 +677,10 @@ Parameter                              | Description                           |
 ---------------------------------------|---------------------------------------|------------------------------------------------------------
 **URL Parameters**                     |                                       |
 `meeting`                              | Meeting id                            | `demo`
-**Encoded Parameters**                 |                                       |
-`uid`                                  | User id                               | `uid_63444326443_50150`
-`sid`                                  | Session id                            | `330249245470504`
+
+### Require authentication:
+
+yes
 
 ### Returned values
 
@@ -689,9 +706,10 @@ Parameter                              | Description                           |
 **URL Parameters**                     |                                       |
 `meeting`                              | Meeting id                            | `demo`
 `filename`                             | Fielname                              | `ucengine.odp`
-**Encoded Parameters**                 |                                       |
-`uid`                                  | User id                               | `uid_63444326443_50150`
-`sid`                                  | Session id                            | `330249245470504`
+
+### Require authentication:
+
+yes
 
 ### Returned values
 
@@ -720,9 +738,11 @@ Parameter                              | Description                           |
 `action`                               | Authorized action for this right      | `add` or `deletè or `join` ...
 `meeting`                              | Meeting id                            | `demo`
 **Encoded Parameters**                 |                                       |
-`uid`                                  | User id                               | `uid_63444326443_50150`
-`sid`                                  | Session id                            | `330249245470504`
 `condition`                            | Array of conditions to satisfy        |
+
+### Require authentication:
+
+yes
 
 ### Examples
 
@@ -758,9 +778,11 @@ Parameter                              | Description                           |
 `action`                               | Authorized action for this right      | `add` or `deletè or `join` ...
 `meeting`                              | Meeting id                            | `demo`
 **Encoded Parameters**                 |                                       |
-`uid`                                  | User id                               | `uid_63444326443_50150`
-`sid`                                  | Session id                            | `330249245470504`
 `condition`                            | Array of conditions to satisfy        |
+
+### Require authentication:
+
+yes
 
 ### Returned values
 
@@ -790,9 +812,11 @@ Parameter                              | Description                           |
 `action`                               | Authorized action for this right      | `add` or `deletè or `join` ...
 `meeting`                              | Meeting id                            | `demo`
 **Encoded Parameters**                 |                                       |
-`uid`                                  | User id                               | `uid_63444326443_50150`
-`sid`                                  | Session id                            | `330249245470504`
 `condition`                            | Array of conditions to satisfy        |
+
+### Require authentication:
+
+yes
 
 ### Returned values
 
