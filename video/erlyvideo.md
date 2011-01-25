@@ -49,12 +49,6 @@ And replace *trusted_login* by *ucengine_login* in *rtmp_handlers*, like that:
          # Fetch erlyvideo_ucengine sources
          $ git clone git://github.com/AF83/erlyvideo-ucengine.git
 
-         # Fetch ibrowse and build it
-         $ cd ../deps/
-         $ git clone https://github.com/cmullaparthi/ibrowse.git
-         $ cd ibrowse
-         $ make
-
          # Build Erlyvideo
          $ cd ../../
          $ make
