@@ -12,19 +12,17 @@ You will need:
 
 See [[erlyvideo]].
 
-## Create an organization, one meeting and one user
+## Create one meeting and one user
 
-* Organization: *myorg*
 * meeting:  *demo*
 * User: *john* - password: *mypwd*
 
 
 * * *
 
-    $> bin/ucectl org add --name "myorg"
-    $> bin/ucectl meeting add --org "myorg" --name "demo"
+    $> bin/ucectl meeting add --name "demo"
     $> bin/ucectl user add --uid 'john' --auth 'password' --credential 'mypwd'
-    $> bin/ucectl acl add --uid 'john' --org 'myorg' --meeting 'demo' --object 'roster' --action 'add'
+    $> bin/ucectl acl add --uid 'john' --meeting 'demo' --object 'roster' --action 'add'
     $> bin/ucectl acl add --uid 'john' --object 'presence' --action 'add'
     $> bin/ucectl acl add --uid 'john' --object 'event' --action 'list'
     $> bin/ucectl acl add --uid 'john' --object 'event' --action 'add'
@@ -66,11 +64,11 @@ Create a folder *chat* in *priw/www*, with an index.html:
 ```javascript
 var password = "mypwd";
 var uid = "john";
-uce.presence.create(password, "myorg", uid, uid, function(err, result, xhr) {
+uce.presence.create(password, uid, uid, function(err, result, xhr) {
   if (err) {
     return;
   }
-  var meeting = uce.attachPresence(result).org("myorg").meeting("demo");
+  var meeting = uce.attachPresence(result).meeting("demo");
   $("<div>").appendTo($("body")).video({domain : "localhost/ucengine",
                                         ucemeeting: meeting});
   $("<div>").appendTo($("body")).chat({ucemeeting : meeting}).chat('toggleMode', 'big');

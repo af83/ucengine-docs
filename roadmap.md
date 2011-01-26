@@ -1,10 +1,8 @@
 # Roadmap
 
-## Version 0.2 - January 2011
+## Version 0.3 - January 2011
 
-* remove organisations
 * add domain/virtualhost
-* file sharing
 
 ## Later
 

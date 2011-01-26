@@ -7,36 +7,38 @@ UC Engine (Unified Collaboration Engine), provides developers with the tools to 
 * [[Installation|install]] - [[Administration with ucectl|ucectl]] - [[Frequently asked questions|faq]]
 * **Databases:** [[mongodb]] - [[mnesia]]
 * **Full text Search:** [[Solr|solr]]
-* **Video:** [[erlyvideo]] - [[red5]]
 * [[ReST API|api]] - [[ACL|acl]] - [[events]]
 
+## Bricks and widgets
+
+* **Video:** [[erlyvideo]] - [[red5]] - [[video widget|widget_video]]
+* **File sharing:** [[brick|brick_filesharing]] - [[filesharing widget|widget_filesharing]]
+* **Translation:** [[brick|brick_translation]]
+* **Twitter:** [[brick|brick_twitter]]
+* **Standalone widgets :** [[activity|widget_activity]] - [[chat|widget_chat]] - [[file|widget_file]] - [[player|widget_player]] - [[replay|widget_replay]] - [[results|widget_results]] - [[search|widget_search]]  - [[whiteboard|widget_whiteboard]]
+
 ## Create bricks and applications
+
+### HTML/Javascript applications
+
+* [[Quickstart with a video/chat application|quickstartjs]]
+* [[Javascript API|ucejs]]
+* [[Guide for creating widget|widgets]]
 
 ### Ruby
 
 * [[Installation|ruby_install]]
 * [API](http://rdoc.info/github/AF83/ucengine.rb/master/frames)
 
-### HTML/Javascript applications
-
-* [[Quickstart with a video/chat application|quickstartjs]]
-* [[Javascript API|ucejs]]
-
-#### Javascript widgets
-
-We provide some [jQuery UI widgets](http://jqueryui.com/).
-
-*  [[Guide|widgets]]
-* **Widgets :** [[activity]] - [[chat]] - [[file]] - [[player]] - [[replay]] - [[results]] - [[search]] - [[video]] - [[whiteboard]]
-
 ## Help/Discuss
 
 * [ucengine mailing-list](http://groups.google.com/group/ucengine)
-* IRC: [#af83-ucengine](irc:af83-ucengine@irc.freenode.net) on freenode.
+* IRC: [#ucengine](irc:ucengine@irc.freenode.net) on freenode.
 
 ## Development and contributions
 
-See [[roadmap]].
+* [[Roadmap|roadmap]]
+* [[History|history]]
 
 Contributions are welcome !
 
