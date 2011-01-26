@@ -1,6 +1,10 @@
 # UC Engine
 
-UC Engine (Unified Collaboration Engine), provides developers with the tools to help them build realtime applications or integrate realtime features to existing applications.
+UC Engine (Unified Collaboration Engine), is a [[publish/subscribe|http://en.wikipedia.org/wiki/PubSub]] server with persistence.
+
+It allow you to build real time applications like collaboration based services, live meetings, games or anything that fit well in the event driven philosophy.
+
+UC Engine is a [[free software project|https://github.com/AF83/ucengine/blob/master/AGPL-LICENSE.txt]] written in erlang and exposes a ReSTful HTTP API with JSON as the primary exchange format.
 
 ## Topics
 
