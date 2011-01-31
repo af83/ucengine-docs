@@ -1,5 +1,9 @@
 # Frequently asked questions
 
+## How to write U.C.Engine ?
+
+**U.C.Engine**.
+
 ## Which versions of erlang and yaws do you support ?
 
 We only support the following versions:
@@ -21,6 +25,9 @@ between `/usr/lib/yaws` and `/usr/lib/erlang/lib`:
 
     > ln -s /usr/lib/yaws `/usr/lib/erlang/lib`
 
+## Who's the devil behind U.C.Engine ?
+
+Some folks of [af83](http://af83.com/).
 
 ## Do you destroy your community ?
 
@@ -46,7 +53,7 @@ Okay, we need to improve this point.
 
 ### #5 Employ large amounts of legalese
 
-No Contributor agrement, no trademarks. Just send us a patch.
+No contributor agrement, no trademarks. Just send us a patch.
 
 ### #6 The community liaison must be chosen carefully
 
