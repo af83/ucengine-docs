@@ -6,18 +6,20 @@
 
 ## Getting started
 
-        require 'rubygems'
-        require 'ucengine'
+```ruby
+require 'rubygems'
+require 'ucengine'
 
-        uce = UCEngine.new("localhost", 4567)
-        uce.connect("uce@example.org", :credential => 'pwd') do |uce|
-                uce.subscribe([], :type => 'chat.message.new', :search => 'HTML5') do |event|
-                        uce.publish(:location => [event['meeting']]
-                                   :from => 'bot',
-                                   :type => 'chat.message.new',
-                                   :metadata => {"text" => "Hey, you were talking about HTML5"})
-                end
-        end
+uce = UCEngine.new("localhost", 4567)
+uce.connect("uce@example.org", :credential => 'pwd') do |uce|
+  uce.subscribe([], :type => 'chat.message.new', :search => 'HTML5') do |event|
+    uce.publish(:location => [event['meeting']]
+                :from => 'bot',
+                :type => 'chat.message.new',
+                :metadata => {"text" => "Hey, you were talking about HTML5"})
+  end
+end
+```
 
 ## More?
 
