@@ -43,9 +43,11 @@ U.C.Engine is a [[free software project|https://github.com/AF83/ucengine/blob/ma
 
 * [[Roadmap|roadmap]]
 * [[History|history]]
+* [[Launching tests|tests]]
 
 Contributions are welcome !
 
 * [Fork us](https://github.com/AF83/ucengine)
 * Create your patch in a topic branch
+* Add some unit tests
 * Send pull request
