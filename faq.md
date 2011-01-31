@@ -1,10 +1,10 @@
 # Frequently asked questions
 
-## How to write U.C.Engine ?
+## How to write U.C.Engine?
 
 **U.C.Engine**.
 
-## Which versions of erlang and yaws do you support ?
+## Which versions of erlang and yaws do you support?
 
 We only support the following versions:
 
@@ -25,11 +25,11 @@ between `/usr/lib/yaws` and `/usr/lib/erlang/lib`:
 
     > ln -s /usr/lib/yaws `/usr/lib/erlang/lib`
 
-## Who's the devil behind U.C.Engine ?
+## Who's the devil behind U.C.Engine?
 
 Some folks of [af83](http://af83.com/).
 
-## Do you destroy your community ?
+## Do you destroy your community?
 
 See [How to destroy your community](http://lwn.net/Articles/370157/) on lwn.
 
@@ -59,7 +59,7 @@ No contributor agreement, no trademarks. Just send us a patch.
 
 We don't have a community liaison. We have coders. Coders code 24/7 and are always accessible. Even when in the toilets. They respond to patches in millisecond timeframes. Again, IRC anyone?
 
-### #7 Governance obfuscation.
+### #7 Governance obfuscation
 
 Like #4, we need more transparency. Did we say something about IRC?
 
