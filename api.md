@@ -443,7 +443,7 @@ yes
 			"end_date":"never",
 			"roster":[	"abel.fournier_1284046072075@af83.com",
 					"abel.fournier_1284107725374@af83.com"],
-			"metadata":{	"description":"UCengine demo meetup"}
+			"metadata":{	"description":"U.C.Engine demo meetup"}
 		},
 		{	"name":"demo2",
 			"start_date":1284046056928,
@@ -487,7 +487,7 @@ yes
 			"end_date":"never",
 			"roster":[	"abel.fournier_1284046072075@af83.com",
 					"abel.fournier_1284107725374@af83.com"],
-			"metadata":{	"description":"UCengine demo meetup"}
+			"metadata":{	"description":"U.C.Engine demo meetup"}
 		}}
 
     400 { "error": "bad_parameters" } // at least one paremeter is missing or wrong
@@ -595,7 +595,7 @@ yes
   Limit can also take the `last` value which is equivalent to `limit=-1`
 - The `_async` option allow you to return the events to the client in real time.
 
-## Send an event to UCengine
+## Send an event to U.C.Engine
 
 ### Request
 
@@ -663,7 +663,7 @@ yes
 
 - You are able to force the filename if it is specified in the url or in
   the request's body (this second case is often handled by the browser).
-- To avoid conflicts between files UC Engine generate a unique id which is returned in the result.
+- To avoid conflicts between files U.C.Engine generate a unique id which is returned in the result.
 
 ## List files
 
@@ -684,9 +684,9 @@ yes
 
 ### Returned values
 
-    200 { "result": [ { "filename": "UCengine.odp"
+    200 { "result": [ { "filename": "U.C.Engine.odp"
                       , "token": "42314657480629893636680972"
-                      , "description": "Présentation du projet UCengine"
+                      , "description": "Présentation du projet U.C.Engine"
                       }
                     , ...
                     ]}
