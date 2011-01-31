@@ -59,7 +59,7 @@ The following options are available:
   * `meeting` `delete` `--name` <name>:
     Delete the meeting with name <name>.
 
-  * `meeting` `list` [`--status` <status>]:
+  * `meeting` `list` `--status` <status>:
     List all meetings with an optional status <status>, meeting status can be any of: `upcoming`|`opened`|`closed` or `all` (default).
 
 ### Users
