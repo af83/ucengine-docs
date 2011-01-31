@@ -49,7 +49,7 @@ Documentation is in progress and progress is good.
 
 ### #4 Project decisions should be made in closed-door meetings
 
-This point needs improvement but it depends as much on you as it does on us. IRC anyone ?
+This point needs improvement but it depends as much on you as it does on us. IRC anyone?
 
 ### #5 Employ large amounts of legalese
 
