@@ -2,11 +2,11 @@
 
 ## Technology agnostic
 
-You can build your applications with your preferred language. We currently support Erlang, Ruby and javascript. See [[javascript|ucejs]] and [[ruby|ruby_install]] api.
+You can build your applications with your preferred language. We currently support Erlang, Ruby and javascript. See the [[javascript|ucejs]] and [[ruby|ruby_install]] API.
 
 ## Brick
 
-A brick is a daemon that speak HTTP with U.C.Engine. It's the easiest way to integrate existing applications with U.C.Engine. See [[ReST API|api]].
+A brick is a daemon that speaks HTTP with U.C.Engine. It's the easiest way to integrate existing applications with U.C.Engine. See [[ReST API|API]].
 
 ## Event
 
@@ -18,4 +18,4 @@ With events you are creating you own protocol. The logic is delegated to the cli
 
 A meeting is a place where events are broadcasted.
 
-In an application you can create meetings a much as you like.
+In an application you can create meetings a much as you would like.
