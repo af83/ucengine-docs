@@ -6,7 +6,7 @@ You can build your applications with your preferred language. We currently suppo
 
 ## Brick
 
-A brick is a daemon that speaks HTTP with U.C.Engine. It's the easiest way to integrate existing applications with U.C.Engine. See [[ReST API|API]].
+A brick is a daemon that speaks HTTP with U.C.Engine. It's the easiest way to integrate existing applications with U.C.Engine. See the [[ReST API|API]].
 
 ## Event
 
