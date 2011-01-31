@@ -87,3 +87,29 @@ uce.infos.post({description: 'my desc'}, function(err, result) {
 ## Get meeting
 
 *uce.meeting(meetingname)*
+
+## Join meeting
+
+*uce.meeting(meeting).join(callback)*
+
+## Leave meeting
+
+*uce.meeting(meeting).leave(callback)*
+
+## Get Roster
+
+*uce.meeting(meeting).getRoster(callback)*
+
+## Push event
+
+*uce.meeting(meeting).push(eventname, metadata, callback)*
+
+```javascript
+uce.meeting('demo').push('my_event', {my_property: 'my property'}, function(err, result) {
+    if (err) throw err;
+    console.log(result); // event recorded
+});
+```
+## Wait events
+
+*uce.meeting(meeting).waitEvents(params, callback, one_shot)*
