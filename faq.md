@@ -8,13 +8,13 @@
 
 We only support the following versions:
 
-- `erlang` starting to R14A
-- `yaws` starting to 1.88
+- `erlang` starting with R14A
+- `yaws` starting with 1.88
 
 ## I got a « can't find include lib "yaws/include/yaws.hrl" » error on debian
 
-Despite that you installed the `erlang` and `erlang-yaws` packages on your
-debian system, you got the following error when building U.C.Engine:
+Despite installing the `erlang` and `erlang-yaws` packages on your
+debian system, you get the following error when building U.C.Engine:
 
     > make
     ...  can't find include lib "yaws/include/yaws.hrl"
@@ -45,23 +45,23 @@ Right. We are poisonous people.
 
 ### #3 Provide no documentation
 
-Documentation is in progress.
+Documentation is in progress and progress is good.
 
 ### #4 Project decisions should be made in closed-door meetings
 
-Okay, we need to improve this point.
+This point needs improvement but it depends as much on you as it does on us. IRC anyone ?
 
 ### #5 Employ large amounts of legalese
 
-No contributor agrement, no trademarks. Just send us a patch.
+No contributor agreement, no trademarks. Just send us a patch.
 
 ### #6 The community liaison must be chosen carefully
 
-We don't have a community liaison.
+We don't have a community liaison. We have coders. Coders code 24/7 and are always accessible. Even when in the toilets. They respond to patches in millisecond timeframes. Again, IRC anyone?
 
 ### #7 Governance obfuscation.
 
-Like #4, we need more transparency.
+Like #4, we need more transparency. Did we say something about IRC?
 
 ### #8 Screw around with licensing
 
@@ -69,7 +69,7 @@ Erlang code == AGPL, javascript == BSD/GPL.
 
 ### #9 Do not allow anybody outside the company to have commit access
 
-Only Chuck Norris have commit access.
+Only Chuck Norris have commit access. If you wish to have commit access, please first submit one or more patches that will be accepted. We will be more then happy to give you write access afterwards. 
 
 ### #10 Silence
 
