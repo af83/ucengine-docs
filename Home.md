@@ -6,6 +6,8 @@ It allow you to build real time applications like collaboration based services, 
 
 U.C.Engine is a [[free software project|https://github.com/AF83/ucengine/blob/master/AGPL-LICENSE.txt]] written in erlang and exposes a ReSTful HTTP API with JSON as the primary exchange format.
 
+See [[introduction]] to learn some concepts of U.C.Engine.
+
 ## Topics
 
 * [[Installation|install]] - [[Administration with ucectl|ucectl]] - [[Frequently asked questions|faq]]
@@ -22,6 +24,9 @@ U.C.Engine is a [[free software project|https://github.com/AF83/ucengine/blob/ma
 * **Standalone widgets :** [[activity|widget_activity]] - [[chat|widget_chat]] - [[file|widget_file]] - [[player|widget_player]] - [[replay|widget_replay]] - [[results|widget_results]] - [[search|widget_search]]  - [[whiteboard|widget_whiteboard]]
 
 ## Create bricks and applications
+
+* [[Designing events|cookbook_events]]
+* [[Create a brick|cookbook_brick]].
 
 ### HTML/Javascript applications
 
