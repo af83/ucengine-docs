@@ -394,22 +394,22 @@ Parameter                              | Description                           |
 
 ### Returned values
 
-    200 {"result":[{	"uid":"abel.fournier_1284046072075@af83.com",
-			"auth":"password",
-			"metadata":{
-				"nickname":"abel_1284046072075"}
-			},
-               {	"uid":"abel.fournier_1284107725374@af83.com",
-			"auth":"password",
-			"metadata":{
-				"nickname":"abel_1284107725374"}
-			},
-	       {	"uid":"abel.fournier_1284114120882@af83.com",
-			"auth":"password",
-			"metadata":{
-				"nickname":"abel_1284114120882"}
-	       },
-	       ...
+    200 {"result":[{    "uid":"abel.fournier_1284046072075@af83.com",
+                        "auth":"password",
+                        "metadata":{
+                                "nickname":"abel_1284046072075"}
+                        },
+               {        "uid":"abel.fournier_1284107725374@af83.com",
+                        "auth":"password",
+                        "metadata":{
+                                "nickname":"abel_1284107725374"}
+                        },
+               {        "uid":"abel.fournier_1284114120882@af83.com",
+                        "auth":"password",
+                        "metadata":{
+                                "nickname":"abel_1284114120882"}
+               },
+               ...
     ]}
 
     400 { "error": "bad_parameters" } // at least one paremeter is missing or wrong
@@ -438,25 +438,25 @@ yes
 
 ### Returned values
 
-    200 {"result":[{	"name":"demo",
-			"start_date":1284046056927,
-			"end_date":"never",
-			"roster":[	"abel.fournier_1284046072075@af83.com",
-					"abel.fournier_1284107725374@af83.com"],
-			"metadata":{	"description":"U.C.Engine demo meetup"}
-		},
-		{	"name":"demo2",
-			"start_date":1284046056928,
-			"end_date":"never",
-			"roster":[],
-			"metadata":{"description":"Meeting R&D"}
-		},
-		{	"name":"agoroom",
-			"start_date":1284046056928,
-			"end_date":1284046056928,
-			"roster":["blah4"],
-			"metadata":{"description":"Meeting agoroom"}
-		}
+    200 {"result":[{    "name":"demo",
+                        "start_date":1284046056927,
+                        "end_date":"never",
+                        "roster":[      "abel.fournier_1284046072075@af83.com",
+                                        "abel.fournier_1284107725374@af83.com"],
+                        "metadata":{    "description":"U.C.Engine demo meetup"}
+                },
+                {       "name":"demo2",
+                        "start_date":1284046056928,
+                        "end_date":"never",
+                        "roster":[],
+                        "metadata":{"description":"Meeting R&D"}
+                },
+                {       "name":"agoroom",
+                        "start_date":1284046056928,
+                        "end_date":1284046056928,
+                        "roster":["blah4"],
+                        "metadata":{"description":"Meeting agoroom"}
+                }
     ]}
 
     400 { "error": "bad_parameters" } // at least one paremeter is missing or wrong
@@ -482,13 +482,13 @@ yes
 
 ### Returned values
 
-    200 {"result":{	"name":"demo",
-			"start_date":1284046056927,
-			"end_date":"never",
-			"roster":[	"abel.fournier_1284046072075@af83.com",
-					"abel.fournier_1284107725374@af83.com"],
-			"metadata":{	"description":"U.C.Engine demo meetup"}
-		}}
+    200 {"result":{     "name":"demo",
+                        "start_date":1284046056927,
+                        "end_date":"never",
+                        "roster":[      "abel.fournier_1284046072075@af83.com",
+                                        "abel.fournier_1284107725374@af83.com"],
+                        "metadata":{    "description":"U.C.Engine demo meetup"}
+                }}
 
     400 { "error": "bad_parameters" } // at least one paremeter is missing or wrong
 
@@ -553,30 +553,30 @@ yes
 
 ### Returned values
 
-    200 {"result": [{	"type":"join_meeting_event",
-			"datetime":1284046079374,
-			"id":"24653994823933231622695570265810",
-			"meeting":"demo",
-			"from":"abel.fournier_1284046072075@af83.com",
-			"metadata":{}
-		},
-		{	"type":"post_annotation_event",
-			"datetime":1284046082844,
-			"id":"20196912711920626263917946711292",
-			"meeting":"demo",
-			"from":"abel.fournier_1284046072075@af83.com",
-			"metadata":{	"language":"fr",
-					"text":"coucou"}
-		},
-		{	"type":"translate_annotation_event",
-			"datetime":1284046083272,
-			"id":"61614248092678409569587739330424",
-			"meeting":"demo",
-			"from":"abel.fournier_1284046072075@af83.com",
-			"metadata":{	"traduction":"cuckoo",
-					"language":"en"}
-		},
-		...
+    200 {"result": [{   "type":"join_meeting_event",
+                        "datetime":1284046079374,
+                        "id":"24653994823933231622695570265810",
+                        "meeting":"demo",
+                        "from":"abel.fournier_1284046072075@af83.com",
+                        "metadata":{}
+                },
+                {       "type":"post_annotation_event",
+                        "datetime":1284046082844,
+                        "id":"20196912711920626263917946711292",
+                        "meeting":"demo",
+                        "from":"abel.fournier_1284046072075@af83.com",
+                        "metadata":{    "language":"fr",
+                                        "text":"coucou"}
+                },
+                {       "type":"translate_annotation_event",
+                        "datetime":1284046083272,
+                        "id":"61614248092678409569587739330424",
+                        "meeting":"demo",
+                        "from":"abel.fournier_1284046072075@af83.com",
+                        "metadata":{    "traduction":"cuckoo",
+                                        "language":"en"}
+                },
+                ...
     ]}
 
     400 { "error": "bad_parameters" } // at least one paremeter is missing or wrong
