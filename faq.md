@@ -14,7 +14,7 @@ We only support the following versions:
 ## I got a « can't find include lib "yaws/include/yaws.hrl" » error on debian
 
 Despite that you installed the `erlang` and `erlang-yaws` packages on your
-debian system, you got the following error when building UC Engine:
+debian system, you got the following error when building U.C.Engine:
 
     > make
     ...  can't find include lib "yaws/include/yaws.hrl"
