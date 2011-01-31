@@ -1,10 +1,10 @@
-# U.C. Engine
+# U.C.Engine
 
-U.C. Engine (Unified Collaboration Engine), is a [[publish/subscribe|http://en.wikipedia.org/wiki/PubSub]] server with persistence.
+U.C.Engine (Unified Collaboration Engine), is a [[publish/subscribe|http://en.wikipedia.org/wiki/PubSub]] server with persistence.
 
 It allow you to build real time applications like collaboration based services, live meetings, games or anything that fit well in the event driven philosophy.
 
-U.C. Engine is a [[free software project|https://github.com/AF83/ucengine/blob/master/AGPL-LICENSE.txt]] written in erlang and exposes a ReSTful HTTP API with JSON as the primary exchange format.
+U.C.Engine is a [[free software project|https://github.com/AF83/ucengine/blob/master/AGPL-LICENSE.txt]] written in erlang and exposes a ReSTful HTTP API with JSON as the primary exchange format.
 
 ## Topics
 

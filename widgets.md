@@ -1,4 +1,4 @@
-# Guide for creating U.C. Engine jQuery UI widgets
+# Guide for creating U.C.Engine jQuery UI widgets
 
 **ucewidget.js** provides a factory method to create widget classes. The signature is *$.uce.widget(String name, Options prototype)*. Like jQuery UI widget factory.
 
