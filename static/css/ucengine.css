@@ -1,0 +1,23 @@
+.page { position: relative; clear: both; width: 963px; margin: 0 auto; padding: 0; }
+
+header { width: 100%; height: 89px; z-index: 10000; background: #474648; }
+header p { position: absolute; top: 10px; left: -26px; width: 421px; height: 76px; margin: 0; text-indent: -3000px; background: url('../img/ucengine.png') 0 0 no-repeat; }
+header ul { float: right; }
+header ul li { margin: 0 0 0 2px; padding: 2px 5px 1px 5px; display: inline; background: #0095ac; }
+header .page > ul li:first-child { background: white; }
+header nav { position: absolute; top: 60px; right: 0; margin: 0; }
+header nav ul { width: auto; margin: 0; padding: 0; }
+header nav ul li { display: inline; margin: 0; padding: 0 0 0 20px; background: none; }
+header nav ul li:after { content: ''; }
+header nav ul li a { position: relative; font: normal 13px Arial; color: #dbdbdb; text-decoration: none; white-space: nowrap; }
+header nav ul li a[target='_blank'] { padding: 0 8px; }
+header nav ul li a[target='_blank']:before { content: '[ '; position: absolute; top: 0px; left: 0; color: #0095ac; }
+header nav ul li a[target='_blank']:after { content: ' ]'; position: absolute; top: 0px; right: 0; color: #0095ac; }
+header .frame { position: absolute; top: 84px; left: 65px; width: 10px; height: 10px; background: #474648; -moz-transform: rotate(45deg); -webkit-transform: rotate(45deg); transform: (45deg); }
+
+a { font: normal 13px Arial; color: #2f2e2e; }
+a.on, a:hover { color: #0095ac; }
+
+
+h1, h2 { color: #0095AC; }
+h1:first-letter, h2:first-letter { color: #474648; }
