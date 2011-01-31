@@ -37,7 +37,7 @@ Short answer: **No**.
 
 ### #1 Make the project depend as much as possible on difficult tools
 
-We are using git + erlang + javascript + ruby. No really difficult.
+We are using git + erlang + javascript + ruby. Not really difficult.
 
 ### #2 Encourage the presence of poisonous people
 
