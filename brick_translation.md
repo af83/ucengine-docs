@@ -47,7 +47,7 @@ Example:
       "parent"   : "96383203370218539842143583984667",
       "metadata" : {
         "lang" : "en",
-        "text" : "Welcome to UC Engine",
+        "text" : "Welcome to U.C. Engine",
         "from" : "uid_63444326443_50150"
       }
     }

@@ -1,4 +1,4 @@
-# UC Engine ReST API
+# ReST API
 
 # General informations about the API
 

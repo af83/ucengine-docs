@@ -4,7 +4,7 @@
 
 ### internal.file.add
 
-Sent by UC Engine. It notifies that a new file have been added.
+Sent by U.C. Engine. It notifies that a new file have been added.
 
 Metadata       | Description
 ---------------|-------------------------------------------------------------------------------------------------------
@@ -32,7 +32,7 @@ Example:
 ### internal.presence.delete
 ### internal.roster.add
 
-Sent by UC Engine. It notifies that a new user entered the current meeting.
+Sent by U.C. Engine. It notifies that a new user entered the current meeting.
 
 Example:
 
@@ -46,7 +46,7 @@ Example:
 
 ### internal.roster.delete
 
-Sent by UC Engine. It notifies that a new user quitted the current meeting.
+Sent by U.C. Engine. It notifies that a new user quitted the current meeting.
 
 Example:
 
@@ -80,7 +80,7 @@ Example:
       "meeting"  : "demo",
       "from"     : "uid_63444326443_50150",
       "metadata" : {
-        "text":"Bienvenue sur UC Engine",
+        "text":"Bienvenue sur U.C. Engine",
         "lang":"fr"
       }
     }
