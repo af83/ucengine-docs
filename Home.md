@@ -41,7 +41,7 @@ See the [[introduction]] to learn some of the concepts of U.C.Engine.
 
 ## Help/Discuss
 
-* [ucengine mailing-list](http://groups.google.com/group/ucengine)
+* [U.C.Engine mailing-list](http://groups.google.com/group/ucengine)
 * IRC: [#ucengine](irc:ucengine@irc.freenode.net) on freenode.
 
 ## Development and contributions
