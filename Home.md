@@ -8,36 +8,36 @@ U.C.Engine is a [[free software project|https://github.com/AF83/ucengine/blob/ma
 
 See the [[introduction]] to learn some of the concepts of U.C.Engine.
 
+## Getting started
+
+* [[Introduction]] - [[Installation|install]] - [[play with the demonstrator]]
+* [[Quickstart with a video/chat application|quickstartjs]]
+* [[Designing events|cookbook_events]]
+* [[Guide for creating widget|widgets]]
+* [[Create a brick|cookbook_brick]]
+
 ## Core
 
-* [[Installation|install]] - [[Administration with ucectl|ucectl]]
+* **API**: [[ReST API reference|api]]
+* **Administration**: [[ucectl console|ucectl]]
 * **Databases:** [[mongodb]] - [[mnesia]]
 * **Full text Search:** [[Solr|solr]]
-* [[ReST API|api]] - [[ACL|acl]] - [[events]]
+* [[ACL|acl]] - [[Core events|events]]
 
-## Bricks and widgets
+## Extensions
+
+### Client libraries
+
+* **Javascript**: [[Javascript API reference|ucejs]]
+* **Ruby**: [[install ruby API|ruby_install]] - [Ruby API reference](http://rdoc.info/github/AF83/ucengine.rb/master/frames)
+
+### Bricks and widgets
 
 * **Video:** [[erlyvideo]] - [[red5]] - [[video widget|widget_video]]
 * **File sharing:** [[brick|brick_filesharing]] - [[filesharing widget|widget_filesharing]]
 * **Translation:** [[brick|brick_translation]]
 * **Twitter:** [[brick|brick_twitter]]
 * **Standalone widgets :** [[activity|widget_activity]] - [[chat|widget_chat]] - [[file|widget_file]] - [[player|widget_player]] - [[replay|widget_replay]] - [[results|widget_results]] - [[search|widget_search]]  - [[whiteboard|widget_whiteboard]] - [[timer|widget_timer]]
-
-## Create bricks and applications
-
-* [[Designing events|cookbook_events]]
-* [[Create a brick|cookbook_brick]]
-
-### HTML/Javascript applications
-
-* [[Quickstart with a video/chat application|quickstartjs]]
-* [[Javascript API|ucejs]]
-* [[Guide for creating widget|widgets]]
-
-### Ruby
-
-* [[Installation|ruby_install]]
-* [API](http://rdoc.info/github/AF83/ucengine.rb/master/frames)
 
 ## Help/Discuss
 
