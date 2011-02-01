@@ -2,7 +2,7 @@
 
 This is the project roadmap.
 The roadmap is freezed for the current month and subject to change weeks after weeks.
-You can also have a look at the [[widget hopper|widgetHopper]].
+You can also have a look at the [[widget hopper|widget_hopper]].
 
 ## January 2011
 * New cleaner theme for demonstrator and widgets
@@ -27,13 +27,13 @@ You can also have a look at the [[widget hopper|widgetHopper]].
 * Screen sharing brick and widget
 * VOIP brick
 * Wowza video server brick
-* New widgets depending on demand (see the [[widget hopper|widgetHopper]])
+* New widgets depending on demand (see the [[widget hopper|widget_hopper]])
 * Additional theme
 * Engine optimizations
 * Even more documentation
 
 ## July - December 2011
-* New widgets depending on demand (see the [[widget hopper|widgetHopper]])
+* New widgets depending on demand (see the [[widget hopper|widget_hopper]])
 * Engine optimizations
 * Documentation again
 
