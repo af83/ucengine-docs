@@ -8,9 +8,9 @@ U.C.Engine is a [[free software project|https://github.com/AF83/ucengine/blob/ma
 
 See the [[introduction]] to learn some of the concepts of U.C.Engine.
 
-## Topics
+## Core
 
-* [[Installation|install]] - [[Administration with ucectl|ucectl]] - [[Frequently asked questions|faq]]
+* [[Installation|install]] - [[Administration with ucectl|ucectl]]
 * **Databases:** [[mongodb]] - [[mnesia]]
 * **Full text Search:** [[Solr|solr]]
 * [[ReST API|api]] - [[ACL|acl]] - [[events]]
@@ -41,8 +41,9 @@ See the [[introduction]] to learn some of the concepts of U.C.Engine.
 
 ## Help/Discuss
 
+* [[Frequently asked questions|faq]]
 * [U.C.Engine mailing-list](http://groups.google.com/group/ucengine)
-* IRC: [#ucengine](irc:ucengine@irc.freenode.net) on freenode.
+* IRC: [#ucengine](irc:ucengine@irc.freenode.net) on freenode
 
 ## Development and contributions
 
