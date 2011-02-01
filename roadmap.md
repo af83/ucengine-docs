@@ -1,11 +1,39 @@
-# Roadmap
+# 2011 U.C.Engine Roadmap
 
-## Version 0.3 - January 2011
+This is the project roadmap.
+The roadmap is freezed for the current month and subject to change weeks after weeks.
+You can also have a look at the [[widget hopper|widgetHopper]].
 
-* add domain/virtualhost
+## January 2011
+* New cleaner theme for demonstrator and widgets
+* File sharing widget
+* Timer widget
+* New improved whiteboard
+* Documentation
 
-## Later
+## February - March 2011
+* Domain / virtual host
+* HTTPS implementation
+* [[CORS|http://www.w3.org/TR/cors/]] support
+* Role system for Users
+* Meeting management widget
+* Office document sharing widget and brick
+* CMIS connector for DB
+* Enhanced replay & search
+* Engine optimizations
+* More documentation
 
-* file sharing with MS Office documents
-* add support of [[CORS|http://www.w3.org/TR/cors/]]
-* add role system for users
+## April - June 2011
+* Screen sharing brick and widget
+* VOIP brick
+* Wowza video server brick
+* New widgets depending on demand (see the [[widget hopper|widgetHopper]])
+* Additional theme
+* Engine optimizations
+* Even more documentation
+
+## July - December 2011
+* New widgets depending on demand (see the [[widget hopper|widgetHopper]])
+* Engine optimizations
+* Documentation again
+
