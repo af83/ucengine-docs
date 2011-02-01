@@ -10,7 +10,7 @@ See the [[introduction]] to learn some of the concepts of U.C.Engine.
 
 ## Getting started
 
-* [[Introduction]] - [[Installation|install]] - [[play with the demonstrator]]
+* [[Introduction|introduction]] - [[Installation|install]] - [[play with the demonstrator]]
 * [[Quickstart with a video/chat application|quickstartjs]]
 * [[Designing events|cookbook_events]]
 * [[Guide for creating widget|widgets]]

@@ -41,7 +41,7 @@ In an application you can create meetings a much as you would like.
 
 A brick is a daemon that speaks HTTP with U.C.Engine.
 
-It's the easiest way to integrate existing applications with U.C.Engine. See the [[ReST API|API]].
+It's the easiest way to integrate existing applications with U.C.Engine. See the [[ReST API|api]].
 
 ### Widgets
 
