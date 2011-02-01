@@ -9,8 +9,9 @@ Play live streaming or publish webcam to a *rtmp* server.
 * domain : *rtmp* server (like: video.ucengine.org/ucengine)
 * stream : *rtmp* stream, should be unique across meetings (optional if ucemeeting is provided)
 * token : token for rtmp stream (optional if ucemeeting is provided)
-* width
-* height
+* width : width of the widget, the default width is the element width
+* height : height of the widget, the default height is (width * ratio)
+* ratio : width/height ratio (between 0 and 1), the default ratio is 0.75
 
 ## Methods
 
