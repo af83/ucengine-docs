@@ -26,7 +26,7 @@ See the [[introduction]] to learn some of the concepts of U.C.Engine.
 ## Create bricks and applications
 
 * [[Designing events|cookbook_events]]
-* [[Create a brick|cookbook_brick]].
+* [[Create a brick|cookbook_brick]]
 
 ### HTML/Javascript applications
 
@@ -46,13 +46,14 @@ See the [[introduction]] to learn some of the concepts of U.C.Engine.
 
 ## Development and contributions
 
-* [[Roadmap|roadmap]]
-* [[History|history]]
+* [[Roadmap|roadmap]] - [[History|history]]
 * [[Launching tests|tests]]
 
 Contributions are welcome !
 
-* [Fork us](https://github.com/AF83/ucengine)
-* Create your patch in a topic branch
-* Add some unit tests
-* Send pull request
+1. [Fork us](https://github.com/AF83/ucengine)
+2. Create your patch in a topic branch
+3. Add some unit tests
+4. Send pull request
+
+You can also contribute to the [documentation](https://github.com/AF83/ucengine-docs).
