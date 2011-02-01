@@ -48,6 +48,7 @@ See the [[introduction]] to learn some of the concepts of U.C.Engine.
 ## Development and contributions
 
 * [[Roadmap|roadmap]] - [[History|history]]
+* [[Licenses|licenses]]
 * [[Launching tests|tests]]
 
 Contributions are welcome !
