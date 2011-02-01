@@ -4,7 +4,8 @@ header, footer, aside, nav, article, section { display: block; }
 .page { position: relative; clear: both; width: 963px; margin: 0 auto; padding: 0; }
 
 header { width: 100%; height: 89px; z-index: 10000; background: #474648; }
-header p { position: absolute; top: 10px; left: -26px; width: 421px; height: 76px; margin: 0; text-indent: -3000px; background: url('../img/ucengine.png') 0 0 no-repeat; }
+header p {  margin: 0; }
+header p a { position: absolute; top: 10px; left: -26px; width: 421px; height: 76px; text-indent: -3000px; background: url('../img/ucengine.png') 0 0 no-repeat; }
 header ul { float: right; }
 header ul li { margin: 0 0 0 2px; padding: 2px 5px 1px 5px; display: inline; background: #0095ac; }
 header .page > ul li:first-child { background: white; }
