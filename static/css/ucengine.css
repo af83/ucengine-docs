@@ -55,6 +55,7 @@ h1:first-letter, h2:first-letter { color: #474648; }
 .no-transforms .ribbon { display: none; }
 
 ol.toc {
+  width: 250px;
   display: none;
   float: right;
   padding: 2em 2em 2em 3em;
