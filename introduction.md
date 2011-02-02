@@ -31,6 +31,9 @@ Here is an event in a JSON format:
 }
 ```
 
+You can create your own events without any configuration. Just push them to U.C.Engine.
+Creating events allow you to design your own protocol. Thus, the logic is delegated to clients.
+
 ### Meetings
 
 A meeting is a place where events are broadcasted.
