@@ -32,8 +32,8 @@
         <div id="guides">
           <div class="guide">
             <div class="main">
-              <h1>{{ page.title }}</h1>
               <div class="content wikistyle gollum {{ page.format }}">
+                <ol class="toc"></ol>
                 {{ page.content }}
               </div>
             </div>
@@ -84,5 +84,12 @@
     <script src="{{ wiki.base_path }}static/javascript/jquery.previewable_comment_form.js" type="text/javascript"></script>
     <script src="{{ wiki.base_path }}static/javascript/jquery.tabs.js" type="text/javascript"></script>
     <script src="{{ wiki.base_path }}static/javascript/gollum.js" type="text/javascript"></script>
+    <script src="{{ wiki.base_path }}static/javascript/jquery.tableofcontents.min.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+      $(document).ready(function() {
+          $("ol.toc").tableOfContents("div.content", {startLevel: 2, depth: 2}).show();
+      });
+    </script>
   </body>
 </html>
