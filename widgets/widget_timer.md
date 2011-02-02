@@ -4,6 +4,7 @@ The timer widget show elapsed and remaining time of the current meeting.
 
 ## Options
 
+* ucemeeting: current meeting
 * start: The time when the user entered the meeting.
 
 ## Methods
