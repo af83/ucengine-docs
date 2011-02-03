@@ -69,7 +69,7 @@ Example:
 
 ## Chat
 
-## chat.message.new
+### chat.message.new
 
 Sent by a user. It allow to post a new message on a chatroom
 
