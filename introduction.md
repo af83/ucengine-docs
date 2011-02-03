@@ -49,3 +49,5 @@ It's the easiest way to integrate existing applications with U.C.Engine. See the
 ### Widgets
 
 A widget is the easiest way to add interactive features to your front-end application. U.C.Engine is shipped with several [jQueryUI Widget](http://jqueryui.com/).
+
+Further reading: [[installation|install]].
