@@ -40,15 +40,17 @@ hashtag        | The hashtag to minitor
 
 Example:
 
-    { "type"    : "twitter.hashtag.add",
-      "datetime": 1292593766682,
-      "id"      : "44099145822544409583064798111089",
-      "meeting" : "demo",
-      "from"    : "uid_63444326443_50150",
-      "metadata": {
-        "hashtag": "#TED"
-      }
-    }
+```javascript
+{ "type"     : "twitter.hashtag.add",
+  "datetime" : 1292593766682,
+  "id"       : "44099145822544409583064798111089",
+  "meeting"  : "demo",
+  "from"     : "uid_63444326443_50150",
+  "metadata" : {
+    "hashtag": "#TED"
+  }
+}
+```
 
 ### twitter.tweet.new
 
@@ -62,17 +64,19 @@ hashtags       | The hashtags presents in the message
 
 Example:
 
-    { "type"     : "twitter.tweet.new",
-      "datetime" : 1292595423660,
-      "id"       : "58605572364308395079869070527396",
-      "meeting"  : "demo",
-      "from"     : "twitter",
-      "metadata" : {
-        "text"     : "#UCEngine is so cooool !",
-        "from"     : "ucengine",
-        "hashtags" : "#UCEngine"
-      }
-    }
+```javascript
+{ "type"     : "twitter.tweet.new",
+  "datetime" : 1292595423660,
+  "id"       : "58605572364308395079869070527396",
+  "meeting"  : "demo",
+  "from"     : "twitter",
+  "metadata" : {
+    "text"     : "#UCEngine is so cooool !",
+    "from"     : "ucengine",
+    "hashtags" : "#UCEngine"
+  }
+}
+```
 
 ## ACL
 
