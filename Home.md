@@ -30,6 +30,7 @@ See the [[introduction]] to learn some of the concepts of U.C.Engine.
 
 * **Javascript**: [[Javascript API reference|ucejs]]
 * **Ruby**: [[install ruby API|ruby_install]] - [Ruby API reference](http://rdoc.info/github/AF83/ucengine.rb/master/frames)
+* **Erlang**: you can extract it from [erlyvideo-ucengine](https://github.com/AF83/erlyvideo-ucengine)
 
 ### Bricks and widgets
 
