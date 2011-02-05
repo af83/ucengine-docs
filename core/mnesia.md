@@ -10,4 +10,6 @@ On debian:
 
 Edit *etc/uce.cfg*:
 
-        {db, mnesia}.
+```erlang
+{db, mnesia}.
+```

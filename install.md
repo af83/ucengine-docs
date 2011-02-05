@@ -8,7 +8,7 @@
 * mnesia or mongodb
 * inets
 
-* enunit (for testing only)
+* eunit (for testing only)
 
 ### Debian
 

@@ -39,18 +39,20 @@ from           | The original sender of the non translated message
 
 Example:
 
-    { "type"     : "chat.translation.new",
-      "datetime" : 1292603078834,
-      "id"       : "55807763603614612180220217695833",
-      "meeting"  : "demo",
-      "from"     : "translation",
-      "parent"   : "96383203370218539842143583984667",
-      "metadata" : {
-        "lang" : "en",
-        "text" : "Welcome to U.C.Engine",
-        "from" : "uid_63444326443_50150"
-      }
-    }
+```javascript
+{ "type"     : "chat.translation.new",
+  "datetime" : 1292603078834,
+  "id"       : "55807763603614612180220217695833",
+  "meeting"  : "demo",
+  "from"     : "translation",
+  "parent"   : "96383203370218539842143583984667",
+  "metadata" : {
+    "lang" : "en",
+    "text" : "Welcome to U.C.Engine",
+    "from" : "uid_63444326443_50150"
+  }
+}
+```
 
 ## ACL
 
