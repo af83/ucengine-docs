@@ -10,10 +10,10 @@ See the [[introduction]] to learn some of the concepts of U.C.Engine.
 
 ## Getting started
 
-* [[Introduction]] - [[Installation|install]] - [[play with the demonstrator]]
+* [[Introduction|introduction]] - [[Installation|install]] - [[Play with the demonstrator]]
 * [[Quickstart with a video/chat application|quickstartjs]]
 * [[Designing events|cookbook_events]]
-* [[Guide for creating widget|widgets]]
+* [[Guide for creating widget|cookbook_widgets]]
 * [[Create a brick|cookbook_brick]]
 
 ## Core
@@ -30,6 +30,7 @@ See the [[introduction]] to learn some of the concepts of U.C.Engine.
 
 * **Javascript**: [[Javascript API reference|ucejs]]
 * **Ruby**: [[install ruby API|ruby_install]] - [Ruby API reference](http://rdoc.info/github/AF83/ucengine.rb/master/frames)
+* **Erlang**: you can extract it from [erlyvideo-ucengine](https://github.com/AF83/erlyvideo-ucengine)
 
 ### Bricks and widgets
 
@@ -48,6 +49,7 @@ See the [[introduction]] to learn some of the concepts of U.C.Engine.
 ## Development and contributions
 
 * [[Roadmap|roadmap]] - [[History|history]]
+* [[Licenses|licenses]]
 * [[Launching tests|tests]]
 
 Contributions are welcome !

@@ -217,13 +217,6 @@ html {overflow-y: scroll;}
   border: 0 !important;
 }
 
-.wikistyle h1 {
-  font-size: 170% !important;
-  border-top: 4px solid #aaa !important;
-  padding-top: .5em !important;
-  margin-top: 1.5em !important;
-}
-
 .wikistyle h2 {
   font-size: 150% !important;
   margin-top: 1.5em !important;
@@ -363,10 +356,6 @@ label.wiki-label {
 .wikistyle.gollum.footer {
   border-top: 4px solid #f0f0f0;
   margin-top: 2em;
-}
-
-.wikistyle.gollum > h1:first-child {
-  display: none;
 }
 
 /* asciidoc */

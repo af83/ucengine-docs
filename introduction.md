@@ -14,12 +14,6 @@ You can build your applications with your preferred language. We currently suppo
 
 U.C.Engine has a small specific vocabulary to designate a few concepts.
 
-### Meetings
-
-A meeting is a place where events are broadcasted.
-
-In an application you can create meetings a much as you would like.
-
 ### Events
 
 Events are the heart of the U.C.Engine protocol.
@@ -37,17 +31,23 @@ Here is an event in a JSON format:
 }
 ```
 
- attribute | description
------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
- type      | The event's type. Its existence is mandatory but not its form. That is say you can put in any string you want.
- datetime  | It's the event's timecode set by the server.
- id        | The id set by the server which identify the event among others.
- meeting   | This is the meeting where the event has been posted.
- from      | The id of the user who sent this event.
- metadata  | This is a key/value pair list. Except that the keys and values have to be strings, they are completely free in their form. It defines the data encapsulated by the event.
+You can create your own events without any configuration. Just push them to U.C.Engine.
+Creating events allow you to design your own protocol. Thus, the logic is delegated to clients.
+
+### Meetings
+
+A meeting is a place where events are broadcasted.
+
+In an application you can create meetings a much as you would like.
 
 ### Bricks
 
 A brick is a daemon that speaks HTTP with U.C.Engine.
 
-It's the easiest way to integrate existing applications with U.C.Engine. See the [[ReST API|API]].
+It's the easiest way to integrate existing applications with U.C.Engine. See the [[ReST API|api]].
+
+### Widgets
+
+A widget is the easiest way to add interactive features to your front-end application. U.C.Engine is shipped with several [jQueryUI Widget](http://jqueryui.com/).
+
+Further reading: [[installation|install]].

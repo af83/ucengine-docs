@@ -53,3 +53,12 @@ h1:first-letter, h2:first-letter { color: #474648; }
 
 .lt-1024 .ribbon { display: none; }
 .no-transforms .ribbon { display: none; }
+
+ol.toc {
+  max-width: 250px;
+  display: none;
+  float: right;
+  padding: 2em 2em 2em 3em;
+  background-color: white;
+  border: 1px #DEDEDE solid;
+}

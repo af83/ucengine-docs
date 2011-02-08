@@ -1,6 +1,6 @@
 # ReST API
 
-# General informations about the API
+## General informations about the API
 
 The base URL is `http://demo.ucengine.org/api/0.2/`
 All the others API URLs are relative to this one.
@@ -12,7 +12,7 @@ You have to consider a few conventions :
   example, to be able to do a `PUT` request, you will send a `POST` request
   with the following parameter: `_method=PUT`.
 
-# Authentication
+## Authentication
 
 If an API method need authentication, there are recurrent parameters :
 
@@ -22,29 +22,29 @@ Parameter                              | Description                           |
 `uid`                                  | User id                               | `uid_63444326443_50150`
 `sid`                                  | Session id                            | `330249245470504`
 
-# Time
-## Retrieve current server's timestamp
+## Time
+### Retrieve current server's timestamp
 
-### Request
+#### Request
 
     GET /time
 
-### Returned values
+#### Returned values
 
     200 {"result": 1284046082844}
 
-### Notes
+#### Notes
 
 The timestamp is the number of milliseconds elapsed since EPOCH (1970-01-01).
 
-# User
-## List users
+## User
+### List users
 
-### Request
+#### Request
 
     GET /user/
 
-### Returned values
+#### Returned values
 
     200 {"result": [{   "uid":"romain.gauthier@af83.com",
                         "auth":"password",
@@ -63,9 +63,9 @@ The timestamp is the number of milliseconds elapsed since EPOCH (1970-01-01).
 
     500 { "error": "unexpected_error" }
 
-## Register users
+### Register users
 
-### Request
+#### Request
 
     PUT /user/{uid}
 
@@ -78,7 +78,7 @@ Parameter                              | Description                           |
 `credential`                           | Password or token                     | `dWlkXzYzNDQ0MzI2NDQzXzUwMTUwCg`
 `metadata`                             | Array containing metadata             | `metadata[key]=value`
 
-### Returned values:
+#### Returned values:
 
     201 { "result": "created" }
 
@@ -86,9 +86,9 @@ Parameter                              | Description                           |
 
     500 { "error": "unexpected_error" }
 
-## Modify user's informations
+### Modify user's informations
 
-### Request
+#### Request
 
     POST /user/{uid}
 
@@ -101,11 +101,11 @@ Parameter                              | Description                           |
 `credential`                           | Password or token                     | `dWlkXzYzNDQ0MzI2NDQzXzUwMTUwCg`
 `metadata`                             | Array containing metadata             | `metadata[key]=value`
 
-### Require authentication:
+#### Require authentication:
 
 yes
 
-## Returned values
+### Returned values
 
     200 { "result": "ok" }
 
@@ -113,9 +113,9 @@ yes
 
     500 { "error": "unexpected_error" }
 
-## Retrieve user's informations
+### Retrieve user's informations
 
-### Request
+#### Request
 
     GET /user/{uid}
 
@@ -124,11 +124,11 @@ Parameter                              | Description                           |
 **URL Parameters**                     |                                       |
 `uid`                                  | User id                               | `uid_63444326443_50150`
 
-### Require authentication:
+#### Require authentication:
 
 yes
 
-### Returned values
+#### Returned values
 
      200 {"result": {    "uid":"romain.gauthier@af83.com",
                          "auth":"password",
@@ -143,9 +143,9 @@ yes
 
     500 { "error": "unexpected_error" }
 
-## Delete a user
+### Delete a user
 
-### Request
+#### Request
 
     DELETE /user/{uid}
 
@@ -154,11 +154,11 @@ Parameter                              | Description                           |
 **URL Parameters**                     |                                       |
 `uid`                                  | User id                               | `uid_63444326443_50150`
 
-### Require authentication:
+#### Require authentication:
 
 yes
 
-### Returned values
+#### Returned values
 
     200 { "result": "ok" }
 
@@ -168,9 +168,9 @@ yes
 
     500 { "error": "unexpected_error" }
 
-# Authentification
+## Authentification
 
-### Request
+#### Request
 
     PUT /presence/{uid}
 
@@ -182,7 +182,7 @@ Parameter                              | Description                           |
 `credential`                           | Password or token                     | `dWlkXzYzNDQ0MzI2NDQzXzUwMTUwCg`
 `metadata`                             | Array containing metadata             | `metadata[key]=value`
 
-### Returned values
+#### Returned values
 
     200 { "result": "409832095702309473209" } // the result is a valid sid
 
@@ -190,13 +190,13 @@ Parameter                              | Description                           |
 
     403 { "error": "bad_credentials" } // the authentification has failed
 
-# Disconnect users
+## Disconnect users
 
-### Request
+#### Request
 
     DELETE /presence/{uid}/{sid}
 
-### Paramètres
+#### Paramètres
 
 Parameter                              | Description                           | Example
 ---------------------------------------|---------------------------------------|------------------------------------------------------------
@@ -204,11 +204,11 @@ Parameter                              | Description                           |
 `uid`                                  | User id                               | `uid_63444326443_50150`
 `sid`                                  | Session id                            | `330249245470504`
 
-### Require authentication:
+#### Require authentication:
 
 yes
 
-### Returned values
+#### Returned values
 
     200 { "result": "ok" }}.
 
@@ -218,27 +218,27 @@ yes
 
     404 { "error": "not_found" } // the presence resource doesn't exists
 
-### Notes
+#### Notes
 
 The user given as an URL parameter is not necessarily the same than the one
 passed as an encoded parameter. Thus you can disconnect another user (if the
 ACLs allow it of course).
 
-# Infos
+## Infos
 
-## Get current domain informations
+### Get current domain informations
 
-### Request
+#### Request
 
     GET /infos
 
-### Returned values
+#### Returned values
 
     200 { "result": {} }
 
-## Update current domain informations
+### Update current domain informations
 
-### Request
+#### Request
 
     POST /infos
 
@@ -247,11 +247,11 @@ Parameter                              | Description                           |
 **URL Parameters**                     |                                       |
 `metadata`                             | Array containing metadata             | `metadata[key]=value`
 
-### Require authentication:
+#### Require authentication:
 
 yes
 
-### Returned values
+#### Returned values
 
     200 { "result": "ok" }
 
@@ -259,10 +259,10 @@ yes
 
     401 { "error": "unauthorized" } // the user is not authorized to updated informations
 
-# Meeting
-## Join a meeting
+## Meeting
+### Join a meeting
 
-### Request
+#### Request
 
     PUT /meeting/all/{meeting}/roster/{uid}
 
@@ -272,11 +272,11 @@ Parameter                              | Description                           |
 `meeting`                              | Meeting id                            | `demo`
 `uid`                                  | User id                               | `uid_63444326443_50150`
 
-### Require authentication:
+#### Require authentication:
 
 yes
 
-### Returned values
+#### Returned values
 
     200 { "result": "ok" }
 
@@ -286,9 +286,9 @@ yes
 
     404 { "error": "not_found" } // the meeting doesn't exists
 
-## Quit a meeting
+### Quit a meeting
 
-### Request
+#### Request
 
     DELETE /meeting/all/{meeting}/roster/{uid}
 
@@ -298,11 +298,11 @@ Parameter                              | Description                           |
 `meeting`                              | Meeting id                            | `demo`
 `uid`                                  | User id                               | `uid_63444326443_50150`
 
-### Require authentication:
+#### Require authentication:
 
 yes
 
-### Returned values
+#### Returned values
 
     200 { "result": "ok" }
 
@@ -313,9 +313,9 @@ yes
     404 { "error": "not_found" } // the meeting doesn't exists
 
 
-## Create a meeting
+### Create a meeting
 
-### Request
+#### Request
 
     PUT /meeting/all/{meeting}
 
@@ -328,18 +328,18 @@ Parameter                              | Description                           |
 `end`                                  | ending Timestamp of the meeting       | `63444430800`
 `metadata`                             | Array containing metadata             | `metadata[key]=value`
 
-### Require authentication:
+#### Require authentication:
 
 yes
 
-### Notes
+#### Notes
 
 - The timestamps are the number of milliseconds elapsed since EPOCH (1970-01-01).
 - If the 'end' parameter is missing, the the meeting has no end date.
 - if the 'start' and 'end' parameters are missing, the meeting starts
   immediatly and has no end date
 
-### Returned values
+#### Returned values
 
     201 { "result": "ok" }
 
@@ -350,9 +350,9 @@ yes
     409 { "error": "conflict" } : // the meeting already exists
 
 
-## Modify a meeting
+### Modify a meeting
 
-### Request
+#### Request
 
     POST /meeting/all/{meeting}
 
@@ -365,11 +365,11 @@ Parameter                              | Description                           |
 `end`                                  | ending Timestamp of the meeting       | `63444430800`
 `metadata`                             | Array containing metadata             | `metadata[key]=value`
 
-### Require authentication:
+#### Require authentication:
 
 yes
 
-### Returned values
+#### Returned values
 
     200 { "result": "ok" }
 
@@ -380,9 +380,9 @@ yes
     404 { "error": "not_found" } // the meeting doesn't exists
 
 
-## List users connected to a meeting (roster)
+### List users connected to a meeting (roster)
 
-### Request
+#### Request
 
     GET /meeting/all/{meeting}/roster
 
@@ -392,7 +392,7 @@ Parameter                              | Description                           |
 `meeting`                              | Meeting id                            | `demo`
 
 
-### Returned values
+#### Returned values
 
     200 {"result":[{    "uid":"abel.fournier_1284046072075@af83.com",
                         "auth":"password",
@@ -418,9 +418,9 @@ Parameter                              | Description                           |
 
     404 { "error": "not_found" } // the meeting doesn't exists
 
-## List the meetings
+### List the meetings
 
-### Request
+#### Request
 
     GET /meeting/
 
@@ -432,11 +432,11 @@ Parameter                              | Description                           |
 **URL Parameters**                     |                                       |
 `status`                               | Status of the meeting                 | `upcoming` or `opened` or `closed` or `all`
 
-### Require authentication:
+#### Require authentication:
 
 yes
 
-### Returned values
+#### Returned values
 
     200 {"result":[{    "name":"demo",
                         "start_date":1284046056927,
@@ -463,24 +463,24 @@ yes
 
     401 { "error": "unauthorized" } // the user is not authorized to list the meetings
 
-## Retrieve meeting's informations
+### Retrieve meeting's informations
 
-### Request
+#### Request
 
     GET /meeting/all/{meeting}
 
-### Parameters
+#### Parameters
 
 Parameter                              | Description                           | Example
 ---------------------------------------|---------------------------------------|------------------------------------------------------------
 **URL Parameters**                     |                                       |
 `meeting`                              | Meeting id                            | `demo`
 
-### Require authentication:
+#### Require authentication:
 
 yes
 
-### Returned values
+#### Returned values
 
     200 {"result":{     "name":"demo",
                         "start_date":1284046056927,
@@ -495,24 +495,24 @@ yes
     401 { "error": "unauthorized" } // the users is not authorized to retrieve the meeting's informations
 
 
-## Delete a meeting
+### Delete a meeting
 
-### Request
+#### Request
 
     DELETE /meeting/all/{meeting}
 
-### Parameters
+#### Parameters
 
 Parameter                              | Description                           | Example
 ---------------------------------------|---------------------------------------|------------------------------------------------------------
 **URL Parameters**                     |                                       |
 `meeting`                              | Meeting id                            | `demo`
 
-### Require authentication:
+#### Require authentication:
 
 yes
 
-### Returned values
+#### Returned values
 
     200 { "result": "ok" }
 
@@ -522,10 +522,10 @@ yes
 
     404 { "error": "not_found" } // the meeting doesn't exists
 
-# Events
-## Retrieve the events
+## Events
+### Retrieve the events
 
-### Request
+#### Request
 
     GET /event/
 
@@ -547,11 +547,11 @@ Parameter                              | Description                           |
 `parent`                               |                                       |
 `_async`                               | Method used to retrieve the events    | `no` or `lp`
 
-### Require authentication:
+#### Require authentication:
 
 yes
 
-### Returned values
+#### Returned values
 
     200 {"result": [{   "type":"join_meeting_event",
                         "datetime":1284046079374,
@@ -585,7 +585,7 @@ yes
 
     404 { "error": "not_found" } // the meeting doesn't exists
 
-### Notes
+#### Notes
 
 'start' and 'end' parameters allow you to frame the events :
 
@@ -595,9 +595,9 @@ yes
   Limit can also take the `last` value which is equivalent to `limit=-1`
 - The `_async` option allow you to return the events to the client in real time.
 
-## Send an event to U.C.Engine
+### Send an event to U.C.Engine
 
-### Request
+#### Request
 
     PUT /event/
 
@@ -612,11 +612,11 @@ Parameter                              | Description                           |
 **Optional Encoded Parameters**        |                                       |
 Any other parameter                    | These will be part of the metadata    |
 
-### Require authentication:
+#### Require authentication:
 
 yes
 
-### Returned values
+#### Returned values
 
     201 {"result": "24653994823933231622695570265810"}
 
@@ -626,10 +626,10 @@ yes
 
     404 { "error": "not_found" } // the meeting doesn't exists
 
-# Files
-## Upload a file
+## Files
+### Upload a file
 
-### Request
+#### Request
 
     PUT /file/{meeting}
 
@@ -645,11 +645,11 @@ Parameter                              | Description                           |
 **Optional Encoded Parameters**        |                                       |
 `_filename`                            | Filname                               | `ucengine.odp`
 
-### Require authentication:
+#### Require authentication:
 
 yes
 
-### Returned values
+#### Returned values
 
     201 { "result": "ucengine_4534543543.odp"} // the file id
 
@@ -659,30 +659,30 @@ yes
 
     404 { "error": "not_found" } // the meeting doesn't exists
 
-### Notes
+#### Notes
 
 - You are able to force the filename if it is specified in the url or in
   the request's body (this second case is often handled by the browser).
 - To avoid conflicts between files U.C.Engine generate a unique id which is returned in the result.
 
-## List files
+### List files
 
-### Request
+#### Request
 
     GET /file/{meeting}
 
-### Parameters
+#### Parameters
 
 Parameter                              | Description                           | Example
 ---------------------------------------|---------------------------------------|------------------------------------------------------------
 **URL Parameters**                     |                                       |
 `meeting`                              | Meeting id                            | `demo`
 
-### Require authentication:
+#### Require authentication:
 
 yes
 
-### Returned values
+#### Returned values
 
     200 { "result": [ { "filename": "U.C.Engine.odp"
                       , "token": "42314657480629893636680972"
@@ -695,9 +695,9 @@ yes
 
     500 { "error": "unexpected_error" }
 
-## Download a file
+### Download a file
 
-### Request
+#### Request
 
     GET /file/{meeting}/{filename}
 
@@ -707,11 +707,11 @@ Parameter                              | Description                           |
 `meeting`                              | Meeting id                            | `demo`
 `filename`                             | Fielname                              | `ucengine.odp`
 
-### Require authentication:
+#### Require authentication:
 
 yes
 
-### Returned values
+#### Returned values
 
     200 The file to download
 
@@ -722,9 +722,11 @@ yes
     500 { "error": "unexpected_error" }
 
 
-## Check user's rights
+## ACLs
 
-### Request
+### Check user's rights
+
+#### Request
 
     GET /user/{uid}/acl/{object}/{action}
 
@@ -740,17 +742,17 @@ Parameter                              | Description                           |
 **Encoded Parameters**                 |                                       |
 `condition`                            | Array of conditions to satisfy        |
 
-### Require authentication:
+#### Require authentication:
 
 yes
 
-### Examples
+#### Examples
 
 If the 'romain' user wants to verify that the 'toto' user has the right to join the 'ucengine' meeting, the request will be :
 
         GET /user/toto/acl/meeting/join/ucengine?uid=romain&sid=40324302840329843809543
 
-### Returned values
+#### Returned values
 
     200 {"result": "true"}
 
@@ -762,9 +764,9 @@ If the 'romain' user wants to verify that the 'toto' user has the right to join 
 
     404 { "error": "not_found" } : l'utilisateur n'existe pas
 
-## Add a right to a user
+### Add a right to a user
 
-### Request
+#### Request
 
     PUT /user/{uid}/acl/{object}/{action}
 
@@ -780,11 +782,11 @@ Parameter                              | Description                           |
 **Encoded Parameters**                 |                                       |
 `condition`                            | Array of conditions to satisfy        |
 
-### Require authentication:
+#### Require authentication:
 
 yes
 
-### Returned values
+#### Returned values
 
     201 { "result": "ok" } // the right has been successfully added
 
@@ -794,15 +796,15 @@ yes
 
     404 { "error": "not_found" } // the user doesn't exists
 
-## Delete a right
+### Delete a right
 
-### Request
+#### Request
 
     DELETE /acl/{uid}/{object}/{action}
 
     DELETE /acl/{uid}/{object}/{action}/{meeting}
 
-### Parameters
+#### Parameters
 
 Parameter                              | Description                           | Example
 ---------------------------------------|---------------------------------------|------------------------------------------------------------
@@ -814,11 +816,11 @@ Parameter                              | Description                           |
 **Encoded Parameters**                 |                                       |
 `condition`                            | Array of conditions to satisfy        |
 
-### Require authentication:
+#### Require authentication:
 
 yes
 
-### Returned values
+#### Returned values
 
     200 { "result": "ok" } // the right has been successfully deleted
 
