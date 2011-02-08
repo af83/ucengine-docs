@@ -66,29 +66,3 @@ Example:
 
 ### internal.user.add
 ### internal.user.update
-
-## Chat
-
-### chat.message.new
-
-Sent by a user. It allow to post a new message on a chatroom
-
-Metadata       | Description
----------------|-------------------------------------------------------------------------------------------------------
-text           | The message content
-lang           | The language of the message
-
-Example:
-
-```javascript
-{ "type"     : "chat.message.new",
-  "datetime" : 1292601125202,
-  "id"       : "91918360913598370296768635184375",
-  "meeting"  : "demo",
-  "from"     : "uid_63444326443_50150",
-  "metadata" : {
-    "text":"Bienvenue sur U.C.Engine",
-    "lang":"fr"
-  }
-}
-```
