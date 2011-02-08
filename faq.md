@@ -69,7 +69,7 @@ Erlang code == AGPL, javascript == BSD/GPL.
 
 ### #9 Do not allow anybody outside the company to have commit access
 
-Only Chuck Norris have commit access. If you wish to have commit access, please first submit one or more patches that will be accepted. We will be more then happy to give you write access afterwards. 
+Only Chuck Norris have commit access. If you wish to have commit access, please first submit one or more patches that will be accepted. We will be more than happy to give you write access afterwards.
 
 ### #10 Silence
 
