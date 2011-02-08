@@ -113,6 +113,19 @@ However, we think that U.C.Engine is simpler than Google Wave, because:
   - The API is smaller;
   - There are fewer concepts and these are simpler.
 
+## Is U.C.Engine different from XMPP?
+
+Most of U.C.Engine's features are present in the XMPP protocol.
+But a few things make U.C.Engine different from XMPP:
+
+  - While you sometimes need [BOSH](http://en.wikipedia.org/wiki/BOSH) to speak to a XMPP server,
+    you always communicate the same way with U.C.Engine because it is HTTP based;
+  - U.C.Engine was meant to be simple. That's why it use JSON instead of XML;
+  - U.C.Engine is persistent and timeline focused.
+
+These main reasons explains why we do not use XMPP.
+Although it should not be difficult to write a brick to make a bridge between U.C.Engine and XMPP.
+
 ## Don't you think U.C.Engine is too much centralized?
 
 As there is no federation aspect in the U.C.Engine protocol, we don't really need to be decentralized.
