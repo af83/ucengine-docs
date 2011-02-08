@@ -92,18 +92,26 @@ as the starting point of the next request.
 Thus, if a request goes wrong and the client doesn't receive the events, it's not a problem.
 These events will be retieved in the next request.
 
-## Is U.C.Engine is different from Google's wave?
+## Is U.C.Engine is different from Google wave?
 
-  - Vocabulary: A few elements of the Wave vocabulary is pretty close the U.C.Engine one :
+  - Vocabulary: A few elements of the Wave vocabulary is pretty close the U.C.Engine one:
 
- Wave    | U.C.Engine
----------|------------
- Waves   | Meetings
- Robots  | Bricks
- Gadgets | Widgets
+ Wave      | U.C.Engine
+-----------|------------
+ Waves     | Meetings
+ Wavelets  | -
+ Documents | -
+ Robots    | Bricks
+ Gadgets   | Widgets
 
+In U.C.Engine there are documents too, but these are just uploaded files.
 
-  - Federation: U.C.Engine doesn't have any federation aspect.
+  - Federation: U.C.Engine doesn't support federation.
+
+However, we think that U.C.Engine is simpler than Google Wave, because:
+
+  - The API is smaller;
+  - There are fewer concepts and these are simpler.
 
 ## Don't you think U.C.Engine is too much centralized?
 
