@@ -74,3 +74,42 @@ Only Chuck Norris have commit access. If you wish to have commit access, please 
 ### #10 Silence
 
 **(...)**
+
+## You said U.C.Engine is persistent, how do you store events?
+
+We currently support two backends: [[mnesia|mnesia]] and [[mongoDB|mongodb]].
+
+## Does U.C.Engine garanty that all event are delivered?
+
+The short response is: **yes**.
+
+The longer response is:
+
+U.C.Engine is stateless so it doesn't try to remember what events the client did not received.
+Instead, the client can use the timestamp of the last event it received
+as the starting point of the next request.
+
+Thus, if a request goes wrong and the client doesn't receive the events, it's not a problem.
+These events will be retieved in the next request.
+
+## Is U.C.Engine is different from Google's wave?
+
+  - Vocabulary: A few elements of the Wave vocabulary is pretty close the U.C.Engine one :
+
+ Wave    | U.C.Engine
+---------|------------
+ Waves   | Meetings
+ Robots  | Bricks
+ Gadgets | Widgets
+
+
+  - Federation: U.C.Engine doesn't have any federation aspect.
+
+## Don't you think U.C.Engine is too much centralized?
+
+As there is no federation aspect in the U.C.Engine protocol, we don't really need to be decentralized.
+Anyway, U.C.Engine is a project under the GNU Affero General Public License, so you are totally free to
+install it and use it on your own machines. Moreover, all published events can be retrieved in a JSON format which
+facilitate migrations and backups of your important live data.
+
+So you shouldn't be tied to a specific provider and should be autonomous enough.
