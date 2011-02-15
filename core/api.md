@@ -44,6 +44,10 @@ The timestamp is the number of milliseconds elapsed since EPOCH (1970-01-01).
 
     GET /user/
 
+#### Require authentication:
+
+yes
+
 #### Returned values
 
     200 {"result": [{   "uid":"romain.gauthier@af83.com",
