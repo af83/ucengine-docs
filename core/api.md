@@ -51,12 +51,14 @@ yes
 #### Returned values
 
     200 {"result": [{   "uid":"romain.gauthier@af83.com",
+                        "domain":"ucengine.org",
                         "auth":"password",
                         "metadata":{
                             "nickname":"abel_1284046072075"
                         }
                     },
                     {   "uid":"victor.goya@af83.com",
+                        "domain":"ucengine.org",
                         "auth":"password",
                         "metadata":{
                             "nickname":"phorque"
@@ -71,13 +73,12 @@ yes
 
 #### Request
 
-    PUT /user/{uid}
+    POST /user/
 
 Parameter                              | Description                           | Example
 ---------------------------------------|---------------------------------------|------------------------------------------------------------
-**URL Parameters**                     |                                       |
-`uid`                                  | User id                               | `uid_63444326443_50150`
 **Encoded Parameters**                 |                                       |
+`uid`                                  | User id                               | `uid_63444326443_50150`
 `auth`                                 | Authentication method                 | `password` or `token`
 `credential`                           | Password or token                     | `dWlkXzYzNDQ0MzI2NDQzXzUwMTUwCg`
 `metadata`                             | Array containing metadata             | `metadata[key]=value`
@@ -94,7 +95,7 @@ Parameter                              | Description                           |
 
 #### Request
 
-    POST /user/{uid}
+    PUT /user/{uid}
 
 Parameter                              | Description                           | Example
 ---------------------------------------|---------------------------------------|------------------------------------------------------------
@@ -135,6 +136,7 @@ yes
 #### Returned values
 
      200 {"result": {    "uid":"romain.gauthier@af83.com",
+                         "domain":"ucengine.org",
                          "auth":"password",
                          "metadata":{
                             "nickname":"abel_1284046072075"
@@ -176,13 +178,12 @@ yes
 
 #### Request
 
-    PUT /presence/{uid}
+    POST /presence/
 
 Parameter                              | Description                           | Example
 ---------------------------------------|---------------------------------------|------------------------------------------------------------
-**URL Parameters**                     |                                       |
-`uid`                                  | User id                               | `uid_63444326443_50150`
 **Encoded Parameters**                 |                                       |
+`uid`                                  | User id                               | `uid_63444326443_50150`
 `credential`                           | Password or token                     | `dWlkXzYzNDQ0MzI2NDQzXzUwMTUwCg`
 `metadata`                             | Array containing metadata             | `metadata[key]=value`
 
@@ -198,7 +199,7 @@ Parameter                              | Description                           |
 
 #### Request
 
-    DELETE /presence/{uid}/{sid}
+    DELETE /presence/{sid}
 
 #### Paramètres
 
@@ -238,13 +239,14 @@ ACLs allow it of course).
 
 #### Returned values
 
-    200 { "result": {} }
+    200 { "result": {"domain": "ucengine.org",
+                     "metadata": [{"description", "an useful description"}]} }
 
 ### Update current domain informations
 
 #### Request
 
-    POST /infos
+    PUT /infos
 
 Parameter                              | Description                           | Example
 ---------------------------------------|---------------------------------------|------------------------------------------------------------
@@ -268,12 +270,13 @@ yes
 
 #### Request
 
-    PUT /meeting/all/{meeting}/roster/{uid}
+    POST /meeting/all/{meeting}/roster/
 
 Parameter                              | Description                           | Example
 ---------------------------------------|---------------------------------------|------------------------------------------------------------
 **URL Parameters**                     |                                       |
 `meeting`                              | Meeting id                            | `demo`
+**Encoded Parameters**                 |                                       |
 `uid`                                  | User id                               | `uid_63444326443_50150`
 
 #### Require authentication:
@@ -321,13 +324,12 @@ yes
 
 #### Request
 
-    PUT /meeting/all/{meeting}
+    POST /meeting/all/
 
 Parameter                              | Description                           | Example
 ---------------------------------------|---------------------------------------|------------------------------------------------------------
-**URL Parameters**                     |                                       |
-`meeting`                              | Meeting id                            | `demo`
 **Optional Encoded Parameters**        |                                       |
+`meeting`                              | Meeting id                            | `demo`
 `start`                                | opening Timestamp of the meeting      | `63444430100`
 `end`                                  | ending Timestamp of the meeting       | `63444430800`
 `metadata`                             | Array containing metadata             | `metadata[key]=value`
@@ -358,7 +360,7 @@ yes
 
 #### Request
 
-    POST /meeting/all/{meeting}
+    PUT /meeting/all/{meeting}
 
 Parameter                              | Description                           | Example
 ---------------------------------------|---------------------------------------|------------------------------------------------------------
@@ -399,16 +401,19 @@ Parameter                              | Description                           |
 #### Returned values
 
     200 {"result":[{    "uid":"abel.fournier_1284046072075@af83.com",
+                        "domain":"ucengine.org",
                         "auth":"password",
                         "metadata":{
                                 "nickname":"abel_1284046072075"}
                         },
                {        "uid":"abel.fournier_1284107725374@af83.com",
+                        "domain":"ucengine.org",
                         "auth":"password",
                         "metadata":{
                                 "nickname":"abel_1284107725374"}
                         },
                {        "uid":"abel.fournier_1284114120882@af83.com",
+                        "domain":"ucengine.org",
                         "auth":"password",
                         "metadata":{
                                 "nickname":"abel_1284114120882"}
@@ -443,22 +448,21 @@ yes
 #### Returned values
 
     200 {"result":[{    "name":"demo",
+                        "domain":"ucengine.org",
                         "start_date":1284046056927,
                         "end_date":"never",
-                        "roster":[      "abel.fournier_1284046072075@af83.com",
-                                        "abel.fournier_1284107725374@af83.com"],
                         "metadata":{    "description":"U.C.Engine demo meetup"}
                 },
                 {       "name":"demo2",
+                        "domain":"ucengine.org",
                         "start_date":1284046056928,
                         "end_date":"never",
-                        "roster":[],
                         "metadata":{"description":"Meeting R&D"}
                 },
                 {       "name":"agoroom",
+                        "domain":"ucengine.org",
                         "start_date":1284046056928,
                         "end_date":1284046056928,
-                        "roster":["blah4"],
                         "metadata":{"description":"Meeting agoroom"}
                 }
     ]}
@@ -487,10 +491,9 @@ yes
 #### Returned values
 
     200 {"result":{     "name":"demo",
+                        "domain":"ucengine.org",
                         "start_date":1284046056927,
                         "end_date":"never",
-                        "roster":[      "abel.fournier_1284046072075@af83.com",
-                                        "abel.fournier_1284107725374@af83.com"],
                         "metadata":{    "description":"U.C.Engine demo meetup"}
                 }}
 
@@ -558,6 +561,7 @@ yes
 #### Returned values
 
     200 {"result": [{   "type":"join_meeting_event",
+                        "domain":"ucengine.org",
                         "datetime":1284046079374,
                         "id":"24653994823933231622695570265810",
                         "meeting":"demo",
@@ -565,6 +569,7 @@ yes
                         "metadata":{}
                 },
                 {       "type":"post_annotation_event",
+                        "domain":"ucengine.org",
                         "datetime":1284046082844,
                         "id":"20196912711920626263917946711292",
                         "meeting":"demo",
@@ -573,6 +578,7 @@ yes
                                         "text":"coucou"}
                 },
                 {       "type":"translate_annotation_event",
+                        "domain":"ucengine.org",
                         "datetime":1284046083272,
                         "id":"61614248092678409569587739330424",
                         "meeting":"demo",
@@ -603,9 +609,9 @@ yes
 
 #### Request
 
-    PUT /event/
+    POST /event/
 
-    PUT /event/{meeting}
+    POST /event/{meeting}
 
 Parameter                              | Description                           | Example
 ---------------------------------------|---------------------------------------|------------------------------------------------------------
@@ -635,19 +641,15 @@ yes
 
 #### Request
 
-    PUT /file/{meeting}
-
-    PUT /file/{meeting}/{filename}
+    POST /file/{meeting}
 
 
 Parameter                              | Description                           | Example
 ---------------------------------------|---------------------------------------|------------------------------------------------------------
 **URL Parameters**                     |                                       |
 `meeting`                              | Meeting id                            | `demo`
-**Optional URL Parameters**            |                                       |
-`filename`                             | Fielname                              | `ucengine.odp`
 **Optional Encoded Parameters**        |                                       |
-`_filename`                            | Filname                               | `ucengine.odp`
+`_filename`                            | Filename                              | `ucengine.odp`
 
 #### Require authentication:
 
@@ -689,6 +691,7 @@ yes
 #### Returned values
 
     200 { "result": [ { "filename": "U.C.Engine.odp"
+                        "domain": "ucengine.org",
                       , "token": "42314657480629893636680972"
                       , "description": "Présentation du projet U.C.Engine"
                       }
@@ -709,7 +712,7 @@ Parameter                              | Description                           |
 ---------------------------------------|---------------------------------------|------------------------------------------------------------
 **URL Parameters**                     |                                       |
 `meeting`                              | Meeting id                            | `demo`
-`filename`                             | Fielname                              | `ucengine.odp`
+`filename`                             | Filename                              | `ucengine.odp`
 
 #### Require authentication:
 
@@ -752,7 +755,7 @@ yes
 
 #### Examples
 
-If the 'romain' user wants to verify that the 'toto' user has the right to join the 'ucengine' meeting, the request will be :
+If the 'romain' user wants to check that the 'toto' user has the right to join the 'ucengine' meeting, the request will be :
 
         GET /user/toto/acl/meeting/join/ucengine?uid=romain&sid=40324302840329843809543
 
@@ -772,9 +775,9 @@ If the 'romain' user wants to verify that the 'toto' user has the right to join 
 
 #### Request
 
-    PUT /user/{uid}/acl/{object}/{action}
+    POST /user/{uid}/acl/{object}/{action}
 
-    PUT /user/{uid}/acl/{object}/{action}/{meeting}
+    POST /user/{uid}/acl/{object}/{action}/{meeting}
 
 Parameter                              | Description                           | Example
 ---------------------------------------|---------------------------------------|------------------------------------------------------------
