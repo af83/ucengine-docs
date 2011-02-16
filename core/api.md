@@ -564,7 +564,7 @@ yes
                         "domain":"ucengine.org",
                         "datetime":1284046079374,
                         "id":"24653994823933231622695570265810",
-                        "meeting":"demo",
+                        "location":"demo",
                         "from":"abel.fournier_1284046072075@af83.com",
                         "metadata":{}
                 },
@@ -572,7 +572,7 @@ yes
                         "domain":"ucengine.org",
                         "datetime":1284046082844,
                         "id":"20196912711920626263917946711292",
-                        "meeting":"demo",
+                        "location":"demo",
                         "from":"abel.fournier_1284046072075@af83.com",
                         "metadata":{    "language":"fr",
                                         "text":"coucou"}
@@ -581,7 +581,7 @@ yes
                         "domain":"ucengine.org",
                         "datetime":1284046083272,
                         "id":"61614248092678409569587739330424",
-                        "meeting":"demo",
+                        "location":"demo",
                         "from":"abel.fournier_1284046072075@af83.com",
                         "metadata":{    "traduction":"cuckoo",
                                         "language":"en"}

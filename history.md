@@ -12,6 +12,8 @@
   
   `{"domain": "ucengine.org", "metadata": [{"description", "a simple description"}]` instead of `[{"description", "a simple description"}]` only.
 
+  Note that the 'meeting' field in the event object has been replaced by 'location', although the meaning is the same.
+
 * The API now use POST to created records and PUT to update them. This is a **backward incompatible change*.*
 
   **ReST API:**
