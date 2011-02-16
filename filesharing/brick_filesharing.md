@@ -41,4 +41,4 @@ None.
 
 ## Widgets
 
-TODO
+See [[filesharing widget|widget_filesharing]].

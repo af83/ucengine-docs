@@ -2,30 +2,39 @@
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>{{ page.title }} - UC Engine</title>
+    <title>{{ page.title }} - U.C.Engine</title>
+    <link rel="stylesheet" href="{{ wiki.base_path }}static/css/ucengine.css" type="text/css" charset="utf-8" />
     <link rel="stylesheet" href="{{ wiki.base_path }}static/css/screen.css" type="text/css" charset="utf-8" />
     <link rel="stylesheet" href="{{ wiki.base_path }}static/css/gollum.css" type="text/css" charset="utf-8" />
     <link rel="stylesheet" href="{{ wiki.base_path }}static/css/syntax.css" type="text/css" charset="utf-8" />
-    <script src="{{ wiki.base_path }}static/javascript/jquery-1.4.2.min.js" type="text/javascript"></script>
-    <script src="{{ wiki.base_path }}static/javascript/jquery.text_selection-1.0.0.min.js" type="text/javascript"></script>
-    <script src="{{ wiki.base_path }}static/javascript/jquery.previewable_comment_form.js" type="text/javascript"></script>
-    <script src="{{ wiki.base_path }}static/javascript/jquery.tabs.js" type="text/javascript"></script>
-    <script src="{{ wiki.base_path }}static/javascript/gollum.js" type="text/javascript"></script>
+
+    <script src="{{ wiki.base_path }}static/javascript/head.min.js" type="text/javascript"></script>
   </head>
 
   <body>
+
+    <header>
+      <div class="page">
+        <p><a href="/">U.C.Engine</a></p>
+        <nav>
+          <ul>
+            <li><a href="{{ wiki.base_path }}">Home</a></li>
+            <li><a href="http://demo.ucengine.org/" target="_blank">Demo</a></li>
+            <li><a href="https://github.com/AF83/ucengine" target="_blank">Source code</a></li>
+            <li><a href="http://ucengine.org/" target="_blank">Community Site</a></li>
+          </ul>
+        </nav>
+        <div class="frame"></div>
+      </div>
+    </header>
+
     <div id="main">
       <div class="site">
         <div id="guides">
           <div class="guide">
             <div class="main">
-              <div class="actions">
-                <div>
-                  <a href="{{ wiki.base_path }}Home.html">Home</a>
-                </div>
-              </div>
-              <h1>{{ page.title }}</h1>
               <div class="content wikistyle gollum {{ page.format }}">
+                <ol class="toc"></ol>
                 {{ page.content }}
               </div>
             </div>
@@ -41,7 +50,7 @@
           <div id="disqus_thread"></div>
           <script type="text/javascript">
               /**
-              * var disqus_identifier; [Optional but recommended: Define a unique identifier (e.g. post id or slug) for this thread] 
+              * var disqus_identifier; [Optional but recommended: Define a unique identifier (e.g. post id or slug) for this thread]
               */
               var disqus_title      = '{{ page.title }}';
               var disqus_identifier = '{{ page.path }}';
@@ -55,9 +64,11 @@
         </div>
       </div>
     </div>
-    <a class="forkme" href="https://github.com/AF83/ucengine">
-        <img alt="Fork us on GitHub" src="static/img/fork-us.png">
-    </a>
+
+    <div class="ribbon">
+      <a href="https://github.com/AF83/ucengine" rel="me">Fork me on GitHub</a>
+    </div>
+
     <script type="text/javascript">
         var _gaq = _gaq || [];
         _gaq.push(['_setAccount', 'UA-1725781-24']);
@@ -67,6 +78,21 @@
         ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
         })();
+    </script>
+
+    <script src="{{ wiki.base_path }}static/javascript/jquery-1.4.2.min.js" type="text/javascript"></script>
+    <script src="{{ wiki.base_path }}static/javascript/jquery.text_selection-1.0.0.min.js" type="text/javascript"></script>
+    <script src="{{ wiki.base_path }}static/javascript/jquery.previewable_comment_form.js" type="text/javascript"></script>
+    <script src="{{ wiki.base_path }}static/javascript/jquery.tabs.js" type="text/javascript"></script>
+    <script src="{{ wiki.base_path }}static/javascript/gollum.js" type="text/javascript"></script>
+    <script src="{{ wiki.base_path }}static/javascript/jquery.tableofcontents.min.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+      $(document).ready(function() {
+          $("ol.toc").tableOfContents("div.content", {startLevel: 2, depth: 2});
+          if ($("ol.toc").children().size() > 0 ) $("ol.toc").show();
+          else $("ol.toc").remove()
+      });
     </script>
   </body>
 </html>

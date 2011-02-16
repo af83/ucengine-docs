@@ -8,7 +8,7 @@
 * mnesia or mongodb
 * inets
 
-* enunit (for testing only)
+* eunit (for testing only)
 
 ### Debian
 
@@ -27,5 +27,5 @@ Go to [localhost:5280](http://localhost:5280/)
 
 ## Further reading:
 
-* Control UC Engine with [[ucectl]]
+* Control U.C.Engine with [[ucectl]]
 * Learn how to [[create javascript applications|quickstartjs]]

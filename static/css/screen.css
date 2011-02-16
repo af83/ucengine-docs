@@ -164,7 +164,7 @@ html {overflow-y: scroll;}
   #guides .admin {
     clear: both;
     margin-top: 3em;
-    border-top: 4px solid #e6e6e6;
+    border-top: 2px solid #e6e6e6;
     padding-top: .3em;
     overflow: hidden;
   }
@@ -217,17 +217,10 @@ html {overflow-y: scroll;}
   border: 0 !important;
 }
 
-.wikistyle h1 {
-  font-size: 170% !important;
-  border-top: 4px solid #aaa !important;
-  padding-top: .5em !important;
-  margin-top: 1.5em !important;
-}
-
 .wikistyle h2 {
   font-size: 150% !important;
   margin-top: 1.5em !important;
-  border-top: 4px solid #e0e0e0 !important;
+  border-top: 2px solid #e0e0e0 !important;
   padding-top: .5em !important;
 }
 
@@ -363,10 +356,6 @@ label.wiki-label {
 .wikistyle.gollum.footer {
   border-top: 4px solid #f0f0f0;
   margin-top: 2em;
-}
-
-.wikistyle.gollum > h1:first-child {
-  display: none;
 }
 
 /* asciidoc */
@@ -724,13 +713,3 @@ table.commits {
             color: #aaa;
             cursor: pointer;
           }
-
-.forkme {
-  height: 149px;
-  left: 0;
-  margin: 0;
-  padding: 0;
-  position: absolute;
-  top: 0;
-  width: 149px;
-}

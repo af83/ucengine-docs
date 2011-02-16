@@ -87,3 +87,63 @@ uce.infos.post({description: 'my desc'}, function(err, result) {
 ## Get meeting
 
 *uce.meeting(meetingname)*
+
+## Join meeting
+
+*uce.meeting(meeting).join(callback)*
+
+## Leave meeting
+
+*uce.meeting(meeting).leave(callback)*
+
+## Get Roster
+
+*uce.meeting(meeting).getRoster(callback)*
+
+## Push event
+
+*uce.meeting(meeting).push(eventname, metadata, callback)*
+
+```javascript
+uce.meeting('demo').push('my_event', {my_property: 'my property'}, function(err, result) {
+    if (err) throw err;
+    console.log(result); // event recorded
+});
+```
+## Wait events
+
+*uce.meeting(meeting).waitEvents(params, callback, one_shot)*
+
+### Params
+
+* params
+* callback
+* one_shot: true or false
+
+## Get events
+
+*uce.meeting(meeting).getEvents(params, callback, onEachEvent)*
+
+## Attach event handler
+
+*uce.meeting(meetingname).bind(eventname, callback)*
+
+*uce.meeting(meetingname).bind(callback)*
+
+## How to subscribe to events
+
+The idea is to create an event loop. You create a meeting context with *uce.meeting(meetingname)*.
+
+If you want to attach a handle to all events, use *uce.meeting(meetingname).bind(callback)*.
+
+Full example:
+
+```javascript
+var meeting = uce.attachPresence(presence).meeting('demo');
+// bind callback to all events in the meeting 'demo'
+meeting.bind(function(event) {
+  console.log("event received", event);
+});
+// start event loop
+meeting.startLoop();
+```

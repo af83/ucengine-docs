@@ -46,10 +46,11 @@ Create a folder *chat* in *priw/www*, with an index.html:
     <script type="text/javascript" src="../lib/jquery.tmpl.min.js"></script>
     <script type="text/javascript" src="../lib/uce.js"></script>
     <script type="text/javascript" src="../lib/ucewidget.js"></script>
-    <script type="text/javascript" src="../lib/video.ui.js"></script>
-    <script type="text/javascript" src="../lib/chat.ui.js"></script>
+    <script type="text/javascript" src="../lib/video/video.ui.js"></script>
+    <script type="text/javascript" src="../lib/chat/chat.ui.js"></script>
     <script type="text/javascript" src="js/yourchat.js"></script>
-    <link rel="stylesheet" type="text/css" href="../css/widgets.css"  />
+    <link rel="stylesheet" type="text/css" href="../lib/chat/chat.css" charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="../lib/video/video.css" charset="utf-8" />
     <link href="../demo/stylesheets/ui-lightness/jquery-ui-1.8.4.custom.css" media="screen" rel="stylesheet" type="text/css" />
     <title>My video/chat application</title>
   </head>

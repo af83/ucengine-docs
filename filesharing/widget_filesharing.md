@@ -1,4 +1,4 @@
-# File
+# File sharing widget
 
 Upload file in current meeting, list uploaded files and allow user to share one of this files.
 
@@ -10,15 +10,21 @@ Upload file in current meeting, list uploaded files and allow user to share one 
 
 ## Methods
 
-* clear: rinit widget
+* clear: reinit widget
 * viewAll: show list uploaded files and hide file preview screen
 * viewPreview: hide list uploaded files and show file preview screen
 * destroy: destroy widget
 
+## Example
+
+```javascript
+$("#demo").file_sharing({ucemeeting: meeting});
+```
+
 ## Theming
 
 ```html
-<article id="file_sharing" class="ui-widget ui-filesharing">
+<div class="ui-widget ui-filesharing">
   <div class="ui-widget-header">
     <span>File sharing</span>
   </div>
@@ -54,5 +60,5 @@ Upload file in current meeting, list uploaded files and allow user to share one 
       <img src=""/>
     </div>
   </div>
-</article>
+</div>
 ```
