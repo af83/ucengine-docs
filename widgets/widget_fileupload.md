@@ -16,7 +16,7 @@ Upload file in current meeting, list uploaded files and allow user to preview or
 * destroy: destroy widget
 
 ## Exemple
-```html
+```javascript
 $("#demo").file_upload({ucemeeting: meeting});
 ```
 
