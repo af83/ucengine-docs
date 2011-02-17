@@ -50,7 +50,7 @@ Example:
 
 ### internal.roster.delete
 
-Sent by U.C.Engine. It notifies that a new user quitted the current meeting.
+Sent by U.C.Engine. It notifies that a new user exited the current meeting.
 
 Example:
 
@@ -66,3 +66,38 @@ Example:
 
 ### internal.user.add
 ### internal.user.update
+
+### internal.acl.add
+
+Sent by U.C.Engine. Notifies the adding of a new right for the user specified in the 'from' field.
+
+Example:
+
+```javascript
+{ "type"     : "internal.acl.add",
+  "datetime" : 1292600689363,
+  "id"       : "05214339923220971091870275941078",
+  "location" : "demo",
+  "from"     : "uid_63444326443_50150",
+  "metadata" : {"object": "file",
+                "action": "delete",
+                "id": "my_own_file.jpg_42424242424242424242"}
+}
+```
+
+### internal.acl.delete
+
+Sent by U.C.Engine. Notifies the deletion of a right for the user specified in the 'from' field.
+
+Example:
+
+```javascript
+{ "type"     : "internal.acl.delete",
+  "datetime" : 1292600689363,
+  "id"       : "05214339923220971091870275941078",
+  "location" : "demo",
+  "from"     : "uid_63444326443_50150",
+  "metadata" : {"object": "roster",
+                "action": "add"}
+}
+```
