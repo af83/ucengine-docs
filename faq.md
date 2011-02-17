@@ -29,6 +29,65 @@ between `/usr/lib/yaws` and `/usr/lib/erlang/lib`:
 
 Some folks of [af83](http://af83.com/).
 
+## You said U.C.Engine is persistent, how do you store events?
+
+We currently support two backends: [[mnesia|mnesia]] and [[mongoDB|mongodb]].
+
+## Does U.C.Engine garanty that all event are delivered?
+
+The short response is: **yes**.
+
+The longer response is:
+
+U.C.Engine is stateless so it doesn't try to remember what events the client did not received.
+Instead, the client can use the timestamp of the last event it received
+as the starting point of the next request.
+
+Thus, if a request goes wrong and the client doesn't receive the events, it's not a problem.
+These events will be retieved in the next request.
+
+## Is U.C.Engine is different from Google wave?
+
+  - Vocabulary: A few elements of the Wave vocabulary is pretty close the U.C.Engine one:
+
+ Wave      | U.C.Engine
+-----------|------------
+ Waves     | Meetings
+ Wavelets  | -
+ Documents | -
+ Robots    | Bricks
+ Gadgets   | Widgets
+
+In U.C.Engine there are documents too, but these are just uploaded files.
+
+  - Federation: U.C.Engine doesn't support federation.
+
+However, we think that U.C.Engine is simpler than Google Wave, because:
+
+  - The API is smaller;
+  - There are fewer concepts and these are simpler.
+
+## Is U.C.Engine different from XMPP?
+
+Most of U.C.Engine's features are present in the XMPP protocol.
+But a few things make U.C.Engine different from XMPP:
+
+  - While you sometimes need [BOSH](http://en.wikipedia.org/wiki/BOSH) to speak to a XMPP server,
+    you always communicate the same way with U.C.Engine because it is HTTP based;
+  - U.C.Engine was meant to be simple. That's why it use JSON instead of XML;
+  - U.C.Engine is persistent and timeline focused.
+
+These main reasons explains why we do not use XMPP.
+Although it should not be difficult to write a brick to make a bridge between U.C.Engine and XMPP.
+
+## Don't you think U.C.Engine is too much centralized?
+
+As there is no federation aspect in the U.C.Engine protocol, we don't really need to be decentralized.
+Anyway, U.C.Engine is a project under the GNU Affero General Public License, so you are totally free to
+install it and use it on your own machines. Moreover, all published events can be retrieved in a JSON format which
+facilitate migrations and backups of your important live data.
+
+So you shouldn't be tied to a specific provider and should be autonomous enough.
 ## Do you destroy your community?
 
 See [How to destroy your community](http://lwn.net/Articles/370157/) on lwn.
@@ -69,8 +128,9 @@ Erlang code == AGPL, javascript == BSD/GPL.
 
 ### #9 Do not allow anybody outside the company to have commit access
 
-Only Chuck Norris have commit access. If you wish to have commit access, please first submit one or more patches that will be accepted. We will be more then happy to give you write access afterwards. 
+Only Chuck Norris have commit access. If you wish to have commit access, please first submit one or more patches that will be accepted. We will be more than happy to give you write access afterwards.
 
 ### #10 Silence
 
 **(...)**
+

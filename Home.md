@@ -8,8 +8,6 @@ U.C.Engine is a [[free software project|https://github.com/AF83/ucengine/blob/ma
 
 See the [[introduction]] to learn some of the concepts of U.C.Engine.
 
-## Getting started
-
 * [[Introduction|introduction]] - [[Installation|install]] - [[Play with the demonstrator]]
 * [[Quickstart with a video/chat application|quickstartjs]]
 * [[Designing events|cookbook_events]]
@@ -35,7 +33,7 @@ See the [[introduction]] to learn some of the concepts of U.C.Engine.
 ### Bricks and widgets
 
 * **Video:** [[erlyvideo]] - [[red5]] - [[video widget|widget_video]]
-* **File sharing:** [[brick|brick_filesharing]] - [[filesharing widget|widget_filesharing]]
+* **File sharing:** [[brick|brick_filesharing]]- [[fileupload widget|widget_fileupload]] - [[filesharing widget|widget_filesharing]]
 * **Translation:** [[brick|brick_translation]]
 * **Twitter:** [[brick|brick_twitter]]
 * **Standalone widgets :** [[activity|widget_activity]] - [[chat|widget_chat]] - [[file|widget_file]] - [[player|widget_player]] - [[replay|widget_replay]] - [[results|widget_results]] - [[search|widget_search]]  - [[whiteboard|widget_whiteboard]] - [[timer|widget_timer]]

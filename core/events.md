@@ -19,7 +19,7 @@ Example:
 { "type"     : "internal.file.add",
   "datetime" : 1292597388050,
   "id"       : "74647005885125029457242944483441",
-  "meeting"  : "demo",
+  "location" : "demo",
   "from"     : "uid_63444326443_50150",
   "metadata" : {
     "id"   : "Eben-Moglen-2010-12-2-privacy-testimony_34891938863969335648238193223131.pdf",
@@ -42,7 +42,7 @@ Example:
 { "type"     : "internal.roster.add",
   "datetime" : 1292594897416,
   "id"       : "30387772929242810120613023014654",
-  "meeting"  : "demo",
+  "location" : "demo",
   "from"     : "uid_63444326443_50150",
   "metadata" : {}
 }
@@ -50,7 +50,7 @@ Example:
 
 ### internal.roster.delete
 
-Sent by U.C.Engine. It notifies that a new user quitted the current meeting.
+Sent by U.C.Engine. It notifies that a new user exited the current meeting.
 
 Example:
 
@@ -58,7 +58,7 @@ Example:
 { "type"     : "internal.roster.delete",
   "datetime" : 1292600689363,
   "id"       : "05214339923220971091870275941078",
-  "meeting"  : "demo",
+  "location" : "demo",
   "from"     : "uid_63444326443_50150",
   "metadata" : {}
 }
@@ -67,28 +67,37 @@ Example:
 ### internal.user.add
 ### internal.user.update
 
-## Chat
+### internal.acl.add
 
-### chat.message.new
-
-Sent by a user. It allow to post a new message on a chatroom
-
-Metadata       | Description
----------------|-------------------------------------------------------------------------------------------------------
-text           | The message content
-lang           | The language of the message
+Sent by U.C.Engine. Notifies the adding of a new right for the user specified in the 'from' field.
 
 Example:
 
 ```javascript
-{ "type"     : "chat.message.new",
-  "datetime" : 1292601125202,
-  "id"       : "91918360913598370296768635184375",
-  "meeting"  : "demo",
+{ "type"     : "internal.acl.add",
+  "datetime" : 1292600689363,
+  "id"       : "05214339923220971091870275941078",
+  "location" : "demo",
   "from"     : "uid_63444326443_50150",
-  "metadata" : {
-    "text":"Bienvenue sur U.C.Engine",
-    "lang":"fr"
-  }
+  "metadata" : {"object": "file",
+                "action": "delete",
+                "id": "my_own_file.jpg_42424242424242424242"}
+}
+```
+
+### internal.acl.delete
+
+Sent by U.C.Engine. Notifies the deletion of a right for the user specified in the 'from' field.
+
+Example:
+
+```javascript
+{ "type"     : "internal.acl.delete",
+  "datetime" : 1292600689363,
+  "id"       : "05214339923220971091870275941078",
+  "location" : "demo",
+  "from"     : "uid_63444326443_50150",
+  "metadata" : {"object": "roster",
+                "action": "add"}
 }
 ```
