@@ -33,7 +33,7 @@ Some folks of [af83](http://af83.com/).
 
 We currently support two backends: [[mnesia|mnesia]] and [[mongoDB|mongodb]].
 
-## Does U.C.Engine garanty that all event are delivered?
+## Does U.C.Engine guaranty that all event are delivered?
 
 The short response is: **yes**.
 
