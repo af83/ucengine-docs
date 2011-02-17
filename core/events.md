@@ -19,7 +19,7 @@ Example:
 { "type"     : "internal.file.add",
   "datetime" : 1292597388050,
   "id"       : "74647005885125029457242944483441",
-  "meeting"  : "demo",
+  "location" : "demo",
   "from"     : "uid_63444326443_50150",
   "metadata" : {
     "id"   : "Eben-Moglen-2010-12-2-privacy-testimony_34891938863969335648238193223131.pdf",
@@ -42,7 +42,7 @@ Example:
 { "type"     : "internal.roster.add",
   "datetime" : 1292594897416,
   "id"       : "30387772929242810120613023014654",
-  "meeting"  : "demo",
+  "location" : "demo",
   "from"     : "uid_63444326443_50150",
   "metadata" : {}
 }
@@ -58,7 +58,7 @@ Example:
 { "type"     : "internal.roster.delete",
   "datetime" : 1292600689363,
   "id"       : "05214339923220971091870275941078",
-  "meeting"  : "demo",
+  "location" : "demo",
   "from"     : "uid_63444326443_50150",
   "metadata" : {}
 }
