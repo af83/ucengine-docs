@@ -15,7 +15,7 @@ We want U.C.Engine to provide the widest set of realtime collaborative features.
 
 ## Voice and video
 * Video display (Done)
-* VOIP manager (Not started)
+* VOIP manager (Specification on going)
 
 ## Event
 * Twitter photo (Not started)
