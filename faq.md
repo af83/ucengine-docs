@@ -33,22 +33,22 @@ Some folks of [af83](http://af83.com/).
 
 We currently support two backends: [[mnesia|mnesia]] and [[mongoDB|mongodb]].
 
-## Does U.C.Engine garanty that all event are delivered?
+## Does U.C.Engine guaranty that all event are delivered?
 
 The short response is: **yes**.
 
 The longer response is:
 
 U.C.Engine is stateless so it doesn't try to remember what events the client did not received.
-Instead, the client can use the timestamp of the last event it received
-as the starting point of the next request.
+Instead, the client can use the timestamp of the last event it received as the starting point of the next request.
 
 Thus, if a request goes wrong and the client doesn't receive the events, it's not a problem.
-These events will be retieved in the next request.
+These events will be retrieved in the next request.
 
-## Is U.C.Engine is different from Google wave?
+## Is U.C.Engine different from Google wave?
 
-  - Vocabulary: A few elements of the Wave vocabulary is pretty close the U.C.Engine one:
+**Objects** 
+A few wave objects are similar to U.C.Engine concepts :
 
  Wave      | U.C.Engine
 -----------|------------
@@ -60,16 +60,25 @@ These events will be retieved in the next request.
 
 In U.C.Engine there are documents too, but these are just uploaded files.
 
-  - Federation: U.C.Engine doesn't support federation.
+**Federation** 
+U.C.Engine doesn't support federation.
+Federation is great but we believe that many applications just don't need federation.
 
-However, we think that U.C.Engine is simpler than Google Wave, because:
+**Complexity**
+Google wanted Wave to be the ultimate one size fits all communication tool of the future (remember?). On our side, we believe in simplicity.
 
+U.C.Engine is simpler than Google Wave, because :
+
+  - The core is smaller;
   - The API is smaller;
-  - There are fewer concepts and these are simpler.
+  - There are fewer and simpler concepts;
+  - We don't have to deal with federation
+
+We hope that more developers will be able to use U.C.Engine to build their own collaborative application.
 
 ## Is U.C.Engine different from XMPP?
 
-Most of U.C.Engine's features are present in the XMPP protocol.
+Most of U.C.Engine's features are included in the XMPP protocol.
 But a few things make U.C.Engine different from XMPP:
 
   - While you sometimes need [BOSH](http://en.wikipedia.org/wiki/BOSH) to speak to a XMPP server,
@@ -77,17 +86,17 @@ But a few things make U.C.Engine different from XMPP:
   - U.C.Engine was meant to be simple. That's why it use JSON instead of XML;
   - U.C.Engine is persistent and timeline focused.
 
-These main reasons explains why we do not use XMPP.
-Although it should not be difficult to write a brick to make a bridge between U.C.Engine and XMPP.
+Even if we decided not to use XMPP, you can! It should be easy to write a brick to make a bridge between U.C.Engine and XMPP.
 
-## Don't you think U.C.Engine is too much centralized?
+## Don't you think U.C.Engine is way too centralized?
 
-As there is no federation aspect in the U.C.Engine protocol, we don't really need to be decentralized.
-Anyway, U.C.Engine is a project under the GNU Affero General Public License, so you are totally free to
+As there is no federation design in the U.C.Engine protocol, we indeed built a centralized architecture.
+Even if we do believe in the benefit of distributed architectures (social networks for example), we think that many realtime collaboration applications just don't need it and would benefit from using a simpler framework.
+
+Anyway, U.C.Engine pubsub server is a project under the GNU Affero General Public License, so you are totally free to
 install it and use it on your own machines. Moreover, all published events can be retrieved in a JSON format which
 facilitate migrations and backups of your important live data.
 
-So you shouldn't be tied to a specific provider and should be autonomous enough.
 ## Do you destroy your community?
 
 See [How to destroy your community](http://lwn.net/Articles/370157/) on lwn.
