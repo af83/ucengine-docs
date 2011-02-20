@@ -1,6 +1,7 @@
 # U.C.Engine
 
 U.C.Engine (Unified Collaboration Engine) includes:
+
 * a [[publish/subscribe|http://en.wikipedia.org/wiki/PubSub]] server with persistence,
 * a Javascript frontend client with a library of several realtime collaborative widgets (chat, file sharing...)
 * several backend clients that provide additional features to your application (video streaming, file converters...)
@@ -19,7 +20,7 @@ See the [[introduction]] to learn some of the concepts of U.C.Engine.
 
 ## Core
 
-The core of U.C.Engine is a [[publish/subscribe|http://en.wikipedia.org/wiki/PubSub]] server written in Erlange. Persistence is achieved via the database of your choice.
+The core of U.C.Engine is a [[publish/subscribe|http://en.wikipedia.org/wiki/PubSub]] server written in Erlang. Persistence is achieved via the database of your choice.
 
 * **API**: [[ReST API reference|api]]
 * **Administration**: [[ucectl console|ucectl]]
