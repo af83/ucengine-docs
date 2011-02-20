@@ -185,6 +185,8 @@ Parameter                              | Description                           |
 **Encoded Parameters**                 |                                       |
 `uid`                                  | User id                               | `uid_63444326443_50150`
 `credential`                           | Password or token                     | `dWlkXzYzNDQ0MzI2NDQzXzUwMTUwCg`
+**Optional Encoded Parameters**        |                                       |
+`timeout`                              | Session timeout value (sec)           | `200`
 `metadata`                             | Array containing metadata             | `metadata[key]=value`
 
 #### Returned values
