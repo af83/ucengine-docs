@@ -5,8 +5,11 @@ You'll find here a list of companies providing services around U.C.Engine.
 ## U.C.Engine editor
 
 **U.C.Engine by af83** 
-af83 is the inventor and main editor of U.C.Engine.
+
+af83 is the creator and main editor of U.C.Engine.
+
 We provide a whole set of services around U.C.Engine : consulting, prototyping, user experience design, engineering, hosting support and training.
+
 More detail on our [[U.C.Engine by af83 website|http://ucengine.af83.com]].
 
 ## U.C.Engine application development
