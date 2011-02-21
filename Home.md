@@ -45,7 +45,7 @@ Building an application with U.C.Engine is mainly a question of adding bricks to
 * **File sharing:** [[brick|brick_filesharing]]- [[fileupload widget|widget_fileupload]] - [[filesharing widget|widget_filesharing]]
 * **Translation:** [[brick|brick_translation]]
 * **Twitter:** [[brick|brick_twitter]]
-* **Standalone widgets :** [[activity|widget_activity]] - [[chat|widget_chat]] - [[file|widget_file]] - [[player|widget_player]] - [[replay|widget_replay]] - [[results|widget_results]] - [[search|widget_search]]  - [[whiteboard|widget_whiteboard]] - [[timer|widget_timer]]
+* **Standalone widgets :** [[activity|widget_activity]] - [[chat|widget_chat]] - [[player|widget_player]] - [[replay|widget_replay]] - [[results|widget_results]] - [[search|widget_search]]  - [[whiteboard|widget_whiteboard]] - [[timer|widget_timer]]
 
 ## Help/Discuss
 
