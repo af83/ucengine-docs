@@ -6,10 +6,10 @@
 
 * Domains have been introduced, all records get a new field "domain" which contains the name of the host where the record has been stored.
 
-  **ReST API*
-  
+  **ReST API**
+
   A consequece of this change that is **not backward compatible** is the return of /infos:
-  
+
   `{"domain": "ucengine.org", "metadata": [{"description", "a simple description"}]` instead of `[{"description", "a simple description"}]` only.
 
   Note that the 'meeting' field in the event object has been replaced by 'location', although the meaning is the same.
@@ -17,16 +17,16 @@
 * The API now use POST to created records and PUT to update them. This is a **backward incompatible change*.*
 
   **ReST API:**
-  
+
   Some examples:
   `POST /meeting/?name={meeting}` instead of `PUT /meeting/{meeting}`
-  
+
   `PUT /user/{uid}` to update an user
-  
+
   **ucectl**
-  
-  Most of the calls to ucectl now require a --domain {domain} argument.
-  
+
+  Most of the calls to ucectl now require a *--domain {domain}* argument.
+
 ## 0.1 to 0.2
 
 * `/api/0.1` is no more available, use `/api/0.2` instead.
