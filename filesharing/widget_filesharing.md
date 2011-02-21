@@ -1,11 +1,12 @@
 # File sharing widget
 
-Upload file in current meeting, list uploaded files and allow user to share one of this files.
+The file sharing widget allow you to synchronize the viewing of a document
+with other participants of the meeting.
 
 ## Options
 
 * ucemeeting: current meeting
-* title: custom title 
+* title: custom title
 
 ## Methods
 
