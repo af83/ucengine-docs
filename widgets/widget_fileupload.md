@@ -44,10 +44,10 @@ $("#demo").file_upload({ucemeeting: meeting});
         <div class="ui-fileupload-files">
             <ul class="ui-fileupload-list">
                 <li class="mime pdf">
-                    <p><a href="#" class="ui-fileupload ui-download-link">production-programming.pdf</a></p>
+                    <p><span class="ui-fileupload ui-filesharing-filename">production-programming.pdf</span></p>
                     <p><span class="ui-file-owner"> 02-21-11 by root</span></p>
                     <p><a href="#" class="ui-fileupload ui-download-link">Download</a></p>
-            </li>
+                </li>
             </ul>
             <div>
                 <p class="ui-fileupload-add">
