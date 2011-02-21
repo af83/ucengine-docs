@@ -6,11 +6,11 @@ Upload file in current meeting, list uploaded files and allow user to preview or
 
 * ucemeeting: current meeting
 * upload: show/hide upload button
-* title: custom title 
+* title: custom title
 
 ## Methods
 
-* clear: rinit widget
+* clear: reinit widget
 * viewAll: show list uploaded files and hide file preview screen
 * viewPreview: hide list uploaded files and show file preview screen
 * destroy: destroy widget

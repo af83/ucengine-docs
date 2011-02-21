@@ -9,7 +9,7 @@ Upload file in current meeting and list upload files.
 
 ## Methods
 
-* clear: rinit widget
+* clear: reinit widget
 * destroy: destroy widget
 
 ## Theming
