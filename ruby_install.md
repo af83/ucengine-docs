@@ -12,8 +12,8 @@ require 'ucengine'
 
 uce = UCEngine.new("localhost", 4567)
 uce.connect("uce@example.org", :credential => 'pwd') do |uce|
-  uce.subscribe([], :type => 'chat.message.new', :search => 'HTML5') do |event|
-    uce.publish(:location => [event['meeting']]
+  uce.subscribe("", :type => 'chat.message.new', :search => 'HTML5') do |event|
+    uce.publish(:location => event['meeting']
                 :from => 'bot',
                 :type => 'chat.message.new',
                 :metadata => {"text" => "Hey, you were talking about HTML5"})
@@ -23,4 +23,4 @@ end
 
 ## More?
 
-See the full API documentation on [rdoc.info](http://rdoc.info/github/AF83/ucengine.rb/master/frames)
+See the full API documentation on [rubydoc.info](http://rubydoc.info/gems/ucengine/0.3.2/UCEngine)
