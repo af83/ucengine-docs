@@ -11,8 +11,8 @@ Upload file in current meeting, list uploaded files and allow user to preview or
 ## Methods
 
 * clear: reinit widget
-* viewAll: show list uploaded files and hide file preview screen
-* viewPreview: hide list uploaded files and show file preview screen
+* startPreview: hide the list of uploaded files and show a preview screen for the chosen file
+* stopPreview: hide the current preview and show the list of available files
 * destroy: destroy widget
 
 ## Exemple
@@ -39,37 +39,45 @@ $("#demo").file_upload({ucemeeting: meeting});
             </span>
         </span>
     </div>
+
     <div class="ui-widget-content">
-        <div class="ui-fileupload-all">
-            <ul class="ui-fileupload-list"></ul>
+        <div class="ui-fileupload-files">
+            <ul class="ui-fileupload-list">
+                <li class="mime pdf">
+                    <p><span class="ui-fileupload ui-filesharing-filename">production-programming.pdf</span></p>
+                    <p><span class="ui-file-owner"> 02-21-11 by root</span></p>
+                    <p><a href="#" class="ui-fileupload ui-download-link">Download</a></p>
+                </li>
+            </ul>
             <div>
                 <p class="ui-fileupload-add">
-                    <a href="#" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button" aria-disabled="false"><span class="ui-button-text">Upload New File</span></a>
+                    <a href="#" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button" aria-disabled="false">
+                        <span class="ui-button-text">Upload New File</span>
+                     </a>
                 </p>
             </div>
         </div>
-        <div class="ui-fileupload-preview" style="display: none;">
-            <div class="ui-fileupload-preview-title"></div>
-            <div class="ui-corner-all ui-preview-toolbar">
-                <span class="ui-fileupload ui-toolbar-button ui-button-previous ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only" href="#" role="button" aria-disabled="false" title="">
-                    <span class="ui-button-icon-primary ui-icon ui-icon-arrowthick-1-n"></span>
-                    <span class="ui-button-text"></span>
-                </span>
-                <span class="ui-fileupload ui-toolbar-button ui-button-next ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only" href="#" role="button" aria-disabled="false" title="">
-                    <span class="ui-button-icon-primary ui-icon ui-icon-arrowthick-1-s"></span>
-                    <span class="ui-button-text"></span>
-                </span>
-                <span class="ui-fileupload ui-toolbar-selector">
-                    <span class="ui-fileupload ui-selector-current"></span>
-                    <span class="ui-fileupload ui-selector-separator">/</span>
-                    <span class="ui-fileupload ui-selector-total"></span>
-                </span>
+        <div class="ui-fileupload-preview">
+        <div class="ui-corner-all ui-preview-toolbar">
+            <span class="ui-fileupload ui-toolbar-button ui-button-previous ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only" href="#" role="button" aria-disabled="false" title="">
+                <span class="ui-button-icon-primary ui-icon ui-icon-arrowthick-1-n"></span>
+                <span class="ui-button-text"></span>
+            </span>
+            <span class="ui-fileupload ui-toolbar-button ui-button-next ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only" href="#" role="button" aria-disabled="false" title="">
+                <span class="ui-button-icon-primary ui-icon ui-icon-arrowthick-1-s"></span>
+                <span class="ui-button-text"></span></span>
                 <span class="ui-fileupload ui-toolbar-button ui-button-stop ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only" href="#" role="button" aria-disabled="false" title="">
-                    <span class="ui-button-icon-primary ui-icon ui-icon-circle-close"></span>
-                    <span class="ui-button-text"></span>
-                </span>
-            </div>
-            <div class="ui-fileupload-preview-page"><img></div>
+                <span class="ui-button-icon-primary ui-icon ui-icon-circle-close"></span>
+                <span class="ui-button-text"></span>
+            </span>
+            <span class="ui-fileupload ui-toolbar-selector">
+                <span class="ui-fileupload ui-selector-current"></span>
+                <span class="ui-fileupload ui-selector-separator">/</span>
+                <span class="ui-fileupload ui-selector-total"></span>
+            </span>
+        </div>
+        <div class="ui-fileupload-page">
+            <img>
         </div>
     </div>
 </article>
