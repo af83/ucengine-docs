@@ -30,7 +30,6 @@ Once you are sure to have all the dependancies installed on your system,
 retrieve the source code from our github repository:
 
      git clone git://github.com/AF83/ucengine.git
-     git submodule update --init
 
 ## Run the server
 
