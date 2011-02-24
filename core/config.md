@@ -9,18 +9,19 @@ Configuration file is located at *etc/uce.cfg*.
 Virtual hosts make possible to use one instance of U.C.Engine with multiple domains.
 The hosts variable allow you to define custom configuration values for each host:
 
-    {bricks,
-     [{"twitter", "secret token for twitter"},
-      {"translation", "secret token for translation"}]}.
+```erlang
+{bricks,
+ [{"twitter", "secret token for twitter"},
+  {"translation", "secret token for translation"}]}.
 
-    {datas, "datas/files"}
+{datas, "datas/files"}.
 
-    {hosts, [
-             {"localhost", []},
-             {"example.com", [{datas, "/tmp"}
-                              {bricks, [{"document", "secret token for document"}]}
-                              ]}]}
-    ]}.
+{hosts, [
+ {"localhost", []},
+ {"example.com", [{datas, "/tmp"}
+                  {bricks, [{"document", "secret token for document"}]}
+]}]}.
+```
 
 Here we define a global data directory for all our hosts and overwride the value for
 the example.com host. Thus the localhost host will have a data directory set to datas/files and the example.com host will have the tmp directory as its data directory.
