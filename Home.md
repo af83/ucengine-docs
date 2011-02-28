@@ -13,10 +13,9 @@ U.C.Engine is a [[free software project|https://github.com/AF83/ucengine/blob/ma
 See the [[introduction]] to learn some of the concepts of U.C.Engine.
 
 * [[Introduction|introduction]] - [[Installation|install]]
-* [[Quickstart with a video/chat application|quickstartjs]]
-* [[Designing events|cookbook_events]]
-* [[Guide for creating widget|cookbook_widgets]]
-* [[Create a brick|cookbook_brick]]
+* [[Getting started with a video/chat application|quickstartjs]]
+* [[Guide for creating a widget|cookbook_widgets]]
+* [[Guide for creating a brick|cookbook_brick]]
 
 ## Core
 
