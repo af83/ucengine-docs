@@ -5,14 +5,16 @@ The roadmap is freezed for the current month and subject to change weeks after w
 You can also have a look at the [[widget hopper|widget_hopper]].
 
 ## January 2011
-* New cleaner theme for demonstrator and widgets
-* File sharing widget
-* Timer widget
-* New improved whiteboard
-* Documentation
+
+* New cleaner theme for demonstrator and widgets - **DONE**
+* File sharing widget - **DONE**
+* Timer widget - **DONE**
+* New improved whiteboard - **DONE**
+* Documentation - **DONE**
 
 ## February - March 2011
-* Domain / virtual host
+
+* Domain / virtual host - **In progress**
 * HTTPS implementation
 * [[CORS|http://www.w3.org/TR/cors/]] support
 * Role system for Users
@@ -24,6 +26,7 @@ You can also have a look at the [[widget hopper|widget_hopper]].
 * More documentation
 
 ## April - June 2011
+
 * Screen sharing brick and widget
 * VOIP brick
 * Wowza video server brick
@@ -33,7 +36,7 @@ You can also have a look at the [[widget hopper|widget_hopper]].
 * Even more documentation
 
 ## July - December 2011
+
 * New widgets depending on demand (see the [[widget hopper|widget_hopper]])
 * Engine optimizations
 * Documentation again
-
