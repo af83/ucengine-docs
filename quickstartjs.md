@@ -1,6 +1,6 @@
 # Quickstart
 
-In this quickstart, we will create a fantastic video/chat application. We will use 2 widgets, [[widget_chat|chat]] and [[video|widget_video]].
+In this quickstart, we will create a fantastic video/chat application. We will use 2 widgets, [[chat|widget_chat]] and [[video|widget_video]].
 
 You will need:
 
