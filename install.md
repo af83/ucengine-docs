@@ -2,6 +2,8 @@
 
 ## Dependencies
 
+U.C.Engine has a few dependancies:
+
 * make
 * erlang (R14A)
 * yaws
@@ -10,22 +12,52 @@
 
 * eunit (for testing only)
 
-### Debian
+## Debian systems
 
-        aptitude install erlang erlang-yaws make
+On Debian systems the following packages should provide the necessary stuff:
 
-## Get source code
+  - erlang
+  - erlang-yaws
+  - make
 
-        git clone git://github.com/AF83/ucengine.git
-        git submodule update --init
+To install them, just run this command:
 
-## Run
+     $> aptitude install erlang erlang-yaws make
 
-        make run
+## Get the source code
 
-Go to [localhost:5280](http://localhost:5280/)
+Once you are sure to have all the dependancies installed on your system,
+retrieve the source code from our github repository:
 
-## Further reading:
+     $> git clone git://github.com/AF83/ucengine.git
+
+## Run the server
+
+Then build the server and start it:
+
+     $> make run
+
+Now your U.C.Engine instance is ready, go to [localhost:5280](http://localhost:5280/).
+
+## Inject some data
+
+If you want to play with U.C.Engine, you can start the *demo* with some data (meetings, users, ...).
+
+    $> make run
+    (in erlang shell): demo:start().
+
+You will 3 meetings:
+
+* demo
+* demo2
+* agoroom
+
+Some users:
+
+* an admin user (username: root, pwd: root)
+* a default user (username: participant, pwd: pwd)
+
+## Further reading
 
 * Control U.C.Engine with [[ucectl]]
 * Learn how to [[create javascript applications|quickstartjs]]

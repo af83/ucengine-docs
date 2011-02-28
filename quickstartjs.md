@@ -1,22 +1,18 @@
 # Quickstart
 
-In this quickstart, we will create a fantastic video/chat application.
+In this quickstart, we will create a fantastic video/chat application. We will use 2 widgets, [[chat|widget_chat]] and [[video|widget_video]].
 
 You will need:
 
-* ucengine up and running
-* a text editor
+* U.C.Engine up and running - see [[install guide|install]].
+* erlyvideo up and running - see [[erlyvideo install guide|erlyvideo]].
+* a text editor.
 * few javascript skills.
-
-## Install erlyvideo
-
-See [[erlyvideo]].
 
 ## Create one meeting and one user
 
 * meeting:  *demo*
 * User: *john* - password: *mypwd*
-
 
 * * *
 
@@ -81,3 +77,8 @@ uce.presence.create(password, uid, uid, function(err, result, xhr) {
 ## Test
 
 Go to [[localhost:5280/chat|http://localhost:5280/chat/]].
+
+## Further reading
+
+* [[Guide for creating a widget|cookbook_widgets]]
+* [[Guide for creating a brick|cookbook_brick]]

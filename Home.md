@@ -8,22 +8,21 @@ U.C.Engine (Unified Collaboration Engine) includes:
 
 U.C.Engine allows you to build real time applications like collaboration based services, live meetings, games or anything that fits well in an event driven philosophy.
 
-U.C.Engine is a [[free software project|https://github.com/AF83/ucengine/blob/master/AGPL-LICENSE.txt]] written in erlang (server) and javascript (front client). It exposes a ReSTful HTTP API with JSON as its primary exchange format. 
+U.C.Engine is a [[free software project|https://github.com/AF83/ucengine/blob/master/AGPL-LICENSE.txt]] written in erlang (server) and javascript (front client). It exposes a ReSTful HTTP API with JSON as its primary exchange format.
 
 See the [[introduction]] to learn some of the concepts of U.C.Engine.
 
-* [[Introduction|introduction]] - [[Installation|install]] - [[Play with the demonstrator]]
-* [[Quickstart with a video/chat application|quickstartjs]]
-* [[Designing events|cookbook_events]]
-* [[Guide for creating widget|cookbook_widgets]]
-* [[Create a brick|cookbook_brick]]
+* [[Introduction|introduction]] - [[Installation|install]]
+* [[Getting started with a video/chat application|quickstartjs]]
+* [[Guide for creating a widget|cookbook_widgets]]
+* [[Guide for creating a brick|cookbook_brick]]
 
 ## Core
 
 The core of U.C.Engine is a [[publish/subscribe|http://en.wikipedia.org/wiki/PubSub]] server written in Erlang. Persistence is achieved via the database of your choice.
 
 * **API**: [[ReST API reference|api]]
-* **Administration**: [[ucectl console|ucectl]]
+* **Administration**: [[ucectl console|ucectl]] - [[config file|config]]
 * **Databases:** [[mongodb]] - [[mnesia]]
 * **Full text Search:** [[Solr|solr]]
 * [[ACL|acl]] - [[Core events|events]]
