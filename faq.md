@@ -47,7 +47,7 @@ These events will be retrieved in the next request.
 
 ## Is U.C.Engine different from Google wave?
 
-**Objects** 
+**Objects**
 A few wave objects are similar to U.C.Engine concepts :
 
  Wave      | U.C.Engine
@@ -60,7 +60,7 @@ A few wave objects are similar to U.C.Engine concepts :
 
 In U.C.Engine there are documents too, but these are just uploaded files.
 
-**Federation** 
+**Federation**
 U.C.Engine doesn't support federation.
 Federation is great but we believe that many applications just don't need federation.
 
@@ -142,4 +142,3 @@ Only Chuck Norris have commit access. If you wish to have commit access, please 
 ### #10 Silence
 
 **(...)**
-
