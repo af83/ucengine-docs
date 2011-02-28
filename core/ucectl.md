@@ -1,7 +1,7 @@
 # ucectl
 
 ## NAME
-ucectl - UCengine control
+ucectl - U.C.Engine control
 
 ## SYNOPSYS
 
