@@ -42,5 +42,4 @@ Now your U.C.Engine instance is ready, go to [localhost:5280](http://localhost:5
 ## Further reading
 
 * Control U.C.Engine with [[ucectl]]
-* [[Play with the demonstrator]]
 * Learn how to [[create javascript applications|quickstartjs]]
