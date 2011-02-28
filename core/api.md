@@ -549,11 +549,11 @@ Parameter                              | Description                           |
 `start`                                | Start of the event's frame            | `63444430100`
 `end`                                  | End of the event's frame              | `63444430300`
 `from`                                 | The sender of the event               | `uid_63444326443_50150`
-`count`                                | Number of events to return            | `42`
-`page`                                 |                                       |
-`order`                                |                                       |
-`search`                               |                                       |
-`parent`                               |                                       |
+`count`                                | Number of events per page             | `42`
+`page`                                 | Index of the first page to return     | `1`
+`order`                                | Sorting order                         | `asc` or `desc`
+`search`                               | Keywords that events should match     | `chuck,bruce`
+`parent`                               | Id of the parent event                | `48320948320982309`
 `_async`                               | Method used to retrieve the events    | `no` or `lp`
 
 #### Require authentication:
@@ -606,6 +606,103 @@ yes
 - The `limit` option can be negative. For instance, `limit=-2` will return the 2 last events of the frame.
   Limit can also take the `last` value which is equivalent to `limit=-1`
 - The `_async` option allow you to return the events to the client in real time.
+
+### Search events in U.C.Engine
+
+#### Request
+
+    GET /search/event
+
+Parameter                              | Description                           | Example
+---------------------------------------|---------------------------------------|------------------------------------------------------------
+**URL Parameters**                     |                                       |
+`meeting`                              | Meeting id                            | `demo`
+**Optional Encoded Parameters**        |                                       |
+`count`                                | Number of events per page             | `42`
+`startPage`                            | Index of the first page to return     | `1`
+`startIndex`                           | Index of the first event in the page  | `2`
+`searchTerms`                          | Terms to search (see Notes below)     | `from:chuck nunchucks`
+
+#### Require authentification
+
+yes
+
+#### Search terms syntax
+
+The search terms can be any whitespace-separated words and will be
+searched in metadata. A few filters, similar to the parameters used in
+the above listing method, are available:
+
+Parameter                              | Description                           | Example
+---------------------------------------|---------------------------------------|------------------------------------------------------------
+`location`                             | Meeting id                            | `demo`
+`type`                                 | The event's type                      | `internal.meeting.add`
+`start`                                | Start of the event's frame            | `63444430100`
+`end`                                  | End of the event's frame              | `63444430300`
+`from`                                 | The sender of the event               | `uid_63444326443_50150`
+`parent`                               | Id of the parent event                | `48320948320982309`
+
+Filters can be used with `filter_name:filter_value`.
+
+#### Examples
+
+- Search all meeting creation events that contain the word `duck`:
+  
+        GET /search/event?searchTerms=duck
+
+- Search all meeting creation events that contain the words `bruce`
+  and `nunchuck`:
+  
+        GET /search/event?searchTerms=type:internal.meeting.add bruce nunchucks
+        
+- Search all chat messages from `chuck.norris`, starting from the
+timestamp 1298907632934 to 1298907722946
+that contain the words `foot`:
+  
+        GET /search/event?searchTerms=type:chat.message.add from:chuck.norris start:1298907632934 end:1298907722946 foot
+
+#### Returned values
+
+        {"result":      {"link": "http://localhost:5280/api/0.3/search/event?uid=user_uid&sid=user_sid&count=2&searchTerms=location:testmeeting chuck",
+                         "totalResults": 2,
+                         "startIndex": 0,
+                         "itemsPerPage": 2,
+                         "Query":       {"role": "request",
+                                         "searchTerms": "location:testmeeting chuck",
+                                         "startPage":1},
+                         "entries": [{"type": "internal.roster.add",
+                                      "domain": "ucengine.org",
+                                      "datetime": 1298908021875,
+                                      "id": "15368680984378277377616406943211",
+                                      "location": "testmeeting",
+                                      "from": "participant.user@af83.com",
+                                      "metadata":       {"nickname": "chuck norris"}},
+                                     {"type": "chat.message.add",
+                                      "domain": "localhost",
+                                      "datetime": 1298908021943,
+                                      "id": "15368680984378277377616406943211",
+                                      "location": "testmeeting",
+                                      "from": "participant.user@af83.com",
+                                      "metadata":       {"text", "I love chuck!"}}]}}
+
+
+#### Notes
+
+The API is similar to the
+[OpenSearch API|http://www.opensearch.org/Specifications/OpenSearch/1.1],
+except that U.C.Engine returns JSON-formatted results. Note that this
+entry point does not behave like the method described above:
+
+- there is no guarantee that a event can be searched right after its
+  registration. The delay depends on the search backend used to index
+  the events;
+- the returned document contains informations about pagination (see
+  the `Returned values` section).
+- the results are not guaranteed to be identical across multiple
+  backends.
+  
+This method is useful to perform fast full-text search, and should be
+used only for this purpose.
 
 ### Send an event to U.C.Engine
 
