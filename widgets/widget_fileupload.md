@@ -15,6 +15,32 @@ Upload file in current meeting, list uploaded files and allow user to preview or
 * stopPreview: hide the current preview and show the list of available files
 * destroy: destroy widget
 
+## Events
+### document.share.start
+
+Sent by an user. Notifies other participants that a new file is shared. 
+
+Metadata       | Description
+---------------|-------------------------------------------------------------------------------------------------------
+id             | The document id to share
+**optional     |
+page           | The starting page number
+
+Example:
+
+```javascript
+{ "type"     : "document.share.start",
+  "datetime" : 1292601125242,
+  "id"       : "91918360913598370296768635184385",
+  "location" : "my_meeting",
+  "from"     : "uid_63444326443_50150",
+  "metadata" : {
+    "id"   : "file_id_43243253253.pdf",
+    "page" : "3",
+  }
+}
+```
+
 ## Exemple
 ```javascript
 $("#demo").file_upload({ucemeeting: meeting});
