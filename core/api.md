@@ -532,6 +532,7 @@ yes
     404 { "error": "not_found" } // the meeting doesn't exists
 
 ## Events
+
 ### Retrieve the events
 
 #### Request
@@ -827,6 +828,32 @@ yes
 
     500 { "error": "unexpected_error" }
 
+
+### Delete a file
+
+#### Request
+
+    DELETE /file/{meeting}/{filename}
+
+Parameter                              | Description                           | Example
+---------------------------------------|---------------------------------------|------------------------------------------------------------
+**URL Parameters**                     |                                       |
+`meeting`                              | Meeting id                            | `demo`
+`filename`                             | Filename                              | `ucengine.odp`
+
+#### Require authentication:
+
+yes
+
+#### Returned values
+
+    200 { "result": "ok" }
+
+    401 { "error": "unauthorized" }
+
+    404 { "error": "not_found" }
+
+    500 { "error": "unexpected_error" }
 
 ## ACLs
 
