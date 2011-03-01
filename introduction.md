@@ -20,12 +20,12 @@ Events are the heart of the U.C.Engine protocol.
 Here is an event in a JSON format:
 
 ```javascript
-{ "type"    : "chat.message.new",
-  "datetime": 1292593766682,
-  "id"      : "44099145822544409583064798111089",
-  "meeting" : "introduction",
-  "from"    : "ucengine@example.com",
-  "metadata": {
+{ "type"     : "chat.message.new",
+  "datetime" : 1292593766682,
+  "id"       : "44099145822544409583064798111089",
+  "location" : "introduction",
+  "from"     : "ucengine@example.com",
+  "metadata" : {
     "text": "Hi there ! I'm an event !"
   }
 }

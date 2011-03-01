@@ -43,7 +43,7 @@ Example:
 { "type"     : "chat.translation.new",
   "datetime" : 1292603078834,
   "id"       : "55807763603614612180220217695833",
-  "meeting"  : "demo",
+  "location" : "demo",
   "from"     : "translation",
   "parent"   : "96383203370218539842143583984667",
   "metadata" : {

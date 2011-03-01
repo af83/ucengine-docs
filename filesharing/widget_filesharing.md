@@ -55,6 +55,7 @@ $("#demo").file_sharing({ucemeeting: meeting});
                 <span class="ui-button-icon-primary ui-icon ui-icon-circle-close"></span>
                 <span class="ui-button-text"></span>
             </span>
+            <a href="#" class="ui-fileupload ui-share-link">Share</a>            
             <span class="ui-filesharing ui-toolbar-selector">
                 <span class="ui-filesharing ui-selector-current"></span>
                 <span class="ui-filesharing ui-selector-separator">/</span>
