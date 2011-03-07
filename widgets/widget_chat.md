@@ -1,5 +1,11 @@
 # Chat
 
+The chat widget enables a public conversation between the attendants.
+It is also integrated with:
+
+* the translation brick: translate the conversation from one language to another
+* the twitter brick: display tweet with the designated hashtag
+
 ## Options
 
 * ucemeeting: current meeting
