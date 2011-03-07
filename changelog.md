@@ -3,6 +3,8 @@
 ## 0.3 to 0.4 (currently in development)
 
 * Vhosts: see [[config]].
+* New search api: See [[Search events in U.C.Engine|api#search-events-in-ucengine]].
+* Fix long polling with nginx.
 
 ## 0.2 to 0.3
 
