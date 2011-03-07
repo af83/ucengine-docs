@@ -14,7 +14,7 @@
 
   **ReST API**
 
-  A consequece of this change that is **not backward compatible** is the return of /infos:
+  A consequence of this change that is **not backward compatible** is the return of /infos:
 
   `{"domain": "ucengine.org", "metadata": [{"description", "a simple description"}]` instead of `[{"description", "a simple description"}]` only.
 
