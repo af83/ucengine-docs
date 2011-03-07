@@ -14,7 +14,8 @@ You have to consider a few conventions :
 
 ## Authentication
 
-If an API method need authentication, there are recurrent parameters :
+All methods require a presence, the following parameters are
+mandatory for all methods, with the exception of presence creation:
 
 Parameter                              | Description                           | Example
 ---------------------------------------|---------------------------------------|------------------------------------------------------------
@@ -43,10 +44,6 @@ The timestamp is the number of milliseconds elapsed since EPOCH (1970-01-01).
 #### Request
 
     GET /user/
-
-#### Require authentication:
-
-yes
 
 #### Returned values
 
@@ -102,13 +99,10 @@ Parameter                              | Description                           |
 **URL Parameters**                     |                                       |
 `uid`                                  | User id                               | `uid_63444326443_50150`
 **Encoded Parameters**                 |                                       |
-`auth`                                 | Authentication method                 | `password` or `token`
+`auth`                                 | Authentication method
+| `password`, `token` or `none`
 `credential`                           | Password or token                     | `dWlkXzYzNDQ0MzI2NDQzXzUwMTUwCg`
 `metadata`                             | Array containing metadata             | `metadata[key]=value`
-
-#### Require authentication:
-
-yes
 
 ### Returned values
 
@@ -128,10 +122,6 @@ Parameter                              | Description                           |
 ---------------------------------------|---------------------------------------|------------------------------------------------------------
 **URL Parameters**                     |                                       |
 `uid`                                  | User id                               | `uid_63444326443_50150`
-
-#### Require authentication:
-
-yes
 
 #### Returned values
 
@@ -159,10 +149,6 @@ Parameter                              | Description                           |
 ---------------------------------------|---------------------------------------|------------------------------------------------------------
 **URL Parameters**                     |                                       |
 `uid`                                  | User id                               | `uid_63444326443_50150`
-
-#### Require authentication:
-
-yes
 
 #### Returned values
 
@@ -211,10 +197,6 @@ Parameter                              | Description                           |
 `uid`                                  | User id                               | `uid_63444326443_50150`
 `sid`                                  | Session id                            | `330249245470504`
 
-#### Require authentication:
-
-yes
-
 #### Returned values
 
     200 { "result": "ok" }}.
@@ -255,10 +237,6 @@ Parameter                              | Description                           |
 **URL Parameters**                     |                                       |
 `metadata`                             | Array containing metadata             | `metadata[key]=value`
 
-#### Require authentication:
-
-yes
-
 #### Returned values
 
     200 { "result": "ok" }
@@ -281,10 +259,6 @@ Parameter                              | Description                           |
 **Encoded Parameters**                 |                                       |
 `uid`                                  | User id                               | `uid_63444326443_50150`
 
-#### Require authentication:
-
-yes
-
 #### Returned values
 
     200 { "result": "ok" }
@@ -306,10 +280,6 @@ Parameter                              | Description                           |
 **URL Parameters**                     |                                       |
 `meeting`                              | Meeting id                            | `demo`
 `uid`                                  | User id                               | `uid_63444326443_50150`
-
-#### Require authentication:
-
-yes
 
 #### Returned values
 
@@ -335,10 +305,6 @@ Parameter                              | Description                           |
 `start`                                | opening Timestamp of the meeting      | `63444430100`
 `end`                                  | ending Timestamp of the meeting       | `63444430800`
 `metadata`                             | Array containing metadata             | `metadata[key]=value`
-
-#### Require authentication:
-
-yes
 
 #### Notes
 
@@ -372,10 +338,6 @@ Parameter                              | Description                           |
 `start`                                | opening Timestamp of the meeting      | `63444430100`
 `end`                                  | ending Timestamp of the meeting       | `63444430800`
 `metadata`                             | Array containing metadata             | `metadata[key]=value`
-
-#### Require authentication:
-
-yes
 
 #### Returned values
 
@@ -443,10 +405,6 @@ Parameter                              | Description                           |
 **URL Parameters**                     |                                       |
 `status`                               | Status of the meeting                 | `upcoming` or `opened` or `closed` or `all`
 
-#### Require authentication:
-
-yes
-
 #### Returned values
 
     200 {"result":[{    "name":"demo",
@@ -486,10 +444,6 @@ Parameter                              | Description                           |
 **URL Parameters**                     |                                       |
 `meeting`                              | Meeting id                            | `demo`
 
-#### Require authentication:
-
-yes
-
 #### Returned values
 
     200 {"result":{     "name":"demo",
@@ -516,10 +470,6 @@ Parameter                              | Description                           |
 ---------------------------------------|---------------------------------------|------------------------------------------------------------
 **URL Parameters**                     |                                       |
 `meeting`                              | Meeting id                            | `demo`
-
-#### Require authentication:
-
-yes
 
 #### Returned values
 
@@ -556,10 +506,6 @@ Parameter                              | Description                           |
 `search`                               | Keywords that events should match     | `chuck,bruce`
 `parent`                               | Id of the parent event                | `48320948320982309`
 `_async`                               | Method used to retrieve the events    | `no` or `lp`
-
-#### Require authentication:
-
-yes
 
 #### Returned values
 
@@ -623,10 +569,6 @@ Parameter                              | Description                           |
 `startPage`                            | Index of the first page to return     | `1`
 `startIndex`                           | Index of the first event in the page  | `2`
 `searchTerms`                          | Terms to search (see Notes below)     | `from:chuck nunchucks`
-
-#### Require authentification
-
-yes
 
 #### Search terms syntax
 
@@ -722,10 +664,6 @@ Parameter                              | Description                           |
 **Optional Encoded Parameters**        |                                       |
 Any other parameter                    | These will be part of the metadata    |
 
-#### Require authentication:
-
-yes
-
 #### Returned values
 
     201 {"result": "24653994823933231622695570265810"}
@@ -750,10 +688,6 @@ Parameter                              | Description                           |
 `meeting`                              | Meeting id                            | `demo`
 **Optional Encoded Parameters**        |                                       |
 `_filename`                            | Filename                              | `ucengine.odp`
-
-#### Require authentication:
-
-yes
 
 #### Returned values
 
@@ -784,10 +718,6 @@ Parameter                              | Description                           |
 **URL Parameters**                     |                                       |
 `meeting`                              | Meeting id                            | `demo`
 
-#### Require authentication:
-
-yes
-
 #### Returned values
 
     200 { "result": [ { "filename": "U.C.Engine.odp"
@@ -814,10 +744,6 @@ Parameter                              | Description                           |
 `meeting`                              | Meeting id                            | `demo`
 `filename`                             | Filename                              | `ucengine.odp`
 
-#### Require authentication:
-
-yes
-
 #### Returned values
 
     200 The file to download
@@ -840,10 +766,6 @@ Parameter                              | Description                           |
 **URL Parameters**                     |                                       |
 `meeting`                              | Meeting id                            | `demo`
 `filename`                             | Filename                              | `ucengine.odp`
-
-#### Require authentication:
-
-yes
 
 #### Returned values
 
@@ -874,10 +796,6 @@ Parameter                              | Description                           |
 `meeting`                              | Meeting id                            | `demo`
 **Encoded Parameters**                 |                                       |
 `condition`                            | Array of conditions to satisfy        |
-
-#### Require authentication:
-
-yes
 
 #### Examples
 
@@ -915,10 +833,6 @@ Parameter                              | Description                           |
 **Encoded Parameters**                 |                                       |
 `condition`                            | Array of conditions to satisfy        |
 
-#### Require authentication:
-
-yes
-
 #### Returned values
 
     201 { "result": "ok" } // the right has been successfully added
@@ -948,10 +862,6 @@ Parameter                              | Description                           |
 `meeting`                              | Meeting id                            | `demo`
 **Encoded Parameters**                 |                                       |
 `condition`                            | Array of conditions to satisfy        |
-
-#### Require authentication:
-
-yes
 
 #### Returned values
 
