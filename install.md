@@ -2,14 +2,13 @@
 
 ## Dependencies
 
-U.C.Engine has a few dependancies:
+U.C.Engine has a few dependencies:
 
 * make
 * erlang (R14A)
 * yaws
 * mnesia or mongodb
 * inets
-
 * eunit (for testing only)
 
 ## Debian systems
@@ -26,7 +25,7 @@ To install them, just run this command:
 
 ## Get the source code
 
-Once you are sure to have all the dependancies installed on your system,
+Once you are sure to have all the dependencies installed on your system,
 retrieve the source code from our github repository:
 
      $> git clone git://github.com/AF83/ucengine.git
@@ -46,13 +45,13 @@ If you want to play with U.C.Engine, you can start the *demo* with some data (me
     $> make run
     (in erlang shell): demo:start().
 
-You will 3 meetings:
+It will create three meetings:
 
 * demo
 * demo2
 * agoroom
 
-Some users:
+And few users:
 
 * an admin user (username: root, pwd: root)
 * a default user (username: participant, pwd: pwd)
