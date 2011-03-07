@@ -12,24 +12,28 @@ You can also have a look at the [[widget hopper|widget_hopper]].
 * New improved whiteboard - **DONE**
 * Documentation - **DONE**
 
-## February - March 2011
+## February 2011
 
-* Domain / virtual host - **In progress**
+* Domain / virtual host - **Done**
+* Enhanced SolR integration and search API - **Done**
+
+## March 2011
+
+* [[CORS|http://www.w3.org/TR/cors/]] support - **In progress**
+* Role system for Users - **In progress**
+* Meeting management widget - **In progress**
 * HTTPS implementation
-* [[CORS|http://www.w3.org/TR/cors/]] support
-* Role system for Users
-* Meeting management widget
 * Office document sharing widget and brick
 * CMIS connector for DB
-* Enhanced replay & search
-* Engine optimizations
-* More documentation
+* Engine optimizations - **In progress**
+* More documentation - **In progress**
 
 ## April - June 2011
 
 * Screen sharing brick and widget
 * VOIP brick
 * Wowza video server brick
+* FMS video server brick
 * New widgets depending on demand (see the [[widget hopper|widget_hopper]])
 * Additional theme
 * Engine optimizations
