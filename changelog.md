@@ -1,5 +1,9 @@
 # History
 
+## 0.3 to 0.4 (currently in development)
+
+* Vhosts: see [[config]].
+
 ## 0.2 to 0.3
 
 * `/api/0.2` is not available anymore, use `/api/0.3` instead.
