@@ -90,7 +90,7 @@ Attach a new presence. It will be used in all next requests.
 
 Parameter                              | Description
 ---------------------------------------|---------------------------------------
-`presence`                             | A presence object returned by the [create method](#create-presence)
+`presence`                             | A presence object returned by the [method to create a presence](#create-a-presence)
 
 ### Example
 
