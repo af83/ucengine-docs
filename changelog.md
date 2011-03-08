@@ -1,4 +1,4 @@
-# History
+# Changelog
 
 ## 0.3 to 0.4 (currently in development)
 
