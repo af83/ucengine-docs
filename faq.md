@@ -47,8 +47,7 @@ These events will be retrieved in the next request.
 
 ## Is U.C.Engine different from Google wave?
 
-**Objects**
-A few wave objects are similar to U.C.Engine concepts :
+**Objects** - A few wave objects are similar to U.C.Engine concepts :
 
  Wave      | U.C.Engine
 -----------|------------
@@ -60,12 +59,10 @@ A few wave objects are similar to U.C.Engine concepts :
 
 In U.C.Engine there are documents too, but these are just uploaded files.
 
-**Federation**
-U.C.Engine doesn't support federation.
+**Federation** - U.C.Engine doesn't support federation.
 Federation is great but we believe that many applications just don't need federation.
 
-**Complexity**
-Google wanted Wave to be the ultimate one size fits all communication tool of the future (remember?). On our side, we believe in simplicity.
+**Complexity** - Google wanted Wave to be the ultimate one size fits all communication tool of the future (remember?). On our side, we believe in simplicity.
 
 U.C.Engine is simpler than Google Wave, because :
 
