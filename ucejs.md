@@ -1,5 +1,13 @@
 # Uce.js
 
+## Location
+
+uce.js is located at *priv/www/lib/uce.js*.
+
+## Dependencies
+
+* jQuery 1.4.4
+
 ## Full example
 
 The following example show you how to subscribe to events and do something with them :
