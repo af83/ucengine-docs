@@ -101,6 +101,15 @@ The following options are available:
   - `conditions`:
     Just like `metadata` a list of conditions is created with all the command line arguments that are not used by the method itself. The list of conditions that can be used depend on the `object` and `action` used.
 
+## NODE
+
+  It is possible to specify the Erlang node name of U.C.Engine with
+  the `--node` argument. This option can be useful when `ucectl` could
+  not find the U.C.Engine node name automatically. For example, if the
+  U.C.Engine node name is `ucengine@myserver.com`:
+  
+  * `demo` `start` `--node` ucengine@myserver.com
+
 ## EXAMPLES
 
 List all meetings:
