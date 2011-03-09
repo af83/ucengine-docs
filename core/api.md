@@ -23,7 +23,7 @@ Parameter                              | Description                           |
 `uid`                                  | User id                               | `uid_63444326443_50150`
 `sid`                                  | Session id                            | `330249245470504`
 
-## Authentification
+### Connect user
 
 #### Request
 
@@ -38,7 +38,7 @@ Parameter                              | Description                           |
 `timeout`                              | Session timeout value (sec)           | `200`
 `metadata`                             | Array containing metadata             | `metadata[key]=value`
 
-#### Returned values
+##### Returned values
 
     200 { "result": "409832095702309473209" } // the result is a valid sid
 
@@ -46,13 +46,13 @@ Parameter                              | Description                           |
 
     403 { "error": "bad_credentials" } // the authentification has failed
 
-## Disconnect users
+### Disconnect users
 
-#### Request
+##### Request
 
     DELETE /presence/{sid}
 
-#### Paramètres
+##### Parameters
 
 Parameter                              | Description                           | Example
 ---------------------------------------|---------------------------------------|------------------------------------------------------------
@@ -60,7 +60,7 @@ Parameter                              | Description                           |
 `uid`                                  | User id                               | `uid_63444326443_50150`
 `sid`                                  | Session id                            | `330249245470504`
 
-#### Returned values
+##### Returned values
 
     200 { "result": "ok" }}.
 
@@ -70,7 +70,7 @@ Parameter                              | Description                           |
 
     404 { "error": "not_found" } // the presence resource doesn't exists
 
-#### Notes
+##### Notes
 
 The user given as an URL parameter is not necessarily the same than the one
 passed as an encoded parameter. Thus you can disconnect another user (if the
