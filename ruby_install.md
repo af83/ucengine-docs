@@ -2,7 +2,7 @@
 
 ## Installation
 
-        gem install ucengine
+    gem install ucengine
 
 ## Getting started
 
