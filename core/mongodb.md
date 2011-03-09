@@ -4,7 +4,7 @@
 
 On debian:
 
-        aptitude install mongodb-server
+    aptitude install mongodb-server
 
 ## Configure
 

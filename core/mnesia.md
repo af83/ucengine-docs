@@ -4,7 +4,7 @@
 
 On debian:
 
-        aptitude install erlang-mnesia
+    aptitude install erlang-mnesia
 
 ## Configure
 
