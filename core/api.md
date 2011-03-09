@@ -23,6 +23,59 @@ Parameter                              | Description                           |
 `uid`                                  | User id                               | `uid_63444326443_50150`
 `sid`                                  | Session id                            | `330249245470504`
 
+## Authentification
+
+#### Request
+
+    POST /presence/
+
+Parameter                              | Description                           | Example
+---------------------------------------|---------------------------------------|------------------------------------------------------------
+**Encoded Parameters**                 |                                       |
+`uid`                                  | User id                               | `uid_63444326443_50150`
+`credential`                           | Password or token                     | `dWlkXzYzNDQ0MzI2NDQzXzUwMTUwCg`
+**Optional Encoded Parameters**        |                                       |
+`timeout`                              | Session timeout value (sec)           | `200`
+`metadata`                             | Array containing metadata             | `metadata[key]=value`
+
+#### Returned values
+
+    200 { "result": "409832095702309473209" } // the result is a valid sid
+
+    400 { "error": "bad_parameters" } // at least one paremeter is missing or wrong
+
+    403 { "error": "bad_credentials" } // the authentification has failed
+
+## Disconnect users
+
+#### Request
+
+    DELETE /presence/{sid}
+
+#### Paramètres
+
+Parameter                              | Description                           | Example
+---------------------------------------|---------------------------------------|------------------------------------------------------------
+**URL Parameters**                     |                                       |
+`uid`                                  | User id                               | `uid_63444326443_50150`
+`sid`                                  | Session id                            | `330249245470504`
+
+#### Returned values
+
+    200 { "result": "ok" }}.
+
+    400 { "error": "bad_parameters" } // at least one paremeter is missing or wrong
+
+    401 { "error": "unauthorized" } // the user is not authorized to disconnect this presence
+
+    404 { "error": "not_found" } // the presence resource doesn't exists
+
+#### Notes
+
+The user given as an URL parameter is not necessarily the same than the one
+passed as an encoded parameter. Thus you can disconnect another user (if the
+ACLs allow it of course).
+
 ## Time
 ### Retrieve current server's timestamp
 
@@ -159,59 +212,6 @@ Parameter                              | Description                           |
     404 { "error": "not_found" }
 
     500 { "error": "unexpected_error" }
-
-## Authentification
-
-#### Request
-
-    POST /presence/
-
-Parameter                              | Description                           | Example
----------------------------------------|---------------------------------------|------------------------------------------------------------
-**Encoded Parameters**                 |                                       |
-`uid`                                  | User id                               | `uid_63444326443_50150`
-`credential`                           | Password or token                     | `dWlkXzYzNDQ0MzI2NDQzXzUwMTUwCg`
-**Optional Encoded Parameters**        |                                       |
-`timeout`                              | Session timeout value (sec)           | `200`
-`metadata`                             | Array containing metadata             | `metadata[key]=value`
-
-#### Returned values
-
-    200 { "result": "409832095702309473209" } // the result is a valid sid
-
-    400 { "error": "bad_parameters" } // at least one paremeter is missing or wrong
-
-    403 { "error": "bad_credentials" } // the authentification has failed
-
-## Disconnect users
-
-#### Request
-
-    DELETE /presence/{sid}
-
-#### Paramètres
-
-Parameter                              | Description                           | Example
----------------------------------------|---------------------------------------|------------------------------------------------------------
-**URL Parameters**                     |                                       |
-`uid`                                  | User id                               | `uid_63444326443_50150`
-`sid`                                  | Session id                            | `330249245470504`
-
-#### Returned values
-
-    200 { "result": "ok" }}.
-
-    400 { "error": "bad_parameters" } // at least one paremeter is missing or wrong
-
-    401 { "error": "unauthorized" } // the user is not authorized to disconnect this presence
-
-    404 { "error": "not_found" } // the presence resource doesn't exists
-
-#### Notes
-
-The user given as an URL parameter is not necessarily the same than the one
-passed as an encoded parameter. Thus you can disconnect another user (if the
-ACLs allow it of course).
 
 ## Infos
 
