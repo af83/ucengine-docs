@@ -61,11 +61,12 @@ Create a folder *chat* in *priw/www*, with an index.html:
 ```javascript
 var password = "mypwd";
 var uid = "john";
-uce.presence.create(password, uid, uid, function(err, result, xhr) {
+var client = uce.createClient();
+client.auth(uid, password, function(err, result, xhr) {
   if (err) {
     return;
   }
-  var meeting = uce.attachPresence(result).meeting("demo");
+  var meeting = client.meeting("demo");
   $("<div>").appendTo($("body")).video({domain : "localhost/ucengine",
                                         ucemeeting: meeting});
   $("<div>").appendTo($("body")).chat({ucemeeting : meeting}).chat('toggleMode', 'big');

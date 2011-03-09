@@ -5,6 +5,11 @@
 * Vhosts: see [[config]].
 * New search api: See [[Search events in U.C.Engine|api#search-events-in-ucengine]].
 * Fix long polling with nginx.
+* Refactor [[uce.js library|ucejs]]
+
+  You must call uce.createClient() to have an instance of `UCEngine`.
+
+  `uce.presence.create` and `uce.presence.close` have been removed. You should use `UCEngine.auth(uid, credential, metadata, callback)` and `UCEngine.close(callback)`.
 
 ## 0.2 to 0.3
 

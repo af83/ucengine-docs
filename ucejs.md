@@ -2,7 +2,7 @@
 
 ## Location
 
-uce.js is located at *priv/www/lib/uce.js*.
+uce.js is located at [priv/www/lib/uce.js](https://github.com/AF83/ucengine/blob/master/priv/www/lib/uce.js).
 
 ## Dependencies
 
@@ -13,20 +13,31 @@ uce.js is located at *priv/www/lib/uce.js*.
 The following example show you how to subscribe to events and do something with them :
 
 ```javascript
-uce.presence.create("p4ssw0rd", "ucengine@example.com", "uce", function(err, result) {
-    var presence = uce.attachPresence(result);
-    var meeting = presence.meeting('demo');
-
-    meeting.bind("my.event", function(event) {
+var client = uce.createClient();
+client.auth('uce@example.org', 'pwd', function(err, result) {
+    var meeting = client.meeting('demo');
+    meeting.bind('my.event', function(event) {
         // do something with event
     });
-    meeting.startLoop();
+    meeting.startLoop(); // start long polling
 });
+```
+
+## Create a client
+
+Create a new U.C.Engine client. Return a `UCEngine` instance.
+
+*uce.createClient()*
+
+### Example
+
+```javascript
+var client = uce.createClient();
 ```
 
 ## Register an user (with password)
 
-*uce.user.registerWithPassword(uid, credential, metadata, callback)*
+*UCEngine.user.registerWithPassword(uid, credential, metadata, callback)*
 
 ### Parameters
 
@@ -40,14 +51,15 @@ Parameter                              | Description
 ### Example
 
 ```javascript
-uce.user.register("ucengine@example.com", "p4ssw0rd", {location: 'Paris'}, function(err, result) {
+var client = uce.createClient();
+client.user.register("ucengine@example.com", "p4ssw0rd", {location: 'Paris'}, function(err, result) {
     // user registered
 });
 ```
 
 ## Register an user (generic)
 
-*uce.user.register(uid, auth, credential, metadata, callback)*
+*UCEngine.user.register(uid, auth, credential, metadata, callback)*
 
 ### Parameters
 
@@ -62,37 +74,41 @@ Parameter                              | Description
 ### Example
 
 ```javascript
-uce.user.register("ucengine@example.com", "token", "dWlkXzYzNDQ0MzI2NDQzXzUwMTUwCg", {location: 'Paris'}, function(err, result) {
+var client = uce.createClient();
+client.user.register("ucengine@example.com", "token", "dWlkXzYzNDQ0MzI2NDQzXzUwMTUwCg", {location: 'Paris'}, function(err, result) {
     // user registered
 });
 ```
 
 ## Create a presence
 
-*uce.presence.create(credential, uid, nickname, callback)*
+*UCEngine.auth(uid, credential[, metadata], callback)*
 
 ### Parameters
 
 Parameter                              | Description
 ---------------------------------------|---------------------------------------
-`credential`                           | Password
 `uid`                                  | User id
-`nickname`                             | The nickname visible in the meeting
+`credential`                           | Password
+`metadata`                             | metadata attached to your presence
 `callback`                             |
 
 ### Example
 
 ```javascript
-uce.presence.create("p4ssw0rd", "ucengine@example.com", "uce", function(err, result) {
+var client = uce.createClient();
+client.auth("ucengine@example.com", "p4ssw0rd", {nickname: "ucengine"}, function(err, result) {
     // presence created
 });
 ```
 
 ## Attach presence
 
-Attach a new presence. It will be used in all next requests.
+Attach a presence to an `UCEngine` instance. It will be used in all next requests.
 
-*uce.attachPresence(presence)*
+You can store result of `UCEngine.auth` in localStorage and reuse it later (after hard refresh for example).
+
+*UCEngine.attachPresence(presence)*
 
 ### Parameters
 
@@ -103,27 +119,26 @@ Parameter                              | Description
 ### Example
 
 ```javascript
-uce.presence.create("p4ssw0rd", "ucengine@example.com", "uce", function(err, result) {
-    var presence = uce.attachPresence(result);
-    // do something with your presence
-});
+var client = uce.createClient();
+client.attachPresence(JSON.parse(window.localStorage.previousPresence));
 ```
 
 ## Get domain informations
 
-*uce.infos.get(callback)*
+*UCEngine.infos.get(callback)*
 
 ### Example
 
 ```javascript
-uce.infos.get(function(err, infos) {
+var client = uce.createClient();
+client.infos.get(function(err, infos) {
     // do something with infos
 });
 ```
 
 ## Update domain informations
 
-*uce.infos.post(metadata, callback)*
+*UCEngine.infos.post(metadata, callback)*
 
 ### Parameters
 
@@ -135,14 +150,15 @@ Parameter                              | Description
 ### Example
 
 ```javascript
-uce.infos.post({description: 'my desc'}, function(err, result) {
+var client = uce.createClient();
+client.infos.post({description: 'my desc'}, function(err, result) {
     // Info updated
 });
 ```
 
 ## Retrieve a meeting as an object
 
-*uce.meeting(meeting)*
+*UCEngine.meeting(meeting)*
 
 ### Parameters
 
@@ -153,13 +169,14 @@ Parameter                              | Description
 ### Example
 
 ```javascript
-var meeting = uce.meeting('demo');
+var client = uce.createClient();
+var meeting = client.meeting('demo');
 // do something with meeting
 ```
 
 ## Join a meeting
 
-*uce.meeting(meeting).join(callback)*
+*UCEngine.meeting(meeting).join(callback)*
 
 ### Parameters
 
@@ -171,7 +188,8 @@ Parameter                              | Description
 ### Example
 
 ```javascript
-var meeting = uce.meeting('demo');
+var client = uce.createClient();
+var meeting = client.meeting('demo');
 meeting.join(function() {
     // Do something in the meeting
 });
@@ -179,7 +197,7 @@ meeting.join(function() {
 
 ## Leave a meeting
 
-*uce.meeting(meeting).leave(callback)*
+*UCEngine.meeting(meeting).leave(callback)*
 
 ### Parameters
 
@@ -191,7 +209,8 @@ Parameter                              | Description
 ### Example
 
 ```javascript
-var meeting = uce.meeting('demo');
+var client = uce.createClient();
+var meeting = client.meeting('demo');
 meeting.join(function() {
     // Do something in the meeting
 
@@ -203,7 +222,7 @@ meeting.join(function() {
 
 ## List the users of a meeting
 
-*uce.meeting(meeting).getRoster(callback)*
+*UCEngine.meeting(meeting).getRoster(callback)*
 
 ### Parameters
 
@@ -215,19 +234,19 @@ Parameter                              | Description
 ### Example
 
 ```javascript
-var meeting = uce.meeting('demo');
-meeting.getRoster(function(roster) {
+var client = uce.createClient();
+var meeting = client.meeting('demo');
+meeting.getRoster(function(err, roster) {
     // The roster is a list of user
-    for(var i in roster) {
-        var user = roser[i];
+    roster.forEach(function(user) {
         // do something with user
-    }
+    });
 });
 ```
 
 ## Push an event
 
-*uce.meeting(meeting).push(type, metadata, callback)*
+*UCEngine.meeting(meeting).push(type, metadata, callback)*
 
 ### Parameters
 
@@ -241,7 +260,8 @@ Parameter                              | Description
 ### Example
 
 ```javascript
-var meetint = uce.meeting('demo')
+var client = uce.createClient();
+var meeting = client.meeting('demo')
 meeting.push('my.event', {property: 'some property'}, function(err, result) {
     // event pushed to the server
 });
@@ -249,7 +269,7 @@ meeting.push('my.event', {property: 'some property'}, function(err, result) {
 
 ## Wait events
 
-*uce.meeting(meeting).waitEvents(params, callback, one_shot)*
+*UCEngine.meeting(meeting).waitEvents(params, callback, one_shot)*
 
 ### Parameters
 
@@ -262,7 +282,7 @@ Parameter                              | Description
 
 ## Get events
 
-*uce.meeting(meeting).getEvents(params, callback, onEachEvent)*
+*UCEngine.meeting(meeting).getEvents(params, callback, onEachEvent)*
 
 ### Parameters
 
@@ -275,9 +295,9 @@ Parameter                              | Description
 
 ## Attach event handler
 
-*uce.meeting(meeting).bind(type, callback)*
+*UCEngine.meeting(meeting).bind(type, callback)*
 
-*uce.meeting(meeting).bind(callback)*
+*UCEngine.meeting(meeting).bind(callback)*
 
 ### Parameters
 
@@ -286,4 +306,3 @@ Parameter                              | Description
 `meeting`                              | The name of the meeting
 `type`                                 | The type of the event to bind
 `callback`                             | A function to call on each retrieved event
-
