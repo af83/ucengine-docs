@@ -261,10 +261,30 @@ Parameter                              | Description
 
 ```javascript
 var client = uce.createClient();
-var meeting = client.meeting('demo')
+var meeting = client.meeting('demo');
 meeting.push('my.event', {property: 'some property'}, function(err, result) {
     // event pushed to the server
 });
+```
+
+## Start long polling
+
+Subscribe to meetings events in long polling.
+
+*UCEngine.meeting(meeting).startLoop(start)*
+
+Parameter                              | Description
+---------------------------------------|---------------------------------------
+`start`                                |
+
+### Example
+
+```javascript
+var client = uce.createClient();
+var meeting = client.meeting('demo');
+meeting.on('chat.message.new', function(event) {
+});
+meeting.startLoop();
 ```
 
 ## Wait events
