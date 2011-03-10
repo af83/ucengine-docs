@@ -636,13 +636,13 @@ The API is similar to the
 except that U.C.Engine returns JSON-formatted results. Note that this
 entry point does not behave like the method described above:
 
-- there is no guarantee that a event can be searched right after its
+- there is no guarantee that an event can be searched right after its
   registration. The delay depends on the search backend used to index
   the events;
 - the returned document contains informations about pagination (see
   the `Returned values` section).
 - the results are not guaranteed to be identical across multiple
-  backends.
+  backends. See the [[config search backends|config#search-backends]].
 
 This method is useful to perform fast full-text search, and should be
 used only for this purpose.
