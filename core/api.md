@@ -591,42 +591,42 @@ Filters can be used with `filter_name:filter_value`.
 
 - Search all meeting creation events that contain the word `duck`:
 
-        GET /search/event?searchTerms=duck
+    GET /search/event?searchTerms=duck
 
 - Search all meeting creation events that contain the words `bruce`
   and `nunchuck`:
 
-        GET /search/event?searchTerms=type:internal.meeting.add bruce nunchucks
+    GET /search/event?searchTerms=type:internal.meeting.add bruce nunchucks
 
 - Search all chat messages from `chuck.norris`, starting from the
 timestamp 1298907632934 to 1298907722946
 that contain the words `foot`:
 
-        GET /search/event?searchTerms=type:chat.message.add from:chuck.norris start:1298907632934 end:1298907722946 foot
+    GET /search/event?searchTerms=type:chat.message.add from:chuck.norris start:1298907632934 end:1298907722946 foot
 
 #### Returned values
 
-        {"result":      {"link": "http://localhost:5280/api/0.3/search/event?uid=user_uid&sid=user_sid&count=2&searchTerms=location:testmeeting chuck",
-                         "totalResults": 2,
-                         "startIndex": 0,
-                         "itemsPerPage": 2,
-                         "Query":       {"role": "request",
-                                         "searchTerms": "location:testmeeting chuck",
-                                         "startPage":1},
-                         "entries": [{"type": "internal.roster.add",
-                                      "domain": "ucengine.org",
-                                      "datetime": 1298908021875,
-                                      "id": "15368680984378277377616406943211",
-                                      "location": "testmeeting",
-                                      "from": "participant.user@af83.com",
-                                      "metadata":       {"nickname": "chuck norris"}},
-                                     {"type": "chat.message.add",
-                                      "domain": "localhost",
-                                      "datetime": 1298908021943,
-                                      "id": "15368680984378277377616406943211",
-                                      "location": "testmeeting",
-                                      "from": "participant.user@af83.com",
-                                      "metadata":       {"text", "I love chuck!"}}]}}
+    {"result": {"link": "http://localhost:5280/api/0.3/search/event?uid=user_uid&sid=user_sid&count=2&searchTerms=location:testmeeting chuck",
+                "totalResults": 2,
+                "startIndex": 0,
+                "itemsPerPage": 2,
+                "Query": {"role": "request",
+                           "searchTerms": "location:testmeeting chuck",
+                           "startPage":1},
+                "entries": [{"type": "internal.roster.add",
+                             "domain": "ucengine.org",
+                             "datetime": 1298908021875,
+                             "id": "15368680984378277377616406943211",
+                             "location": "testmeeting",
+                             "from": "participant.user@af83.com",
+                             "metadata": {"nickname": "chuck norris"}},
+                            {"type": "chat.message.add",
+                             "domain": "localhost",
+                             "datetime": 1298908021943,
+                             "id": "15368680984378277377616406943211",
+                             "location": "testmeeting",
+                             "from": "participant.user@af83.com",
+                             "metadata": {"text", "I love chuck!"}}]}}
 
 
 #### Notes
