@@ -11,6 +11,8 @@
 
   `uce.presence.create` and `uce.presence.close` have been removed. You should use `UCEngine.auth(uid, credential, metadata, callback)` and `UCEngine.close(callback)`.
 
+  `UCEngine.meeting(name).bind` is replaced by `UCEngine.meeting(name).on`. `UCEngine.meeting(name).bind` is now deprecated on stay an alias for `UCEngine.meeting(name).on`.
+
 ## 0.2 to 0.3
 
 * `/api/0.2` is not available anymore, use `/api/0.3` instead.

@@ -16,7 +16,7 @@ The following example show you how to subscribe to events and do something with 
 var client = uce.createClient();
 client.auth('uce@example.org', 'pwd', function(err, result) {
     var meeting = client.meeting('demo');
-    meeting.bind('my.event', function(event) {
+    meeting.on(chat.message.new', function(event) {
         // do something with event
     });
     meeting.startLoop(); // start long polling
@@ -295,9 +295,9 @@ Parameter                              | Description
 
 ## Attach event handler
 
-*UCEngine.meeting(meeting).bind(type, callback)*
+*UCEngine.meeting(meeting).on(type, callback)*
 
-*UCEngine.meeting(meeting).bind(callback)*
+*UCEngine.meeting(meeting).on(callback)*
 
 ### Parameters
 
