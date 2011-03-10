@@ -590,18 +590,18 @@ Filters can be used with `filter_name:filter_value`.
 #### Examples
 
 - Search all meeting creation events that contain the word `duck`:
-  
+
         GET /search/event?searchTerms=duck
 
 - Search all meeting creation events that contain the words `bruce`
   and `nunchuck`:
-  
+
         GET /search/event?searchTerms=type:internal.meeting.add bruce nunchucks
-        
+
 - Search all chat messages from `chuck.norris`, starting from the
 timestamp 1298907632934 to 1298907722946
 that contain the words `foot`:
-  
+
         GET /search/event?searchTerms=type:chat.message.add from:chuck.norris start:1298907632934 end:1298907722946 foot
 
 #### Returned values
@@ -632,7 +632,7 @@ that contain the words `foot`:
 #### Notes
 
 The API is similar to the
-[OpenSearch API|http://www.opensearch.org/Specifications/OpenSearch/1.1],
+[OpenSearch API](http://www.opensearch.org/Specifications/OpenSearch/1.1),
 except that U.C.Engine returns JSON-formatted results. Note that this
 entry point does not behave like the method described above:
 
@@ -643,7 +643,7 @@ entry point does not behave like the method described above:
   the `Returned values` section).
 - the results are not guaranteed to be identical across multiple
   backends.
-  
+
 This method is useful to perform fast full-text search, and should be
 used only for this purpose.
 
