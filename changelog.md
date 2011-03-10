@@ -13,6 +13,13 @@
 
   `UCEngine.meeting(name).bind` is replaced by `UCEngine.meeting(name).on`. `UCEngine.meeting(name).bind` is now deprecated on stay an alias for `UCEngine.meeting(name).on`.
 
+* API: there is no more public methods except the presence creation.
+  So you have to be logged in to do anything now. Moreover the public methods now support new rights:
+
+  - infos get
+  - meeting get
+  - meeting list
+
 ## 0.2 to 0.3
 
 * `/api/0.2` is not available anymore, use `/api/0.3` instead.
