@@ -27,7 +27,13 @@ client.auth('uce@example.org', 'pwd', function(err, result) {
 
 Create a new U.C.Engine client. Return a `UCEngine` instance.
 
-*uce.createClient()*
+*uce.createClient(baseUrl)*
+
+### Parameters
+
+Parameter                              | Description
+---------------------------------------|---------------------------------------
+`baseUrl`                              | Base url of API
 
 ### Example
 
