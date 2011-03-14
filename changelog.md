@@ -22,6 +22,7 @@
 
 * Mongodb configuration have been updated. See the [[config]] doc.
 * [[CORS|http://www.w3.org/TR/cors/]] support.
+* Rename "datas" configuration key to "data".
 
 ## 0.2 to 0.3
 
