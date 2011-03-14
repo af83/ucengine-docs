@@ -20,6 +20,8 @@
   - meeting get
   - meeting list
 
+* Mongodb configuration have been updated. See the [[config]] doc.
+
 ## 0.2 to 0.3
 
 * `/api/0.2` is not available anymore, use `/api/0.3` instead.
