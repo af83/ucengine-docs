@@ -1,8 +1,12 @@
 # Access Control list
 
-## Setting up default acl
+## Setting up default rights
 
 See the [[configuration file documentation|config]].
+
+## Setting up rights via the command line
+
+See the [[ACL section|ucectl#acl]] of the ucectl tool and some [[examples|ucectl#examples]].
 
 ## List
 
@@ -30,3 +34,19 @@ user           | list         | [[List users|api#list-users]]
 user           | update       | [[Updade user informations|api#modify-users-informations]]
 user           | get          | [[Get user informations|api#retrieve-users-informations]]
 user           | delete       | [[Delete an user|api#delete-a-user]]
+
+## Conditions
+
+Conditions allows you to specify rights more finely.
+
+Object         | Action       | Condition  |  Description
+---------------|--------------|------------|---------------------------------------------------------------------------------
+file           | get          | id         | Download the file which have the corresponding file id.
+file           | delete       | id         | Delete the file which have the corresponding file id.
+event          | get          | id         | Retrieve the event which have the corresponding event id.
+event          | list         | from       | List events which have been posted by the corresponding "from" uid.
+event          | add          | to         | Send an event to the corresponding "to" uid.
+user           | update       | user       | Update the corresponding "user" uid.
+user           | update       | auth       |
+user           | get          | user       | Retrieve the informations of the corresponding "user" uid.
+user           | delete       | user       | Delete the corresponding "user" uid.
