@@ -149,11 +149,10 @@ This allow you, for example, to check if there is a current U.C.Engine instance 
 ```erlang
 {db, mongodb}.
 
-{mongodb,
- {uce_pool, [{size, 10},
-             {host, "127.0.0.1"},
-             {port, 27017},
-             {database, "ucengine"}]}}.
+{mongodb, [{size, 10},
+           {host, "127.0.0.1"},
+           {port, 27017},
+           {database, "ucengine"}]}.
 ```
 
 ## Search backends
@@ -171,4 +170,3 @@ This allow you, for example, to check if there is a current U.C.Engine instance 
 
 {solr, [{host, "http://localhost:8983/solr"}]}.
 ```
-
