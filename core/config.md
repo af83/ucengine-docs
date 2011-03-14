@@ -31,6 +31,25 @@ the example.com host. Thus localhost will have a data directory set to *datas/fi
 The logic of the overwrite mechanism is to replace the global value. For instance, the example set 2 bricks for each hosts while the example.com define its own brick.
 As the bricks variable is replaced for example.com, this domain will only have the document brick.
 
+### Setting up different databases per vhost
+
+You can setup different databases for each vhost. It allow you to use mnesia for one domain and mongodb for another.
+
+Example:
+
+```erlang
+% Per host config
+{hosts, [
+ {"localhost", [{db, mnesia}]},
+ {"example.com", [{db, mongodb},
+                  {mongodb, [{size, 10},
+                  {host, "127.0.0.1"},
+                  {port, 27017},
+                  {database, "example"}]}
+                  ]}
+]}
+```
+
 ## Admin setup
 
 ```erlang
