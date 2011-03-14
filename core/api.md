@@ -12,6 +12,10 @@ You have to consider a few conventions :
   example, to be able to do a `PUT` request, you will send a `POST` request
   with the following parameter: `_method=PUT`.
 
+### About cross domain requests
+
+Since U.C.Engine 0.4 you can perform cross domain requests. We send *Access-Control-Allow-Origin* with value `*`.
+
 ## Authentication
 
 All methods require a presence, the following parameters are

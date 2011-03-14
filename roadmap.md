@@ -19,7 +19,7 @@ You can also have a look at the [[widget hopper|widget_hopper]].
 
 ## March 2011
 
-* [[CORS|http://www.w3.org/TR/cors/]] support - **In progress**
+* [[CORS|http://www.w3.org/TR/cors/]] support - **Done**
 * Role system for Users - **In progress**
 * Meeting management widget - **In progress**
 * HTTPS implementation

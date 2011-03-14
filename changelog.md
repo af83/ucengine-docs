@@ -21,6 +21,7 @@
   - meeting list
 
 * Mongodb configuration have been updated. See the [[config]] doc.
+* [[CORS|http://www.w3.org/TR/cors/]] support.
 
 ## 0.2 to 0.3
 
