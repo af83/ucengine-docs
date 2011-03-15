@@ -23,6 +23,21 @@ To install them, just run this command:
 
      $> aptitude install erlang erlang-yaws make
 
+## Mac OS X
+
+### MacPorts
+
+
+    $> sudo port selfupdate
+    $> sudo port install erlang +ssl yaws
+    $> sudo port load yaws
+    $> export ERL_LIBS=/opt/local/lib/yaws/
+
+### Homebrew
+
+    $> brew install erlang yaws
+    $> export ERL_LIBS=/usr/local/Cellar/yaws/1.88/lib/yaws
+
 ## Get the source code
 
 Once you are sure to have all the dependencies installed on your system,
