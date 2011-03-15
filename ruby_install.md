@@ -24,4 +24,4 @@ end
 
 ## More?
 
-See the full API documentation on [rubydoc.info](http://rubydoc.info/gems/ucengine/0.3.2/UCEngine)
+See the full API documentation on [rubydoc.info](http://rubydoc.info/gems/ucengine/0.4.0/UCEngine)
