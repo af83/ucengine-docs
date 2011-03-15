@@ -51,7 +51,7 @@ Then build the server and start it:
 
      $> make run
 
-Now your U.C.Engine instance is ready, go to [localhost:5280](http://localhost:5280/).
+Now your U.C.Engine instance is running, go to [localhost:5280](http://localhost:5280/).
 
 ## Inject some data
 
