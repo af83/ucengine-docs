@@ -2,7 +2,7 @@
 
 ## General informations about the API
 
-The base URL is `http://demo.ucengine.org/api/0.3/`
+The base URL is `http://demo.ucengine.org/api/0.4/`
 All the others API URLs are relative to this one.
 
 You have to consider a few conventions :
@@ -626,7 +626,7 @@ that contain the words `foot`:
 
 #### Returned values
 
-    {"result": {"link": "http://localhost:5280/api/0.3/search/event?uid=user_uid&sid=user_sid&count=2&searchTerms=location:testmeeting chuck",
+    {"result": {"link": "http://localhost:5280/api/0.4/search/event?uid=user_uid&sid=user_sid&count=2&searchTerms=location:testmeeting chuck",
                 "totalResults": 2,
                 "startIndex": 0,
                 "itemsPerPage": 2,

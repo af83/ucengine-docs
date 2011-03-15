@@ -1,7 +1,10 @@
 # Changelog
 
-## 0.3 to 0.4 (currently in development)
+## 0.4 to 0.5 (currently in development)
 
+## 0.3 to 0.4
+
+* `/api/0.3` is not available anymore, use `/api/0.4` instead.
 * Vhosts: see [[config]].
 * New search api: see [[Search events in U.C.Engine|api#search-events-in-ucengine]].
 * New entry point to retrieve presence information: see [[Retrieve presence informations||api#retrieve-presence-informations]].
