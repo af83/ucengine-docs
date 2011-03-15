@@ -11,7 +11,7 @@ U.C.Engine has a few dependencies:
 * inets
 * eunit (for testing only)
 
-## Debian systems
+### Debian systems
 
 On Debian systems the following packages should provide the necessary stuff:
 
@@ -21,11 +21,11 @@ On Debian systems the following packages should provide the necessary stuff:
 
 To install them, just run this command:
 
-     $> aptitude install erlang erlang-yaws make
+    $> aptitude install erlang erlang-yaws make
 
-## Mac OS X
+### Mac OS X
 
-### MacPorts
+#### MacPorts
 
 
     $> sudo port selfupdate
@@ -33,7 +33,7 @@ To install them, just run this command:
     $> sudo port load yaws
     $> export ERL_LIBS=/opt/local/lib/yaws/
 
-### Homebrew
+#### Homebrew
 
     $> brew install erlang yaws
     $> export ERL_LIBS=/usr/local/Cellar/yaws/1.88/lib/yaws
