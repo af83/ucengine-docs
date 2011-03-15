@@ -108,6 +108,21 @@ client.auth("ucengine@example.com", "p4ssw0rd", {nickname: "ucengine"}, function
 });
 ```
 
+## Get presence informations
+
+*UCEngine.presence(callback)*
+
+### Parameters
+
+```javascript
+var client = uce.createClient();
+client.auth("ucengine@example.com", "p4ssw0rd", {nickname: "ucengine"}, function(err, result) {
+    client.presence(function(err, presence) {
+        // presence exists
+    });
+)};        
+```
+
 ## Attach presence
 
 Attach a presence to an `UCEngine` instance. It will be used in all next requests.
