@@ -3,7 +3,8 @@
 ## 0.3 to 0.4 (currently in development)
 
 * Vhosts: see [[config]].
-* New search api: See [[Search events in U.C.Engine|api#search-events-in-ucengine]].
+* New search api: see [[Search events in U.C.Engine|api#search-events-in-ucengine]].
+* New entry point to retrieve presence information: see [[Retrieve presence informations||api#retrieve-presence-informations]].
 * Fix long polling with nginx.
 * Refactor [[uce.js library|ucejs]]
 

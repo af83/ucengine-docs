@@ -50,6 +50,22 @@ Parameter                              | Description                           |
 
     403 { "error": "bad_credentials" } // the authentification has failed
 
+### Retrieve presence informations
+
+#### Request
+
+    GET /presence/{sid}
+
+#### Returned values
+
+    200 {"result":{     "id":"409832095702309473209",
+                        "domain":"ucengine.org",
+                        "user":uid_63444326443_50150,
+                        "metadata":{    "nickname":"My nickname"}
+                }}
+
+    404 { "error": "not_found" } // the presence resource doesn't exists
+
 ### Disconnect users
 
 ##### Request
