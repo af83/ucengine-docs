@@ -4,8 +4,6 @@ Configuration file is located at *etc/uce.cfg*.
 
 ## Virtual hosts
 
-**This feature is currently in development.**
-
 Virtual hosts make possible to use one instance of U.C.Engine with multiple domains.
 The `hosts` variable allow you to define custom configuration values for each host:
 
@@ -25,7 +23,7 @@ The `hosts` variable allow you to define custom configuration values for each ho
 ]}]}.
 ```
 
-Here we define a global data directory for all our hosts and overwride the value for
+Here we define a global data directory for all our hosts and override the value for
 the example.com host. Thus localhost will have a data directory set to *data/files* and example.com will have the *tmp* directory as its data directory.
 
 The logic of the overwrite mechanism is to replace the global value. For instance, the example set 2 bricks for each hosts while the example.com define its own brick.

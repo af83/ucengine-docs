@@ -7,7 +7,7 @@
 * `/api/0.3` is not available anymore, use `/api/0.4` instead.
 * Vhosts: see [[config]].
 * New search api: see [[Search events in U.C.Engine|api#search-events-in-ucengine]].
-* New entry point to retrieve presence information: see [[Retrieve presence informations||api#retrieve-presence-informations]].
+* New entry point to retrieve presence information: see [[Retrieve presence informations|api#retrieve-presence-informations]].
 * Fix long polling with nginx.
 * Refactor [[uce.js library|ucejs]]
 
