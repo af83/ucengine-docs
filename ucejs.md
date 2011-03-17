@@ -41,6 +41,15 @@ Parameter                              | Description
 var client = uce.createClient();
 ```
 
+## U.C.Engine client
+
+## Properties
+
+Property                               | Description
+---------------------------------------|---------------------------------------
+`connected`                            | true/false. True if currently connected on API.
+`uid`                                  | Current user uid. Null if not connected.
+
 ## Register an user (with password)
 
 *UCEngine.user.registerWithPassword(uid, credential, metadata, callback)*
@@ -120,7 +129,7 @@ client.auth("ucengine@example.com", "p4ssw0rd", {nickname: "ucengine"}, function
     client.presence(function(err, presence) {
         // presence exists
     });
-)};        
+)};
 ```
 
 ## Attach presence
