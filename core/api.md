@@ -582,8 +582,6 @@ Parameter                              | Description                           |
 
 Parameter                              | Description                           | Example
 ---------------------------------------|---------------------------------------|------------------------------------------------------------
-**URL Parameters**                     |                                       |
-`meeting`                              | Meeting id                            | `demo`
 **Optional Encoded Parameters**        |                                       |
 `count`                                | Number of events per page             | `42`
 `startPage`                            | Index of the first page to return     | `1`
