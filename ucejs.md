@@ -6,7 +6,7 @@ uce.js is located at [priv/www/lib/uce.js](https://github.com/AF83/ucengine/blob
 
 ## Dependencies
 
-* jQuery 1.4.4
+* jQuery >= 1.4.4
 
 ## Full example
 
@@ -39,6 +39,7 @@ Parameter                              | Description
 
 ```javascript
 var client = uce.createClient();
+var client = uce.createClient("http://demo.ucengine.org"); // works only if your browser support cors.
 ```
 
 ## U.C.Engine client
