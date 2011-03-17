@@ -2,6 +2,8 @@
 
 ## 0.4 to 0.5 (currently in development)
 
+* Add `UCEngine.search` and `UCEngine.meeting(name).search` in [[uce.js|ucejs]].
+
 ## 0.3 to 0.4
 
 * `/api/0.3` is not available anymore, use `/api/0.4` instead.

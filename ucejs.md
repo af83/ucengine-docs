@@ -188,6 +188,8 @@ client.infos.post({description: 'my desc'}, function(err, result) {
 
 ## Search events in all meetings
 
+**Only available in version >= 0.5**
+
 *UCEngine.search(terms, callback)*
 
 ### Parameters
@@ -379,6 +381,8 @@ Parameter                              | Description
 `callback`                             | A function to call on each retrieved event
 
 ## Search meeting events
+
+**Only available in version >= 0.5**
 
 *UCEngine.meeting(meeting).search(terms, callback)*
 
