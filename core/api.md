@@ -624,7 +624,7 @@ that contain the words `foot`:
 
 #### Returned values
 
-    {"result": {"link": "http://localhost:5280/api/0.4/search/event?uid=user_uid&sid=user_sid&count=2&searchTerms=location:testmeeting chuck",
+    200 {"result": {"link": "http://localhost:5280/api/0.4/search/event?uid=user_uid&sid=user_sid&count=2&searchTerms=location:testmeeting chuck",
                 "totalResults": 2,
                 "startIndex": 0,
                 "itemsPerPage": 2,
