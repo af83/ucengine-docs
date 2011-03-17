@@ -7,6 +7,7 @@
 ## 0.4.1
 
 * Fix a bug on private events: the events are now correctly filtered on the 'to' parameter.
+* Add a search() method in uce.js to use the new search API of U.C.Engine, see [[Search events with the Javascript library|http://docs.ucengine.org/ucejs.html#search-events-in-all-meetings]].
 
 ## 0.3 to 0.4
 
