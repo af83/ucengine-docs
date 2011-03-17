@@ -90,7 +90,7 @@ Parameter                              | Description
 
 ```javascript
 var client = uce.createClient();
-client.user.register("ucengine@example.com", "token", "dWlkXzYzNDQ0MzI2NDQzXzUwMTUwCg", {location: 'Paris'}, function(err, result) {
+client.user.register("ucengine@example.com", "token", "NDQ0MzI2NDQzXzUwMTUwCg", {location: 'Paris'}, function(err, result) {
     // user registered
 });
 ```
