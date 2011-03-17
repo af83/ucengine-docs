@@ -4,6 +4,10 @@
 
 * Add `UCEngine.search` and `UCEngine.meeting(name).search` in [[uce.js|ucejs]].
 
+## 0.4.1
+
+* Fix a bug on private events: the events are now correctly filtered on the 'to' parameter.
+
 ## 0.3 to 0.4
 
 * `/api/0.3` is not available anymore, use `/api/0.4` instead.
