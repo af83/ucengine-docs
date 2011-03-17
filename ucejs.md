@@ -186,6 +186,27 @@ client.infos.post({description: 'my desc'}, function(err, result) {
 });
 ```
 
+## Search events in all meetings
+
+*UCEngine.search(terms, callback)*
+
+### Parameters
+
+Parameter                              | Description
+---------------------------------------|---------------------------------------
+`terms`                                | Javascript hash. See example and [[Search events in U.C.Engine|api#search-events-in-ucengine]],
+`callback`                             |
+
+### Example
+
+```javascript
+var client = uce.createClient();
+client.search({query: 'I want this string',
+               type: ['chat.message.new', 'internal.meeting.add']}, function(err, result) {
+
+});
+```
+
 ## Retrieve a meeting as an object
 
 *UCEngine.meeting(meeting)*
@@ -356,3 +377,26 @@ Parameter                              | Description
 `meeting`                              | The name of the meeting
 `type`                                 | The type of the event to bind
 `callback`                             | A function to call on each retrieved event
+
+## Search meeting events
+
+*UCEngine.meeting(meeting).search(terms, callback)*
+
+### Parameters
+
+Parameter                              | Description
+---------------------------------------|---------------------------------------
+`meeting`                              | The name of the meeting
+`terms`                                | Javascript hash. See example and [[Search events in U.C.Engine|api#search-events-in-ucengine]],
+`callback`                             |
+
+### Example
+
+```javascript
+var client = uce.createClient();
+var meeting = client.meeting('demo');
+meeting.search({query: 'I want this string',
+               type: ['chat.message.new', 'internal.meeting.add']}, function(err, result) {
+
+});
+```
