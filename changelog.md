@@ -3,6 +3,7 @@
 ## 0.4 to 0.5 (currently in development)
 
 * Add `UCEngine.search` and `UCEngine.meeting(name).search` in [[uce.js|ucejs]].
+* Remove authentication on /time end point.
 
 ## 0.4.1
 

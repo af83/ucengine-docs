@@ -111,6 +111,8 @@ ACLs allow it of course).
 
 The timestamp is the number of milliseconds elapsed since EPOCH (1970-01-01).
 
+Authentication is not needed since U.C.Engine v0.5.
+
 ## User
 ### List users
 
