@@ -4,6 +4,7 @@
 
 * Add `UCEngine.search` and `UCEngine.meeting(name).search` in [[uce.js|ucejs]].
 * Remove authentication on /time end point.
+* Fix *totalResults* field in search api.
 
 ## 0.4.1
 
