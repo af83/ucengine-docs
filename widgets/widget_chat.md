@@ -6,6 +6,14 @@ It is also integrated with:
 * the translation brick: translate the conversation from one language to another
 * the twitter brick: display tweet with the designated hashtag
 
+## Location
+
+Chat widget is located at *priv/www/lib/chat/chat.ui.js*.
+
+## Dependencies
+
+* jQuery UI
+
 ## Options
 
 * ucemeeting: current meeting
