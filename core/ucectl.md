@@ -79,7 +79,13 @@ The following options are available:
   * `user` `list` `--domain` <domain>:
     List all users.
 
-### ACL
+  * `user` `role` `add` `--domain` <domain> `--uid` <uid> `--role` <role> [`--location` <location>]
+    Give the role named <role> to the user <uid> in an optional location <location>
+    
+  * `user` `role` `delete` `--domain` <domain> `--uid` <uid> `--role` <role> [`--location` <location>]
+    Remove the role named <role> to the user <uid> in an optional location <location>
+
+### ACL (prior to version 0.5)
 
   * `acl` `add` `--domain` <domain> `--uid` <uid> `--object` *object* `--action` <action> [`--meeting` <meeting>] [`--condition` <value>] ... :
     Allow the user <uid> to do <action> on <object> bounded to an optional meeting <meeting> with some <conditions> (see FORMAT for more informations about <conditions>).
@@ -89,6 +95,23 @@ The following options are available:
 
   * `acl` `check` `--domain` <domain> `--uid` <uid> `--object` *object* `--action` <action> [`--meeting` <meeting>] [`--condition` <value>] ... :
     Check that the user <uid> has the right to do <action> on <object> in an optional meeting <meeting> with some <conditions>.
+
+### Roles (starting from version 0.5)
+
+  * `role` `add` `--domain` <domain> `--name` <name> :
+  Add a new role named <name>. By default, no access rights are attached to this role.
+  
+  * `role` `delete` `--domain` <domain> `--name` <name> :
+  Remove the role <name>.
+  
+  * `role` `access` `add` `--domain` <domain> `--name` <name> `--action` <action> `--object` <object> [`--<condition> <value] ... :
+  Allow the users with the role named <name> to do <action> on <object> with some <conditions> (see FORMAT for more informations about <conditions>).
+  
+  * `role` `access` `delete` `--domain` <domain> `--name` <name> `--action` <action> `--object` <object> [`--<condition> <value] ... :
+  Remove the right for the users with the role named <name> to do <action> on <object> with some <conditions>.
+  
+  * `role` `access` `check` `--domain` <domain> `--uid` <uid> `--location` <location> `--action` <action> `--object` <object> [`--<condition> <value] ... :
+  Check that the user <uid> has the right to do <action> on <object> in an optional location <location> with some <conditions>.
 
 ## FORMAT
 

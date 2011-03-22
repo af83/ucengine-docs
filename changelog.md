@@ -5,6 +5,11 @@
 * Add `UCEngine.search` and `UCEngine.meeting(name).search` in [[uce.js|ucejs]].
 * Remove authentication on /time end point.
 * Fix *totalResults* field in search api.
+* ucectl command-line tool:
+  - remove all the commands regarding ACL
+  - add a new set of commands to add, remove and configure roles
+  - add a new set of commands to give or remove roles to an user
+  - add a new command to check user rights
 
 ## 0.4.1
 
