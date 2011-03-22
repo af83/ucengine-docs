@@ -3,6 +3,14 @@
 The file sharing widget allow you to synchronize the viewing of a document
 with other participants of the meeting.
 
+## Location
+
+File sharing widget is located at *priv/www/lib/file_sharing/file_sharing.ui.js*.
+
+## Dependencies
+
+* jQuery UI
+
 ## Options
 
 * ucemeeting: current meeting
