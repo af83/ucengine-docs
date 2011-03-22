@@ -162,17 +162,20 @@ Update the user with a stronger password and a different nickname:
 	ucectl user update --domain localhost --uid 'Chuck' --auth 'password' --credential '835dc9b5fa0ffa8'
 		--nickname 'Cordell Walker'
 
-Allow Chuck to join the meeting 'Coliseum' if he doesn't wear shirt:
-	ucectl acl add --domain localhost --uid 'Chuck' --meeting 'Coliseum' --object 'roster'
-		--action 'add' --topless 'yes'
+Create a new role called 'ranger':
+    ucectl role add --domain localhost --name ranger
+    
+Give this role to Chuck in Texas:
+    ucectl user role add --domain localhost --uid chuck --role ranger --location 'texas'
 
-Check that Chuck cannot join the meeting 'Coliseum' if he wear shirt:
-	ucectl acl add --domain localhost --uid 'Chuck' --meeting 'Coliseum' --object 'roster'
-		--action 'add' --topless 'no'
-
+Add the right to the 'ranger' users to protect the law:
+    ucectl role access add --domain localhost --name ranger --action kick --object butt --badguy yes
+    
 Delete this right:
-	ucectl acl delete --domain localhost --uid 'Chuck' --meeting 'Coliseum' --object 'roster'
-		--action 'add' --topless 'yes'
+    ucectl role access delete --domain localhost --name ranger --action kick --object butt --badguy yes
+
+Delete the role:
+    ucectl role delete --domain localhost --name ranger
 
 And delete the user 'Chuck':
 	ucectl user delete --domain localhost --uid 'Chuck'
