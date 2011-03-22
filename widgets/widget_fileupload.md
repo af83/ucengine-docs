@@ -1,6 +1,15 @@
-# File
+# File Upload
 
 Upload file in current meeting, list uploaded files and allow user to preview or to share one of this files.
+
+## Location
+
+File upload widget is located at *priv/www/lib/file_upload/file_upload.ui.js*.
+
+## Dependencies
+
+* jQuery UI
+* [jQuery strftime](http://projects.nocternity.net/index.py/en/jquery-strftime): *priv/www/lib/jquery.strftime.minified.js*
 
 ## Options
 
