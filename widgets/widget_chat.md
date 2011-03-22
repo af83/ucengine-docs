@@ -1,4 +1,4 @@
-# Chat
+# Chat widget
 
 The chat widget enables a public conversation between the attendants.
 It is also integrated with:
