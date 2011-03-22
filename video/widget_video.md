@@ -1,6 +1,14 @@
-# Video
+# Video Widget
 
 Play live streaming or publish webcam to a *rtmp* server.
+
+## Location
+
+Video widget is located at *priv/www/lib/video/video.ui.js*.
+
+## Dependencies
+
+* jQuery UI
 
 ## Options
 
