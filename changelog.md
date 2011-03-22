@@ -10,6 +10,8 @@
   - add a new set of commands to add, remove and configure roles
   - add a new set of commands to give or remove roles to an user
   - add a new command to check user rights
+* the 'acl' section of the configuration file has been removed.
+* a new 'roles' section of the configuration file can be use to set default roles and associated rights.
 
 ## 0.4.1
 

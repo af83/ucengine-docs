@@ -66,14 +66,20 @@ presence (`{"presence", "add"}`) and list all users of his domain (`{"user", "ge
 
 
 ```erlang
-{acl, [{"internal.user.add", [{"presence", "add"},
-                              {"user", "get"}]}]}.
+{roles, [{"default", [{"add", "presence", []},
+                      {"get", "user", []}]},
+         {"speaker", [{"join", "meeting", []},
+                      {"add", "event", [{"type", "message.chat.new"}]}]}]}.
 ```
 
-The format of the right is a simple tuple:
+Roles are described by a name (ex: "speaker") and a list of associated
+rights. The format of the right is a simple tuple:
 
-  - the object of the right ("presence" in the example above)
-  - the action allowed on this object ("add" in the example above)
+  - the action allowed ("add" in the example above)
+  - the object concerned by the action ("event" in the example above)
+  - a list of conditions which depends on the kind of object and
+    action (the event "type" is limited to "message.chat.new" in the
+    example above).
 
 For more informations, take a look at the [[ACL overview|acl]].
 
