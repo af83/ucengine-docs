@@ -23,7 +23,6 @@ Chat widget is located at *priv/www/lib/chat/chat.ui.js*.
 
 ## Methods
 
-* toggleMode
 * clear
 * destroy
 
