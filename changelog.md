@@ -2,9 +2,12 @@
 
 ## 0.4 to 0.5 (currently in development)
 
-* Add `UCEngine.search` and `UCEngine.meeting(name).search` in [[uce.js|ucejs]].
 * Remove authentication on /time end point.
-* Fix *totalResults* field in search api.
+* Search API:
+  * Fix *totalResults* field in search api.
+  * Add *order* parameter in search api.
+* Uce.js:
+  * add *options* parameter in `UCEngine.search` and `UCEngine.meeting(name).search`
 * ucectl command-line tool:
   - remove all the commands regarding ACL
   - add a new set of commands to add, remove and configure roles
@@ -16,7 +19,7 @@
 ## 0.4.1
 
 * Fix a bug on private events: the events are now correctly filtered on the 'to' parameter.
-* Add a search() method in uce.js to use the new search API of U.C.Engine, see [[Search events with the Javascript library|http://docs.ucengine.org/ucejs.html#search-events-in-all-meetings]].
+* Add `UCEngine.search` and `UCEngine.meeting(name).search` in [[uce.js|ucejs]].
 
 ## 0.3 to 0.4
 

@@ -586,6 +586,7 @@ Parameter                              | Description                           |
 ---------------------------------------|---------------------------------------|------------------------------------------------------------
 **Optional Encoded Parameters**        |                                       |
 `count`                                | Number of events per page             | `42`
+`order`                                | Order of events                       | `desc` or `asc`
 `startPage`                            | Index of the first page to return     | `1`
 `startIndex`                           | Index of the first event in the page  | `2`
 `searchTerms`                          | Terms to search (see Notes below)     | `from:chuck nunchucks`

@@ -189,15 +189,14 @@ client.infos.post({description: 'my desc'}, function(err, result) {
 
 ## Search events in all meetings
 
-**Only available in version >= 0.5**
-
-*UCEngine.search(terms, callback)*
+*UCEngine.search(terms, [options, ]callback)*
 
 ### Parameters
 
 Parameter                              | Description
 ---------------------------------------|---------------------------------------
 `terms`                                | Javascript hash. See example and [[Search events in U.C.Engine|api#search-events-in-ucengine]],
+`options`                              | Javascript hash for pagination and order
 `callback`                             |
 
 ### Example
@@ -205,7 +204,7 @@ Parameter                              | Description
 ```javascript
 var client = uce.createClient();
 client.search({query: 'I want this string',
-               type: ['chat.message.new', 'internal.meeting.add']}, function(err, result) {
+               type: ['chat.message.new', 'internal.meeting.add']}, {order: 'desc'}, function(err, result) {
 
 });
 ```
@@ -383,16 +382,15 @@ Parameter                              | Description
 
 ## Search meeting events
 
-**Only available in version >= 0.5**
-
-*UCEngine.meeting(meeting).search(terms, callback)*
+*UCEngine.meeting(meeting).search(terms, [options, ]callback)*
 
 ### Parameters
 
 Parameter                              | Description
 ---------------------------------------|---------------------------------------
 `meeting`                              | The name of the meeting
-`terms`                                | Javascript hash. See example and [[Search events in U.C.Engine|api#search-events-in-ucengine]],
+`terms`                                | Javascript hash. See example and [[Search events in U.C.Engine|api#search-events-in-ucengine]]
+`options`                              | Javascript hash for pagination and order
 `callback`                             |
 
 ### Example
