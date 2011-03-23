@@ -136,31 +136,31 @@ The following options are available:
 ## EXAMPLES
 
 List all meetings:
-	ucectl meeting list --domain localhost
+    ucectl meeting list --domain localhost
 
 Only keep the closed|opened|upcoming meetings:
-	ucectl meeting list --domain localhost --status closed
-	ucectl meeting list --domain localhost --status opened
-	ucectl meeting list --domain localhost --status upcoming
+    ucectl meeting list --domain localhost --status closed
+    ucectl meeting list --domain localhost --status opened
+    ucectl meeting list --domain localhost --status upcoming
 
 Create a new meeting 'Christmas dinner':
-	ucectl meeting add --domain localhost --name 'Christmas dinner' --start '2010-24-12 20:30:00'
-                --end '2010-25-12 03:00:00' --appetizer 'Chips'
+    ucectl meeting add --domain localhost --name 'Christmas dinner' --start '2010-24-12 20:30:00'
+                       --end '2010-25-12 03:00:00' --appetizer 'Chips'
 
 Make it frenchier:
-	ucectl meeting update --domain localhost --name 'Christmas dinner' --start '2010-24-12 20:30:00'
-                --end '2010-25-12 07:00:00' --appetizer 'Snails'
+    ucectl meeting update --domain localhost --name 'Christmas dinner' --start '2010-24-12 20:30:00'
+                          --end '2010-25-12 07:00:00' --appetizer 'Snails'
 
 And delete it:
-ucectl meeting list --domain localhost	ucectl meeting delete --domain localhost --name 'Christmas dinner'
+ucectl meeting list --domain localhost  ucectl meeting delete --domain localhost --name 'Christmas dinner'
 
 Create a new user 'Chuck' with a password set to 'Norris' with his nickname in the metadata:
-	ucectl user add --domain localhost --uid 'Chuck' --auth 'password' --credential 'Norris'
-		--nickname 'Colonel Braddock'
+    ucectl user add --domain localhost --uid 'Chuck' --auth 'password' --credential 'Norris'
+                    --nickname 'Colonel Braddock'
 
 Update the user with a stronger password and a different nickname:
-	ucectl user update --domain localhost --uid 'Chuck' --auth 'password' --credential '835dc9b5fa0ffa8'
-		--nickname 'Cordell Walker'
+    ucectl user update --domain localhost --uid 'Chuck' --auth 'password' --credential '835dc9b5fa0ffa8'
+                       --nickname 'Cordell Walker'
 
 Create a new role called 'ranger':
     ucectl role add --domain localhost --name ranger
@@ -178,4 +178,4 @@ Delete the role:
     ucectl role delete --domain localhost --name ranger
 
 And delete the user 'Chuck':
-	ucectl user delete --domain localhost --uid 'Chuck'
+    ucectl user delete --domain localhost --uid 'Chuck'
