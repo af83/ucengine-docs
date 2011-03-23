@@ -56,7 +56,7 @@ Example:
 
 ## User rights
 
-## Prior to version 0.5
+### Prior to version 0.5
 
 New rights can be set at runtime for an user based on the events he sent. The `acl` section
 of the configuration file defines which rights have to be set after an event with a specific
@@ -76,7 +76,7 @@ The format of the right is a simple tuple:
 - the object of the right ("presence" in the example above)
 - the action allowed on this object ("add" in the example above)
 
-## Starting from version 0.5
+### Starting from version 0.5
 
 ```erlang
 {roles, [{"default", [{"add", "presence", []},
