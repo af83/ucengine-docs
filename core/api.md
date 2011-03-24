@@ -798,7 +798,7 @@ Parameter                              | Description                           |
 
     500 { "error": "unexpected_error" }
 
-## ACLs
+## ACLs (prior to version 0.5)
 
 ### Check user's rights
 
@@ -894,3 +894,95 @@ Parameter                              | Description                           |
 
     404 { "error", "not_found" } // the users doesn't exists
 
+## Roles (Starting from version 0.5)
+
+### Add a new role
+
+#### Request
+
+    POST /role/
+
+Parameter                              | Description                           | Example
+---------------------------------------|---------------------------------------|------------------------------------------------------------
+**Encoded Parameters**                 |                                       |
+`name`                                 | The name of the new role              | `admin`, `speaker`, ...
+
+#### Returned values
+
+    201 { "result": "created" } // the role has been successfully added
+
+    400 { "error": "missing_parameters" } // at least one paremeter is missing (probably the 'name')
+
+    401 { "error": "unauthorized" } // the user is not authorized to add a role
+
+    409 { "error": "conflict" } // the role already exists
+
+### Delete a role
+
+#### Request
+
+    DELETE /role/{name}
+
+#### Returned values
+
+    200 { "result": "ok } // the role has been successfully deleted
+
+    401 { "error": "unauthorized" } // the user is not authorized to delete this role
+
+    404 { "error": "not_found" } // the role does not exist
+
+### Add a new access right to a role
+
+#### Request
+
+    POST /role/{name}/acl/
+
+Parameter                              | Description                           | Example
+---------------------------------------|---------------------------------------|------------------------------------------------------------
+**Encoded Parameters**                 |                                       |
+`object`                               | The kind of object to access to       | `user`, `meeting`, ...
+`action`                               | The action allowed on the object      | `add`, `update`, ...
+`conditions`                           | Array of conditions to satisfy        | conditions[id]='123'
+
+#### Returned values
+
+    201 { "result": "created" } // the access right has been successfully added to the role
+
+    400 { "error": "missing_parameters" } // at least one paremeter is missing
+
+    401 { "error": "unauthorized" } // the user is not authorized to add an access right to this role
+
+    404 { "error": "not_found" } // the role does not exists
+
+#### Notes
+
+Adding the same access right twice or more will not produce an error
+and does not consume more resources on the server.
+
+### Remove an access right from a role
+
+#### Request
+
+    DELETE /role/{name}/acl/
+
+Parameter                              | Description                           | Example
+---------------------------------------|---------------------------------------|------------------------------------------------------------
+**Encoded Parameters**                 |                                       |
+`object`                               | The kind of object to access to       | `user`, `meeting`, ...
+`action`                               | The action allowed on the object      | `add`, `update`, ...
+`conditions`                           | Array of conditions to satisfy        | conditions[id]='123'
+
+#### Returned values
+
+    200 { "result": "ok" } // the access right has been successfully deleted from the role
+
+    400 { "error": "missing_parameters" } // at least one paremeter is missing
+
+    401 { "error": "unauthorized" } // the user is not authorized to delete an access right from this role
+
+    404 { "error": "not_found" } // the role does not exists
+
+#### Notes
+
+Event if you added the same access right twice or more the delete
+operation will completly delete the access right.
