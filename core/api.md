@@ -931,7 +931,7 @@ Parameter                              | Description                           |
 
     404 { "error": "not_found" } // the role does not exist
 
-### Add a new access right to a role
+### Set a new access right to a role
 
 #### Request
 
@@ -942,11 +942,11 @@ Parameter                              | Description                           |
 **Encoded Parameters**                 |                                       |
 `object`                               | The kind of object to access to       | `user`, `meeting`, ...
 `action`                               | The action allowed on the object      | `add`, `update`, ...
-`conditions`                           | Array of conditions to satisfy        | conditions[id]='123'
+`conditions`                           | Array of conditions to satisfy        | `conditions[id]='123'`
 
 #### Returned values
 
-    201 { "result": "created" } // the access right has been successfully added to the role
+    200 { "result": "ok" } // the access right has been successfully added to the role
 
     400 { "error": "missing_parameters" } // at least one paremeter is missing
 
@@ -956,21 +956,21 @@ Parameter                              | Description                           |
 
 #### Notes
 
-Adding the same access right twice or more will not produce an error
-and does not consume more resources on the server.
+It is not an error to set an access right twice or more, the access rights will not be duplicated.
 
-### Remove an access right from a role
+### Unset an access right from a role
 
 #### Request
 
-    DELETE /role/{name}/acl/
+    DELETE /role/{name}/acl/{action}/{object}
 
 Parameter                              | Description                           | Example
 ---------------------------------------|---------------------------------------|------------------------------------------------------------
-**Encoded Parameters**                 |                                       |
+**URL parameters**                     |                                       |
 `object`                               | The kind of object to access to       | `user`, `meeting`, ...
 `action`                               | The action allowed on the object      | `add`, `update`, ...
-`conditions`                           | Array of conditions to satisfy        | conditions[id]='123'
+**Encoded Parameters**                 |                                       |
+`conditions`                           | Array of conditions to satisfy        | `conditions[id]='123'`
 
 #### Returned values
 
@@ -982,7 +982,81 @@ Parameter                              | Description                           |
 
     404 { "error": "not_found" } // the role does not exists
 
+### Set a role to an user
+
+#### Request
+
+    POST /user/{uid}/roles
+
+Parameter                              | Description                                   | Example
+---------------------------------------|-----------------------------------------------|------------------------------------------------------------
+**URL Parameters**                     |                                               |
+`uid`                                  | User id                                       | `uid_63444326443_50150`
+**Encoded Parameters**                 |                                               |
+`role`                                 | The role name                                 | `admin`, `speaker`, ...
+`location`                             | The location (meeting) where the role applies | `mymeeting`
+
+#### Returned values
+
+    200 { "result": "ok" } // the role has been successfuly set to the user
+
+    400 { "error": "missing_parameters" } // at least one paremeter is missing
+
+    401 { "error": "unauthorized" } // the user is not authorized to set this role to the user
+
+    404 { "error": "not_found" } // the role, the user or the location does not exists
+
 #### Notes
 
-Event if you added the same access right twice or more the delete
-operation will completly delete the access right.
+If the location parameter is omitted the role will apply on all locations.
+
+### Unset a role to an user
+
+#### Request
+
+    DELETE /user/{uid}/roles/{role}
+
+    DELETE /user/{uid}/roles/{role}/{location}
+
+Parameter                              | Description                                   | Example
+---------------------------------------|-----------------------------------------------|------------------------------------------------------------
+**URL Parameters**                     |                                               | 
+`uid`                                  | User id                                       | `uid_63444326443_50150`
+`role`                                 | The role name                                 | `admin`, `speaker`, ...
+`location`                             | The location (meeting) where the role applies | `mymeeting`
+
+#### Returned values
+
+    200 { "result": "ok" } // the role has been successfuly removed from the user
+
+    401 { "error": "unauthorized" } // the user is not authorized to remove this role from the user
+
+    404 { "error": "not_found" } // the role, the user or the location does not exists
+
+### Check user access
+
+#### Request
+
+    GET /user/{uid}/can/{action}/{object}
+
+    GET /user/{uid}/can/{action}/{object}/{location}
+
+Parameter                              | Description                                   | Example
+---------------------------------------|-----------------------------------------------|------------------------------------------------------------
+**URL Parameters**                     |                                               | 
+`uid`                                  | User id                                       | `uid_63444326443_50150`
+`object`                               | The object on which the right apply           | `meeting`  or `event`
+`action`                               | Authorized action for this right              | `add` or `deletè or `join` ...
+`location`                             | The location (meeting) where the role applies | `mymeeting`
+**Encoded Parameters**                 |                                               |
+`conditions`                           | Array of conditions to satisfy                | `conditions[id]='123'`
+
+#### Returned values
+
+    200 {"result": "true"}
+
+    200 {"result": "false"}
+
+    401 { "error": "unauthorized" } : the caller is not authorized to check the user's rights
+
+    404 { "error": "not_found" } : the user does not exists
