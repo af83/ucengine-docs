@@ -24,8 +24,8 @@ mandatory for all methods, with the exception of presence creation:
 Parameter                              | Description                           | Example
 ---------------------------------------|---------------------------------------|------------------------------------------------------------
 **Encoded Parameters**                 |                                       |
-`uid`                                  | User id                               | `uid_63444326443_50150`
-`sid`                                  | Session id                            | `330249245470504`
+`uid`                                  | User id                               | `91020740579212808535843549778848`
+`sid`                                  | Session id                            | `07462066523652880535592964206583`
 
 ### Connect user
 
@@ -36,7 +36,7 @@ Parameter                              | Description                           |
 Parameter                              | Description                           | Example
 ---------------------------------------|---------------------------------------|------------------------------------------------------------
 **Encoded Parameters**                 |                                       |
-`uid`                                  | User id                               | `uid_63444326443_50150`
+`name`                                 | User name                             | `ucengine@example.com`
 `credential`                           | Password or token                     | `dWlkXzYzNDQ0MzI2NDQzXzUwMTUwCg`
 **Optional Encoded Parameters**        |                                       |
 `timeout`                              | Session timeout value (sec)           | `200`
@@ -44,7 +44,8 @@ Parameter                              | Description                           |
 
 ##### Returned values
 
-    200 { "result": "409832095702309473209" } // the result is a valid sid
+    200 { "result": {"uid": "91020740579212808535843549778848",
+                     "sid": "07462066523652880535592964206583" } // the result is a valid sid
 
     400 { "error": "bad_parameters" } // at least one paremeter is missing or wrong
 
@@ -60,7 +61,7 @@ Parameter                              | Description                           |
 
     200 {"result":{     "id":"409832095702309473209",
                         "domain":"ucengine.org",
-                        "user":uid_63444326443_50150,
+                        "user":91020740579212808535843549778848,
                         "metadata":{    "nickname":"My nickname"}
                 }}
 
@@ -77,8 +78,8 @@ Parameter                              | Description                           |
 Parameter                              | Description                           | Example
 ---------------------------------------|---------------------------------------|------------------------------------------------------------
 **URL Parameters**                     |                                       |
-`uid`                                  | User id                               | `uid_63444326443_50150`
-`sid`                                  | Session id                            | `330249245470504`
+`uid`                                  | User id                               | `91020740579212808535843549778848`
+`sid`                                  | Session id                            | `07462066523652880535592964206583`
 
 ##### Returned values
 
@@ -122,14 +123,16 @@ Authentication is not needed since U.C.Engine v0.5.
 
 #### Returned values
 
-    200 {"result": [{   "uid":"romain.gauthier@af83.com",
+    200 {"result": [{   "id": "23117132645488565859338928472570",
+                        "name":"romain.gauthier@af83.com",
                         "domain":"ucengine.org",
                         "auth":"password",
                         "metadata":{
                             "nickname":"abel_1284046072075"
                         }
                     },
-                    {   "uid":"victor.goya@af83.com",
+                    {   "id": "87955907670601102242750832275542",
+                        "name":"victor.goya@af83.com",
                         "domain":"ucengine.org",
                         "auth":"password",
                         "metadata":{
@@ -150,14 +153,14 @@ Authentication is not needed since U.C.Engine v0.5.
 Parameter                              | Description                           | Example
 ---------------------------------------|---------------------------------------|------------------------------------------------------------
 **Encoded Parameters**                 |                                       |
-`uid`                                  | User id                               | `uid_63444326443_50150`
+`name`                                 | User id                               | `ucengine@example.com`
 `auth`                                 | Authentication method                 | `password` or `token`
 `credential`                           | Password or token                     | `dWlkXzYzNDQ0MzI2NDQzXzUwMTUwCg`
 `metadata`                             | Array containing metadata             | `metadata[key]=value`
 
 #### Returned values:
 
-    201 { "result": "created" }
+    201 { "result": "91020740579212808535843549778848" }
 
     401 { "error": "unauthorized" }
 
@@ -172,10 +175,9 @@ Parameter                              | Description                           |
 Parameter                              | Description                           | Example
 ---------------------------------------|---------------------------------------|------------------------------------------------------------
 **URL Parameters**                     |                                       |
-`uid`                                  | User id                               | `uid_63444326443_50150`
+`uid`                                  | User id                               | `91020740579212808535843549778848`
 **Encoded Parameters**                 |                                       |
-`auth`                                 | Authentication method
-| `password`, `token` or `none`
+`auth`                                 | Authentication method                 | `password`, `token` or `none`
 `credential`                           | Password or token                     | `dWlkXzYzNDQ0MzI2NDQzXzUwMTUwCg`
 `metadata`                             | Array containing metadata             | `metadata[key]=value`
 
@@ -196,15 +198,16 @@ Parameter                              | Description                           |
 Parameter                              | Description                           | Example
 ---------------------------------------|---------------------------------------|------------------------------------------------------------
 **URL Parameters**                     |                                       |
-`uid`                                  | User id                               | `uid_63444326443_50150`
+`uid`                                  | User id                               | `91020740579212808535843549778848`
 
 #### Returned values
 
-     200 {"result": {    "uid":"romain.gauthier@af83.com",
+     200 {"result": {    "id": "91020740579212808535843549778848",
+                         "name":"romain.gauthier@af83.com",
                          "domain":"ucengine.org",
                          "auth":"password",
                          "metadata":{
-                            "nickname":"abel_1284046072075"
+                            "nickname":"Romain - el paisano - Gauthier"
                          }
                     }}
 
@@ -223,7 +226,7 @@ Parameter                              | Description                           |
 Parameter                              | Description                           | Example
 ---------------------------------------|---------------------------------------|------------------------------------------------------------
 **URL Parameters**                     |                                       |
-`uid`                                  | User id                               | `uid_63444326443_50150`
+`uid`                                  | User id                               | `91020740579212808535843549778848`
 
 #### Returned values
 
@@ -279,7 +282,7 @@ Parameter                              | Description                           |
 **URL Parameters**                     |                                       |
 `meeting`                              | Meeting id                            | `demo`
 **Encoded Parameters**                 |                                       |
-`uid`                                  | User id                               | `uid_63444326443_50150`
+`uid`                                  | User id                               | `91020740579212808535843549778848`
 
 #### Returned values
 
@@ -301,7 +304,7 @@ Parameter                              | Description                           |
 ---------------------------------------|---------------------------------------|------------------------------------------------------------
 **URL Parameters**                     |                                       |
 `meeting`                              | Meeting id                            | `demo`
-`uid`                                  | User id                               | `uid_63444326443_50150`
+`uid`                                  | User id                               | `91020740579212808535843549778848`
 
 #### Returned values
 
@@ -386,23 +389,26 @@ Parameter                              | Description                           |
 
 #### Returned values
 
-    200 {"result":[{    "uid":"abel.fournier_1284046072075@af83.com",
+    200 {"result":[{    "id":"34334839681323313178318538371527",
+                        "name":"jeffrey.lebowski@bathtub.com",
                         "domain":"ucengine.org",
                         "auth":"password",
                         "metadata":{
-                                "nickname":"abel_1284046072075"}
+                                "nickname":"The Dude"}
                         },
-               {        "uid":"abel.fournier_1284107725374@af83.com",
+               {        "id":"18519526811067452830480557737028",
+                        "name":"walter.sobchak@bowling.org",
                         "domain":"ucengine.org",
                         "auth":"password",
                         "metadata":{
-                                "nickname":"abel_1284107725374"}
+                                "nickname":"The Veteran"}
                         },
-               {        "uid":"abel.fournier_1284114120882@af83.com",
+               {        "id":"40608184277610677427985745048015",
+                        "name":"donny@steelcan.org",
                         "domain":"ucengine.org",
                         "auth":"password",
                         "metadata":{
-                                "nickname":"abel_1284114120882"}
+                                "nickname":"donny"}
                },
                ...
     ]}
@@ -521,7 +527,7 @@ Parameter                              | Description                           |
 `type`                                 | The event's type                      | `internal.meeting.add`
 `start`                                | Start of the event's frame            | `63444430100`
 `end`                                  | End of the event's frame              | `63444430300`
-`from`                                 | The sender of the event               | `uid_63444326443_50150`
+`from`                                 | The sender of the event               | `91020740579212808535843549778848`
 `count`                                | Number of events per page             | `42`
 `page`                                 | Index of the first page to return     | `1`
 `order`                                | Sorting order                         | `asc` or `desc`
@@ -603,7 +609,7 @@ Parameter                              | Description                           |
 `type`                                 | The event's type                      | `internal.meeting.add`
 `start`                                | Start of the event's frame            | `63444430100`
 `end`                                  | End of the event's frame              | `63444430300`
-`from`                                 | The sender of the event               | `uid_63444326443_50150`
+`from`                                 | The sender of the event               | `91020740579212808535843549778848`
 `parent`                               | Id of the parent event                | `48320948320982309`
 
 Filters can be used with `filter_name:filter_value`.
@@ -627,7 +633,7 @@ that contain the words `foot`:
 
 #### Returned values
 
-    200 {"result": {"link": "http://localhost:5280/api/0.4/search/event?uid=user_uid&sid=user_sid&count=2&searchTerms=location:testmeeting chuck",
+    200 {"result": {"link": "http://localhost:5280/api/0.4/search/event?uid=91020740579212808535843549778848&sid=07462066523652880535592964206583&count=2&searchTerms=location:testmeeting chuck",
                 "totalResults": 2,
                 "startIndex": 0,
                 "itemsPerPage": 2,
@@ -811,7 +817,7 @@ Parameter                              | Description                           |
 Parameter                              | Description                           | Example
 ---------------------------------------|---------------------------------------|------------------------------------------------------------
 **URL Parameters**                     |                                       |
-`uid`                                  | User id                               | `uid_63444326443_50150`
+`uid`                                  | User id                               | `91020740579212808535843549778848`
 `object`                               | The object on which the right apply   | `meeting`  or `event`
 `action`                               | Authorized action for this right      | `add` or `deletè or `join` ...
 `meeting`                              | Meeting id                            | `demo`
@@ -822,7 +828,7 @@ Parameter                              | Description                           |
 
 If the 'romain' user wants to check that the 'toto' user has the right to join the 'ucengine' meeting, the request will be :
 
-        GET /user/toto/acl/meeting/join/ucengine?uid=romain&sid=40324302840329843809543
+        GET /user/toto/acl/meeting/join/ucengine?uid=91020740579212808535843549778848&sid=07462066523652880535592964206583
 
 #### Returned values
 
@@ -847,7 +853,7 @@ If the 'romain' user wants to check that the 'toto' user has the right to join t
 Parameter                              | Description                           | Example
 ---------------------------------------|---------------------------------------|------------------------------------------------------------
 **URL Parameters**                     |                                       |
-`uid`                                  | User id                               | `uid_63444326443_50150`
+`uid`                                  | User id                               | `91020740579212808535843549778848`
 `object`                               | The object on which the right apply   | `meeting` or `event`
 `action`                               | Authorized action for this right      | `add` or `deletè or `join` ...
 `meeting`                              | Meeting id                            | `demo`
@@ -877,7 +883,7 @@ Parameter                              | Description                           |
 Parameter                              | Description                           | Example
 ---------------------------------------|---------------------------------------|------------------------------------------------------------
 **URL Parameters**                     |                                       |
-`uid`                                  | User id                               | `uid_63444326443_50150`
+`uid`                                  | User id                               | `91020740579212808535843549778848`
 `object`                               | The object on which the right apply   | `meeting` or `event` ...
 `action`                               | Authorized action for this right      | `add` or `deletè or `join` ...
 `meeting`                              | Meeting id                            | `demo`
@@ -991,7 +997,7 @@ Parameter                              | Description                           |
 Parameter                              | Description                                   | Example
 ---------------------------------------|-----------------------------------------------|------------------------------------------------------------
 **URL Parameters**                     |                                               |
-`uid`                                  | User id                                       | `uid_63444326443_50150`
+`uid`                                  | User id                                       | `91020740579212808535843549778848`
 **Encoded Parameters**                 |                                               |
 `role`                                 | The role name                                 | `admin`, `speaker`, ...
 `location`                             | The location (meeting) where the role applies | `mymeeting`
@@ -1021,7 +1027,7 @@ If the location parameter is omitted the role will apply on all locations.
 Parameter                              | Description                                   | Example
 ---------------------------------------|-----------------------------------------------|------------------------------------------------------------
 **URL Parameters**                     |                                               | 
-`uid`                                  | User id                                       | `uid_63444326443_50150`
+`uid`                                  | User id                                       | `91020740579212808535843549778848`
 `role`                                 | The role name                                 | `admin`, `speaker`, ...
 `location`                             | The location (meeting) where the role applies | `mymeeting`
 
@@ -1044,7 +1050,7 @@ Parameter                              | Description                            
 Parameter                              | Description                                   | Example
 ---------------------------------------|-----------------------------------------------|------------------------------------------------------------
 **URL Parameters**                     |                                               | 
-`uid`                                  | User id                                       | `uid_63444326443_50150`
+`uid`                                  | User id                                       | `91020740579212808535843549778848`
 `object`                               | The object on which the right apply           | `meeting`  or `event`
 `action`                               | Authorized action for this right              | `add` or `deletè or `join` ...
 `location`                             | The location (meeting) where the role applies | `mymeeting`
