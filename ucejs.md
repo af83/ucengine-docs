@@ -53,13 +53,13 @@ Property                               | Description
 
 ## Register an user (with password)
 
-*UCEngine.user.registerWithPassword(uid, credential, metadata, callback)*
+*UCEngine.user.registerWithPassword(name, credential, metadata, callback)*
 
 ### Parameters
 
 Parameter                              | Description
 ---------------------------------------|---------------------------------------
-`uid`                                  | User id
+`name`                                 | User name
 `credential`                           | Password
 `metadata`                             | Metadata attached to the user
 `callback`                             |
@@ -75,13 +75,13 @@ client.user.register("ucengine@example.com", "p4ssw0rd", {location: 'Paris'}, fu
 
 ## Register an user (generic)
 
-*UCEngine.user.register(uid, auth, credential, metadata, callback)*
+*UCEngine.user.register(name, auth, credential, metadata, callback)*
 
 ### Parameters
 
 Parameter                              | Description
 ---------------------------------------|---------------------------------------
-`uid`                                  | User id
+`name`                                 | User name
 `auth`                                 | The authentification method (token, password, etc.)
 `credential`                           | Password
 `metadata`                             | Metadata attached to the user
@@ -98,13 +98,13 @@ client.user.register("ucengine@example.com", "token", "NDQ0MzI2NDQzXzUwMTUwCg", 
 
 ## Create a presence
 
-*UCEngine.auth(uid, credential[, metadata], callback)*
+*UCEngine.auth(name, credential[, metadata], callback)*
 
 ### Parameters
 
 Parameter                              | Description
 ---------------------------------------|---------------------------------------
-`uid`                                  | User id
+`name`                                 | User name
 `credential`                           | Password
 `metadata`                             | metadata attached to your presence
 `callback`                             |
