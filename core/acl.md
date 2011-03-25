@@ -1,12 +1,52 @@
 # Access Control list
 
+## Roles
+
+U.C.Engine have a role based autorization mechanism. With this system,
+users can hold roles in a specific location, for example: the user
+"chuck" holds the role "speaker" in the location "Meeting". 
+
+A role is a set of access rights, namely an Access Control List
+(ACL), and is identified by a name (ex: "speaker", "administrator", etc.).
+
+Roles can be attributed to any users with an optional location. If a
+location is set, the role will be available only in this location. For
+example: the user `chuck` has a role `speaker` in the location
+`meeting`. Users can hold as many roles as needed, and can hold the
+same role in multiple locations.
+
+## Access
+
+An access right is the combination of an allowed `action`, an
+`object` and an optional dictionary of `conditions`. A literal expression of
+an access right could be: "is is allowed to perform `action` on
+`object` as long as the `conditions` matches the parameters of the
+request".
+
+Note that a condition that is not set into the `conditions` dictionary
+will be considered as true: an access right with a given condition
+is included in the same access right without this condition. For
+example: an access right that allow to `add` an `event` if its type is
+`message.chat.new` is more restrictive than an access right that does
+not give any conditions about the `event` type ; thus, the later allow the
+users holding the role that own this access right to `add` an `event`
+with any type.
+
 ## Setting up default rights
 
 See the [[configuration file documentation|config]].
 
-## Setting up rights via the command line
+## Setting up rights at runtime
 
-See the [[ACL section|ucectl#acl]] of the ucectl tool and some [[examples|ucectl#examples]].
+### Command-line
+
+See the [[Roles section|ucectl#roles-starting-from-version-05]] of the
+ucectl tool and some [[examples|ucectl#examples]].
+
+### REST API
+
+See the [[Roles section|api#roles-starting-from-version-05]] section
+of the REST API documentation.
 
 ## List
 

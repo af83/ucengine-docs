@@ -16,6 +16,10 @@
     - add a new command to check user rights
   * the `acl` section of the configuration file has been removed.
   * a new `roles` section of the configuration file can be use to set default roles and associated rights.
+  * the '/acl' entry point of the REST API is no longer available, the
+    authorization are handled by both the '/role' and '/user' entry
+    points. See the [[Roles|api#roles-starting-from-version-05]] section
+    of the API documentation.
 
 ## 0.4.1
 
