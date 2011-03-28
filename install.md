@@ -13,7 +13,7 @@ U.C.Engine has a few dependencies:
 
 ### Debian systems
 
-On Debian systems the following packages should provide the necessary stuff:
+On Debian systems the following packages should provide the necessary stuff (but do verify you have the minimal erlang version!):
 
   - erlang
   - erlang-yaws
@@ -22,6 +22,10 @@ On Debian systems the following packages should provide the necessary stuff:
 To install them, just run this command:
 
     $> aptitude install erlang erlang-yaws make
+
+Note: on ubuntu this would be 
+
+    $> aptitude install erlang yaws make
 
 ### Mac OS X
 
