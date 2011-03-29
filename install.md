@@ -25,7 +25,7 @@ To install them, just run this command:
 
 ### Ubuntu
 
-You should probably upgrade your erlang version. Ubuntu is currently shipped with erlang R13B03. You should upgrade to R14B01
+Ubuntu is currently shipped with erlang R13B03. You must upgrade to R14B01 unless `erl` show something like `Erlang R14A`.
 
     $ sudo apt-get install build-essential libncurses5-dev openssl libssl-dev
     $ wget http://www.erlang.org/download/otp_src_R14B01.tar.gz
