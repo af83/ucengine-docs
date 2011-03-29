@@ -25,7 +25,18 @@ To install them, just run this command:
 
 ### Ubuntu
 
+You should probably upgrade your erlang version. Ubuntu is currently shipped with erlang R13B03. You should upgrade to R14B01
+
+    $ sudo apt-get install build-essential libncurses5-dev openssl libssl-dev
+    $ wget http://www.erlang.org/download/otp_src_R14B01.tar.gz
+    $ tar xvzf otp_src_R14B01.tar.gz
+    $ cd otp_src_R14B01
+    $ ./configure && make && sudo make install
+
+And then install ucengine dependencies:
+
     $> aptitude install erlang yaws make
+    $> export ERL_LIBS=/usr/lib/yaws/
 
 ### Mac OS X
 
