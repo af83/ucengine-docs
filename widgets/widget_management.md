@@ -23,5 +23,5 @@ Management widget is located at *priv/www/lib/management/management.ui.js*.
 ## Examples
 
 ```javascript
-$("#placeholder").management({ucemeeting: meeting});
+$("#placeholder").management({ucemeeting: meeting, me: 'my_uid'});
 ```

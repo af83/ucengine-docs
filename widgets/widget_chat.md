@@ -26,6 +26,12 @@ Chat widget is located at *priv/www/lib/chat/chat.ui.js*.
 * clear
 * destroy
 
+## Examples
+
+```javascript
+$("#placeholder").chat({ucemeeting: meeting, me: 'my_uid'});
+```
+
 ## Events
 ### chat.message.new
 
