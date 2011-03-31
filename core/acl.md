@@ -15,6 +15,11 @@ example: the user `chuck` has a role `speaker` in the location
 `meeting`. Users can hold as many roles as needed, and can hold the
 same role in multiple locations.
 
+When an user is created, it automatically holds the role named
+"default" and a new role is created with the same id than the
+user. These roles can be used to set access rights for all the users
+or for a particular user.
+
 ## Access
 
 An access right is the combination of an allowed `action`, an
@@ -47,6 +52,30 @@ ucectl tool and some [[examples|ucectl#examples]].
 
 See the [[Roles section|api#roles-starting-from-version-05]] section
 of the REST API documentation.
+
+## Example
+
+Let's create a new user named 'chuck' using the ucectl command line tool:
+
+    $ ucectl user add --domain localhost --uid 'Chuck' --auth 'password' --credential 'Norris' --nickname 'Colonel Braddock'
+    {"ok", "909432094832048032530257"}
+
+This user holds two default roles: "default" and
+"909432094832048032530257".
+
+Create a new role 'ranger' and give it to Chuck
+
+    $ ucectl role add --domain localhost --name ranger
+    $ ucectl user role add --domain localhost --uid 909432094832048032530257 --role ranger --location texas
+
+Let's add an access right for Chuck to kick the butt of the bad guys:
+
+    $ ucectl role access add --domain localhost --name ranger --action kick --object butt --who badguys
+
+Check that Chuck can really do it:
+
+    $ ucectl role access check --domain localhost --uid 909432094832048032530257 --name ranger --action kick --object butt --who badguys
+    Success: true
 
 ## List
 

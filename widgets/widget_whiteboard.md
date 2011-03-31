@@ -18,5 +18,5 @@
 ## Examples
 
 ```javascript
-$("#demo").whiteboard();
+$("#placeholder").whiteboard({ucemeeting: meeting});
 ```

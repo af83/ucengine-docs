@@ -320,6 +320,30 @@ meeting.push('my.event', {property: 'some property'}, function(err, result) {
 });
 ```
 
+## Push a private event
+
+*UCEngine.meeting(meeting).pushTo(to, type, metadata, callback)*
+
+### Parameters
+
+Parameter                              | Description
+---------------------------------------|---------------------------------------
+`meeting`                              | The name of the meeting
+`type`                                 | Type of the event
+`to`                                   | The user uid of the recipient
+`metadata`                             | Metadata attached to the event
+`callback`                             |
+
+### Example
+
+```javascript
+var client = uce.createClient();
+var meeting = client.meeting('demo');
+meeting.pushTo('recipient@example.com', 'my.event', {property: 'some property'}, function(err, result) {
+    // event pushed to the server
+});
+```
+
 ## Start long polling
 
 Subscribe to meetings events in long polling.
