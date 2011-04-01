@@ -29,7 +29,7 @@ Chat widget is located at *priv/www/lib/chat/chat.ui.js*.
 ## Examples
 
 ```javascript
-$("#placeholder").chat({ucemeeting: meeting, me: 'my_uid'});
+$("#placeholder").chat({ucemeeting: meeting, uceclient: client});
 ```
 
 ## Events
