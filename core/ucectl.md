@@ -144,22 +144,22 @@ Only keep the closed|opened|upcoming meetings:
     ucectl meeting list --domain localhost --status upcoming
 
 Create a new meeting 'Christmas dinner':
-    ucectl meeting add --domain localhost --name 'Christmas dinner' --start '2010-24-12 20:30:00'
+    ucectl meeting add --domain localhost --name 'Christmas dinner' --start '2010-24-12 20:30:00'\
                        --end '2010-25-12 03:00:00' --appetizer 'Chips'
 
 Make it frenchier:
-    ucectl meeting update --domain localhost --name 'Christmas dinner' --start '2010-24-12 20:30:00'
+    ucectl meeting update --domain localhost --name 'Christmas dinner' --start '2010-24-12 20:30:00'\
                           --end '2010-25-12 07:00:00' --appetizer 'Snails'
 
 And delete it:
-ucectl meeting list --domain localhost  ucectl meeting delete --domain localhost --name 'Christmas dinner'
+    ucectl meeting list --domain localhost  ucectl meeting delete --domain localhost --name 'Christmas dinner'
 
 Create a new user 'Chuck' with a password set to 'Norris' with his nickname in the metadata:
-    ucectl user add --domain localhost --uid 'Chuck' --auth 'password' --credential 'Norris'
+    ucectl user add --domain localhost --uid 'Chuck' --auth 'password' --credential 'Norris'\
                     --nickname 'Colonel Braddock'
 
 Update the user with a stronger password and a different nickname:
-    ucectl user update --domain localhost --uid 'Chuck' --auth 'password' --credential '835dc9b5fa0ffa8'
+    ucectl user update --domain localhost --uid 'Chuck' --auth 'password' --credential '835dc9b5fa0ffa8'\
                        --nickname 'Cordell Walker'
 
 Create a new role called 'ranger':
