@@ -103,6 +103,12 @@ user           | list         | [[List users|api#list-users]]
 user           | update       | [[Updade user informations|api#modify-users-informations]]
 user           | get          | [[Get user informations|api#retrieve-users-informations]]
 user           | delete       | [[Delete an user|api#delete-a-user]]
+user.role      | add          | [[Set a role to an user|api#set-a-role-to-an-user]]
+user.role      | delete       | [[Unset a role to an user|api#unset-a-role-to-an-user]]
+role           | add          | [[Add a new role|api#add-a-new-role]]
+role           | delete       | [[Delete a role|api#delete-a-role]]
+access         | add          | [[Set an access right to a role|api#set-a-new-access-right-to-a-role]]
+access         | delete       | [[Unset an access right from a role|api#unset-an-access-right-from-a-role]]
 
 ## Conditions
 
