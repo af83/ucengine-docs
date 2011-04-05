@@ -64,3 +64,25 @@ Example:
   "metadata" : {}
 }
 ```
+
+### meeting.lead.refuse
+
+Sent by the meeting owner to warn the user that its lead request was refused.
+
+Metadata       | Description
+---------------|-------------------------------------------------------------------------------------------------------
+user           | The id of the user who sent the lead request
+
+Example:
+
+```javascript
+{ "type"     : "meeting.lead.refuse",
+  "datetime" : 1292601125202,
+  "id"       : "91918360913598370296768635184375",
+  "location" : "demo",
+  "from"     : "uid_63444326443_50150",
+  "metadata" : {
+    "user"   : "uid_9340329840_41321"
+  }
+}
+```
