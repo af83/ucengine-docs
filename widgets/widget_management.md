@@ -48,3 +48,19 @@ Example:
   }
 }
 ```
+
+### meeting.lead.request
+
+Sent by an user to request the lead of the meeting to the `owner`.
+
+Example:
+
+```javascript
+{ "type"     : "meeting.lead.request",
+  "datetime" : 1292601125202,
+  "id"       : "91918360913598370296768635184375",
+  "location" : "demo",
+  "from"     : "uid_63444326443_50150",
+  "metadata" : {}
+}
+```
