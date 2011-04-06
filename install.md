@@ -40,14 +40,14 @@ And then install ucengine dependencies:
 
 ### Mac OS X
 
-#### MacPorts
+#### [MacPorts](http://www.macports.org/)
 
     $> sudo port selfupdate
     $> sudo port install erlang +ssl yaws
     $> sudo port load yaws
     $> export ERL_LIBS=/opt/local/lib/yaws/
 
-#### Homebrew
+#### [Homebrew](http://mxcl.github.com/homebrew/)
 
     $> brew install erlang yaws
     $> export ERL_LIBS=/usr/local/Cellar/yaws/1.88/lib/yaws
@@ -58,6 +58,7 @@ Once you are sure to have all the dependencies installed on your system,
 retrieve the source code from our github repository:
 
      $> git clone git://github.com/AF83/ucengine.git
+     $> cd ucengine
 
 ## Run the server (prior to version 0.5)
 
