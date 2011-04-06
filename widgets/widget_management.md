@@ -87,3 +87,37 @@ Example:
   }
 }
 ```
+
+## Theming
+<article id="management" class="ui-management ui-widget">
+  <div class="ui-widget-header ui-corner-all ui-helper-clearfix">
+    <span class="ui-widget-header-left">
+      <span class="ui-toolbar-button ui-button-fold ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only" role="button" aria-disabled="false" title="">
+        <span class="ui-button-icon-primary ui-icon ui-icon-triangle-1-s"></span>
+        <span class="ui-button-text"></span>
+      </span>
+    </span>
+    <span class="ui-widget-header-title">Meeting Facilitation</span>
+    <span class="ui-widget-header-right">
+      <span class="ui-toolbar-button ui-button-toggle ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only" role="button" aria-disabled="false" title="">
+        <span class="ui-button-icon-primary ui-icon ui-icon-circle-plus"></span>
+        <span class="ui-button-text"></span>
+      </span>
+  </span>
+  </div>
+  <div class="ui-widget-content">
+    <div class="ui-management-roster">
+      <li class="">
+        <span class="ui-management-user">Unnamed 2</span>
+        <span class="ui-management-role">You</span>
+        <a class="ui-management-lead-button ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-management-lead-button-request" role="button" aria-disabled="false">
+          <span class="ui-button-text">Request Lead</span>
+        </a>
+      </li>
+      <li class="">
+        <span class="ui-management-user">Unnamed 1</span>
+        <span class="ui-management-role">Owner</span>
+      </li>
+    </div>
+  </div>
+</article>
