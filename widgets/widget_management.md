@@ -9,6 +9,7 @@ Management widget is located at *priv/www/lib/management/management.ui.js*.
 ## Dependencies
 
 * jQuery UI
+* [[jQuery Editable Plugin|http://plugins.jquery.com/node/5601/release]]
 
 ## Options
 
