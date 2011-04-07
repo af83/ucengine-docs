@@ -14,6 +14,7 @@ Management widget is located at *priv/www/lib/management/management.ui.js*.
 ## Options
 
 * ucemeeting: current meeting
+* uceclient: the client object returned by uce.createClient()
 * title
 
 ## Methods
@@ -89,6 +90,7 @@ Example:
 ```
 
 ## Theming
+```html
 <article id="management" class="ui-management ui-widget">
   <div class="ui-widget-header ui-corner-all ui-helper-clearfix">
     <span class="ui-widget-header-left">
@@ -121,3 +123,4 @@ Example:
     </div>
   </div>
 </article>
+```
