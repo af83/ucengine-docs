@@ -2,6 +2,7 @@
 
 ## 0.4 to 0.5 (currently in development)
 
+* ucectl command-line tool have been renamed ucengine-admin.
 * Remove authentication on `/time` end point.
 * Search API:
   * Fix `totalResults` field in search api.
@@ -9,7 +10,7 @@
 * Uce.js:
   * add `options` parameter in `UCEngine.search` and `UCEngine.meeting(name).search`
 * Roles and ACL:
-  * ucectl command-line tool:
+  * ucengine-admin command-line tool:
     - remove all the commands regarding ACL
     - add a new set of commands to add, remove and configure roles
     - add a new set of commands to give or remove roles to an user
