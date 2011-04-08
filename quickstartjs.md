@@ -16,12 +16,14 @@ You will need:
 
 * * *
 
-    $> bin/ucectl meeting add --name "demo"
-    $> bin/ucectl user add --uid 'john' --auth 'password' --credential 'mypwd'
-    $> bin/ucectl acl add --uid 'john' --meeting 'demo' --object 'roster' --action 'add'
-    $> bin/ucectl acl add --uid 'john' --object 'presence' --action 'add'
-    $> bin/ucectl acl add --uid 'john' --object 'event' --action 'list'
-    $> bin/ucectl acl add --uid 'john' --object 'event' --action 'add'
+    $> bin/ucectl meeting add --domain localhost --name "demo"
+    $> bin/ucectl user add --domain localhost --name 'john' --auth 'password' --credential 'mypwd'
+    Success: 52050861150575074077437530343071 # User id
+
+    $> bin/ucectl role access add --domain localhost --name 52050861150575074077437530343071 --action add --object roster
+    $> bin/ucectl role access add --domain localhost --name 52050861150575074077437530343071 --action add --object presence
+    $> bin/ucectl role access add --domain localhost --name 52050861150575074077437530343071 --action list --object event
+    $> bin/ucectl role access add --domain localhost --name 52050861150575074077437530343071 --action add --object event
 
 See [[ucectl]] for more informations.
 
