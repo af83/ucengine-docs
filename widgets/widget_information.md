@@ -18,6 +18,7 @@ Information widget is located at *priv/www/lib/information/information.ui.js*.
 * ucemeeting: current meeting
 * uceclient: the client object returned by uce.createClient()
 * title
+* maxlenght: the maximum length for a field value before displaying a collapse button.
 * fields: a list of fields to display (default: name and description),
   this list take the form of a dictionary with the name of the field
   in the meeting metadata as the key and a dictionary with the 'title'
@@ -51,8 +52,8 @@ $("#placeholder").information({ucemeeting: meeting,
     </span>
     <span class="ui-widget-header-title">Informations</span>
     <span class="ui-widget-header-right">
-      <span class="ui-toolbar-button ui-button-toggle ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only" role="button" aria-disabled="false" title="">
-        <span class="ui-button-icon-primary ui-icon ui-icon-circle-minus"></span>
+      <span class="ui-toolbar-button ui-button-toggle ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only" role="button" aria-disabled="false" title=""><span class="ui-button-icon-primary ui-icon ui-icon-circle-minus">
+        </span>
         <span class="ui-button-text"></span>
       </span>
     </span>
@@ -61,11 +62,11 @@ $("#placeholder").information({ucemeeting: meeting,
     <ul class="ui-information-list">
       <li class="ui-information-name">
         <span class="ui-information-title">Meeting Name</span>
-        <span class="ui-information-value">My first meeting</span>
+        <span class="ui-information-value ui-information-editable">demo</span>
       </li>
       <li class="ui-information-description">
         <span class="ui-information-title">Description</span>
-        <span class="ui-information-placeholder">Please enter a description of the meeting</span>
+        <span class="ui-information-value ui-information-editable">U.C.Engine demo meetup</span>
       </li>
     </ul>
   </div>
