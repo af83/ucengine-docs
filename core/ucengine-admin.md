@@ -153,7 +153,7 @@ Make it frenchier:
                           --end '2010-25-12 07:00:00' --appetizer 'Snails'
 
 And delete it:
-    ucengine-admin meeting list --domain localhost  ucengine-admin meeting delete --domain localhost --name 'Christmas dinner'
+    ucengine-admin meeting delete --domain localhost --name 'Christmas dinner'
 
 Create a new user 'Chuck' with a password set to 'Norris' with his nickname in the metadata:
     ucengine-admin user add --domain localhost --uid 'Chuck' --auth 'password' --credential 'Norris'\
