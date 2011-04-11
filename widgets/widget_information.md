@@ -10,34 +10,42 @@ Information widget is located at *priv/www/lib/information/information.ui.js*.
 
 ## Dependencies
 
-* jQuery UI
+* [[jQuery UI|http://jqueryui.com/]]
 * [[jQuery Editable Plugin|http://plugins.jquery.com/node/5601/release]]
 
 ## Options
 
-* ucemeeting: current meeting
-* uceclient: the client object returned by uce.createClient()
-* title
-* maxlenght: the maximum length for a field value before displaying a collapse button.
-* fields: a list of fields to display (default: name and description),
-  this list take the form of a dictionary with the name of the field
-  in the meeting metadata as the key and a dictionary with the 'title'
-  and 'placeholder' value.
+Option         | Description
+---------------|---------------------------------------------------------------
+ucemeeting     | The current meeting
+uceclient      | The client object returned by uce.createClient()
+title          | The title to display in the widget header
+maxlength      | The maximum length for a field value before displaying a collapse button.
+fields         | A list of fields to display (default: `name` and `description`)
 
 ## Methods
 
-* clear
-* destroy
+Method         | Description
+---------------|---------------------------------------------------------------
+clear          | Reinitialize the widget
+destroy        | Destroy the widget
 
 ## Examples
 
 ```javascript
-$("#placeholder").information({ucemeeting: meeting,
-                              uceclient: client,
-                              fields: {'name': {title: "Meeting Name",
-                                                placeholder: "Enter the name of the meeting room"},
-                                       'description': {title: "Description",
-                                                       placeholder: "Summarize the topic"}}});
+$("#placeholder").information({ ucemeeting: meeting,
+                                uceclient: client,
+                                fields: {
+                                  name: {
+                                    title       : "Meeting Name",
+                                    placeholder : "Enter the name of the meeting room"
+                                  },
+                                  description: {
+                                    title       : "Description",
+                                    placeholder : "Summarize the topic"
+                                  }
+                                }
+                              });
 ```
 
 ## Theming
