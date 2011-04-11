@@ -92,21 +92,7 @@ The following options are available:
 
     Remove the role named *role* to the user *name* or *uid* in an optional location *location*
 
-### ACL (prior to version 0.5)
-
-  * `acl` `add` `--domain` *domain* `--uid` *uid* `--object` *object* `--action` *action* [`--meeting` *meeting*] [`--condition` *value*] ...
-
-    Allow the user *uid* to do *action* on *object* bounded to an optional meeting *meeting* with some <conditions> (see FORMAT for more informations about <conditions>).
-
-  * `acl` `delete` `--domain` *domain* `--uid` *uid* `--object` *object* `--action` *action* [`--meeting` *meeting*] [`--condition` *value*] ...
-
-    Remove the right for an user *uid* to do *action* on *object* in an optional meeting *meeting* with some <conditions>.
-
-  * `acl` `check` `--domain` *domain* `--uid` *uid* `--object` *object* `--action` *action* [`--meeting` *meeting*] [`--condition` *value*] ...
-
-    Check that the user *uid* has the right to do *action* on *object* in an optional meeting *meeting* with some <conditions>.
-
-### Roles (starting from version 0.5)
+### Roles
 
   * `role` `add` `--domain` *domain* `--name` *name*
 
