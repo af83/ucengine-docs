@@ -18,7 +18,7 @@ You will need:
 
     $> bin/ucectl meeting add --domain localhost --name "demo"
     $> bin/ucectl user add --domain localhost --name 'john' --auth 'password' --credential 'mypwd'
-    Success: 52050861150575074077437530343071 # User id
+    Success: 52050861150575074077437530343071 # User id which is also the name of the default user role
 
     $> bin/ucectl role access add --domain localhost --name 52050861150575074077437530343071 --action add --object roster
     $> bin/ucectl role access add --domain localhost --name 52050861150575074077437530343071 --action add --object presence
