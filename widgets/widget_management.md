@@ -24,8 +24,10 @@ code           | The meeting access code
 
 ## Methods
 
-* clear
-* destroy
+Method         | Description
+---------------|---------------------------------------------------------------
+clear          | Reinitialize the widget
+destroy        | Destroy the widget
 
 ## Examples
 
