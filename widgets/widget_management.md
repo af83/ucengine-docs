@@ -48,6 +48,7 @@ Example:
 
 ```javascript
 { "type"     : "roster.nickname.update",
+  "domain"   : "localhost",
   "datetime" : 1292601125202,
   "id"       : "91918360913598370296768635184375",
   "location" : "demo",
@@ -66,6 +67,7 @@ Example:
 
 ```javascript
 { "type"     : "meeting.lead.request",
+  "domain"   : "localhost",
   "datetime" : 1292601125202,
   "id"       : "91918360913598370296768635184375",
   "location" : "demo",
@@ -86,6 +88,7 @@ Example:
 
 ```javascript
 { "type"     : "meeting.lead.refuse",
+  "domain"   : "localhost",
   "datetime" : 1292601125202,
   "id"       : "91918360913598370296768635184375",
   "location" : "demo",

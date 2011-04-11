@@ -43,6 +43,7 @@ Example:
 
 ```javascript
 { "type"     : "document.share.start",
+  "domain"   : "localhost",
   "datetime" : 1292601125242,
   "id"       : "91918360913598370296768635184385",
   "location" : "my_meeting",

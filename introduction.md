@@ -21,6 +21,7 @@ Here is an event in a JSON format:
 
 ```javascript
 { "type"     : "chat.message.new",
+  "domain"   : "localhost",
   "datetime" : 1292593766682,
   "id"       : "44099145822544409583064798111089",
   "location" : "introduction",

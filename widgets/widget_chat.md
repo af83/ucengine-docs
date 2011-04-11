@@ -50,6 +50,7 @@ Example:
 
 ```javascript
 { "type"     : "chat.message.new",
+  "domain"   : "localhost",
   "datetime" : 1292601125202,
   "id"       : "91918360913598370296768635184375",
   "location" : "demo",
@@ -74,6 +75,7 @@ Example:
 
 ```javascript
 { "type"     :"twitter.hashtag.add",
+  "domain"   : "localhost",
   "datetime" :1302532593023,
   "id"       :"24535972794006181696054633929989",
   "location" :"demo",
