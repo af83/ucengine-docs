@@ -2,20 +2,33 @@
 
 Video player using HTML5 *video* element. Video should be encoded in mp4 and webm.
 
+## Location
+
+The player widget is located at *priv/www/lib/player/player.ui.js*.
+
+## Dependencies
+
+* [[jQuery UI|http://jqueryui.com/]]
+
 ## Options
 
-* start
-* src   : source of the video (without .mp4 or .webm)
-* width
-* height
+Option         | Description
+---------------|---------------------------------------------------------------
+start          | The time when user entered the meeting
+src            | The video source (without .mp4 or .webm)
+title          | The title to display in the widget header
+width          |
+height         |
 
 ## Methods
 
-* play
-* pause
-* stop
-* seek
-* destroy
+Method         | Description
+---------------|---------------------------------------------------------------
+play           | Resume the player
+pause          | Pause the player
+stop           | Stop the player
+seek           | Jump to the specified timestamp
+destroy        | Destroy the widget
 
 ## Example
 

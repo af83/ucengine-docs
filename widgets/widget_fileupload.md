@@ -8,37 +8,42 @@ File upload widget is located at *priv/www/lib/file_upload/file_upload.ui.js*.
 
 ## Dependencies
 
-* jQuery UI
+* [[jQuery UI|http://jqueryui.com/]]
 * [jQuery strftime](http://projects.nocternity.net/index.py/en/jquery-strftime): *priv/www/lib/jquery.strftime.minified.js*
 
 ## Options
 
-* ucemeeting: current meeting
-* upload: show/hide upload button
-* title: custom title
+Option         | Description
+---------------|---------------------------------------------------------------
+ucemeeting     | The current meeting
+upload         | Show or hide the upload button
+title          | The title to display in the widget header
 
 ## Methods
 
-* clear: reinit widget
-* startPreview: hide the list of uploaded files and show a preview screen for the chosen file
-* stopPreview: hide the current preview and show the list of available files
-* destroy: destroy widget
+Method         | Description
+---------------|---------------------------------------------------------------
+startPreview   | Hide the list of upload files and show a preview screen for the chosen file
+stopPreview    | Hide the current preview and show the list of available files
+clear          | Reinitialize the widget
+destroy        | Destroy the widget
 
 ## Events
 ### document.share.start
 
-Sent by an user. Notifies other participants that a new file is shared. 
+Sent by an user. Notifies other participants that a new file is shared.
 
 Metadata       | Description
 ---------------|-------------------------------------------------------------------------------------------------------
 id             | The document id to share
-**optional     |
+**optional**   |
 page           | The starting page number
 
 Example:
 
 ```javascript
 { "type"     : "document.share.start",
+  "domain"   : "localhost",
   "datetime" : 1292601125242,
   "id"       : "91918360913598370296768635184385",
   "location" : "my_meeting",
@@ -51,8 +56,9 @@ Example:
 ```
 
 ## Exemple
+
 ```javascript
-$("#demo").file_upload({ucemeeting: meeting});
+$("#placeholder").file_upload({ucemeeting: meeting, upload: true});
 ```
 
 ## Theming
