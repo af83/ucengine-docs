@@ -238,6 +238,34 @@ client.role.deleteAccess("speaker", "add", "event", {'type': 'chat.message.new'}
 });
 ```
 
+## Check access rights
+
+*UCEngine.user.can(uid, action, object, conditions, callback)*
+
+### Parameters
+
+Parameter                              | Description
+---------------------------------------|---------------------------------------
+`uid`                                  | The user id
+`action`                               | The action to allow
+`object`                               | The object on which the `action` is performed
+`conditions`                           | A dictionary of conditions
+`callback`                             |
+
+### Notes
+
+See the [[ACL|acl]] page for a list of all the available
+`actions`, `objects` and `conditions`.
+
+### Example
+
+```javascript
+var client = uce.createClient();
+client.user.can('user@example.com', 'add', 'event', {'type': 'chat.message.new'}, function(err, result) {
+   // if 'result' is true the user has the right to add an event of type 'chat.message.new'
+});
+```
+
 ## Create a presence
 
 *UCEngine.auth(uid, credential[, metadata], callback)*

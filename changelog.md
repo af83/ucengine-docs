@@ -8,7 +8,8 @@
   * Fix `totalResults` field in search api.
   * Add `order` parameter in search api.
 * Uce.js:
-  * add `options` parameter in `UCEngine.search` and `UCEngine.meeting(name).search`
+  * add an `options` parameter in `UCEngine.search` and `UCEngine.meeting(name).search`
+  * add a `conditions` parameter to `UCEngine.user.can`
 * Roles and ACL:
   * ucengine-admin command-line tool:
     - remove all the commands regarding ACL
@@ -22,10 +23,10 @@
     points. See the [[Roles|api#roles-starting-from-version-05]] section
     of the API documentation.
 
-* The user id that is used in most API calls is now returned by the
-  server after user creation. The username can still be used to create
-  a new presence. See the [[Authentication|api#connect-user]] section
-  of the API documentation.
+  * The user id that is used in most API calls is now returned by the
+    server after user creation. The username can still be used to create
+    a new presence. See the [[Authentication|api#connect-user]] section
+    of the API documentation.
 
 ## 0.4.1
 
