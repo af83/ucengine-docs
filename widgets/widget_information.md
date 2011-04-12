@@ -23,6 +23,14 @@ title          | The title to display in the widget header
 maxlength      | The maximum length for a field value before displaying a collapse button.
 fields         | A list of fields to display (default: `name` and `description`)
 
+## Field format
+
+Option         | Description
+---------------|---------------------------------------------------------------
+title          | The field title
+text           | Default text when the field is empty and the user can not edit it
+placeholder    | Default text when the field is empty and the user can edit it
+
 ## Methods
 
 Method         | Description
@@ -38,6 +46,7 @@ $("#placeholder").information({ ucemeeting: meeting,
                                 fields: {
                                   name: {
                                     title       : "Meeting Name",
+                                    text        : "Unnamed meeting",
                                     placeholder : "Enter the name of the meeting room"
                                   },
                                   description: {
