@@ -172,6 +172,22 @@ This allow you, for example, to check if there is a current U.C.Engine instance 
 {pidfile, "tmp/ucengine.pid"}.
 ```
 
+## Log dir
+
+Directory where yaws will wrote logs files.
+
+```erlang
+{log_dir, "log/"}.
+```
+
+## Log level
+
+Level of logs. Values: debug, info, warning, error, critical.
+
+```erlang
+{log_level, debug}.
+```
+
 ## Databases backends
 
 ### Mnesia

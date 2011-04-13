@@ -27,6 +27,7 @@
     server after user creation. The username can still be used to create
     a new presence. See the [[Authentication|api#connect-user]] section
     of the API documentation.
+* Add `log_dir` in [[config|config file]], used for yaws logs.
 
 ## 0.4.1
 
