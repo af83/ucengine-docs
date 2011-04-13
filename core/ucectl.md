@@ -91,7 +91,7 @@ The following options are available:
     Allow the user <uid> to do <action> on <object> bounded to an optional meeting <meeting> with some <conditions> (see FORMAT for more informations about <conditions>).
 
   * `acl` `delete` `--domain` <domain> `--uid` <uid> `--object` *object* `--action` <action> [`--meeting` <meeting>] [`--condition` <value>] ... :
-    Remove the right for an user <uid> to do <action> on <object> in an optional meeting <meeting> with some <conditions>.
+    Remove the right for a user <uid> to do <action> on <object> in an optional meeting <meeting> with some <conditions>.
 
   * `acl` `check` `--domain` <domain> `--uid` <uid> `--object` *object* `--action` <action> [`--meeting` <meeting>] [`--condition` <value>] ... :
     Check that the user <uid> has the right to do <action> on <object> in an optional meeting <meeting> with some <conditions>.

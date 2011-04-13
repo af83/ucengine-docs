@@ -51,7 +51,7 @@ Property                               | Description
 `connected`                            | true/false. True if currently connected on API.
 `uid`                                  | Current user uid. Null if not connected.
 
-## Register an user (with password)
+## Register a user (with password)
 
 *UCEngine.user.registerWithPassword(uid, credential, metadata, callback)*
 
@@ -73,7 +73,7 @@ client.user.register("ucengine@example.com", "p4ssw0rd", {location: 'Paris'}, fu
 });
 ```
 
-## Register an user (generic)
+## Register a user (generic)
 
 *UCEngine.user.register(uid, auth, credential, metadata, callback)*
 
@@ -96,7 +96,7 @@ client.user.register("ucengine@example.com", "token", "NDQ0MzI2NDQzXzUwMTUwCg", 
 });
 ```
 
-## Add an existing role to an user
+## Add an existing role to a user
 
 *UCEngine.user.addRole(uid, role, location, callback)*
 
@@ -118,7 +118,7 @@ client.user.addRole("ucengine@example.com", "speaker", "demo", function(err, res
 });
 ```
 
-## Delete a role from an user
+## Delete a role from a user
 
 *UCEngine.user.delRole(uid, role, location, callback)*
 
@@ -136,7 +136,7 @@ Parameter                              | Description
 ```javascript
 var client = uce.createClient();
 client.user.delRole("ucengine@example.com", "speaker", "demo", function(err, result) {
-   // Role deleted from an user
+   // Role deleted from a user
 });
 ```
 

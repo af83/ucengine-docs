@@ -38,7 +38,7 @@ $("#placeholder").management({ucemeeting: meeting, uceclient: client});
 ## Events
 ### roster.nickname.update
 
-Sent by an user to set his new nickname
+Sent by a user to set his new nickname
 
 Metadata       | Description
 ---------------|-------------------------------------------------------------------------------------------------------
@@ -61,7 +61,7 @@ Example:
 
 ### meeting.lead.request
 
-Sent by an user to request the lead of the meeting to the `owner`.
+Sent by a user to request the lead of the meeting to the `owner`.
 
 Example:
 

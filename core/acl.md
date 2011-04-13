@@ -15,7 +15,7 @@ example: the user `chuck` has a role `speaker` in the location
 `meeting`. Users can hold as many roles as needed, and can hold the
 same role in multiple locations.
 
-When an user is created, it automatically holds the role named
+When a user is created, it automatically holds the role named
 "default" and a new role is created with the same id than the
 user. These roles can be used to set access rights for all the users
 or for a particular user.
@@ -102,9 +102,9 @@ presence       | delete       | [[Logout|api#disconnect-users]]
 user           | list         | [[List users|api#list-users]]
 user           | update       | [[Updade user informations|api#modify-users-informations]]
 user           | get          | [[Get user informations|api#retrieve-users-informations]]
-user           | delete       | [[Delete an user|api#delete-a-user]]
-user.role      | add          | [[Set a role to an user|api#set-a-role-to-an-user]]
-user.role      | delete       | [[Unset a role to an user|api#unset-a-role-to-an-user]]
+user           | delete       | [[Delete a user|api#delete-a-user]]
+user.role      | add          | [[Set a role to a user|api#set-a-role-to-a-user]]
+user.role      | delete       | [[Unset a role to a user|api#unset-a-role-to-a-user]]
 role           | add          | [[Add a new role|api#add-a-new-role]]
 role           | delete       | [[Delete a role|api#delete-a-role]]
 access         | add          | [[Set an access right to a role|api#set-a-new-access-right-to-a-role]]

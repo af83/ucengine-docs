@@ -14,7 +14,7 @@
   * ucengine-admin command-line tool:
     - remove all the commands regarding ACL
     - add a new set of commands to add, remove and configure roles
-    - add a new set of commands to give or remove roles to an user
+    - add a new set of commands to give or remove roles to a user
     - add a new command to check user rights
   * the `acl` section of the configuration file has been removed.
   * a new `roles` section of the configuration file can be use to set default roles and associated rights.
@@ -80,7 +80,7 @@
   Some examples:
   `POST /meeting/?name={meeting}` instead of `PUT /meeting/{meeting}`
 
-  `PUT /user/{uid}` to update an user
+  `PUT /user/{uid}` to update a user
 
   **ucectl**
 

@@ -39,7 +39,7 @@ $("#placeholder").chat({ucemeeting: meeting, uceclient: client});
 ## Events
 ### chat.message.new
 
-Sent by an user. It allow to post a new message on a chatroom.
+Sent by a user. It allow to post a new message on a chatroom.
 
 Metadata       | Description
 ---------------|---------------------------------------------------------------
@@ -64,7 +64,7 @@ Example:
 
 ### twitter.hashtag.add
 
-Sent by an user. It allow you to say that you want a new hashtag to be minitored.
+Sent by a user. It allow you to say that you want a new hashtag to be minitored.
 See the [[Twitter brick|brick_twitter]] for more informations.
 
 Metadata       | Description

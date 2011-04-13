@@ -58,11 +58,11 @@ Example:
 
 ### Prior to version 0.5
 
-New rights can be set at runtime for an user based on the events he sent. The `acl` section
+New rights can be set at runtime for a user based on the events he sent. The `acl` section
 of the configuration file defines which rights have to be set after an event with a specific
 type was received.
 
-With the example below, when an user register himself (triggering an `internal.user.add` event),
+With the example below, when a user register himself (triggering an `internal.user.add` event),
 U.C.Engine will automatically create the rights for this user to create a
 presence (`{"presence", "add"}`) and list all users of his domain (`{"user", "get"}`).
 

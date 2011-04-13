@@ -31,7 +31,7 @@ destroy        | Destroy the widget
 ## Events
 ### document.share.start
 
-Sent by an user. Notifies other participants that a new file is shared.
+Sent by a user. Notifies other participants that a new file is shared.
 
 Metadata       | Description
 ---------------|-------------------------------------------------------------------------------------------------------

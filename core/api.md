@@ -988,7 +988,7 @@ Parameter                              | Description                           |
 
     404 { "error": "not_found" } // the role does not exists
 
-### Set a role to an user
+### Set a role to a user
 
 #### Request
 
@@ -1016,7 +1016,7 @@ Parameter                              | Description                            
 
 If the location parameter is omitted the role will apply on all locations.
 
-### Unset a role to an user
+### Unset a role to a user
 
 #### Request
 
