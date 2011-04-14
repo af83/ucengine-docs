@@ -467,6 +467,28 @@ meeting.getRoster(function(err, roster) {
 });
 ```
 
+## Delete a file uploaded on the meeting
+
+*UCEngine.meeting(meeting).delFile(id, callback)*
+
+### Parameters
+
+Parameter                              | Description
+---------------------------------------|---------------------------------------
+`meeting`                              | The name of the meeting
+`id`                                   | The id of the file to delete
+`callback`                             |
+
+### Example
+
+```javascript
+var client = uce.createClient();
+var meeting = client.meeting('demo');
+meeting.delFile("file_id", function(err, result) {
+  // The file is deleted
+});
+```
+
 ## Push an event
 
 *UCEngine.meeting(meeting).push(type, metadata, callback)*
