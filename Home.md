@@ -34,7 +34,7 @@ Building an application with U.C.Engine is mainly a question of adding bricks to
 ### Client libraries
 
 * **Javascript**: [[Javascript API reference|ucejs]]
-* **Ruby**: [[install ruby API|ruby_install]] - [Ruby API reference](http://rdoc.info/github/AF83/ucengine.rb/master/frames)
+* **Ruby**: [[install ruby API|ruby_install]] - [Ruby API reference](http://rdoc.info/github/AF83/ucengine.rb/master/frames) - [Ruby event-machine librairy](https://github.com/AF83/ucengine.em)
 * **Erlang**: you can extract it from [erlyvideo-ucengine](https://github.com/AF83/erlyvideo-ucengine)
 * **Nodejs**: [node-ucengine](https://github.com/athoune/node-ucengine) - A contribution by [athoune](https://github.com/athoune)
 * **Python**: [py-ucengine](https://github.com/athoune/py-ucengine/)- A contribution by [athoune](https://github.com/athoune)
