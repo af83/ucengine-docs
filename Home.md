@@ -22,7 +22,7 @@ See the [[introduction]] to learn some of the concepts of U.C.Engine.
 The core of U.C.Engine is a [[publish/subscribe|http://en.wikipedia.org/wiki/PubSub]] server written in Erlang. Persistence is achieved via the database of your choice.
 
 * **API**: [[ReST API reference|api]]
-* **Administration**: [[ucectl console|ucectl]] - [[config file|config]] - (version 0.5: [[ucengine]] - [[ucengine-admin]])
+* **Administration**: [[ucengine]] - [[ucengine-admin]] - [[config file|config]]
 * **Databases:** [[mongodb]] - [[mnesia]]
 * **Full text Search:** [[Solr|solr]]
 * [[ACL|acl]] - [[Core events|events]]

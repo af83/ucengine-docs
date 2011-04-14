@@ -4,7 +4,7 @@
 
 U.C.Engine have a role based autorization mechanism. With this system,
 users can hold roles in a specific location, for example: the user
-"chuck" holds the role "speaker" in the location "Meeting". 
+"chuck" holds the role "speaker" in the location "Meeting".
 
 A role is a set of access rights, namely an Access Control List
 (ACL), and is identified by a name (ex: "speaker", "administrator", etc.).
@@ -45,8 +45,8 @@ See the [[configuration file documentation|config]].
 
 ### Command-line
 
-See the [[Roles section|ucectl#roles-starting-from-version-05]] of the
-ucectl tool and some [[examples|ucectl#examples]].
+See the [[Roles section|ucengine-admin#roles]] of the
+ucengine-admin tool and some [[examples|ucengine-admin#examples]].
 
 ### REST API
 
@@ -55,9 +55,9 @@ of the REST API documentation.
 
 ## Example
 
-Let's create a new user named 'chuck' using the ucectl command line tool:
+Let's create a new user named 'chuck' using the ucengine-admin command line tool:
 
-    $ ucectl user add --domain localhost --uid 'Chuck' --auth 'password' --credential 'Norris' --nickname 'Colonel Braddock'
+    $ ucengine-admin user add --domain localhost --uid 'Chuck' --auth 'password' --credential 'Norris' --nickname 'Colonel Braddock'
     {"ok", "909432094832048032530257"}
 
 This user holds two default roles: "default" and
@@ -65,16 +65,16 @@ This user holds two default roles: "default" and
 
 Create a new role 'ranger' and give it to Chuck
 
-    $ ucectl role add --domain localhost --name ranger
-    $ ucectl user role add --domain localhost --uid 909432094832048032530257 --role ranger --location texas
+    $ ucengine-admin role add --domain localhost --name ranger
+    $ ucengine-admin user role add --domain localhost --uid 909432094832048032530257 --role ranger --location texas
 
 Let's add an access right for Chuck to kick the butt of the bad guys:
 
-    $ ucectl role access add --domain localhost --name ranger --action kick --object butt --who badguys
+    $ ucengine-admin role access add --domain localhost --name ranger --action kick --object butt --who badguys
 
 Check that Chuck can really do it:
 
-    $ ucectl role access check --domain localhost --uid 909432094832048032530257 --name ranger --action kick --object butt --who badguys
+    $ ucengine-admin role access check --domain localhost --uid 909432094832048032530257 --name ranger --action kick --object butt --who badguys
     Success: true
 
 ## List

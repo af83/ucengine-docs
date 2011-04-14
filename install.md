@@ -60,15 +60,7 @@ retrieve the source code from our github repository:
      $> git clone git://github.com/AF83/ucengine.git
      $> cd ucengine
 
-## Run the server (prior to version 0.5)
-
-Then build the server and start it:
-
-     $> make run
-
-Now your U.C.Engine instance is running, go to [localhost:5280](http://localhost:5280/).
-
-## Run the server (starting from version 0.5)
+## Run the server
 
 Then build the server:
 
@@ -82,8 +74,7 @@ Now your U.C.Engine instance is running, go to [localhost:5280](http://localhost
 
 If you want to play with U.C.Engine, you can start the *demo* with some data (meetings, users, ...).
 
-    $> make run
-    (in erlang shell): demo:start().
+    $> ./rel/ucengine/bin/ucengine-admin demo start
 
 It will create three meetings:
 
@@ -98,5 +89,5 @@ And few users:
 
 ## Further reading
 
-* Control U.C.Engine with [[ucectl]]
+* Control U.C.Engine with [[ucengine-admin]]
 * Learn how to [[create javascript applications|quickstartjs]]
