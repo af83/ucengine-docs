@@ -56,28 +56,6 @@ Example:
 
 ## User rights
 
-### Prior to version 0.5
-
-New rights can be set at runtime for a user based on the events he sent. The `acl` section
-of the configuration file defines which rights have to be set after an event with a specific
-type was received.
-
-With the example below, when a user register himself (triggering an `internal.user.add` event),
-U.C.Engine will automatically create the rights for this user to create a
-presence (`{"presence", "add"}`) and list all users of his domain (`{"user", "get"}`).
-
-```erlang
-{acl, [{"internal.user.add", [{"presence", "add"},
-                              {"user", "get"}]}]}.
-```
-
-The format of the right is a simple tuple:
-
-- the object of the right ("presence" in the example above)
-- the action allowed on this object ("add" in the example above)
-
-### Starting from version 0.5
-
 ```erlang
 {roles, [{"default", [{"add", "presence", []},
                       {"get", "user", []}]},

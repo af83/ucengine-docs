@@ -2,7 +2,7 @@
 
 ## General informations about the API
 
-The base URL is `http://demo.ucengine.org/api/0.4/`
+The base URL is `http://demo.ucengine.org/api/0.5/`
 All the others API URLs are relative to this one.
 
 You have to consider a few conventions :
@@ -111,8 +111,6 @@ ACLs allow it of course).
 #### Notes
 
 The timestamp is the number of milliseconds elapsed since EPOCH (1970-01-01).
-
-Authentication is not needed since U.C.Engine v0.5.
 
 ## User
 ### List users
@@ -633,7 +631,7 @@ that contain the words `foot`:
 
 #### Returned values
 
-    200 {"result": {"link": "http://localhost:5280/api/0.4/search/event?uid=91020740579212808535843549778848&sid=07462066523652880535592964206583&count=2&searchTerms=location:testmeeting chuck",
+    200 {"result": {"link": "http://localhost:5280/api/0.5/search/event?uid=91020740579212808535843549778848&sid=07462066523652880535592964206583&count=2&searchTerms=location:testmeeting chuck",
                 "totalResults": 2,
                 "startIndex": 0,
                 "itemsPerPage": 2,
@@ -900,7 +898,7 @@ Parameter                              | Description                           |
 
     404 { "error", "not_found" } // the users doesn't exists
 
-## Roles (Starting from version 0.5)
+## Roles
 
 ### Add a new role
 

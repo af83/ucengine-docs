@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.4 to 0.5 (currently in development)
+## 0.4 to 0.5
 
 * ucectl command-line tool have been renamed ucengine-admin.
 * Remove authentication on `/time` end point.
@@ -20,7 +20,7 @@
   * a new `roles` section of the configuration file can be use to set default roles and associated rights.
   * the '/acl' entry point of the REST API is no longer available, the
     authorization are handled by both the '/role' and '/user' entry
-    points. See the [[Roles|api#roles-starting-from-version-05]] section
+    points. See the [[Roles|api#roles]] section
     of the API documentation.
 
   * The user id that is used in most API calls is now returned by the
