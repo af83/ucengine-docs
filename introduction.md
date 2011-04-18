@@ -22,12 +22,13 @@ Here is an event in a JSON format:
 ```javascript
 { "type"     : "chat.message.new",
   "domain"   : "localhost",
-  "datetime" : 1292593766682,
-  "id"       : "44099145822544409583064798111089",
-  "location" : "introduction",
-  "from"     : "ucengine@example.com",
+  "datetime" : 1292601125202,
+  "id"       : "91918360913598370296768635184375",
+  "location" : "demo",
+  "from"     : "82435388420458600092293846199231",
   "metadata" : {
     "text": "Hi there ! I'm an event !"
+    "lang": "en"
   }
 }
 ```
