@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.5 to 0.6 (currently in development)
+
+* Add [[adminbar widget|widget_adminbar]].
+
 ## 0.4 to 0.5
 
 * ucectl command-line tool have been renamed ucengine-admin.
