@@ -9,6 +9,7 @@ The whiteboard widget is located at *priv/www/lib/whiteboard/whiteboard.ui.js*.
 ## Dependencies
 
 * [[jQuery UI|http://jqueryui.com/]]
+* [[UCE widget|https://github.com/AF83/ucengine/blob/master/priv/www/lib/ucewidget.js]]
 * [[Html5 Canvas Whiteboard|http://code.google.com/p/html-5-canvas-whiteboard/]]
 
 ## Options

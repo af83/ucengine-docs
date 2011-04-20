@@ -9,6 +9,7 @@ File upload widget is located at *priv/www/lib/file_upload/file_upload.ui.js*.
 ## Dependencies
 
 * [[jQuery UI|http://jqueryui.com/]]
+* [[UCE widget|https://github.com/AF83/ucengine/blob/master/priv/www/lib/ucewidget.js]]
 * [jQuery strftime](http://projects.nocternity.net/index.py/en/jquery-strftime): *priv/www/lib/jquery.strftime.minified.js*
 
 ## Options

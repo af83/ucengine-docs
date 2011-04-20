@@ -11,6 +11,7 @@ Information widget is located at *priv/www/lib/information/information.ui.js*.
 ## Dependencies
 
 * [[jQuery UI|http://jqueryui.com/]]
+* [[UCE widget|https://github.com/AF83/ucengine/blob/master/priv/www/lib/ucewidget.js]]
 * [[jQuery Editable Plugin|http://plugins.jquery.com/node/5601/release]]
 
 ## Options

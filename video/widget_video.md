@@ -8,7 +8,8 @@ Video widget is located at *priv/www/lib/video/video.ui.js*.
 
 ## Dependencies
 
-* jQuery UI
+* [[jQuery UI|http://jqueryui.com/]]
+* [[UCE widget|https://github.com/AF83/ucengine/blob/master/priv/www/lib/ucewidget.js]]
 
 ## Options
 

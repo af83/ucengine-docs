@@ -13,6 +13,7 @@ Chat widget is located at *priv/www/lib/chat/chat.ui.js*.
 ## Dependencies
 
 * [[jQuery UI|http://jqueryui.com/]]
+* [[UCE widget|https://github.com/AF83/ucengine/blob/master/priv/www/lib/ucewidget.js]]
 
 ## Options
 
