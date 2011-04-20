@@ -18,6 +18,8 @@ The admin bar widget is located at
 Option         | Description
 ---------------|---------------------------------------------------------------
 widgets        | The list of available widgets
+ucemeeting     | The current meeting
+uceclient      | The client object returned by uce.createClient()
 
 ## Widgets paramater format
 
@@ -25,6 +27,7 @@ Option         | Description
 ---------------|---------------------------------------------------------------
 title          | The widget title
 description    | A small description of the widget
+thumbnail      | A path to the widget's thumbnail
 
 ## Methods
 
