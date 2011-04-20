@@ -24,7 +24,7 @@ Include some files like *jQueryUI* and *uce.js*, located at *priv/lib/*.
 
 And start using your widget:
 
-```html
+```javascript
 $("body").speak();
 ```
 
