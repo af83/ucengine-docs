@@ -4,32 +4,19 @@ This is the project roadmap.
 The roadmap is freezed for the current month and subject to change weeks after weeks.
 You can also have a look at the [[widget hopper|widget_hopper]].
 
-## January 2011
-
-* New cleaner theme for demonstrator and widgets - **DONE**
-* File sharing widget - **DONE**
-* Timer widget - **DONE**
-* New improved whiteboard - **DONE**
-* Documentation - **DONE**
-
-## February 2011
-
-* Domain / virtual host - **Done**
-* Enhanced SolR integration and search API - **Done**
-
 ## March 2011
 
 * [[CORS|http://www.w3.org/TR/cors/]] support - **Done**
-* Role system for Users - **In progress**
-* Meeting management widget - **In progress**
-* HTTPS implementation
-* Office document sharing widget and brick
-* CMIS connector for DB
-* Engine optimizations - **In progress**
-* More documentation - **In progress**
+* Role system for Users - **Done**
+* Meeting management widget - **Done**
+* Engine optimizations - **Done**
+* More documentation - **Done**
 
 ## April - June 2011
 
+* HTTPS implementation
+* Office document sharing widget and brick
+* partial CMIS connector for DB
 * Screen sharing brick and widget
 * VOIP brick
 * Wowza video server brick
