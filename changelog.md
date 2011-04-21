@@ -1,30 +1,33 @@
 # Changelog
 
-## 0.4 to 0.5 (currently in development)
+## 0.4 to 0.5
 
+* ucectl command-line tool have been renamed ucengine-admin.
 * Remove authentication on `/time` end point.
 * Search API:
   * Fix `totalResults` field in search api.
   * Add `order` parameter in search api.
 * Uce.js:
-  * add `options` parameter in `UCEngine.search` and `UCEngine.meeting(name).search`
+  * add an `options` parameter in `UCEngine.search` and `UCEngine.meeting(name).search`
+  * add a `conditions` parameter to `UCEngine.user.can`
 * Roles and ACL:
-  * ucectl command-line tool:
+  * ucengine-admin command-line tool:
     - remove all the commands regarding ACL
     - add a new set of commands to add, remove and configure roles
-    - add a new set of commands to give or remove roles to an user
+    - add a new set of commands to give or remove roles to a user
     - add a new command to check user rights
   * the `acl` section of the configuration file has been removed.
   * a new `roles` section of the configuration file can be use to set default roles and associated rights.
   * the '/acl' entry point of the REST API is no longer available, the
     authorization are handled by both the '/role' and '/user' entry
-    points. See the [[Roles|api#roles-starting-from-version-05]] section
+    points. See the [[Roles|api#roles]] section
     of the API documentation.
 
-* The user id that is used in most API calls is now returned by the
-  server after user creation. The username can still be used to create
-  a new presence. See the [[Authentication|api#connect-user]] section
-  of the API documentation.
+  * The user id that is used in most API calls is now returned by the
+    server after user creation. The username can still be used to create
+    a new presence. See the [[Authentication|api#connect-user]] section
+    of the API documentation.
+* Add a `log_dir` option in the [[config file|config]], used for yaws logs.
 
 ## 0.4.1
 
@@ -78,7 +81,7 @@
   Some examples:
   `POST /meeting/?name={meeting}` instead of `PUT /meeting/{meeting}`
 
-  `PUT /user/{uid}` to update an user
+  `PUT /user/{uid}` to update a user
 
   **ucectl**
 

@@ -51,7 +51,7 @@ Property                               | Description
 `connected`                            | true/false. True if currently connected on API.
 `uid`                                  | Current user uid. Null if not connected.
 
-## Register an user (with password)
+## Register a user (with password)
 
 *UCEngine.user.registerWithPassword(name, credential, metadata, callback)*
 
@@ -73,7 +73,7 @@ client.user.register("ucengine@example.com", "p4ssw0rd", {location: 'Paris'}, fu
 });
 ```
 
-## Register an user (generic)
+## Register a user (generic)
 
 *UCEngine.user.register(name, auth, credential, metadata, callback)*
 
@@ -93,6 +93,176 @@ Parameter                              | Description
 var client = uce.createClient();
 client.user.register("ucengine@example.com", "token", "NDQ0MzI2NDQzXzUwMTUwCg", {location: 'Paris'}, function(err, result) {
     // user registered
+});
+```
+
+## Add an existing role to a user
+
+*UCEngine.user.addRole(uid, role, location, callback)*
+
+### Parameters
+
+Parameter                              | Description
+---------------------------------------|---------------------------------------
+`uid`                                  | User id
+`role`                                 | The name of the role to give to the user
+`location`                             | The location/meeting where the role applies
+`callback`                             |
+
+### Example
+
+```javascript
+var client = uce.createClient();
+client.user.addRole("ucengine@example.com", "speaker", "demo", function(err, result) {
+   // Role added to the user
+});
+```
+
+## Delete a role from a user
+
+*UCEngine.user.delRole(uid, role, location, callback)*
+
+### Parameters
+
+Parameter                              | Description
+---------------------------------------|---------------------------------------
+`uid`                                  | User id
+`role`                                 | The name of the role to give to the user
+`location`                             | The location/meeting where the role applies
+`callback`                             |
+
+### Example
+
+```javascript
+var client = uce.createClient();
+client.user.delRole("ucengine@example.com", "speaker", "demo", function(err, result) {
+   // Role deleted from a user
+});
+```
+
+## Add a new role
+
+*UCEngine.role.add(name, callback)*
+
+### Parameters
+
+Parameter                              | Description
+---------------------------------------|---------------------------------------
+`name`                                 | The name of the new role
+`callback`                             |
+
+### Example
+
+```javascript
+var client = uce.createClient();
+client.role.add("speaker", function(err, result) {
+   // Role added
+});
+```
+
+## Delete a role
+
+*UCEngine.role.del(name, callback)*
+
+### Parameters
+
+Parameter                              | Description
+---------------------------------------|---------------------------------------
+`name`                                 | The name of the role to delete
+`callback`                             |
+
+### Example
+
+```javascript
+var client = uce.createClient();
+client.role.del("speaker", function(err, result) {
+   // Role deleted
+});
+```
+
+## Add an access right to an existing role
+
+*UCEngine.role.addAccess(role, action, object, conditions, callback)*
+
+### Parameters
+
+Parameter                              | Description
+---------------------------------------|---------------------------------------
+`role`                                 | The name of the role
+`action`                               | The action to allow
+`object`                               | The object on which the `action` is performed
+`conditions`                           | A dictionary of conditions
+`callback`                             |
+
+### Notes
+
+See the [[ACL|acl]] page for a list of all the available
+`actions`, `objects` and `conditions`.
+
+### Example
+
+```javascript
+var client = uce.createClient();
+client.role.addAccess("speaker", "add", "event", {'type': 'chat.message.new'}, function(err, result) {
+   // The access right has been added
+   // Now all the users with the role 'speaker' can push an event with a `chat.message.new` type.
+});
+```
+
+## Delete an access right from an existing role
+
+*UCEngine.role.delAccess(role, action, object, conditions, callback)*
+
+### Parameters
+
+Parameter                              | Description
+---------------------------------------|---------------------------------------
+`role`                                 | The name of the role
+`action`                               | The action to allow
+`object`                               | The object on which the `action` is performed
+`conditions`                           | A dictionary of conditions
+`callback`                             |
+
+### Notes
+
+See the [[ACL|acl]] page for a list of all the available
+`actions`, `objects` and `conditions`.
+
+### Example
+
+```javascript
+var client = uce.createClient();
+client.role.deleteAccess("speaker", "add", "event", {'type': 'chat.message.new'}, function(err, result) {
+   // The access right has been deleted
+   // Now, the users with the role 'speaker' cannot push an event with a 'chat.message.new' type anymore.
+});
+```
+
+## Check access rights
+
+*UCEngine.user.can(uid, action, object, conditions, callback)*
+
+### Parameters
+
+Parameter                              | Description
+---------------------------------------|---------------------------------------
+`uid`                                  | The user id
+`action`                               | The action to allow
+`object`                               | The object on which the `action` is performed
+`conditions`                           | A dictionary of conditions
+`callback`                             |
+
+### Notes
+
+See the [[ACL|acl]] page for a list of all the available
+`actions`, `objects` and `conditions`.
+
+### Example
+
+```javascript
+var client = uce.createClient();
+client.user.can('user@example.com', 'add', 'event', {'type': 'chat.message.new'}, function(err, result) {
+   // if 'result' is true the user has the right to add an event of type 'chat.message.new'
 });
 ```
 
@@ -297,6 +467,28 @@ meeting.getRoster(function(err, roster) {
 });
 ```
 
+## Delete a file uploaded on the meeting
+
+*UCEngine.meeting(meeting).delFile(id, callback)*
+
+### Parameters
+
+Parameter                              | Description
+---------------------------------------|---------------------------------------
+`meeting`                              | The name of the meeting
+`id`                                   | The id of the file to delete
+`callback`                             |
+
+### Example
+
+```javascript
+var client = uce.createClient();
+var meeting = client.meeting('demo');
+meeting.delFile("file_id", function(err, result) {
+  // The file is deleted
+});
+```
+
 ## Push an event
 
 *UCEngine.meeting(meeting).push(type, metadata, callback)*
@@ -316,6 +508,30 @@ Parameter                              | Description
 var client = uce.createClient();
 var meeting = client.meeting('demo');
 meeting.push('my.event', {property: 'some property'}, function(err, result) {
+    // event pushed to the server
+});
+```
+
+## Push a private event
+
+*UCEngine.meeting(meeting).pushTo(to, type, metadata, callback)*
+
+### Parameters
+
+Parameter                              | Description
+---------------------------------------|---------------------------------------
+`meeting`                              | The name of the meeting
+`type`                                 | Type of the event
+`to`                                   | The user uid of the recipient
+`metadata`                             | Metadata attached to the event
+`callback`                             |
+
+### Example
+
+```javascript
+var client = uce.createClient();
+var meeting = client.meeting('demo');
+meeting.pushTo('recipient@example.com', 'my.event', {property: 'some property'}, function(err, result) {
     // event pushed to the server
 });
 ```

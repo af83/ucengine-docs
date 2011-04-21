@@ -42,6 +42,7 @@ Example:
 
 ```javascript
 { "type"     : "twitter.hashtag.add",
+  "domain"   : "localhost",
   "datetime" : 1292593766682,
   "id"       : "44099145822544409583064798111089",
   "location" : "demo",
@@ -66,6 +67,7 @@ Example:
 
 ```javascript
 { "type"     : "twitter.tweet.new",
+  "domain"   : "localhost",
   "datetime" : 1292595423660,
   "id"       : "58605572364308395079869070527396",
   "location" : "demo",

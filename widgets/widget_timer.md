@@ -2,14 +2,26 @@
 
 The timer widget show elapsed and remaining time of the current meeting.
 
+## Location
+
+The timer widget is located at *priv/www/lib/timer/timer.ui.js*.
+
+## Dependencies
+
+* [[jQuery UI|http://jqueryui.com/]]
+
 ## Options
 
-* ucemeeting: current meeting
-* start: The time when the user entered the meeting.
+Option         | Description
+---------------|---------------------------------------------------------------
+ucemeeting     | The current meeting
+start          | The time when the user entered the meeting
 
 ## Methods
 
-* destroy
+Method         | Description
+---------------|---------------------------------------------------------------
+destroy        | Destroy the widget
 
 ## Example
 

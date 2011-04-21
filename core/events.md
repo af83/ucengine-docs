@@ -17,6 +17,7 @@ Example:
 
 ```javascript
 { "type"     : "internal.file.add",
+  "domain"   : "localhost",
   "datetime" : 1292597388050,
   "id"       : "74647005885125029457242944483441",
   "location" : "demo",
@@ -40,6 +41,7 @@ Example:
 
 ```javascript
 { "type"     : "internal.roster.add",
+  "domain"   : "localhost",
   "datetime" : 1292594897416,
   "id"       : "30387772929242810120613023014654",
   "location" : "demo",
@@ -56,6 +58,7 @@ Example:
 
 ```javascript
 { "type"     : "internal.roster.delete",
+  "domain"   : "localhost",
   "datetime" : 1292600689363,
   "id"       : "05214339923220971091870275941078",
   "location" : "demo",
@@ -75,6 +78,7 @@ Example:
 
 ```javascript
 { "type"     : "internal.acl.add",
+  "domain"   : "localhost",
   "datetime" : 1292600689363,
   "id"       : "05214339923220971091870275941078",
   "location" : "demo",
@@ -93,6 +97,7 @@ Example:
 
 ```javascript
 { "type"     : "internal.acl.delete",
+  "domain"   : "localhost",
   "datetime" : 1292600689363,
   "id"       : "05214339923220971091870275941078",
   "location" : "demo",

@@ -4,7 +4,7 @@
 
 U.C.Engine have a role based autorization mechanism. With this system,
 users can hold roles in a specific location, for example: the user
-"chuck" holds the role "speaker" in the location "Meeting". 
+"chuck" holds the role "speaker" in the location "Meeting".
 
 A role is a set of access rights, namely an Access Control List
 (ACL), and is identified by a name (ex: "speaker", "administrator", etc.).
@@ -14,6 +14,11 @@ location is set, the role will be available only in this location. For
 example: the user `chuck` has a role `speaker` in the location
 `meeting`. Users can hold as many roles as needed, and can hold the
 same role in multiple locations.
+
+When a user is created, it automatically holds the role named
+"default" and a new role is created with the same id than the
+user. These roles can be used to set access rights for all the users
+or for a particular user.
 
 ## Access
 
@@ -40,13 +45,37 @@ See the [[configuration file documentation|config]].
 
 ### Command-line
 
-See the [[Roles section|ucectl#roles-starting-from-version-05]] of the
-ucectl tool and some [[examples|ucectl#examples]].
+See the [[Roles section|ucengine-admin#roles]] of the
+ucengine-admin tool and some [[examples|ucengine-admin#examples]].
 
 ### REST API
 
 See the [[Roles section|api#roles-starting-from-version-05]] section
 of the REST API documentation.
+
+## Example
+
+Let's create a new user named 'chuck' using the ucengine-admin command line tool:
+
+    $ ucengine-admin user add --domain localhost --uid 'Chuck' --auth 'password' --credential 'Norris' --nickname 'Colonel Braddock'
+    {"ok", "909432094832048032530257"}
+
+This user holds two default roles: "default" and
+"909432094832048032530257".
+
+Create a new role 'ranger' and give it to Chuck
+
+    $ ucengine-admin role add --domain localhost --name ranger
+    $ ucengine-admin user role add --domain localhost --uid 909432094832048032530257 --role ranger --location texas
+
+Let's add an access right for Chuck to kick the butt of the bad guys:
+
+    $ ucengine-admin role access add --domain localhost --name ranger --action kick --object butt --who badguys
+
+Check that Chuck can really do it:
+
+    $ ucengine-admin role access check --domain localhost --uid 909432094832048032530257 --name ranger --action kick --object butt --who badguys
+    Success: true
 
 ## List
 
@@ -73,7 +102,13 @@ presence       | delete       | [[Logout|api#disconnect-users]]
 user           | list         | [[List users|api#list-users]]
 user           | update       | [[Updade user informations|api#modify-users-informations]]
 user           | get          | [[Get user informations|api#retrieve-users-informations]]
-user           | delete       | [[Delete an user|api#delete-a-user]]
+user           | delete       | [[Delete a user|api#delete-a-user]]
+user.role      | add          | [[Set a role to a user|api#set-a-role-to-a-user]]
+user.role      | delete       | [[Unset a role to a user|api#unset-a-role-to-a-user]]
+role           | add          | [[Add a new role|api#add-a-new-role]]
+role           | delete       | [[Delete a role|api#delete-a-role]]
+access         | add          | [[Set an access right to a role|api#set-a-new-access-right-to-a-role]]
+access         | delete       | [[Unset an access right from a role|api#unset-an-access-right-from-a-role]]
 
 ## Conditions
 

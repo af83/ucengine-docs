@@ -41,6 +41,7 @@ Example:
 
 ```javascript
 { "type"     : "chat.translation.new",
+  "domain"   : "localhost",
   "datetime" : 1292603078834,
   "id"       : "55807763603614612180220217695833",
   "location" : "demo",

@@ -22,7 +22,7 @@ See the [[introduction]] to learn some of the concepts of U.C.Engine.
 The core of U.C.Engine is a [[publish/subscribe|http://en.wikipedia.org/wiki/PubSub]] server written in Erlang. Persistence is achieved via the database of your choice.
 
 * **API**: [[ReST API reference|api]]
-* **Administration**: [[ucectl console|ucectl]] - [[config file|config]]
+* **Administration**: [[ucengine]] - [[ucengine-admin]] - [[config file|config]]
 * **Databases:** [[mongodb]] - [[mnesia]]
 * **Full text Search:** [[Solr|solr]]
 * [[ACL|acl]] - [[Core events|events]]
@@ -34,9 +34,10 @@ Building an application with U.C.Engine is mainly a question of adding bricks to
 ### Client libraries
 
 * **Javascript**: [[Javascript API reference|ucejs]]
-* **Ruby**: [[install ruby API|ruby_install]] - [Ruby API reference](http://rdoc.info/github/AF83/ucengine.rb/master/frames)
+* **Ruby**: [[install ruby API|ruby_install]] - [Ruby API reference](http://rdoc.info/github/AF83/ucengine.rb/master/frames) - [Ruby event-machine library](https://github.com/AF83/ucengine.em)
 * **Erlang**: you can extract it from [erlyvideo-ucengine](https://github.com/AF83/erlyvideo-ucengine)
 * **Nodejs**: [node-ucengine](https://github.com/athoune/node-ucengine) - A contribution by [athoune](https://github.com/athoune)
+* **Python**: [py-ucengine](https://github.com/athoune/py-ucengine/)- A contribution by [athoune](https://github.com/athoune)
 
 ### Bricks and widgets
 
@@ -44,7 +45,8 @@ Building an application with U.C.Engine is mainly a question of adding bricks to
 * **File sharing:** [[brick|brick_filesharing]]- [[fileupload widget|widget_fileupload]] - [[filesharing widget|widget_filesharing]]
 * **Translation:** [[brick|brick_translation]]
 * **Twitter:** [[brick|brick_twitter]]
-* **Standalone widgets :** [[activity|widget_activity]] - [[chat|widget_chat]] - [[player|widget_player]] - [[replay|widget_replay]] - [[results|widget_results]] - [[search|widget_search]]  - [[whiteboard|widget_whiteboard]] - [[timer|widget_timer]]
+* **Standalone widgets :** [[activity|widget_activity]] - [[chat|widget_chat]] - [[player|widget_player]] - [[replay|widget_replay]] - [[results|widget_results]] - [[search|widget_search]]  - [[whiteboard|widget_whiteboard]] - [[timer|widget_timer]] - [[management|widget_management]] - [[information|widget_information]]
+* **Demo widgets :** [[adminbar|widget_adminbar]]
 
 ## Help/Discuss
 
@@ -64,6 +66,13 @@ Contributions are welcome !
 2. Create your patch in a topic branch
 3. Add some unit tests
 4. Send pull request
+
+**Note on branching**:
+
+  * [master](https://github.com/AF83/ucengine/tree/master) is the "releases" branch
+  * [develop](https://github.com/AF83/ucengine/tree/develop) is the "currently in developement" branch
+
+So if you plan to contribute, don't forget to work from develop.
 
 You can also contribute to the [documentation](https://github.com/AF83/ucengine-docs).
 
