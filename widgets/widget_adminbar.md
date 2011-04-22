@@ -21,7 +21,7 @@ widgets        | The list of available widgets
 ucemeeting     | The current meeting
 uceclient      | The client object returned by uce.createClient()
 
-## Widgets paramater format
+## Widgets parameter format
 
 Option         | Description
 ---------------|---------------------------------------------------------------
@@ -34,6 +34,23 @@ thumbnail      | A path to the widget's thumbnail
 Method         | Description
 ---------------|---------------------------------------------------------------
 destroy        | Destroy the widget
+
+## Events
+### admin.meeting.close
+
+Sent by the meeting owner to close the meeting of the participants
+
+Example:
+```javascript
+{ "type"     : "admin.meeting.close",
+  "domain"   : "localhost",
+  "datetime" : 1292601125202,
+  "id"       : "91918360913598370296768635184375",
+  "location" : "demo",
+  "from"     : "uid_63444326443_50150",
+  "metadata" : {}
+}
+```
 
 ## Examples
 
