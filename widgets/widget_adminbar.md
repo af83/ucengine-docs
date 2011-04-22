@@ -52,6 +52,22 @@ Example:
 }
 ```
 
+### admin.meeting.widgets.add
+
+Sent by the meeting owner to notify that new widgets added to the meeting workspace of all participants
+
+Example:
+```javascript
+{ "type"     : "admin.meeting.widgets.add",
+  "domain"   : "localhost",
+  "datetime" : 1292601125202,
+  "id"       : "91918360913598370296768635184375",
+  "location" : "demo",
+  "from"     : "uid_63444326443_50150",
+  "metadata" : {"widgets": "fileupload,filesharing"}
+}
+```
+
 ## Examples
 
 ```javascript
