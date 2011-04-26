@@ -138,7 +138,7 @@ Example:
      </ul>
      <div class="ui-management-invite-header">
        <a class="ui-management-roster-link">Users</a>
-       <h1>Add users</h1>
+       <h1>Invite users</h1>
      </div>
      <div class="ui-management-invite">
        <p>URL</p>
