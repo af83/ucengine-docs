@@ -1,12 +1,12 @@
-# UCengine plugin for Erlyvideo
+# U.C.Engine plugin for Erlyvideo
 
 ## Introduction
 
-[erlyvideo_ucengine](https://github.com/AF83/erlyvideo-ucengine) is a plugin to bind Erlyvideo events and UCengine events, it allows UCengine clients to connect to Erlyvideo through UCengine events.
+[erlyvideo_ucengine](https://github.com/AF83/erlyvideo-ucengine) is a plugin to turn erlyvideo into an U.C.Engine brick. It allow you to create a video stream per meeting.
 
 ## How it works?
 
-Fig.1 connection workflow: how the plugin allows users to connect to erlyvideo from ucengine. 
+Fig.1 connection workflow: how the plugin allows users to connect to erlyvideo from ucengine.
 
 ![Fig.1 connection workflow](./static/img/uce_erlyvideo_wf1.png)
 
@@ -14,7 +14,8 @@ Fig.2 publish/play stream workflow: how the plugin manages events publish and pl
 
 ![Fig.2 publis/play stream workflow](./static/img/uce_erlyvideo_wf2.png)
 
-Fig.3 close/lost stream workflow: how the plugin manages events close and lost stream.
+Fig.3 close/lost stream workflow: how the plugin manages events close and lost
+stream.
 
 ![Fig.3 close/lost stream workflow](./static/img/uce_erlyvideo_wf3.png)
 
@@ -45,15 +46,15 @@ And replace *trusted_login* by *ucengine_login* in *rtmp_handlers*, like that:
 
 * [ibrowse](https://github.com/dizzyd/ibrowse)
 
-## Install it from scratch
+## Install it from git repository
 
          # Fetch Erlyvideo sources
          $ git clone https://github.com/erlyvideo/erlyvideo.git
-         $ mkdir erlyvideo/plugins/
+         $ mkdir erlyvideo/plugins
          $ cd erlyvideo/plugins/
 
          # Fetch erlyvideo_ucengine sources
-         $ git clone git://github.com/AF83/erlyvideo-ucengine.git
+         $ git clone git://github.com/AF83/erlyvideo-ucengine.git erlyucengine
 
          # Build Erlyvideo
          $ cd ../../
