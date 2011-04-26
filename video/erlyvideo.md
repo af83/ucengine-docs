@@ -48,20 +48,20 @@ And replace *trusted_login* by *ucengine_login* in *rtmp_handlers*, like that:
 
 ## Install it from git repository
 
-         # Fetch Erlyvideo sources
-         $ git clone https://github.com/erlyvideo/erlyvideo.git
-         $ mkdir erlyvideo/plugins
-         $ cd erlyvideo/plugins/
+     # Fetch Erlyvideo sources
+     $ git clone https://github.com/erlyvideo/erlyvideo.git
+     $ mkdir erlyvideo/plugins
+     $ cd erlyvideo/plugins/
 
-         # Fetch erlyvideo_ucengine sources
-         $ git clone git://github.com/AF83/erlyvideo-ucengine.git erlyucengine
+     # Fetch erlyvideo_ucengine sources
+     $ git clone git://github.com/AF83/erlyvideo-ucengine.git erlyucengine
 
-         # Build Erlyvideo
-         $ cd ../../
-         $ make
+     # Build Erlyvideo
+     $ cd ../../
+     $ make
 
-         # Update configuration, then run Erlyvideo
-         $ make run
+     # Update configuration, then run Erlyvideo
+     $ make run
 
 ## Use it with video widget
 
