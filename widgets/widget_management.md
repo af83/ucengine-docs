@@ -10,7 +10,7 @@ Management widget is located at *priv/www/lib/management/management.ui.js*.
 
 * [[jQuery UI|http://jqueryui.com/]]
 * [[UCE widget|https://github.com/AF83/ucengine/blob/master/priv/www/lib/ucewidget.js]]
-* [[jQuery Editable Plugin|http://plugins.jquery.com/node/5601/release]]
+* [[jQuery Editable Plugin|http://plugins.jquery.com/project/Editable]]
 * [[ZeroClipboard|http://code.google.com/p/zeroclipboard/]]
 
 ## Options
