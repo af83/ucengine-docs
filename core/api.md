@@ -324,7 +324,7 @@ Parameter                              | Description                           |
 Parameter                              | Description                           | Example
 ---------------------------------------|---------------------------------------|------------------------------------------------------------
 **Optional Encoded Parameters**        |                                       |
-`meeting`                              | Meeting id                            | `demo`
+`name`                                 | Meeting id                            | `demo`
 `start`                                | opening Timestamp of the meeting      | `63444430100`
 `end`                                  | ending Timestamp of the meeting       | `63444430800`
 `metadata`                             | Array containing metadata             | `metadata[key]=value`
