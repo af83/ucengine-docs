@@ -46,7 +46,6 @@ Building an application with U.C.Engine is mainly a question of adding bricks to
 * **Translation:** [[brick|brick_translation]]
 * **Twitter:** [[brick|brick_twitter]]
 * **Standalone widgets :** [[activity|widget_activity]] - [[chat|widget_chat]] - [[player|widget_player]] - [[replay|widget_replay]] - [[results|widget_results]] - [[search|widget_search]]  - [[whiteboard|widget_whiteboard]] - [[timer|widget_timer]] - [[management|widget_management]] - [[information|widget_information]]
-* **Demo widgets :** [[adminbar|widget_adminbar]]
 
 ## Help/Discuss
 
