@@ -33,10 +33,20 @@ Ubuntu is currently shipped with erlang R13B03. You must upgrade to R14B01 unles
     $ cd otp_src_R14B01
     $ ./configure && make && sudo make install
 
-And then install ucengine dependencies:
+And then install U.C.Engine dependencies:
 
     $> aptitude install erlang yaws make
     $> export ERL_LIBS=/usr/lib/yaws/
+
+### Fedora Core 14
+
+Fedore Core 14 comes with Erlang R14B02 and Yaws 1.89. Install them wih:
+
+    $> yum install erlang yaws yaws-devel
+
+Make sure the full path of yaws is set:
+
+    $> export ERL_LIBS=/usr/lib/erlang/lib/yaws
 
 ### Mac OS X
 
