@@ -9,11 +9,13 @@ File sharing widget is located at *priv/www/lib/file_sharing/file_sharing.ui.js*
 
 ## Dependencies
 
-* jQuery UI
+* [[jQuery UI|http://jqueryui.com/]]
+* [[UCE widget|https://github.com/AF83/ucengine/blob/master/priv/www/lib/ucewidget.js]]
 
 ## Options
 
 * ucemeeting: current meeting
+* uceclient: The client object returned by uce.createClient()
 * title: custom title
 
 ## Methods
@@ -26,7 +28,8 @@ File sharing widget is located at *priv/www/lib/file_sharing/file_sharing.ui.js*
 ## Example
 
 ```javascript
-$("#demo").file_sharing({ucemeeting: meeting});
+$("#demo").file_sharing({ucemeeting: meeting,
+                         uceclient: client});
 ```
 
 ## Theming
