@@ -890,6 +890,30 @@ Parameter                              | Description                           |
 
     404 { "error": "not_found" } // the role does not exists
 
+### List access rights for a role
+
+#### Request
+
+    GET /role/{role}/acl
+
+Parameter                              | Description                           | Example
+---------------------------------------|---------------------------------------|------------------------------------------------------------
+**URL parameters**                     |                                       |
+`role`                                 | The role name                         | `admin`, `speaker`, ...
+
+#### Returned values
+
+    200 { "result": [{"action": "delete",
+                      "object": "file",
+                      "conditions": {"id": "file_243253243242363.jpg"}},
+                     {"action": "add",
+                      "object": "presence",
+                      "conditions": []}]}
+
+    401 { "error": "unauthorized" } // the user is not authorized to list the access rights for this role
+
+    404 { "error": "not_found" } // the role does not exist
+
 ### Set a role to a user
 
 #### Request

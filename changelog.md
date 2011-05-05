@@ -4,6 +4,8 @@
 
 * Improved many widgets.
 * Fix long polling with nginx (again).
+* API:
+  * Add a new entry point to [[list access rights attached to a role|api#list-access-rights-for-a-role]].
 
 ## 0.4 to 0.5
 
