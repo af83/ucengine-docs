@@ -65,7 +65,7 @@ Parameter                              | Description                           |
                         "metadata":{    "nickname":"My nickname"}
                 }}
 
-    404 { "error": "not_found" } // the presence resource doesn't exists
+    404 { "error": "not_found" } // the presence resource does not exist
 
 ### Disconnect users
 
@@ -89,7 +89,7 @@ Parameter                              | Description                           |
 
     401 { "error": "unauthorized" } // the user is not authorized to disconnect this presence
 
-    404 { "error": "not_found" } // the presence resource doesn't exists
+    404 { "error": "not_found" } // the presence resource does not exist
 
 ##### Notes
 
@@ -290,7 +290,7 @@ Parameter                              | Description                           |
 
     401 { "error": "unauthorized" } // the user is not authorized to join the meeting
 
-    404 { "error": "not_found" } // the meeting doesn't exists
+    404 { "error": "not_found" } // the meeting does not exist
 
 ### Quit a meeting
 
@@ -312,7 +312,7 @@ Parameter                              | Description                           |
 
     401 { "error": "unauthorized" } // the user is not authorized to quit the meeting
 
-    404 { "error": "not_found" } // the meeting doesn't exists
+    404 { "error": "not_found" } // the meeting does not exist
 
 
 ### Create a meeting
@@ -370,7 +370,7 @@ Parameter                              | Description                           |
 
     401 { "error": "unauthorized" } // the user is not authorized to delete the meeting
 
-    404 { "error": "not_found" } // the meeting doesn't exists
+    404 { "error": "not_found" } // the meeting does not exist
 
 
 ### List users connected to a meeting (roster)
@@ -415,7 +415,7 @@ Parameter                              | Description                           |
 
     401 { "error": "unauthorized" } // the user is not authorized to list the users of this meeting
 
-    404 { "error": "not_found" } // the meeting doesn't exists
+    404 { "error": "not_found" } // the meeting does not exist
 
 ### List the meetings
 
@@ -505,7 +505,7 @@ Parameter                              | Description                           |
 
     401 { "error": "unauthorized" } // the user is not authorized to delete the meeting
 
-    404 { "error": "not_found" } // the meeting doesn't exists
+    404 { "error": "not_found" } // the meeting does not exist
 
 ## Events
 
@@ -568,7 +568,7 @@ Parameter                              | Description                           |
 
     401 { "error": "unauthorized" } // the user is not authorized to list the events of this meeting
 
-    404 { "error": "not_found" } // the meeting doesn't exists
+    404 { "error": "not_found" } // the meeting does not exist
 
 #### Notes
 
@@ -697,7 +697,7 @@ Any other parameter                    | These will be part of the metadata    |
 
     401 { "error": "unauthorized" } // the user is not authorized to send events to this meeting
 
-    404 { "error": "not_found" } // the meeting doesn't exists
+    404 { "error": "not_found" } // the meeting does not exist
 
 ## Files
 ### Upload a file
@@ -722,7 +722,7 @@ Parameter                              | Description                           |
 
     401 { "error": "unauthorized" } // the user is not authorized to upload files in this meeting
 
-    404 { "error": "not_found" } // the meeting doesn't exists
+    404 { "error": "not_found" } // the meeting does not exist
 
 #### Notes
 
@@ -936,7 +936,7 @@ Parameter                              | Description                            
 
     401 { "error": "unauthorized" } // the user is not authorized to set this role to the user
 
-    404 { "error": "not_found" } // the role, the user or the location does not exists
+    404 { "error": "not_found" } // the role, the user or the location does not exist
 
 #### Notes
 
@@ -963,7 +963,7 @@ Parameter                              | Description                            
 
     401 { "error": "unauthorized" } // the user is not authorized to remove this role from the user
 
-    404 { "error": "not_found" } // the role, the user or the location does not exists
+    404 { "error": "not_found" } // the role, the user or the location does not exist
 
 ### Check user access
 
@@ -991,4 +991,4 @@ Parameter                              | Description                            
 
     401 { "error": "unauthorized" } : the caller is not authorized to check the user's rights
 
-    404 { "error": "not_found" } : the user does not exists
+    404 { "error": "not_found" } : the user does not exist
