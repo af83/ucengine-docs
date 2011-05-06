@@ -17,6 +17,7 @@ File upload widget is located at *priv/www/lib/file_upload/file_upload.ui.js*.
 Option         | Description
 ---------------|---------------------------------------------------------------
 ucemeeting     | The current meeting
+uceclient      | The U.C.Engine client
 upload         | Show or hide the upload button
 title          | The title to display in the widget header
 
@@ -28,6 +29,12 @@ startPreview   | Hide the list of upload files and show a preview screen for the
 stopPreview    | Hide the current preview and show the list of available files
 clear          | Reinitialize the widget
 destroy        | Destroy the widget
+
+## Javascript Events
+
+Name         | Description
+-------------|---------------------------------------------------------------
+updated      | called when a new message is received
 
 ## Events
 ### document.share.start

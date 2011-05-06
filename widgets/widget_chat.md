@@ -20,6 +20,7 @@ Chat widget is located at *priv/www/lib/chat/chat.ui.js*.
 Option         | Description
 ---------------|---------------------------------------------------------------
 ucemeeting     | The current meeting
+uceclient      | The client
 title          | The title to display in the widget header
 lang           | The default language
 langs          | The available languages
@@ -30,6 +31,12 @@ Method         | Description
 ---------------|---------------------------------------------------------------
 clear          | Reinitialize the widget
 destroy        | Destroy the widget
+
+## Javascript Events
+
+Name         | Description
+-------------|---------------------------------------------------------------
+updated      | called when a new message is received
 
 ## Examples
 
