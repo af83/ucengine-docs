@@ -17,6 +17,9 @@ File sharing widget is located at *priv/www/lib/file_sharing/file_sharing.ui.js*
 * ucemeeting: current meeting
 * uceclient: The client object returned by uce.createClient()
 * title: custom title
+* width: default width
+* height: default height
+* ratio: ratio height/width (default: 0.75)
 
 ## Methods
 
