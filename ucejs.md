@@ -240,7 +240,7 @@ client.role.deleteAccess("speaker", "add", "event", {'type': 'chat.message.new'}
 
 ## Check access rights
 
-*UCEngine.user.can(uid, action, object, conditions, callback)*
+*UCEngine.user.can(uid, action, object, conditions, location, callback)*
 
 ### Parameters
 
@@ -250,6 +250,7 @@ Parameter                              | Description
 `action`                               | The action to allow
 `object`                               | The object on which the `action` is performed
 `conditions`                           | A dictionary of conditions
+`location`                             | The location
 `callback`                             |
 
 ### Notes
@@ -261,7 +262,7 @@ See the [[ACL|acl]] page for a list of all the available
 
 ```javascript
 var client = uce.createClient();
-client.user.can('user@example.com', 'add', 'event', {'type': 'chat.message.new'}, function(err, result) {
+client.user.can('user@example.com', 'add', 'event', {'type': 'chat.message.new'}, 'meetingname', function(err, result) {
    // if 'result' is true the user has the right to add an event of type 'chat.message.new'
 });
 ```
@@ -617,5 +618,56 @@ var meeting = client.meeting('demo');
 meeting.search({query: 'I want this string',
                type: ['chat.message.new', 'internal.meeting.add']}, function(err, result) {
 
+});
+```
+
+## ACL in meeting
+
+*UCEngine.meeting(meeting).can(uid, action, object, conditions, callback)*
+
+### Parameters
+
+Parameter                              | Description
+---------------------------------------|---------------------------------------
+`meeting`                              | The name of the meeting
+`uid`                                  | The user id
+`action`                               | The action to allow
+`object`                               | The object on which the `action` is performed
+`conditions`                           | A dictionary of conditions
+`callback`                             |
+
+
+### Example
+
+```javascript
+var client = uce.createClient();
+var meeting = client.meeting('demo');
+meeting.can('test@example.com', 'update', 'meeting', {}, function(err, result) {
+ // result is true or false
+});
+```
+
+## ACL for the current user in meeting
+
+*UCEngine.meeting(meeting).canCurrentUser(action, object, conditions, callback)*
+
+### Parameters
+
+Parameter                              | Description
+---------------------------------------|---------------------------------------
+`meeting`                              | The name of the meeting
+`action`                               | The action to allow
+`object`                               | The object on which the `action` is performed
+`conditions`                           | A dictionary of conditions
+`callback`                             |
+
+
+### Example
+
+```javascript
+var client = uce.createClient();
+var meeting = client.meeting('demo');
+meeting.canCurrentUser('update', 'meeting', {}, function(err, result) {
+ // result is true or false
 });
 ```
