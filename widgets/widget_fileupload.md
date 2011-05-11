@@ -36,6 +36,12 @@ Name         | Description
 -------------|---------------------------------------------------------------
 updated      | called when a new message is received
 
+## Examples
+
+```javascript
+$("#placeholder").file_upload({ucemeeting: meeting, upload: true});
+```
+
 ## Events
 ### document.share.start
 
@@ -63,11 +69,15 @@ Example:
 }
 ```
 
-## Exemple
+## Access rights
 
-```javascript
-$("#placeholder").file_upload({ucemeeting: meeting, upload: true});
-```
+Action  | Object        | Conditions    | Description
+--------|---------------|---------------|------------------------------------------------------------------------------------------------
+add     | file          |               | Allow the user to add a file. If true, display the upload button.
+delete  | file          | id            | Allow the user to delete the file with the identifier 'id'. If true, display a 'delete' button.
+delete  | file          |               | Delete all files. If true, display 'delete' buttons for every files.
+share   | document      | id            | Share a document with the file identifier 'id'. If true, add a 'share' link.
+share   | document      |               | Share all documents. If true, add 'share' links for every files.
 
 ## Theming
 

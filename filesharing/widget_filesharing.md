@@ -35,6 +35,13 @@ $("#demo").file_sharing({ucemeeting: meeting,
                          uceclient: client});
 ```
 
+## Access rights
+
+Action  | Object        | Conditions    | Description
+--------|---------------|---------------|-----------------------------------------------------------
+share   | document      | id            | Share a document with the file identifier 'id'
+share   | document      |               | Share all documents
+
 ## Theming
 
 ```html
@@ -69,7 +76,7 @@ $("#demo").file_sharing({ucemeeting: meeting,
                 <span class="ui-button-icon-primary ui-icon ui-icon-circle-close"></span>
                 <span class="ui-button-text"></span>
             </span>
-            <a href="#" class="ui-fileupload ui-share-link">Share</a>            
+            <a href="#" class="ui-fileupload ui-share-link">Share</a>
             <span class="ui-filesharing ui-toolbar-selector">
                 <span class="ui-filesharing ui-selector-current"></span>
                 <span class="ui-filesharing ui-selector-separator">/</span>

@@ -58,6 +58,12 @@ $("#placeholder").information({ ucemeeting: meeting,
                               });
 ```
 
+## Access rights
+
+Action  | Object        | Conditions    | Description
+--------|---------------|---------------|-----------------------------------------------------------
+update  | meeting       |               | Allow the user to update the fields.
+
 ## Theming
 ```html
 <article id="information" class="ui-widget ui-information expanded">
