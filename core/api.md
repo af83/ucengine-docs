@@ -680,14 +680,14 @@ used only for this purpose.
 
     POST /event/{meeting}
 
-Parameter                              | Description                           | Example
----------------------------------------|---------------------------------------|------------------------------------------------------------
-**URL Parameters**                     |                                       |
-`meeting`                              | Meeting id                            | `demo`
-**Encoded Parameters**                 |                                       |
-`type`                                 | The event's type                      | `internal.meeting.add`
-**Optional Encoded Parameters**        |                                       |
-Any other parameter                    | These will be part of the metadata    |
+Parameter                              | Description                                   | Example
+---------------------------------------|-----------------------------------------------|------------------------------------------------------------
+**URL Parameters**                     |                                               |
+`meeting`                              | Meeting id                                    | `demo`
+**Encoded Parameters**                 |                                               |
+`type`                                 | The event's type, cannot be 'internal.*' type | `chat.message.new`
+**Optional Encoded Parameters**        |                                               |
+Any other parameter                    | These will be part of the metadata            |
 
 #### Returned values
 
