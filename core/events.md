@@ -31,6 +31,38 @@ Example:
 }
 ```
 
+### internal.role.add
+
+Example:
+
+```javascript
+{ "type"     : "internal.role.add",
+  "domain"   : "localhost",
+  "datetime" : 1292597388050,
+  "id"       : "74647005885125029457242944483441",
+  "from"     : "uid_63444326443_50150",
+  "metadata" : {
+    "name" : "speaker"
+  }
+}
+```
+
+### internal.role.delete
+
+Example:
+
+```javascript
+{ "type"     : "internal.role.delete",
+  "domain"   : "localhost",
+  "datetime" : 1292597388050,
+  "id"       : "74647005885125029457242944483441",
+  "from"     : "uid_63444326443_50150",
+  "metadata" : {
+    "name" : "speaker"
+  }
+}
+```
+
 ### internal.presence.add
 ### internal.presence.delete
 ### internal.roster.add
@@ -70,39 +102,80 @@ Example:
 ### internal.user.add
 ### internal.user.update
 
-### internal.acl.add
+### internal.user.role.add
 
-Sent by U.C.Engine. Notifies the adding of a new right for the user specified in the 'from' field.
+Sent by U.C.Engine. It notifies that a user get a new role.
 
 Example:
 
 ```javascript
-{ "type"     : "internal.acl.add",
+{ "type"     : "internal.user.role.add",
   "domain"   : "localhost",
   "datetime" : 1292600689363,
   "id"       : "05214339923220971091870275941078",
   "location" : "demo",
   "from"     : "uid_63444326443_50150",
-  "metadata" : {"object": "file",
-                "action": "delete",
-                "id": "my_own_file.jpg_42424242424242424242"}
+  "metadata" : {
+    "role": "speaker",
+    "user": "uid_7893423675"
+  }
 }
 ```
 
-### internal.acl.delete
+### internal.user.role.delete
 
-Sent by U.C.Engine. Notifies the deletion of a right for the user specified in the 'from' field.
+Sent by U.C.Engine. It notifies that a user loose a role.
 
 Example:
 
 ```javascript
-{ "type"     : "internal.acl.delete",
+{ "type"     : "internal.user.role.delete",
   "domain"   : "localhost",
   "datetime" : 1292600689363,
   "id"       : "05214339923220971091870275941078",
   "location" : "demo",
   "from"     : "uid_63444326443_50150",
-  "metadata" : {"object": "roster",
-                "action": "add"}
+  "metadata" : {
+    "role": "speaker",
+    "user": "uid_7893423675"
+  }
+}
+```
+
+### internal.access.add
+
+Example:
+
+```javascript
+{ "type"     : "internal.access.add",
+  "domain"   : "localhost",
+  "datetime" : 1292600689363,
+  "id"       : "05214339923220971091870275941078",
+  "from"     : "uid_63444326443_50150",
+  "metadata" : {
+    "role"   : "speaker",
+    "action" : "",
+    "object" : "",
+    ...
+  }
+}
+```
+
+### internal.access.delete
+
+Example:
+
+```javascript
+{ "type"     : "internal.access.delete",
+  "domain"   : "localhost",
+  "datetime" : 1292600689363,
+  "id"       : "05214339923220971091870275941078",
+  "from"     : "uid_63444326443_50150",
+  "metadata" : {
+    "role"   : "speaker",
+    "action" : "",
+    "object" : "",
+    ...
+  }
 }
 ```
