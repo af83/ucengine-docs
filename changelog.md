@@ -7,8 +7,11 @@
 * API:
   * Add a new entry point to [[list access rights attached to a role|api#list-access-rights-for-a-role]].
   * Nobody can push 'internal.*' events from API.
+  * Now sent metadata when uploading a file can be retrieved through the corresponding internal.file.add event.
 * [[uce.js|ucejs]]:
   * add `UCEngine.meeting(name).can` and `UCEngine.meeting(name).canCurrentUser`.
+* [[Filesharing brick|brick_filesharing]]
+  * The brick add an *uploadedby* metadata when uploading generated images
 
 ## 0.4 to 0.5
 
