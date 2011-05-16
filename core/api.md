@@ -710,8 +710,9 @@ Parameter                              | Description                           |
 ---------------------------------------|---------------------------------------|------------------------------------------------------------
 **URL Parameters**                     |                                       |
 `meeting`                              | Meeting id                            | `demo`
+**Required Encoded Parameters**        |                                       |
+`content`                              | Content of the file                   |
 **Optional Encoded Parameters**        |                                       |
-`_filename`                            | Filename                              | `ucengine.odp`
 `metadata`                             | Array containing metadata             | `metadata[key]=value`
 
 #### Returned values
@@ -726,8 +727,7 @@ Parameter                              | Description                           |
 
 #### Notes
 
-- You are able to force the filename if it is specified in the url or in
-  the request's body (this second case is often handled by the browser).
+- The body request **must be in multipart/form-data**.
 - To avoid conflicts between files U.C.Engine generate a unique id which is returned in the result.
 
 ### List files
