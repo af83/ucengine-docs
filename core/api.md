@@ -706,13 +706,13 @@ Any other parameter                    | These will be part of the metadata     
 
     POST /file/{meeting}
 
-
 Parameter                              | Description                           | Example
 ---------------------------------------|---------------------------------------|------------------------------------------------------------
 **URL Parameters**                     |                                       |
 `meeting`                              | Meeting id                            | `demo`
 **Optional Encoded Parameters**        |                                       |
 `_filename`                            | Filename                              | `ucengine.odp`
+`metadata`                             | Array containing metadata             | `metadata[key]=value`
 
 #### Returned values
 
@@ -745,10 +745,11 @@ Parameter                              | Description                           |
 
 #### Returned values
 
-    200 { "result": [ { "filename": "U.C.Engine.odp"
-                        "domain": "ucengine.org",
-                      , "token": "42314657480629893636680972"
-                      , "description": "Présentation du projet U.C.Engine"
+    200 { "result": [ { "name": "U.C.Engine.pdf"
+                      , "uri" : "file://data/ucengine.pdf"
+                      , "id" : "fileid"
+                      , "domain": "ucengine.org"
+                      , "location": "demo"
                       }
                     , ...
                     ]}
