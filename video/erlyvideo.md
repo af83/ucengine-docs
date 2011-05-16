@@ -4,20 +4,26 @@
 
 [erlyvideo_ucengine](https://github.com/AF83/erlyvideo-ucengine) is a plugin to turn erlyvideo into an U.C.Engine brick. It allow you to create a video stream per meeting.
 
-## How it works?
+## Dependencies
 
-Fig.1 connection workflow: how the plugin allows users to connect to erlyvideo from ucengine.
+* [ibrowse](https://github.com/dizzyd/ibrowse)
 
-![Fig.1 connection workflow](./static/img/uce_erlyvideo_wf1.png)
+## Install it from git repository
 
-Fig.2 publish/play stream workflow: how the plugin manages events publish and play stream.
+    # Fetch af83's fork of Erlyvideo
+    $ git clone https://github.com/AF83/erlyvideo.git --branch plugins
+    $ mkdir erlyvideo/plugins
+    $ cd erlyvideo/plugins/
 
-![Fig.2 publis/play stream workflow](./static/img/uce_erlyvideo_wf2.png)
+    # Fetch erlyvideo_ucengine sources
+    $ git clone git://github.com/AF83/erlyvideo-ucengine.git erlyucengine
 
-Fig.3 close/lost stream workflow: how the plugin manages events close and lost
-stream.
+    # Build Erlyvideo
+    $ cd ../../
+    $ make
 
-![Fig.3 close/lost stream workflow](./static/img/uce_erlyvideo_wf3.png)
+    # Update configuration, then run Erlyvideo
+    $ make run
 
 ## Configuration
 
@@ -42,26 +48,20 @@ And replace *trusted_login* by *ucengine_login* in *rtmp_handlers*, like that:
 {rtmp_handlers, [{auth_users_limit, 200}, ucengine_login, apps_push, apps_streaming, apps_recording]},
 ```
 
-## Dependencies
+## How it works?
 
-* [ibrowse](https://github.com/dizzyd/ibrowse)
+Fig.1 connection workflow: how the plugin allows users to connect to erlyvideo from ucengine.
 
-## Install it from git repository
+![Fig.1 connection workflow](./static/img/uce_erlyvideo_wf1.png)
 
-     # Fetch Erlyvideo sources
-     $ git clone https://github.com/erlyvideo/erlyvideo.git
-     $ mkdir erlyvideo/plugins
-     $ cd erlyvideo/plugins/
+Fig.2 publish/play stream workflow: how the plugin manages events publish and play stream.
 
-     # Fetch erlyvideo_ucengine sources
-     $ git clone git://github.com/AF83/erlyvideo-ucengine.git erlyucengine
+![Fig.2 publis/play stream workflow](./static/img/uce_erlyvideo_wf2.png)
 
-     # Build Erlyvideo
-     $ cd ../../
-     $ make
+Fig.3 close/lost stream workflow: how the plugin manages events close and lost
+stream.
 
-     # Update configuration, then run Erlyvideo
-     $ make run
+![Fig.3 close/lost stream workflow](./static/img/uce_erlyvideo_wf3.png)
 
 ## Use it with video widget
 
