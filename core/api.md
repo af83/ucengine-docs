@@ -706,14 +706,15 @@ Any other parameter                    | These will be part of the metadata     
 
     POST /file/{meeting}
 
-Parameter                              | Description                           | Example
----------------------------------------|---------------------------------------|------------------------------------------------------------
-**URL Parameters**                     |                                       |
-`meeting`                              | Meeting id                            | `demo`
-**Required Encoded Parameters**        |                                       |
-`content`                              | Content of the file                   |
-**Optional Encoded Parameters**        |                                       |
-`metadata`                             | Array containing metadata             | `metadata[key]=value`
+Parameter                              | Description                            | Example
+---------------------------------------|----------------------------------------|------------------------------------------------------------
+**URL Parameters**                     |                                        |
+`meeting`                              | Meeting id                             | `demo`
+**Required Encoded Parameters**        |                                        |
+`content`                              | Content of the file                    |
+**Optional Encoded Parameters**        |                                        |
+`forceContentType`                     | Force the content type of the response | `text/html`
+`metadata`                             | Array containing metadata              | `metadata[key]=value`
 
 #### Returned values
 
@@ -728,6 +729,7 @@ Parameter                              | Description                           |
 #### Notes
 
 - The body request **must be in multipart/form-data**.
+- The `forceContentType` parameter is only a workaround when browsers show a popup when *content-type* is *application/json*.
 - To avoid conflicts between files U.C.Engine generate a unique id which is returned in the result.
 
 ### List files
