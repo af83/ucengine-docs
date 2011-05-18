@@ -5,7 +5,6 @@
 * Improved many widgets.
 * Fix long polling with nginx (again).
 * API:
-  * Add a new entry point to [[list access rights attached to a role|api#list-access-rights-for-a-role]].
   * Nobody can push 'internal.*' events from API.
   * Now sent metadata when uploading a file can be retrieved through the corresponding internal.file.add event.
   * Update file upload api to allow metadata in multipart/form-data.

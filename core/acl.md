@@ -107,7 +107,6 @@ user.role      | add          | [[Set a role to a user|api#set-a-role-to-a-user]
 user.role      | delete       | [[Unset a role to a user|api#unset-a-role-to-a-user]]
 role           | add          | [[Add a new role|api#add-a-new-role]]
 role           | delete       | [[Delete a role|api#delete-a-role]]
-access         | list         | [[List access rights for a role|api#list-access-rights-for-a-role]]
 access         | add          | [[Set an access right to a role|api#set-a-new-access-right-to-a-role]]
 access         | delete       | [[Unset an access right from a role|api#unset-an-access-right-from-a-role]]
 
