@@ -77,4 +77,4 @@ end
 ## Librairies
 
 * **Javascript**: [[Javascript API reference|ucejs]]
-* **Ruby**: [[install ruby API|ruby_install]]
+* **Ruby**: [[install ruby API|ucengine-rb]]
