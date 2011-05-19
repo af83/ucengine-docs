@@ -19,10 +19,11 @@ Add into *etc/uce.cfg* an entry.
 The first step is to connect your brick with U.C.Engine.
 
 ```ruby
+require 'ucengine'
+
 uce = UCEngine.new("localhost", 5280)
-  uce.connect("echo", "secret_do_not_share_secret_do_not_share") do |uce|
-     // we will add code here after
-  end
+uce.connect("echo", :credential => "secret_do_not_share_secret_do_not_share") do |uce|
+     # we will add code here after
 end
 ```
 
@@ -34,7 +35,7 @@ In this case we want to subscribe to events *chat.message.new*.
 
 ```ruby
 uce.subscribe([], :type => "chat.message.new", :start => uce.time) do |event|
-   // for each events received, this block will be called
+   # for each events received, this block will be called
 end
 ```
 
@@ -60,16 +61,17 @@ If your brick need to check user's right, you should ask U.C.Engine about **obje
 This is the final result of your brick.
 
 ```ruby
+require 'ucengine'
+
 uce = UCEngine.new("localhost", 5280)
-  uce.connect("echo", "secret_do_not_share_secret_do_not_share") do |uce|
-     uce.subscribe([], :type => "chat.message.new", :start => uce.time) do |event|
-       uce.publish(:location => event['location'],
-                   :type => "echo",
-                   :parent => event['id'],
-                   :metadata => {:text => event['metadata']['text'],
-                                 :lang => event['metadata']['lang'],
-                                 :from => event['from']})
-    end
+uce.connect("echo", :credential => "secret_do_not_share_secret_do_not_share") do |uce|
+  uce.subscribe([], :type => "chat.message.new", :start => uce.time) do |event|
+    uce.publish(:location => event['location'],
+                :type => "echo",
+                :parent => event['id'],
+                :metadata => {:text => event['metadata']['text'],
+                              :lang => event['metadata']['lang'],
+                              :from => event['from']})
   end
 end
 ```
