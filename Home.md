@@ -57,23 +57,7 @@ Building an application with U.C.Engine is mainly a question of adding bricks to
 
 * [[Roadmap|roadmap]] - [[Changelog|changelog]]
 * [[Licenses|licenses]]
-* [[Launching tests|tests]]
-
-Contributions are welcome !
-
-1. [Fork us](https://github.com/AF83/ucengine)
-2. Create your patch in a topic branch
-3. Add some unit tests
-4. Send pull request
-
-**Note on branching**:
-
-  * [master](https://github.com/AF83/ucengine/tree/master) is the "releases" branch
-  * [develop](https://github.com/AF83/ucengine/tree/develop) is the "currently in developement" branch
-
-So if you plan to contribute, don't forget to work from develop.
-
-You can also contribute to the [documentation](https://github.com/AF83/ucengine-docs).
+* [[Contribution guide|contributions]]
 
 ## Professional services
 
