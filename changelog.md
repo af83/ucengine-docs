@@ -2,7 +2,6 @@
 
 ## 0.5 to 0.6 (currently in development)
 
-* Improved many widgets.
 * Fix long polling with nginx (again).
 * API:
   * Nobody can push 'internal.*' events from API.
@@ -13,6 +12,8 @@
   * add `UCEngine.meeting(name).can` and `UCEngine.meeting(name).canCurrentUser`.
 * [[Filesharing brick|brick_filesharing]]
   * The brick add an *uploadedby* metadata when uploading generated images
+* Improved many widgets.
+* Improved documentation.
 
 ## 0.4 to 0.5
 
