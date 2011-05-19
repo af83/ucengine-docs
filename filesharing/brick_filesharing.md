@@ -33,7 +33,7 @@ Sent by the document brick after a document conversion was successfuly completed
  Metadata | Description
 ---------------|-------------------------------------------------------------------------------------------------------
  0    | First image
- 2    | Second image
+ 1    | Second image
  ...  | ...
  n    | nth image
 
