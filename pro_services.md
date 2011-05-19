@@ -4,7 +4,7 @@ You'll find here a list of companies providing services around U.C.Engine.
 
 ## U.C.Engine editor
 
-**U.C.Engine by af83** 
+**U.C.Engine by af83**
 
 af83 is the creator and main editor of U.C.Engine.
 
