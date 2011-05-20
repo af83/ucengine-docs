@@ -744,6 +744,8 @@ Parameter                              | Description                           |
 ---------------------------------------|---------------------------------------|------------------------------------------------------------
 **URL Parameters**                     |                                       |
 `meeting`                              | Meeting id                            | `demo`
+**Optional Encoded Parameters**        |                                       |
+`order`                                | Sorting order                         | `asc` or `desc`
 
 #### Returned values
 

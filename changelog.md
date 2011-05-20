@@ -8,6 +8,7 @@
   * Now sent metadata when uploading a file can be retrieved through the corresponding internal.file.add event.
   * Update file upload api to allow metadata in multipart/form-data.
   * Add *forceContentType* parameter on file upload api.
+  * Add an *order* parameter when listing files on a meeting.
 * [[uce.js|ucejs]]:
   * add `UCEngine.meeting(name).can` and `UCEngine.meeting(name).canCurrentUser`.
 * [[Filesharing brick|brick_filesharing]]
