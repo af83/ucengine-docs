@@ -7,7 +7,7 @@ ucengine-admin - U.C.Engine administration
 ## SYNOPSYS
 
 `ucengine-admin` `--help` <br />
-`ucengine-admin` *object* <action> [`--<parameter>` <value>] <br />
+`ucengine-admin <domain>` *object* <action> [`--<parameter>` <value>] <br />
 
 ## DESCRIPTION
 
@@ -26,98 +26,94 @@ The following options are available:
 
     The name of the Erlang node (ex. 'node1', 'node1@localhost' or 'node1@myhost.mydomain').
 
-  * -c *path*
-
-    Path to the configuration file.
-
 ### Domain information
 
-  * `infos` `update` `--domain` *domain*  [`--<metadata>` *value*] ...
+  * `infos` `update`  [`--<metadata>` *value*] ...
 
     Update the domain *domain* informations with arbitrary values
 
-  * `infos` `get` `--domain` *domain*
+  * `infos` `get`
 
     Get informations about the domain *domain*
 
 ### Meetings
 
-  * `meeting` `add` `--domain` *domain* `--name` *name* [`--start` *date* `--end` *date*] [`--<metadata>` *value*] ... :
+  * `meeting` `add` *name* [`--start` *date*] [`--end` *date*] [`--<metadata>` *value*] ... :
 
     Create an new meeting with name *name* with optional starting and ending dates (see the FORMAT section for date formatting).
 
-  * `meeting` `update` `--domain` *domain* `--name` *name* [`--start` *date* `--end` *date*] [`--<metadata>` *value*] ...
+  * `meeting` `update` *name* [`--start` *date*] [`--end` *date*] [`--<metadata>` *value*] ...
 
     Update the meeting with name *name*.
 
-  * `meeting` `get` `--domain` *domain* `--name` *name*
+  * `meeting` `get` *name*
 
     Get all informations about the meeting *name*.
 
-  * `meeting` `delete` `--domain` *domain* `--name` *name*
+  * `meeting` `delete` *name*
 
     Delete the meeting with name *name*.
 
-  * `meeting` `list` `--domain` *domain* `--status` *status*
+  * `meeting` `list` *status*
 
-    List all meetings with an optional status *status*, meeting status can be any of: `upcoming`|`opened`|`closed` or `all` (default).
+    List all meetings with an optional status *status*, meeting status can be any of: `upcoming`|`opened`|`closed` or `all`
 
 ### Users
 
-  * `user` `add` `--domain` *domain* `--name` *name* `--auth` *auth* `--credential` *credential* [`--<metadata>` *value*] ...
+  * `user` `add`  *name* *auth* *credential* [`--<metadata>` *value*] ...
 
     Create an new user with the name *name* where <auth> is a method to authenticate (currently only 'password' and 'token' are supported) and <credential> the secret to authenticate the user.
 
-  * `user` `update` `--domain` *domain* [`--name` *name* | `--uid` *uid*] `--auth` *auth* `--credential` *credential* [`--<metadata>` *value*] ...
+  * `user` `update` *name* *auth* *credential* [`--<metadata>` *value*] ...
 
-    Update the user with the name *name* or the identifier *uid*.
+    Update the user with the name *name*.
 
-  * `user` `get` `--domain` *domain* [`--name` *name* | `--uid` *uid*]
+  * `user` `get` *name*
 
-    Get all informations about the user with the name *name* or the identifier *uid*.
+    Get all informations about the user with the name *name*.
 
-  * `user` `delete` `--domain` *domain* [`--name` *name* | `--uid` *uid*]
+  * `user` `delete` *name*
 
-    Delete the user with the name *name* or the identifier *uid*.
+    Delete the user with the name *name*,
 
-  * `user` `list` `--domain` *domain*
+  * `user` `list`
 
     List all users.
 
-  * `user` `role` `add` `--domain` *domain* [`--name` *name* | `--uid` *uid*] `--role` *role* [`--location` *location*]
+  * `user` `role` `add` *name* *role* [`--location` *location*]
 
-    Give the role named *role* to the user *name* or *uid* in an optional location *location*
+    Give the role named *role* to the user *name* in an optional location *location*
 
-  * `user` `role` `delete` `--domain` *domain* [`--name` *name* | `--uid` *uid*] `--role` *role* [`--location` *location*]
+  * `user` `role` `delete` *name* *role* [`--location` *location*]
 
-    Remove the role named *role* to the user *name* or *uid* in an optional location *location*
+    Remove the role named *role* to the user *name* in an optional location *location*
 
 ### Roles
 
-  * `role` `add` `--domain` *domain* `--name` *name*
+  * `role` `add` *name*
 
   Add a new role named *name*. By default, no access rights are attached to this role.
 
-  * `role` `delete` `--domain` *domain* `--name` *name*
+  * `role` `delete` *name*
 
   Remove the role *name*.
 
-  * `role` `access` `add` `--domain` *domain* `--name` *name* `--action` *action* `--object` *object* [`--<condition> *value*] ...
+  * `role` `access` `add` *name* *action* *object* [`--<condition> *value*] ...
 
   Allow the users with the role named *name* to do *action* on *object* with some <conditions> (see FORMAT for more informations about <conditions>).
 
-  * `role` `access` `delete` `--domain` *domain* `--name` *name* `--action` *action* `--object` *object* [`--<condition> *value*] ...
+  * `role` `access` `delete` *name* *action* *object* [`--<condition> *value*] ...
 
   Remove the right for the users with the role named *name* to do *action* on *object* with some <conditions>.
 
-  * `role` `access` `check` `--domain` *domain* `--uid` *uid* `--location` *location* `--action` *action* `--object` *object* [`--<condition> *value*] ...
+  * `role` `access` `check` *name* *action* *object* [`--location` *location*] [`--<condition> *value*] ...
 
   Check that the user *uid* has the right to do *action* on *object* in an optional location *location* with some <conditions>.
 
 ## FORMAT
 
   - `date`:
-    ISO8601 formatted date (ex. '2010-25-12 00:00:01').
+    ISO8601 formatted date (ex. '2010-12-25 00:00:01').
 
   - `metadata`:
     meetings can hold an unlimited amount of metadata as a *key*=*value* store. Any arguments of the command line which are not part of the expected parameters are automatically added to the metadata of the object.
@@ -132,51 +128,51 @@ The following options are available:
   not find the U.C.Engine node name automatically. For example, if the
   U.C.Engine node name is `ucengine@myserver.com`:
 
-  * `demo` `start` `--node` ucengine@myserver.com
+  * `time` `get` `--node` ucengine@myserver.com
 
 ## EXAMPLES
 
 List all meetings:
-    ucengine-admin meeting list --domain localhost
+    ucengine-admin localhost meeting list
 
 Only keep the closed|opened|upcoming meetings:
-    ucengine-admin meeting list --domain localhost --status closed
-    ucengine-admin meeting list --domain localhost --status opened
-    ucengine-admin meeting list --domain localhost --status upcoming
+    ucengine-admin localhost meeting list closed
+    ucengine-admin localhost meeting list opened
+    ucengine-admin localhost meeting list upcoming
 
 Create a new meeting 'Christmas dinner':
-    ucengine-admin meeting add --domain localhost --name 'Christmas dinner' --start '2010-24-12 20:30:00'\
+    ucengine-admin localhost meeting add 'Christmas dinner' --start '2010-24-12 20:30:00'\
                        --end '2010-25-12 03:00:00' --appetizer 'Chips'
 
 Make it frenchier:
-    ucengine-admin meeting update --domain localhost --name 'Christmas dinner' --start '2010-24-12 20:30:00'\
+    ucengine-admin localhost meeting update 'Christmas dinner' --start '2010-24-12 20:30:00'\
                           --end '2010-25-12 07:00:00' --appetizer 'Snails'
 
 And delete it:
-    ucengine-admin meeting delete --domain localhost --name 'Christmas dinner'
+    ucengine-admin localhost meeting delete 'Christmas dinner'
 
 Create a new user 'Chuck' with a password set to 'Norris' with his nickname in the metadata:
-    ucengine-admin user add --domain localhost --uid 'Chuck' --auth 'password' --credential 'Norris'\
+    ucengine-admin localhost user add 'Chuck' 'password' 'Norris'\
                     --nickname 'Colonel Braddock'
 
 Update the user with a stronger password and a different nickname:
-    ucengine-admin user update --domain localhost --name 'Chuck' --auth 'password' --credential '835dc9b5fa0ffa8'\
+    ucengine-admin localhost user update 'Chuck' 'password' '835dc9b5fa0ffa8'\
                        --nickname 'Cordell Walker'
 
 Create a new role called 'ranger':
-    ucengine-admin role add --domain localhost --name ranger
+    ucengine-admin localhost role add ranger
 
 Give this role to Chuck in Texas:
-    ucengine-admin user role add --domain localhost --name chuck --role ranger --location 'texas'
+    ucengine-admin localhost user role add chuck ranger --location 'texas'
 
 Add the right to the 'ranger' users to protect the law:
-    ucengine-admin role access add --domain localhost --name ranger --action kick --object butt --badguy yes
+    ucengine-admin localhost role access add ranger kick butt --badguy yes
 
 Delete this right:
-    ucengine-admin role access delete --domain localhost --name ranger --action kick --object butt --badguy yes
+    ucengine-admin localhost role access delete ranger kick butt --badguy yes
 
 Delete the role:
-    ucengine-admin role delete --domain localhost --name ranger
+    ucengine-admin localhost role delete ranger
 
 And delete the user 'Chuck':
-    ucengine-admin user delete --domain localhost --name 'Chuck'
+    ucengine-admin localhost user delete 'Chuck'

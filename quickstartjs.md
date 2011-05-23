@@ -16,14 +16,14 @@ You will need:
 
 * * *
 
-    $> bin/ucengine-admin meeting add --domain localhost --name "demo"
-    $> bin/ucengine-admin user add --domain localhost --name 'john' --auth 'password' --credential 'mypwd'
+    $> bin/ucengine-admin localhost meeting add "demo"
+    $> bin/ucengine-admin localhost user add 'john' 'password' 'mypwd'
     Success: 52050861150575074077437530343071 # User id which is also the name of the default user role
 
-    $> bin/ucengine-admin role access add --domain localhost --name 52050861150575074077437530343071 --action add --object roster
-    $> bin/ucengine-admin role access add --domain localhost --name 52050861150575074077437530343071 --action add --object presence
-    $> bin/ucengine-admin role access add --domain localhost --name 52050861150575074077437530343071 --action list --object event
-    $> bin/ucengine-admin role access add --domain localhost --name 52050861150575074077437530343071 --action add --object event
+    $> bin/ucengine-admin localhost role access add 52050861150575074077437530343071 add roster
+    $> bin/ucengine-admin localhost role access add 52050861150575074077437530343071 add presence
+    $> bin/ucengine-admin localhost role access add 52050861150575074077437530343071 list event
+    $> bin/ucengine-admin localhost role access add 52050861150575074077437530343071 add event
 
 See [[ucengine-admin]] for more informations.
 

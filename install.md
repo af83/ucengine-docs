@@ -84,7 +84,7 @@ Now your U.C.Engine instance is running, go to [localhost:5280](http://localhost
 
 If you want to play with U.C.Engine, you can start the *demo* with some data (meetings, users, ...).
 
-    $> ./rel/ucengine/bin/ucengine-admin demo start
+    $> PATH=$PATH:./rel/ucengine/bin ./contrib/demo.sh
 
 It will create three meetings:
 

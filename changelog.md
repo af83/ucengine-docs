@@ -12,7 +12,10 @@
 * [[uce.js|ucejs]]:
   * add `UCEngine.meeting(name).can` and `UCEngine.meeting(name).canCurrentUser`.
 * [[Filesharing brick|brick_filesharing]]
-  * The brick add an *uploadedby* metadata when uploading generated images
+  * The brick add an *uploadedby* metadata when uploading generated images.
+* Refactored [[ucengine-admin]]:
+  * the domain as first argument (except for *time get*).
+  * No more options when options are mandatory.
 * Improved many widgets.
 * Improved documentation.
 
