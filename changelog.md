@@ -47,6 +47,8 @@
     server after user creation. The username can still be used to create
     a new presence. See the [[Authentication|api#connect-user]] section
     of the API documentation.
+* Files:
+    Now the API return the name of the deleted file.
 * Add a `log_dir` option in the [[config file|config]], used for yaws logs.
 
 ## 0.4.1
