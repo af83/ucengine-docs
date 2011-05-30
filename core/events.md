@@ -31,6 +31,31 @@ Example:
 }
 ```
 
+### internal.file.delete
+
+Sent by U.C.Engine. It notifies that a new file have been deleted.
+
+Metadata       | Description
+---------------|-------------------------------------------------------------------------------------------------------
+id             | The id of the file. This id is unique for each uploaded file (even if the file is the same).
+name           | original name of the file
+
+Example:
+
+```javascript
+{ "type"     : "internal.file.delete",
+  "domain"   : "localhost",
+  "datetime" : 1292597388050,
+  "id"       : "74647005885125029457242944483441",
+  "location" : "demo",
+  "from"     : "uid_63444326443_50150",
+  "metadata" : {
+    "id"   : "Eben-Moglen-2010-12-2-privacy-testimony_34891938863969335648238193223131.pdf",
+    "name" : "Eben-Moglen-2010-12-2-privacy-testimony.pdf"
+  }
+}
+```
+
 ### internal.role.add
 
 Example:
