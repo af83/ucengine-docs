@@ -11,12 +11,19 @@ The brick have some dependencies, which are essentially gems to be installed :
 * ucengine
 * RMagick
 
+We provide a Gemfile to install these gems.
+
+## Installation
+
+    $> git clone https://github.com/AF83/ucengine-document.git
+    $> cd ucengine-document
+    $> bundle install
+
 ## Launch and stop the brick
 
-    $> cd bricks/document
-    $> ruby bin/document start
+    $> bin/document start
     document: process with pid 83 started.
-    $> ruby bin/document stop
+    $> bin/document stop
     document: trying to stop process with pid 83...
     document: process with pid 83 successfully stopped.
 

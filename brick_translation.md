@@ -11,16 +11,23 @@ The brick have some dependencies, which are essentially gems to be installed :
 * ucengine
 * rsay
 
+We provide a Gemfile to install these gems.
+
+## Installation
+
+    $> git clone https://github.com/AF83/ucengine-translation.git
+    $> cd ucengine-translation
+    $> bundle install
+
 ## Configuration
 
-See bricks/translation/config.yaml.
+See *config.yaml*.
 
 ## Launch and stop the brick
 
-    $> cd bricks/translation
-    $> ruby bin/translation start
+    $> bin/translation start
     translation: process with pid 83 started.
-    $> ruby bin/translation stop
+    $> bin/translation stop
     translation: trying to stop process with pid 83...
     translation: process with pid 83 successfully stopped.
 
@@ -54,10 +61,6 @@ Example:
   }
 }
 ```
-
-## ACL
-
-none
 
 ## Widgets
 

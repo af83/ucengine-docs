@@ -11,22 +11,30 @@ The brick have some dependencies, which are essentially gems to be installed :
 * ucengine
 * twitterstream
 
+We provide a Gemfile to install these gems.
+
+
+## Installation
+
+    $> git clone https://github.com/AF83/ucengine-twitter.git
+    $> cd ucengine-twitter
+    $> bundle install
+
 ## Configuration
 
-See bricks/twitter/config.yaml.
+See **config.yaml**.
 
 ## Launch and stop the brick
 
-    $> cd bricks/twitter
-    $> ruby bin/twitter start
+    $> bin/twitter start
     twitter: process with pid 83 started.
-    $> ruby bin/twitter stop
+    $> bin/twitter stop
     twitter: trying to stop process with pid 83...
     twitter: process with pid 83 successfully stopped.
 
 ## Events
 
-The brick listen for `twitter.hashtag.add` events. 
+The brick listen for `twitter.hashtag.add` events.
 
 ### twitter.hashtag.add
 
