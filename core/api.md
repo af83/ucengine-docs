@@ -269,52 +269,6 @@ Parameter                              | Description                           |
     401 { "error": "unauthorized" } // the user is not authorized to updated informations
 
 ## Meeting
-### Join a meeting
-
-#### Request
-
-    POST /meeting/all/{meeting}/roster/
-
-Parameter                              | Description                           | Example
----------------------------------------|---------------------------------------|------------------------------------------------------------
-**URL Parameters**                     |                                       |
-`meeting`                              | Meeting id                            | `demo`
-**Encoded Parameters**                 |                                       |
-`uid`                                  | User id                               | `91020740579212808535843549778848`
-
-#### Returned values
-
-    200 { "result": "ok" }
-
-    400 { "error": "bad_parameters" } // at least one paremeter is missing or wrong
-
-    401 { "error": "unauthorized" } // the user is not authorized to join the meeting
-
-    404 { "error": "not_found" } // the meeting does not exist
-
-### Quit a meeting
-
-#### Request
-
-    DELETE /meeting/all/{meeting}/roster/{uid}
-
-Parameter                              | Description                           | Example
----------------------------------------|---------------------------------------|------------------------------------------------------------
-**URL Parameters**                     |                                       |
-`meeting`                              | Meeting id                            | `demo`
-`uid`                                  | User id                               | `91020740579212808535843549778848`
-
-#### Returned values
-
-    200 { "result": "ok" }
-
-    400 { "error": "bad_parameters" } // at least one paremeter is missing or wrong
-
-    401 { "error": "unauthorized" } // the user is not authorized to quit the meeting
-
-    404 { "error": "not_found" } // the meeting does not exist
-
-
 ### Create a meeting
 
 #### Request
@@ -372,6 +326,76 @@ Parameter                              | Description                           |
 
     404 { "error": "not_found" } // the meeting does not exist
 
+### Retrieve meeting's informations
+
+#### Request
+
+    GET /meeting/all/{meeting}
+
+#### Parameters
+
+Parameter                              | Description                           | Example
+---------------------------------------|---------------------------------------|------------------------------------------------------------
+**URL Parameters**                     |                                       |
+`meeting`                              | Meeting id                            | `demo`
+
+#### Returned values
+
+    200 {"result":{     "name":"demo",
+                        "domain":"ucengine.org",
+                        "start_date":1284046056927,
+                        "end_date":"never",
+                        "metadata":{    "description":"U.C.Engine demo meetup"}
+                }}
+
+    400 { "error": "bad_parameters" } // at least one paremeter is missing or wrong
+
+    401 { "error": "unauthorized" } // the users is not authorized to retrieve the meeting's informations
+
+### Join a meeting
+
+#### Request
+
+    POST /meeting/all/{meeting}/roster/
+
+Parameter                              | Description                           | Example
+---------------------------------------|---------------------------------------|------------------------------------------------------------
+**URL Parameters**                     |                                       |
+`meeting`                              | Meeting id                            | `demo`
+**Encoded Parameters**                 |                                       |
+`uid`                                  | User id                               | `91020740579212808535843549778848`
+
+#### Returned values
+
+    200 { "result": "ok" }
+
+    400 { "error": "bad_parameters" } // at least one paremeter is missing or wrong
+
+    401 { "error": "unauthorized" } // the user is not authorized to join the meeting
+
+    404 { "error": "not_found" } // the meeting does not exist
+
+### Quit a meeting
+
+#### Request
+
+    DELETE /meeting/all/{meeting}/roster/{uid}
+
+Parameter                              | Description                           | Example
+---------------------------------------|---------------------------------------|------------------------------------------------------------
+**URL Parameters**                     |                                       |
+`meeting`                              | Meeting id                            | `demo`
+`uid`                                  | User id                               | `91020740579212808535843549778848`
+
+#### Returned values
+
+    200 { "result": "ok" }
+
+    400 { "error": "bad_parameters" } // at least one paremeter is missing or wrong
+
+    401 { "error": "unauthorized" } // the user is not authorized to quit the meeting
+
+    404 { "error": "not_found" } // the meeting does not exist
 
 ### List users connected to a meeting (roster)
 
@@ -456,56 +480,6 @@ Parameter                              | Description                           |
     400 { "error": "bad_parameters" } // at least one paremeter is missing or wrong
 
     401 { "error": "unauthorized" } // the user is not authorized to list the meetings
-
-### Retrieve meeting's informations
-
-#### Request
-
-    GET /meeting/all/{meeting}
-
-#### Parameters
-
-Parameter                              | Description                           | Example
----------------------------------------|---------------------------------------|------------------------------------------------------------
-**URL Parameters**                     |                                       |
-`meeting`                              | Meeting id                            | `demo`
-
-#### Returned values
-
-    200 {"result":{     "name":"demo",
-                        "domain":"ucengine.org",
-                        "start_date":1284046056927,
-                        "end_date":"never",
-                        "metadata":{    "description":"U.C.Engine demo meetup"}
-                }}
-
-    400 { "error": "bad_parameters" } // at least one paremeter is missing or wrong
-
-    401 { "error": "unauthorized" } // the users is not authorized to retrieve the meeting's informations
-
-
-### Delete a meeting
-
-#### Request
-
-    DELETE /meeting/all/{meeting}
-
-#### Parameters
-
-Parameter                              | Description                           | Example
----------------------------------------|---------------------------------------|------------------------------------------------------------
-**URL Parameters**                     |                                       |
-`meeting`                              | Meeting id                            | `demo`
-
-#### Returned values
-
-    200 { "result": "ok" }
-
-    400 { "error": "bad_parameters" } // at least one paremeter is missing or wrong
-
-    401 { "error": "unauthorized" } // the user is not authorized to delete the meeting
-
-    404 { "error": "not_found" } // the meeting does not exist
 
 ## Events
 
