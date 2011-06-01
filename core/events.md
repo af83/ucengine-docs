@@ -2,6 +2,12 @@
 
 ## Internals
 
+This page list all events triggered by U.C.Engine core. Users cannot create these kind of events.
+
+### internal.meeting.add
+
+### internal.meeting.update
+
 ### internal.file.add
 
 Sent by U.C.Engine. It notifies that a new file have been added.
