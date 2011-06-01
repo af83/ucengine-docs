@@ -25,9 +25,9 @@ See *config.yaml*.
 
 ## Launch and stop the brick
 
-    $> bin/translation start
+    $> bundle exec bin/translation start
     translation: process with pid 83 started.
-    $> bin/translation stop
+    $> bundle exec bin/translation stop
     translation: trying to stop process with pid 83...
     translation: process with pid 83 successfully stopped.
 

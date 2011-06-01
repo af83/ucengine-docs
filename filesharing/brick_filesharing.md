@@ -21,9 +21,9 @@ We provide a Gemfile to install these gems.
 
 ## Launch and stop the brick
 
-    $> bin/document start
+    $> bundle exec bin/document start
     document: process with pid 83 started.
-    $> bin/document stop
+    $> bundle exec bin/document stop
     document: trying to stop process with pid 83...
     document: process with pid 83 successfully stopped.
 

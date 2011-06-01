@@ -26,9 +26,9 @@ See **config.yaml**.
 
 ## Launch and stop the brick
 
-    $> bin/twitter start
+    $> bundle exec bin/twitter start
     twitter: process with pid 83 started.
-    $> bin/twitter stop
+    $> bundle exec bin/twitter stop
     twitter: trying to stop process with pid 83...
     twitter: process with pid 83 successfully stopped.
 
