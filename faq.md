@@ -11,19 +11,15 @@ We only support the following versions:
 - `erlang` starting with R14A
 - `yaws` starting with 1.88
 
-## I got a « can't find include lib "yaws/include/yaws.hrl" » error on debian
+## I got a « can't find include lib "yaws/include/yaws.hrl" » error
 
-Despite installing the `erlang` and `erlang-yaws` packages on your
-debian system, you get the following error when building U.C.Engine:
+Please verify the value of `ERL_LIBS` environnement variable. See the [[installations|install]] page about that.
 
-    > make
-    ...  can't find include lib "yaws/include/yaws.hrl"
+## I got a "ERROR: Unable to generate spec: read file info /usr/lib/erlang/man/man1/xxx1pm.gz failed"
 
-The problem comes from the fact that when installing `yaws`, the libraries are
-not accessible from `/usr/lib/erlang/lib`. To resolve it, you can add a symlink
-between `/usr/lib/yaws` and `/usr/lib/erlang/lib`:
+You can remove the symlink in `/usr/lib/erlang/man`.
 
-    > ln -s /usr/lib/yaws `/usr/lib/erlang/lib`
+    rm /usr/lib/erlang/man
 
 ## Who's the devil behind U.C.Engine?
 
