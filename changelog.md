@@ -135,4 +135,4 @@
   `uce.subscribe([org, meeting])` is replaced by `uce.subscribe([meeting])`.
 
 
-* A new entry point is available: `/infos`. Please refer to [[api]], [[ucectl]] and [[ucejs]] documentation. You can store some generic informations about current domain.
+* A new entry point is available: `/infos`. Please refer to [[api]], [[ucengine-admin]] and [[ucejs]] documentation. You can store some generic informations about current domain.
