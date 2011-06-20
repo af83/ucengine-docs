@@ -8,7 +8,7 @@ U.C.Engine is a [[free software project|https://github.com/AF83/ucengine/blob/ma
 
 ## Technology agnostic
 
-You can build your applications with your preferred language. We currently support Erlang, Ruby and javascript. See the [[javascript|ucejs]] and [[ruby|ucengine-rbl]] API.
+You can build your applications with your preferred language. We currently support Erlang, Ruby and javascript. See the [[javascript|ucejs]] and [[ruby|ucengine-rb]] API.
 
 ## A bit of vocabulary
 
