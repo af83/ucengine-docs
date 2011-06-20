@@ -1,4 +1,4 @@
-CC_GOLLUM_SITE = --allow_elements embed,object --allow_attributes src --allow_protocols irc
+CC_GOLLUM_SITE += --allow_elements embed,object --allow_attributes src --allow_protocols irc
 
 doc:
 	gollum-site generate $(CC_GOLLUM_SITE)
