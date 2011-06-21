@@ -58,8 +58,12 @@ A widget is the easiest way to add interactive features to your front-end applic
 
 <div style="width:500px"><iframe src="http://www.slideshare.net/slideshow/embed_code/6772504" width="500" height="400" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe></div>
 
+[Download PDF U.C.Engine (3.9Mo)](downloads/General_Presentation_UCE.pdf).
+
 ### U.C.Engine @ fosdem 2011
 
 <div style="width:500px"><iframe src="http://www.slideshare.net/slideshow/embed_code/7092130" width="500" height="400" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe></div>
+
+[Download PDF U.C.Engine @ fosdem 2011 (743Ko)](downloads/UCE_Fosdem_2011.pdf).
 
 Further reading: [[installation|install]].
