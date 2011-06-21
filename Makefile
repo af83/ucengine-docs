@@ -1,6 +1,6 @@
 CC_GOLLUM_SITE += --allow_elements embed,object --allow_attributes src --allow_protocols irc
 
-doc:
+doc: clean
 	gollum-site generate $(CC_GOLLUM_SITE)
 
 	cd _site && ln -s Home.html index.html
