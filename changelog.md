@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.5 to 0.6 (currently in development)
+## 0.5 to 0.5.1 (currently in development)
 
 * Fix long polling with nginx (again).
 * API:
@@ -9,6 +9,7 @@
   * Update file upload api to allow metadata in multipart/form-data.
   * Add *forceContentType* parameter on file upload api.
   * Add an *order* parameter when listing files on a meeting.
+  * Many bug fix.
 * [[uce.js|ucejs]]:
   * add `UCEngine.meeting(name).can` and `UCEngine.meeting(name).canCurrentUser`.
 * [[Filesharing brick|brick_filesharing]]
@@ -18,7 +19,7 @@
   * No more options when options are mandatory.
 * Improved many widgets.
 * Improved documentation.
-* Bricks have been extrated from U.C.Engine main repository.
+* Bricks have been extracted from U.C.Engine main repository.
 
 ## 0.4 to 0.5
 
