@@ -17,6 +17,7 @@
 * Refactored [[ucengine-admin]]:
   * the domain as first argument (except for *time get*).
   * No more options when options are mandatory.
+* Add *bind_ip* config parameter.
 * Improved many widgets.
 * Improved documentation.
 * Bricks have been extracted from U.C.Engine main repository.

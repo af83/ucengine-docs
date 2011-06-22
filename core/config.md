@@ -92,6 +92,14 @@ Here is an example of how it could looks like:
   {"translation", "d713ab03c0280f82708f865ffa2240a38c26f010"}]}.
 ```
 
+## Bind ip
+
+Specific IP address that U.C.Engine will listen on.
+
+```erlang
+{bind_ip, {0,0,0,0}}.
+```
+
 ## Port
 
 ```erlang
