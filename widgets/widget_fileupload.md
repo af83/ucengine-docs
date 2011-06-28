@@ -4,7 +4,7 @@ Upload file in current meeting, list uploaded files and allow user to preview or
 
 ## Location
 
-File upload widget is located at *priv/www/lib/file_upload/file_upload.ui.js*.
+https://github.com/AF83/ucengine-widgets
 
 ## Dependencies
 

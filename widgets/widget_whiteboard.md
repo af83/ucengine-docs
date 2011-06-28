@@ -4,7 +4,7 @@ The whiteboard widget allow you to draw in real time with other users.
 
 ## Location
 
-The whiteboard widget is located at *priv/www/lib/whiteboard/whiteboard.ui.js*.
+https://github.com/AF83/ucengine-widgets
 
 ## Dependencies
 

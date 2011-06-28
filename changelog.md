@@ -21,6 +21,7 @@
 * Improved many widgets.
 * Improved documentation.
 * Bricks have been extracted from U.C.Engine main repository.
+* Widgets have been extrated from U.C.Engine main repository.
 
 ## 0.4 to 0.5
 

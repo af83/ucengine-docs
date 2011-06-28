@@ -5,7 +5,7 @@ with other participants of the meeting.
 
 ## Location
 
-File sharing widget is located at *priv/www/lib/file_sharing/file_sharing.ui.js*.
+https://github.com/AF83/ucengine-widgets
 
 ## Dependencies
 

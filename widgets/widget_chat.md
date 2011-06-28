@@ -8,7 +8,7 @@ It is also integrated with:
 
 ## Location
 
-Chat widget is located at *priv/www/lib/chat/chat.ui.js*.
+https://github.com/AF83/ucengine-widgets
 
 ## Dependencies
 

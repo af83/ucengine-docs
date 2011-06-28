@@ -6,7 +6,7 @@ You must use this widget with the [[erlyvideo brick|erlyvideo]].
 
 ## Location
 
-Video widget is located at *priv/www/lib/video/video.ui.js*.
+https://github.com/AF83/ucengine-widgets
 
 ## Dependencies
 
