@@ -80,6 +80,8 @@ Then build the server:
 
 Now your U.C.Engine instance is running, go to [localhost:5280](http://localhost:5280/).
 
+You can copy rel/ucengine to other folder or server without problems and discard the git repository.
+
 ## Inject some data
 
 If you want to play with U.C.Engine, you can start the *demo* with some data (meetings, users, ...).
