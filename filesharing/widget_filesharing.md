@@ -10,7 +10,7 @@ https://github.com/AF83/ucengine-widgets
 ## Dependencies
 
 * [[jQuery UI|http://jqueryui.com/]]
-* [[UCE widget|https://github.com/AF83/ucengine/blob/master/priv/www/lib/ucewidget.js]]
+* [[UCE widget|https://github.com/AF83/ucengine/blob/master/wwwroot/lib/ucewidget.js]]
 
 ## Options
 

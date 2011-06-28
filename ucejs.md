@@ -2,7 +2,7 @@
 
 ## Location
 
-uce.js is located at [priv/www/lib/uce.js](https://github.com/AF83/ucengine/blob/master/priv/www/lib/uce.js).
+uce.js is located at [wwwroot/lib/uce.js](https://github.com/AF83/ucengine/blob/master/wwwroot/lib/uce.js).
 
 ## Dependencies
 

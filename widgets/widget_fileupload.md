@@ -9,8 +9,8 @@ https://github.com/AF83/ucengine-widgets
 ## Dependencies
 
 * [[jQuery UI|http://jqueryui.com/]]
-* [[UCE widget|https://github.com/AF83/ucengine/blob/master/priv/www/lib/ucewidget.js]]
-* [jQuery strftime](http://projects.nocternity.net/index.py/en/jquery-strftime): *priv/www/lib/jquery.strftime.minified.js*
+* [[UCE widget|https://github.com/AF83/ucengine/blob/master/wwwroot/lib/ucewidget.js]]
+* [jQuery strftime](http://projects.nocternity.net/index.py/en/jquery-strftime)
 
 ## Options
 

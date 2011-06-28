@@ -106,13 +106,13 @@ Specific IP address that U.C.Engine will listen on.
 {port, 5280}.
 ```
 
-## Root
+## Wwwroot
 
-The `root` key allow you to indicate which directory you want to be served by the embedded web server.
+The `wwwroot` key allow you to indicate which directory you want to be served by the embedded web server.
 This directory is usefull to serve your own static files.
 
 ```erlang
-{root, "priv/www/"}.
+{wwwroot, "wwwroot/"}.
 ```
 
 ## Data

@@ -29,7 +29,7 @@ See [[ucengine-admin]] for more informations.
 
 ## Start hacking
 
-Create a folder *chat* in *priv/www*, with an index.html:
+Create a folder *chat* in *wwwroot*, with an index.html:
 
     $> mkdir -p rel/ucengine/priv/www/chat/js
 
