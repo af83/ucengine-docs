@@ -3,6 +3,7 @@
 ## 0.5 to 0.5.1 (currently in development)
 
 * Fix long polling with nginx (again).
+* Any requests with unrecognized host header will no longer have a 404 response, but an empty response.
 * API:
   * Nobody can push 'internal.*' events from API.
   * Now sent metadata when uploading a file can be retrieved through the corresponding internal.file.add event.
