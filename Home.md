@@ -13,7 +13,7 @@ U.C.Engine is a [[free software project|https://github.com/AF83/ucengine/blob/ma
 See the [[introduction]] to learn some of the concepts of U.C.Engine.
 
 * [[Introduction|introduction]] - [[Installation|install]]
-* [[Getting started with a video/chat application|quickstartjs]]
+* **Tutorial** : [[Play with API and command line tool|tutorial_1_api_cli]] - [[Creating a chat widget|tutorial_2_js_app]]
 * [[Guide for creating a widget|cookbook_widgets]]
 * [[Guide for creating a brick|cookbook_brick]]
 
@@ -49,7 +49,7 @@ Building an application with U.C.Engine is mainly a question of adding bricks to
 
 ## Help/Discuss
 
-* [[Frequently asked questions|faq]]
+* [[Frequently asked questions (FAQ)|faq]]
 * [U.C.Engine mailing-list](http://groups.google.com/group/ucengine)
 * IRC: [#ucengine](irc:ucengine@irc.freenode.net) on freenode
 

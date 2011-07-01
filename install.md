@@ -103,4 +103,4 @@ And few users:
 ## Further reading
 
 * Control U.C.Engine with [[ucengine-admin]]
-* Learn how to [[create javascript applications|quickstartjs]]
+* Start the tutorial, [[playing with API and command line tool|tutorial_1_api_cli]]
