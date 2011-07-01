@@ -2,6 +2,8 @@
 
 Docs of U.C.Engine in a [gollum](http://github.com/github/gollum) wiki.
 
+You can find the U.C.Engine document in [docs.ucengine.org](http://docs.ucengine.org/).
+
 ## Installation
 
 ## Generating the documentation
@@ -15,10 +17,9 @@ To generate the documentation, use the following command:
 
     $ make doc
 
-When you are editing the doc, you probably want to see your work. To do so, use
-gollum-site :
+When you are editing the doc, you probably want to see your work.
 
-    $ gollum-site generate --working && gollum-site serve
+    $ make working
 
 ## License
 
