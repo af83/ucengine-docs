@@ -12,7 +12,7 @@ You can also have a look at the [[widget hopper|widget_hopper]].
 * Engine optimizations - **Done**
 * More documentation - **Done**
 
-## April - June 2011
+## April - July 2011
 
 * HTTPS implementation
 * Office document sharing widget and brick
@@ -26,8 +26,10 @@ You can also have a look at the [[widget hopper|widget_hopper]].
 * Engine optimizations
 * Even more documentation
 
-## July - December 2011
+## August - December 2011
 
 * New widgets depending on demand (see the [[widget hopper|widget_hopper]])
 * Engine optimizations
 * Documentation again
+* Streaming API
+* WebSocket API
