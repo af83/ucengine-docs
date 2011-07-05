@@ -10,6 +10,8 @@
   * Update file upload api to allow metadata in multipart/form-data.
   * Add *forceContentType* parameter on file upload api.
   * Add an *order* parameter when listing files on a meeting.
+  * Support of OPTIONS with better CORS handling (thanks elishowk).
+  * Support of HEAD method.
   * Many bug fix.
 * [[uce.js|ucejs]]:
   * add `UCEngine.meeting(name).can` and `UCEngine.meeting(name).canCurrentUser`.
