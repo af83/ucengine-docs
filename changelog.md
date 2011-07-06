@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.5 to 0.5.1 (currently in development)
+## 0.5 to 0.5.1
 
 * Fix long polling with nginx (again).
 * Any requests with unrecognized host header will no longer have a 404 response, but an empty response.
