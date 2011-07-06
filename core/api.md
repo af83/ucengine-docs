@@ -411,21 +411,21 @@ Parameter                              | Description                           |
 
 #### Returned values
 
-    200 {"result":[{    "id":"34334839681323313178318538371527",
+    200 {"result":[{    "uid":"34334839681323313178318538371527",
                         "name":"jeffrey.lebowski@bathtub.com",
                         "domain":"ucengine.org",
                         "auth":"password",
                         "metadata":{
                                 "nickname":"The Dude"}
                         },
-               {        "id":"18519526811067452830480557737028",
+               {        "uid":"18519526811067452830480557737028",
                         "name":"walter.sobchak@bowling.org",
                         "domain":"ucengine.org",
                         "auth":"password",
                         "metadata":{
                                 "nickname":"The Veteran"}
                         },
-               {        "id":"40608184277610677427985745048015",
+               {        "uid":"40608184277610677427985745048015",
                         "name":"donny@steelcan.org",
                         "domain":"ucengine.org",
                         "auth":"password",
@@ -810,6 +810,11 @@ Parameter                              | Description                           |
 
     DELETE /role/{name}
 
+Parameter                              | Description                           | Example
+---------------------------------------|---------------------------------------|------------------------------------------------------------
+**Url Parameters**                     |                                       |
+`name`                                 | The role name                         | `admin`, `speaker`, ...
+
 #### Returned values
 
     200 { "result": "ok } // the role has been successfully deleted
@@ -826,6 +831,8 @@ Parameter                              | Description                           |
 
 Parameter                              | Description                           | Example
 ---------------------------------------|---------------------------------------|------------------------------------------------------------
+**Url Parameters**                     |                                       |
+`name`                                 | The role name                         | `admin`, `speaker`, ...
 **Encoded Parameters**                 |                                       |
 `object`                               | The kind of object to access to       | `user`, `meeting`, ...
 `action`                               | The action allowed on the object      | `add`, `update`, ...
@@ -854,6 +861,7 @@ It is not an error to set an access right twice or more, the access rights will 
 Parameter                              | Description                           | Example
 ---------------------------------------|---------------------------------------|------------------------------------------------------------
 **URL parameters**                     |                                       |
+`name`                                 | The role name                         | `admin`, `speaker`, ...
 `object`                               | The kind of object to access to       | `user`, `meeting`, ...
 `action`                               | The action allowed on the object      | `add`, `update`, ...
 **Encoded Parameters**                 |                                       |
@@ -947,3 +955,4 @@ Parameter                              | Description                            
     401 { "error": "unauthorized" } : the caller is not authorized to check the user's rights
 
     404 { "error": "not_found" } : the user does not exist
+
