@@ -503,7 +503,7 @@ Parameter                              | Description                           |
 `count`                                | Number of events per page             | `42`
 `page`                                 | Index of the first page to return     | `1`
 `order`                                | Sorting order                         | `asc` or `desc`
-`search`                               | Keywords that events should match     | `chuck,bruce`
+`search`                               | Keywords that events should match, forcing use of erlang search backend     | `chuck,bruce`
 `parent`                               | Id of the parent event                | `48320948320982309`
 `_async`                               | Method used to retrieve the events    | `no` or `lp`
 
@@ -572,7 +572,7 @@ Parameter                              | Description                           |
 #### Search terms syntax
 
 The search terms can be any whitespace-separated words and will be
-searched in metadata. A few filters, similar to the parameters used in
+searched in metadata, using the configured search back-end. A few filters, similar to the parameters used in
 the above listing method, are available:
 
 Parameter                              | Description                           | Example
