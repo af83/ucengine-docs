@@ -2,7 +2,7 @@
 
 Docs of U.C.Engine in a [gollum](http://github.com/github/gollum) wiki.
 
-You can find the U.C.Engine document in [docs.ucengine.org](http://docs.ucengine.org/).
+You can find the U.C.Engine documentation in [docs.ucengine.org](http://docs.ucengine.org/).
 
 ## Installation
 
