@@ -4,7 +4,7 @@ You'll find here a list of companies providing services around U.C.Engine.
 
 ## U.C.Engine editor
 
-**U.C.Engine by af83**
+### U.C.Engine by af83
 
 af83 is the creator and main editor of U.C.Engine.
 
@@ -16,9 +16,9 @@ More detail on our [[U.C.Engine by af83 website|http://ucengine.af83.com]].
 
 Companies that integrate U.C.Engine to build custom applications for their customers.
 
-**U.C.Engine meeting by af83**
+### U.C.Engine meeting by af83
 
-[[meeting.ucengine.com|https://meeting.ucengine.com/]]
+<a href="https://meeting.ucengine.com/"><img class="screenshot" src="static/img/screenshots/meeting.png" /></a>
 
 ## Distributions based on U.C.Engine
 

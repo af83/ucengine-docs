@@ -62,3 +62,10 @@ ol.toc {
   background-color: white;
   border: 1px #DEDEDE solid;
 }
+
+.screenshot {
+    border: solid 1px #C6C4C4;
+    -moz-box-shadow: 5px 5px 5px #ccc;
+    -webkit-box-shadow: 5px 5px 5px #ccc;
+    box-shadow: 5px 5px 5px #ccc;
+}
