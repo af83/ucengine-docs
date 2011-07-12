@@ -12,7 +12,9 @@ If you have any questions, don't hesitate to ask the team on:
 1. [Fork us](https://github.com/AF83/ucengine)
 2. Create your patch in a topic branch
 3. Add some unit tests
-4. [[Launch tests|tests]]
+4. Launch tests
+   * Erlang: `$> make tests`
+   * Javascript: Point your browser to http://localhost:5280/tests.html.
 5. Send pull request
 
 **Note on branching**:
