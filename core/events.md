@@ -6,6 +6,8 @@ This page list all events triggered by U.C.Engine core. Users cannot create thes
 
 ### internal.meeting.add
 
+It notifies that a new meeting have been created.
+
 Example:
 
 ```javascript
@@ -19,6 +21,8 @@ Example:
 ```
 
 ### internal.meeting.update
+
+It notifies that the meeting have been updated.
 
 Example:
 
@@ -35,7 +39,7 @@ Example:
 
 ### internal.file.add
 
-Sent by U.C.Engine. It notifies that a new file have been added.
+It notifies that a new file have been added.
 
 Metadata       | Description
 ---------------|-------------------------------------------------------------------------------------------------------
@@ -64,7 +68,7 @@ Example:
 
 ### internal.file.delete
 
-Sent by U.C.Engine. It notifies that a new file have been deleted.
+It notifies that a new file have been deleted.
 
 Metadata       | Description
 ---------------|-------------------------------------------------------------------------------------------------------
@@ -89,6 +93,12 @@ Example:
 
 ### internal.role.add
 
+It notifies that a role have been associate to the user.
+
+Metadata       | Description
+---------------|-------------------------------------------------------------------------------------------------------
+name           | name of the role
+
 Example:
 
 ```javascript
@@ -105,6 +115,12 @@ Example:
 
 ### internal.role.delete
 
+It notifies that a role have been deassociated to the user.
+
+Metadata       | Description
+---------------|-------------------------------------------------------------------------------------------------------
+name           | name of the role
+
 Example:
 
 ```javascript
@@ -120,10 +136,31 @@ Example:
 ```
 
 ### internal.presence.add
+
+```javascript
+{ "type"     : "internal.presence.add",
+  "domain"   : "localhost",
+  "datetime" : 1292597388050,
+  "id"       : "74647005885125029457242944483441",
+  "from"     : "uid_63444326443_50150",
+  "metadata" : {}
+}
+```
+
 ### internal.presence.delete
+
+```javascript
+{ "type"     : "internal.presence.delete",
+  "domain"   : "localhost",
+  "datetime" : 1292597388050,
+  "id"       : "74647005885125029457242944483441",
+  "from"     : "uid_63444326443_50150",
+  "metadata" : {}
+}
+
 ### internal.roster.add
 
-Sent by U.C.Engine. It notifies that a new user entered the current meeting.
+It notifies that a new user entered the current meeting.
 
 Example:
 
@@ -140,7 +177,7 @@ Example:
 
 ### internal.roster.delete
 
-Sent by U.C.Engine. It notifies that a new user exited the current meeting.
+It notifies that a new user exited the current meeting.
 
 Example:
 
@@ -156,11 +193,32 @@ Example:
 ```
 
 ### internal.user.add
+
+```javascript
+{ "type"     : "internal.user.add",
+  "domain"   : "localhost",
+  "datetime" : 1292600689363,
+  "id"       : "05214339923220971091870275941078",
+  "from"     : "uid_63444326443_50150",
+  "metadata" : {}
+}
+```
+
 ### internal.user.update
+
+```javascript
+{ "type"     : "internal.user.update",
+  "domain"   : "localhost",
+  "datetime" : 1292600689363,
+  "id"       : "05214339923220971091870275941078",
+  "from"     : "uid_63444326443_50150",
+  "metadata" : {}
+}
+```
 
 ### internal.user.role.add
 
-Sent by U.C.Engine. It notifies that a user get a new role.
+It notifies that a user get a new role.
 
 Example:
 
@@ -180,7 +238,7 @@ Example:
 
 ### internal.user.role.delete
 
-Sent by U.C.Engine. It notifies that a user loose a role.
+It notifies that a user loose a role.
 
 Example:
 
