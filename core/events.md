@@ -6,7 +6,32 @@ This page list all events triggered by U.C.Engine core. Users cannot create thes
 
 ### internal.meeting.add
 
+Example:
+
+```javascript
+{ "type"     : "internal.meeting.add",
+  "domain"   : "localhost",
+  "datetime" : 1292597388050,
+  "id"       : "74647005885125029457242944483441",
+  "from"     : "uid_63444326443_50150",
+  "metadata" : {}
+}
+```
+
 ### internal.meeting.update
+
+Example:
+
+```javascript
+{ "type"     : "internal.meeting.update",
+  "domain"   : "localhost",
+  "datetime" : 1292597388050,
+  "id"       : "74647005885125029457242944483441",
+  "from"     : "uid_63444326443_50150",
+  "location" : "demo",
+  "metadata" : {}
+}
+```
 
 ### internal.file.add
 
