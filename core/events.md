@@ -157,6 +157,7 @@ Example:
   "from"     : "uid_63444326443_50150",
   "metadata" : {}
 }
+```
 
 ### internal.roster.add
 
