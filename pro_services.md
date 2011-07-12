@@ -16,6 +16,10 @@ More detail on our [[U.C.Engine by af83 website|http://ucengine.af83.com]].
 
 Companies that integrate U.C.Engine to build custom applications for their customers.
 
+**U.C.Engine meeting by af83**
+
+[[meeting.ucengine.com|https://meeting.ucengine.com/]]
+
 ## Distributions based on U.C.Engine
 
 Companies that provide packaged solutions based on U.C.Engine.
