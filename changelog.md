@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.5.1 to 0.5.2
+
+* New push event API with JSON accepted. You can now store json in event's metadata.
+
 ## 0.5 to 0.5.1
 
 * Fix long polling with nginx (again).

@@ -648,7 +648,38 @@ used only for this purpose.
 
 ### Send an event to U.C.Engine
 
-#### Request
+#### JSON version
+
+**This API is subject to change**. You should set the content-type of the request as *applicaton/json*.
+
+##### Request
+
+    POST /event2/
+
+    POST /event2/{meeting}
+
+Parameter                              | Description                                   | Example
+---------------------------------------|-----------------------------------------------|------------------------------------------------------------
+**URL Parameters**                     |                                               |
+`meeting`                              | Meeting id                                    | `demo`
+**JSON Body**                          |                                               |
+`type`                                 | The event's type, cannot be 'internal.*' type | `chat.message.new`
+`to`                                   |                                               |
+`parent`                               |                                               |
+`metadata`                             |                                               |
+
+##### Returned values
+
+    201 {"result": "24653994823933231622695570265810"}
+
+    400 { "error": "bad_parameters" } // at least one paremeter is missing or wrong
+
+    401 { "error": "unauthorized" } // the user is not authorized to send events to this meeting
+
+    404 { "error": "not_found" } // the meeting does not exist
+
+#### Old version
+##### Request
 
     POST /event/
 
@@ -661,9 +692,11 @@ Parameter                              | Description                            
 **Encoded Parameters**                 |                                               |
 `type`                                 | The event's type, cannot be 'internal.*' type | `chat.message.new`
 **Optional Encoded Parameters**        |                                               |
-Any other parameter                    | These will be part of the metadata            |
+`to`                                   |                                               |
+`parent`                               |                                               |
+`metadata`                             | These will be part of the metadata            |
 
-#### Returned values
+##### Returned values
 
     201 {"result": "24653994823933231622695570265810"}
 
