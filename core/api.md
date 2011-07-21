@@ -505,7 +505,6 @@ Parameter                              | Description                           |
 `order`                                | Sorting order                         | `asc` or `desc`
 `search`                               | Keywords that events should match, using the erlang search backend | `chuck,bruce`
 `parent`                               | Id of the parent event                | `48320948320982309`
-`_async`                               | Method used to retrieve the events    | `no` or `lp`
 
 #### Returned values
 
@@ -548,11 +547,72 @@ Parameter                              | Description                           |
 
 'start' and 'end' parameters allow you to frame the events :
 
-- If 'end' is missing: return all the events from `start` to the end of the timeline.
-- If 'start' and 'end' are missing: return all the events of the timeline.
-- The `limit` option can be negative. For instance, `limit=-2` will return the 2 last events of the frame.
-  Limit can also take the `last` value which is equivalent to `limit=-1`
-- The `_async` option allow you to return the events to the client in real time.
+- If `end` is missing: return all the events from `start` to the end of the timeline.
+- If `start` and 'end' are missing: return all the events of the timeline.
+
+### Retrieve the events in live
+
+#### Request
+
+    GET /live/
+
+    GET /live/{meeting}
+
+Parameter                              | Description                           | Example
+---------------------------------------|---------------------------------------|------------------------------------------------------------
+**URL Parameters**                     |                                       |
+`meeting`                              | Meeting id                            | `demo`
+**Optional Encoded Parameters**        |                                       |
+`type`                                 | The event's type                      | `internal.meeting.add`
+`start`                                | Start of the event's frame            | `63444430100`
+`from`                                 | The sender of the event               | `91020740579212808535843549778848`
+`order`                                | Sorting order                         | `asc` or `desc`
+`search`                               | Keywords that events should match, using the erlang search backend | `chuck,bruce`
+`parent`                               | Id of the parent event                | `48320948320982309`
+`mode`                                 | Mode to retrieve events               | `longpolling`
+
+#### Returned values
+
+    200 {"result": [{   "type":"join_meeting_event",
+                        "domain":"ucengine.org",
+                        "datetime":1284046079374,
+                        "id":"24653994823933231622695570265810",
+                        "location":"demo",
+                        "from":"abel.fournier_1284046072075@af83.com",
+                        "metadata":{}
+                },
+                {       "type":"post_annotation_event",
+                        "domain":"ucengine.org",
+                        "datetime":1284046082844,
+                        "id":"20196912711920626263917946711292",
+                        "location":"demo",
+                        "from":"abel.fournier_1284046072075@af83.com",
+                        "metadata":{    "language":"fr",
+                                        "text":"coucou"}
+                },
+                {       "type":"translate_annotation_event",
+                        "domain":"ucengine.org",
+                        "datetime":1284046083272,
+                        "id":"61614248092678409569587739330424",
+                        "location":"demo",
+                        "from":"abel.fournier_1284046072075@af83.com",
+                        "metadata":{    "traduction":"cuckoo",
+                                        "language":"en"}
+                },
+                ...
+    ]}
+
+    400 { "error": "bad_parameters" } // at least one paremeter is missing or wrong
+
+    401 { "error": "unauthorized" } // the user is not authorized to list the events of this meeting
+
+    404 { "error": "not_found" } // the meeting does not exist
+
+#### Notes
+
+This is the good method to retrieve events in live.
+
+- You have to update the `start` parameter each time you ask te API. You can use the time api or get the datetime of the last event received.
 
 ### Search events in U.C.Engine
 
