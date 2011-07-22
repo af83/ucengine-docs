@@ -566,7 +566,6 @@ Parameter                              | Description                           |
 `type`                                 | The event's type                      | `internal.meeting.add`
 `start`                                | Start of the event's frame            | `63444430100`
 `from`                                 | The sender of the event               | `91020740579212808535843549778848`
-`order`                                | Sorting order                         | `asc` or `desc`
 `search`                               | Keywords that events should match, using the erlang search backend | `chuck,bruce`
 `parent`                               | Id of the parent event                | `48320948320982309`
 `mode`                                 | Mode to retrieve events               | `longpolling`
