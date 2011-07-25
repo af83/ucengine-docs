@@ -568,7 +568,7 @@ Parameter                              | Description                           |
 `from`                                 | The sender of the event               | `91020740579212808535843549778848`
 `search`                               | Keywords that events should match, using the erlang search backend | `chuck,bruce`
 `parent`                               | Id of the parent event                | `48320948320982309`
-`mode`                                 | Mode to retrieve events               | `longpolling`
+`mode`                                 | Mode to retrieve events               | `longpolling` or `eventsource`
 
 #### Returned values
 
@@ -612,6 +612,7 @@ Parameter                              | Description                           |
 This is the good method to retrieve events in live.
 
 - You have to update the `start` parameter each time you ask te API. You can use the time api or get the datetime of the last event received.
+- Use the `mode` parameter to switch between the longpolling or streaming api.
 
 ### Search events in U.C.Engine
 
