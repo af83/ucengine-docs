@@ -570,7 +570,7 @@ Parameter                              | Description                           |
 `parent`                               | Id of the parent event                | `48320948320982309`
 `mode`                                 | Mode to retrieve events               | `longpolling` or `eventsource`
 
-#### Returned values
+#### Returned values with long polling api
 
     200 {"result": [{   "type":"join_meeting_event",
                         "domain":"ucengine.org",
@@ -607,12 +607,19 @@ Parameter                              | Description                           |
 
     404 { "error": "not_found" } // the meeting does not exist
 
+#### Returned values with eventsource api
+
+    data: {"type":"join_meeting_event", "domain":"ucengine.org", "datetime":1284046079374, "id":"24653994823933231622695570265810", "location":"demo", "from":"abel.fournier_1284046072075@af83.com", "metadata":{}}
+
+    data: {"type":"join_meeting_event", "domain":"ucengine.org", "datetime":1284046079374, "id":"24653994823933231622695570265810", "location":"demo", "from":"abel.fournier_1284046072075@af83.com", "metadata":{}}
+
 #### Notes
 
 This is the good method to retrieve events in live.
 
 - You have to update the `start` parameter each time you ask te API. You can use the time api or get the datetime of the last event received.
-- Use the `mode` parameter to switch between the longpolling or streaming api.
+- Use the `mode` parameter to switch between the longpolling or eventsource api.
+- The eventsource api is compatible with [[EventSource specification|http://dev.w3.org/html5/eventsource/]].
 
 ### Search events in U.C.Engine
 
