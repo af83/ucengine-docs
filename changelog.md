@@ -2,11 +2,13 @@
 
 ## 0.5.1 to 0.6.0
 
+* `/api/0.5` is not available anymore, use `/api/0.6` instead.
 * New push event API with JSON accepted. You can now store json in event's metadata.
 * *Live api*
  * Add a streaming api compatible with [[EventSource|http://dev.w3.org/html5/eventsource/]]
  * New live entry point for long polling stuff
 * Uce.js can now choose the best api to retrieve events. Or you can force the transport.
+* add unbind method
 
 ## 0.5 to 0.5.1
 

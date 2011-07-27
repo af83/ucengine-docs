@@ -537,7 +537,7 @@ meeting.pushTo('recipient@example.com', 'my.event', {property: 'some property'},
 });
 ```
 
-## Start retriving live events
+## Start retrieving live events
 
 Subscribe to meetings events with long polling or streaming api..
 

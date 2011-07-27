@@ -2,7 +2,7 @@
 
 ## General informations about the API
 
-The base URL is `http://demo.ucengine.org/api/0.5/`
+The base URL is `/api/0.6/`
 All the others API URLs are relative to this one.
 
 You have to consider a few conventions :
