@@ -123,12 +123,12 @@ The `data` key allow you to indicate which directory you want to be the reposito
 {data, "data/files"}.
 ```
 
-## Long polling timeout
+## Connection timeout
 
-The `long_polling_timeout` key is usefull when you want to customize the long polling hangup timeout.
+The `connection_timeout` key is usefull when you want to customize the timeout of the live api (eventsource, longpolling, ...).
 
 ```erlang
-{long_polling_timeout, 60}.
+{connection_timeout, 60}.
 ```
 
 ## Timeout refresh

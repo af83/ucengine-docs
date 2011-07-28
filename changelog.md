@@ -7,8 +7,9 @@
 * *Live api*
  * Add a streaming api compatible with [[EventSource|http://dev.w3.org/html5/eventsource/]]
  * New live entry point for long polling stuff
+ * Renamed `long_polling_timeout` config to `connection_timeout`
 * Uce.js can now choose the best api to retrieve events. Or you can force the transport.
-* add unbind method
+ * add unbind method
 
 ## 0.5 to 0.5.1
 
