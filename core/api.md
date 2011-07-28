@@ -717,13 +717,13 @@ used only for this purpose.
 
 #### JSON version
 
-**This API is subject to change**. You should set the content-type of the request as *applicaton/json*.
+You must set the content-type of the request as *applicaton/json*.
 
 ##### Request
 
-    POST /event2/
+    POST /event/
 
-    POST /event2/{meeting}
+    POST /event/{Meeting}
 
 Parameter                              | Description                                   | Example
 ---------------------------------------|-----------------------------------------------|------------------------------------------------------------
