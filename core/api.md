@@ -162,6 +162,8 @@ Parameter                              | Description                           |
 
     401 { "error": "unauthorized" }
 
+    409 { "error": "conflict" }
+
     500 { "error": "unexpected_error" }
 
 ### Modify user's informations
@@ -1015,7 +1017,7 @@ If the location parameter is omitted the role will apply on all locations.
 
 Parameter                              | Description                                   | Example
 ---------------------------------------|-----------------------------------------------|------------------------------------------------------------
-**URL Parameters**                     |                                               | 
+**URL Parameters**                     |                                               |
 `uid`                                  | User id                                       | `91020740579212808535843549778848`
 `role`                                 | The role name                                 | `admin`, `speaker`, ...
 `location`                             | The location (meeting) where the role applies | `mymeeting`
@@ -1038,7 +1040,7 @@ Parameter                              | Description                            
 
 Parameter                              | Description                                   | Example
 ---------------------------------------|-----------------------------------------------|------------------------------------------------------------
-**URL Parameters**                     |                                               | 
+**URL Parameters**                     |                                               |
 `uid`                                  | User id                                       | `91020740579212808535843549778848`
 `object`                               | The object on which the right apply           | `meeting`  or `event`
 `action`                               | Authorized action for this right              | `add` or `deletè or `join` ...
