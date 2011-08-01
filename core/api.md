@@ -217,6 +217,37 @@ Parameter                              | Description                           |
 
     500 { "error": "unexpected_error" }
 
+### Find user's informations
+
+Find user by name or by id.
+
+#### Request
+
+    GET /find/user
+
+Parameter                              | Description                           | Example
+---------------------------------------|---------------------------------------|------------------------------------------------------------
+**URL Parameters**                     |                                       |
+`by_name`                              | User name                             | `romain.gauthier@af83.com`
+`by_id`                                | User id                               | `91020740579212808535843549778848` 
+
+#### Returned values
+
+     200 {"result": {    "id": "91020740579212808535843549778848",
+                         "name":"romain.gauthier@af83.com",
+                         "domain":"ucengine.org",
+                         "auth":"password",
+                         "metadata":{
+                            "nickname":"Romain - el paisano - Gauthier"
+                         }
+                    }}
+
+    401 { "error": "unauthorized" }
+
+    404 { "error": "not_found" }
+
+    500 { "error": "unexpected_error" }
+
 ### Delete a user
 
 #### Request
