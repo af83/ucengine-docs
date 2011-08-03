@@ -203,11 +203,11 @@ Parameter                              | Description                           |
 #### Returned values
 
      200 {"result": {    "id": "91020740579212808535843549778848",
-                         "name":"romain.gauthier@af83.com",
+                         "name":"jean.roucas@af83.com",
                          "domain":"ucengine.org",
                          "auth":"password",
                          "metadata":{
-                            "nickname":"Romain - el paisano - Gauthier"
+                            "nickname":"Jean Roucas"
                          }
                     }}
 
@@ -234,13 +234,15 @@ Parameter                              | Description                           |
 #### Returned values
 
      200 {"result": {    "id": "91020740579212808535843549778848",
-                         "name":"romain.gauthier@af83.com",
+                         "name":"bernard.menez@af83.com",
                          "domain":"ucengine.org",
                          "auth":"password",
                          "metadata":{
-                            "nickname":"Romain - el paisano - Gauthier"
+                            "nickname":"Bernard Menez"
                          }
                     }}
+
+    400 { "error": "missing_parameters"}
 
     401 { "error": "unauthorized" }
 
@@ -931,7 +933,7 @@ Parameter                              | Description                           |
 
     201 { "result": "created" } // the role has been successfully added
 
-    400 { "error": "missing_parameters" } // at least one paremeter is missing (probably the 'name')
+    400 { "error": "missing_parameters" } // at least one paremeter is missing
 
     401 { "error": "unauthorized" } // the user is not authorized to add a role
 
