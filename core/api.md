@@ -952,7 +952,7 @@ Parameter                              | Description                           |
 
 #### Returned values
 
-    200 { "result": "ok } // the role has been successfully deleted
+    200 { "result": "ok" } // the role has been successfully deleted
 
     401 { "error": "unauthorized" } // the user is not authorized to delete this role
 
