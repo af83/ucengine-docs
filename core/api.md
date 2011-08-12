@@ -2,7 +2,7 @@
 
 ## General informations about the API
 
-The base URL is `http://demo.ucengine.org/api/0.5/`
+The base URL is `/api/0.6/`
 All the others API URLs are relative to this one.
 
 You have to consider a few conventions :
@@ -162,6 +162,8 @@ Parameter                              | Description                           |
 
     401 { "error": "unauthorized" }
 
+    409 { "error": "conflict" }
+
     500 { "error": "unexpected_error" }
 
 ### Modify user's informations
@@ -201,13 +203,46 @@ Parameter                              | Description                           |
 #### Returned values
 
      200 {"result": {    "id": "91020740579212808535843549778848",
-                         "name":"romain.gauthier@af83.com",
+                         "name":"jean.roucas@af83.com",
                          "domain":"ucengine.org",
                          "auth":"password",
                          "metadata":{
-                            "nickname":"Romain - el paisano - Gauthier"
+                            "nickname":"Jean Roucas"
                          }
                     }}
+
+    401 { "error": "unauthorized" }
+
+    404 { "error": "not_found" }
+
+    500 { "error": "unexpected_error" }
+
+### Find user's informations
+
+Find user by name or by id.
+
+#### Request
+
+    GET /find/user
+
+Parameter                              | Description                           | Example
+---------------------------------------|---------------------------------------|------------------------------------------------------------
+**URL Parameters**                     |                                       |
+`by_name`                              | User name                             | `romain.gauthier@af83.com`
+`by_id`                                | User id                               | `91020740579212808535843549778848` 
+
+#### Returned values
+
+     200 {"result": {    "id": "91020740579212808535843549778848",
+                         "name":"bernard.menez@af83.com",
+                         "domain":"ucengine.org",
+                         "auth":"password",
+                         "metadata":{
+                            "nickname":"Bernard Menez"
+                         }
+                    }}
+
+    400 { "error": "missing_parameters"}
 
     401 { "error": "unauthorized" }
 
@@ -568,9 +603,9 @@ Parameter                              | Description                           |
 `from`                                 | The sender of the event               | `91020740579212808535843549778848`
 `search`                               | Keywords that events should match, using the erlang search backend | `chuck,bruce`
 `parent`                               | Id of the parent event                | `48320948320982309`
-`mode`                                 | Mode to retrieve events               | `longpolling`
+`mode`                                 | Mode to retrieve events               | `longpolling` or `eventsource`
 
-#### Returned values
+#### Returned values with long polling api
 
     200 {"result": [{   "type":"join_meeting_event",
                         "domain":"ucengine.org",
@@ -607,11 +642,19 @@ Parameter                              | Description                           |
 
     404 { "error": "not_found" } // the meeting does not exist
 
+#### Returned values with eventsource api
+
+    data: {"type":"join_meeting_event", "domain":"ucengine.org", "datetime":1284046079374, "id":"24653994823933231622695570265810", "location":"demo", "from":"abel.fournier_1284046072075@af83.com", "metadata":{}}
+
+    data: {"type":"join_meeting_event", "domain":"ucengine.org", "datetime":1284046079374, "id":"24653994823933231622695570265810", "location":"demo", "from":"abel.fournier_1284046072075@af83.com", "metadata":{}}
+
 #### Notes
 
 This is the good method to retrieve events in live.
 
 - You have to update the `start` parameter each time you ask te API. You can use the time api or get the datetime of the last event received.
+- Use the `mode` parameter to switch between the longpolling or eventsource api.
+- The eventsource api is compatible with [[EventSource specification|http://dev.w3.org/html5/eventsource/]].
 
 ### Search events in U.C.Engine
 
@@ -709,13 +752,13 @@ used only for this purpose.
 
 #### JSON version
 
-**This API is subject to change**. You should set the content-type of the request as *applicaton/json*.
+You must set the content-type of the request as *applicaton/json*.
 
 ##### Request
 
-    POST /event2/
+    POST /event/
 
-    POST /event2/{meeting}
+    POST /event/{Meeting}
 
 Parameter                              | Description                                   | Example
 ---------------------------------------|-----------------------------------------------|------------------------------------------------------------
@@ -890,7 +933,7 @@ Parameter                              | Description                           |
 
     201 { "result": "created" } // the role has been successfully added
 
-    400 { "error": "missing_parameters" } // at least one paremeter is missing (probably the 'name')
+    400 { "error": "missing_parameters" } // at least one paremeter is missing
 
     401 { "error": "unauthorized" } // the user is not authorized to add a role
 
@@ -909,7 +952,7 @@ Parameter                              | Description                           |
 
 #### Returned values
 
-    200 { "result": "ok } // the role has been successfully deleted
+    200 { "result": "ok" } // the role has been successfully deleted
 
     401 { "error": "unauthorized" } // the user is not authorized to delete this role
 
@@ -1007,7 +1050,7 @@ If the location parameter is omitted the role will apply on all locations.
 
 Parameter                              | Description                                   | Example
 ---------------------------------------|-----------------------------------------------|------------------------------------------------------------
-**URL Parameters**                     |                                               | 
+**URL Parameters**                     |                                               |
 `uid`                                  | User id                                       | `91020740579212808535843549778848`
 `role`                                 | The role name                                 | `admin`, `speaker`, ...
 `location`                             | The location (meeting) where the role applies | `mymeeting`
@@ -1030,7 +1073,7 @@ Parameter                              | Description                            
 
 Parameter                              | Description                                   | Example
 ---------------------------------------|-----------------------------------------------|------------------------------------------------------------
-**URL Parameters**                     |                                               | 
+**URL Parameters**                     |                                               |
 `uid`                                  | User id                                       | `91020740579212808535843549778848`
 `object`                               | The object on which the right apply           | `meeting`  or `event`
 `action`                               | Authorized action for this right              | `add` or `deletè or `join` ...

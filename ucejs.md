@@ -537,15 +537,16 @@ meeting.pushTo('recipient@example.com', 'my.event', {property: 'some property'},
 });
 ```
 
-## Start long polling
+## Start retrieving live events
 
-Subscribe to meetings events in long polling.
+Subscribe to meetings events with long polling or streaming api..
 
-*UCEngine.meeting(meeting).startLoop(start)*
+*UCEngine.meeting(meeting).startLoop([start, transports])*
 
 Parameter                              | Description
 ---------------------------------------|---------------------------------------
-`start`                                |
+`start`                                | datetime of last event
+`transports`                           | transports to retrieve events (see waitEvents)
 
 ### Example
 
@@ -559,7 +560,7 @@ meeting.startLoop();
 
 ## Wait events
 
-*UCEngine.meeting(meeting).waitEvents(params, callback, one_shot)*
+*UCEngine.meeting(meeting).waitEvents(params, callback, [one_shot, transports])*
 
 ### Parameters
 
@@ -569,6 +570,7 @@ Parameter                              | Description
 `params`                               | See the [events API of U.C.Engine](/api.html#events)
 `callback`                             |
 `oneshot`                              | Either or not the method should keep looping
+`transports`                           | Transports to retrieve events (*longpolling* or *eventsource*). Default is all transports.
 
 ## Get events
 
