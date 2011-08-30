@@ -208,3 +208,11 @@ Level of logs. Values: debug, info, warning, error, critical.
 
 {solr, [{host, "http://localhost:8983/solr"}]}.
 ```
+
+## Broadcasting strategy (events)
+
+Any value but `async` will enable the sync mode. Setting this to `async` will enable the async strategy, that is, clients get a key which is not persisted nor broadcasted (for a short time at least).
+
+``` erlang
+{events, async}
+```
