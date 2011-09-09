@@ -55,7 +55,7 @@ Building an application with U.C.Engine is mainly a question of adding bricks to
 
 ## Development and contributions
 
-* [[Roadmap|roadmap]] - [[Changelog|changelog]]
+* [[Changelog|changelog]]
 * [[Licenses|licenses]]
 * [[Contribution guide|contributions]]
 
