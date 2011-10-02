@@ -125,7 +125,10 @@ The `data` key allow you to indicate which directory you want to be the reposito
 
 ## Connection timeout
 
-The `connection_timeout` key is usefull when you want to customize the timeout of the live api (eventsource, longpolling, ...).
+The `connection_timeout` key is usefull when you want to customize the timeout of the live api (longpolling only).
+The connection will be closed if nothing happened during this time.
+
+Value in seconds.
 
 ```erlang
 {connection_timeout, 60}.
@@ -133,17 +136,32 @@ The `connection_timeout` key is usefull when you want to customize the timeout o
 
 ## Timeout refresh
 
+The `timeout_refresh` is the interval (in seconds) where the cleanup presences occurs.
+
+Value in seconds.
+
 ```erlang
 {timeout_refresh, 1}.
 ```
 
 ## Presence timeout
 
+The `presence_timeout` key allow you to customize the delay of inactivity for one user before being disconnected.
+
+Value in seconds.
+
 ```erlang
 {presence_timeout, 150}.
 ```
 
 ## Cache refresh
+
+The `cache_refresh` is used to customize the `cache_refresh_secs` of yaws.
+Ignore it if you don't serve your assets via U.C.Engine.
+
+A `0` value means there is no cache, and yaws will not cache any files.
+
+Value in seconds.
 
 ```erlang
 {cache_refresh, 0}.
