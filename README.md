@@ -21,6 +21,10 @@ When you are editing the doc, you probably want to see your work.
 
     $ make working
 
+When you what to push change, you probably want that the page is valid.
+
+    $ make validate
+
 ## License
 
 Creative Commons Attribution-ShareAlike 3.0 Unported License

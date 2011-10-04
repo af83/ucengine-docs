@@ -14,7 +14,7 @@ working: clean
 	gollum-site serve
 
 validate:
-	validate-website -s http://localhost:8000/ -n --no-markup-validation
+	validate-website -s http://localhost:8000/ -n
 
 clean:
 	rm -rf _site
