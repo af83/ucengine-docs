@@ -57,8 +57,6 @@ of the REST API documentation.
 
 Object         | Action       | Description
 ---------------|--------------|----------------------------------------------------------------------------------------
-infos          | get          | [[Retrieve the current domain informations|api#get-current-domain-informations]]
-infos          | update       | [[Update current domain informations|api#update-current-domain-informations]]
 meeting        | get          | [[Retrieve meeting informations|api#retrieve-meetings-informations]]
 meeting        | list         | [[List the meetings|api#list-the-meetings]]
 meeting        | add          | [[Create a meeting|api#create-a-meeting]]

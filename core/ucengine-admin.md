@@ -26,16 +26,6 @@ The following options are available:
 
     The name of the Erlang node (ex. 'node1', 'node1@localhost' or 'node1@myhost.mydomain').
 
-### Domain information
-
-  * `infos` `update`  [`--<metadata>` *value*] ...
-
-    Update the domain *domain* informations with arbitrary values
-
-  * `infos` `get`
-
-    Get informations about the domain *domain*
-
 ### Meetings
 
   * `meeting` `add` *name* [`--start` *date*] [`--end` *date*] [`--<metadata>` *value*] ... :

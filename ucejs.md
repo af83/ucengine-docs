@@ -325,39 +325,6 @@ var client = uce.createClient();
 client.attachPresence(JSON.parse(window.localStorage.previousPresence));
 ```
 
-## Get domain informations
-
-*UCEngine.infos.get(callback)*
-
-### Example
-
-```javascript
-var client = uce.createClient();
-client.infos.get(function(err, infos) {
-    // do something with infos
-});
-```
-
-## Update domain informations
-
-*UCEngine.infos.post(metadata, callback)*
-
-### Parameters
-
-Parameter                              | Description
----------------------------------------|---------------------------------------
-`metadata`                             | A flat Object wich represents the metadata attached to the domain
-`callback`                             |
-
-### Example
-
-```javascript
-var client = uce.createClient();
-client.infos.post({description: 'my desc'}, function(err, result) {
-    // Info updated
-});
-```
-
 ## Search events in all meetings
 
 *UCEngine.search(terms, [options, ]callback)*

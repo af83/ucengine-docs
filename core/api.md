@@ -271,38 +271,6 @@ Parameter                              | Description                           |
 
     500 { "error": "unexpected_error" }
 
-## Infos
-
-### Get current domain informations
-
-#### Request
-
-    GET /infos
-
-#### Returned values
-
-    200 { "result": {"domain": "ucengine.org",
-                     "metadata": [{"description", "an useful description"}]} }
-
-### Update current domain informations
-
-#### Request
-
-    PUT /infos
-
-Parameter                              | Description                           | Example
----------------------------------------|---------------------------------------|------------------------------------------------------------
-**URL Parameters**                     |                                       |
-`metadata`                             | Array containing metadata             | `metadata[key]=value`
-
-#### Returned values
-
-    200 { "result": "ok" }
-
-    400 { "error": "bad_parameters" } // at least one paremeter is missing or wrong
-
-    401 { "error": "unauthorized" } // the user is not authorized to updated informations
-
 ## Meeting
 ### Create a meeting
 
