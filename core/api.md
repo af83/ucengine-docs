@@ -156,6 +156,8 @@ Parameter                              | Description                           |
 `credential`                           | Password or token                     | `dWlkXzYzNDQ0MzI2NDQzXzUwMTUwCg`
 `metadata`                             | Array containing metadata             | `metadata[key]=value`
 
+*Note:* If the config value `register` is `restricted`, you must pass the `uid` and the `sid` of a connected user with `user::add` ACL.
+
 #### Returned values:
 
     201 { "result": "91020740579212808535843549778848" }

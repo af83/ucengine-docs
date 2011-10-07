@@ -74,6 +74,16 @@ rights. The format of the right is a simple tuple:
 
 For more informations, take a look at the [[ACL overview|acl]].
 
+## Register
+
+Allow direct registration or allowed only for connected users with `user::add` ACL.
+Can be set up by vhost.
+
+```erlang
+{register, open}.
+{register, restricted}.
+```
+
 ## Bricks
 
 The configuration can specify a list of bricks to accept.

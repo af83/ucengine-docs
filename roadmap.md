@@ -9,7 +9,6 @@
 * Allows to switch a meeting to be writable or readonly
 * Remove metadata on the presence
 * Join a roster and create meeting metadata will be stored in events metadata (internal.roster.add and internal.meeting.add)
-* Add a config key to disallow creating user if not authenticated
 
 ## Later
 

@@ -6,6 +6,7 @@
 * New push event API with JSON accepted. You can now store json in event's metadata.
 * The internal.meeting.add event is now triggered inside the meeting ([[#13|https://github.com/AF83/ucengine/issues/13]]).
 * Removed the `/infos` endpoint.
+* Add a new config key `register` to switch from open registrations to retricted registrations.
 * *Live api*
  * Add a streaming api compatible with [[EventSource|http://dev.w3.org/html5/eventsource/]]
  * New live entry point for long polling stuff
