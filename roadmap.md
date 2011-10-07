@@ -7,7 +7,6 @@
 * Remove `start`, `end` and metadata from the meeting
 * Remove the implicit status of the meeting (upcoming, opened, closed or all)
 * Allows to switch a meeting to be writable or readonly
-* Remove metadata on the presence
 * Join a roster and create meeting metadata will be stored in events metadata (internal.roster.add and internal.meeting.add)
 
 ## Later

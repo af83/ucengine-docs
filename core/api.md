@@ -40,7 +40,6 @@ Parameter                              | Description                           |
 `credential`                           | Password or token                     | `dWlkXzYzNDQ0MzI2NDQzXzUwMTUwCg`
 **Optional Encoded Parameters**        |                                       |
 `timeout`                              | Session timeout value (sec)           | `200`
-`metadata`                             | Array containing metadata             | `metadata[key]=value`
 
 ##### Returned values
 
@@ -61,8 +60,7 @@ Parameter                              | Description                           |
 
     200 {"result":{     "id":"409832095702309473209",
                         "domain":"ucengine.org",
-                        "user":91020740579212808535843549778848,
-                        "metadata":{    "nickname":"My nickname"}
+                        "user":91020740579212808535843549778848
                 }}
 
     404 { "error": "not_found" } // the presence resource does not exist
