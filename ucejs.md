@@ -82,7 +82,7 @@ client.user.register("ucengine@example.com", "p4ssw0rd", {location: 'Paris'}, fu
 Parameter                              | Description
 ---------------------------------------|---------------------------------------
 `name`                                 | User name
-`auth`                                 | The authentification method (token, password, etc.)
+`auth`                                 | The authentification method (password, none, etc.)
 `credential`                           | Password
 `metadata`                             | Metadata attached to the user
 `callback`                             |

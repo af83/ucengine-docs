@@ -37,7 +37,7 @@ Parameter                              | Description                           |
 ---------------------------------------|---------------------------------------|------------------------------------------------------------
 **Encoded Parameters**                 |                                       |
 `name`                                 | User name                             | `ucengine@example.com`
-`credential`                           | Password or token                     | `dWlkXzYzNDQ0MzI2NDQzXzUwMTUwCg`
+`credential`                           | Password                              | `dWlkXzYzNDQ0MzI2NDQzXzUwMTUwCg`
 **Optional Encoded Parameters**        |                                       |
 `timeout`                              | Session timeout value (sec)           | `200`
 
@@ -150,8 +150,8 @@ Parameter                              | Description                           |
 ---------------------------------------|---------------------------------------|------------------------------------------------------------
 **Encoded Parameters**                 |                                       |
 `name`                                 | User id                               | `ucengine@example.com`
-`auth`                                 | Authentication method                 | `password` or `token`
-`credential`                           | Password or token                     | `dWlkXzYzNDQ0MzI2NDQzXzUwMTUwCg`
+`auth`                                 | Authentication method                 | `password` or `none
+`credential`                           | Password                              | `dWlkXzYzNDQ0MzI2NDQzXzUwMTUwCg`
 `metadata`                             | Array containing metadata             | `metadata[key]=value`
 
 *Note:* If the config value `register` is `restricted`, you must pass the `uid` and the `sid` of a connected user with `user::add` ACL.
@@ -177,8 +177,8 @@ Parameter                              | Description                           |
 **URL Parameters**                     |                                       |
 `uid`                                  | User id                               | `91020740579212808535843549778848`
 **Encoded Parameters**                 |                                       |
-`auth`                                 | Authentication method                 | `password`, `token` or `none`
-`credential`                           | Password or token                     | `dWlkXzYzNDQ0MzI2NDQzXzUwMTUwCg`
+`auth`                                 | Authentication method                 | `password` or  `none`
+`credential`                           | Password                              | `dWlkXzYzNDQ0MzI2NDQzXzUwMTUwCg`
 `metadata`                             | Array containing metadata             | `metadata[key]=value`
 
 ### Returned values
