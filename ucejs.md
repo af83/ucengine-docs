@@ -367,13 +367,14 @@ var meeting = client.meeting('demo');
 
 ## Join a meeting
 
-*UCEngine.meeting(meeting).join(callback)*
+*UCEngine.meeting(meeting).join(metadata, callback)*
 
 ### Parameters
 
 Parameter                              | Description
 ---------------------------------------|---------------------------------------
 `meeting`                              | The name of the meeting
+`metadata`                             | Metadata associated to the internal.roster.add
 `callback`                             |
 
 ### Example
