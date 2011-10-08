@@ -366,7 +366,7 @@ Parameter                              | Description                           |
 **URL Parameters**                     |                                       |
 `meeting`                              | Meeting id                            | `demo`
 **Encoded Parameters**                 |                                       |
-`uid`                                  | User id                               | `91020740579212808535843549778848`
+`metadata`                             | Metadata associated to the event      |
 
 #### Returned values
 

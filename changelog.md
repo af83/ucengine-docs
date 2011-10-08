@@ -9,6 +9,7 @@
 * Add a new config key `register` to switch from open registrations to retricted registrations.
 * Removed metadata on the presence.
 * Removed the token auth backend.
+* Add metadata parameter in the join roster API.
 * *Live api*
  * Add a streaming api compatible with [[EventSource|http://dev.w3.org/html5/eventsource/]]
  * New live entry point for long polling stuff
