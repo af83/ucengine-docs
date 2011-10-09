@@ -276,22 +276,13 @@ Parameter                              | Description                           |
 
 #### Request
 
-    POST /meeting/all/
+    POST /meeting/
 
 Parameter                              | Description                           | Example
 ---------------------------------------|---------------------------------------|------------------------------------------------------------
 **Optional Encoded Parameters**        |                                       |
 `name`                                 | Meeting id                            | `demo`
-`start`                                | opening Timestamp of the meeting      | `63444430100`
-`end`                                  | ending Timestamp of the meeting       | `63444430800`
 `metadata`                             | Array containing metadata             | `metadata[key]=value`
-
-#### Notes
-
-- The timestamps are the number of milliseconds elapsed since EPOCH (1970-01-01).
-- If the 'end' parameter is missing, the the meeting has no end date.
-- if the 'start' and 'end' parameters are missing, the meeting starts
-  immediatly and has no end date
 
 #### Returned values
 
@@ -304,19 +295,17 @@ Parameter                              | Description                           |
     409 { "error": "conflict" } : // the meeting already exists
 
 
-### Modify a meeting
+### Update a meeting
 
 #### Request
 
-    PUT /meeting/all/{meeting}
+    PUT /meeting/{meeting}
 
 Parameter                              | Description                           | Example
 ---------------------------------------|---------------------------------------|------------------------------------------------------------
 **URL Parameters**                     |                                       |
 `meeting`                              | Meeting id                            | `demo`
 **Optional Encoded Parameters**        |                                       |
-`start`                                | opening Timestamp of the meeting      | `63444430100`
-`end`                                  | ending Timestamp of the meeting       | `63444430800`
 `metadata`                             | Array containing metadata             | `metadata[key]=value`
 
 #### Returned values
@@ -333,7 +322,7 @@ Parameter                              | Description                           |
 
 #### Request
 
-    GET /meeting/all/{meeting}
+    GET /meeting/{meeting}
 
 #### Parameters
 
@@ -346,9 +335,7 @@ Parameter                              | Description                           |
 
     200 {"result":{     "name":"demo",
                         "domain":"ucengine.org",
-                        "start_date":1284046056927,
-                        "end_date":"never",
-                        "metadata":{    "description":"U.C.Engine demo meetup"}
+                        "metadata":{"description":"U.C.Engine demo meetup"}
                 }}
 
     400 { "error": "bad_parameters" } // at least one paremeter is missing or wrong
@@ -359,7 +346,7 @@ Parameter                              | Description                           |
 
 #### Request
 
-    POST /meeting/all/{meeting}/roster/
+    POST /meeting/{meeting}/roster/
 
 Parameter                              | Description                           | Example
 ---------------------------------------|---------------------------------------|------------------------------------------------------------
@@ -382,7 +369,7 @@ Parameter                              | Description                           |
 
 #### Request
 
-    DELETE /meeting/all/{meeting}/roster/{uid}
+    DELETE /meeting/{meeting}/roster/{uid}
 
 Parameter                              | Description                           | Example
 ---------------------------------------|---------------------------------------|------------------------------------------------------------
@@ -404,7 +391,7 @@ Parameter                              | Description                           |
 
 #### Request
 
-    GET /meeting/all/{meeting}/roster
+    GET /meeting/{meeting}/roster
 
 Parameter                              | Description                           | Example
 ---------------------------------------|---------------------------------------|------------------------------------------------------------
@@ -450,32 +437,18 @@ Parameter                              | Description                           |
 
     GET /meeting/
 
-    GET /meeting/{status}
-
-
-Parameter                              | Description                           | Example
----------------------------------------|---------------------------------------|------------------------------------------------------------
-**URL Parameters**                     |                                       |
-`status`                               | Status of the meeting                 | `upcoming` or `opened` or `closed` or `all`
-
 #### Returned values
 
     200 {"result":[{    "name":"demo",
                         "domain":"ucengine.org",
-                        "start_date":1284046056927,
-                        "end_date":"never",
-                        "metadata":{    "description":"U.C.Engine demo meetup"}
+                        "metadata":{"description":"U.C.Engine demo meetup"}
                 },
                 {       "name":"demo2",
                         "domain":"ucengine.org",
-                        "start_date":1284046056928,
-                        "end_date":"never",
                         "metadata":{"description":"Meeting R&D"}
                 },
                 {       "name":"agoroom",
                         "domain":"ucengine.org",
-                        "start_date":1284046056928,
-                        "end_date":1284046056928,
                         "metadata":{"description":"Meeting agoroom"}
                 }
     ]}
@@ -551,7 +524,7 @@ Parameter                              | Description                           |
 'start' and 'end' parameters allow you to frame the events :
 
 - If `end` is missing: return all the events from `start` to the end of the timeline.
-- If `start` and 'end' are missing: return all the events of the timeline.
+- If `start` and `end` are missing: return all the events of the timeline.
 
 ### Retrieve the events in live
 
