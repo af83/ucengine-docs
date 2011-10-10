@@ -46,7 +46,7 @@ Parameter                              | Description                           |
     200 { "result": {"uid": "91020740579212808535843549778848",
                      "sid": "07462066523652880535592964206583" } // the result is a valid sid
 
-    400 { "error": "bad_parameters" } // at least one paremeter is missing or wrong
+    400 { "error": "bad_parameters" } // at least one parameter is missing or wrong
 
     403 { "error": "bad_credentials" } // the authentification has failed
 
@@ -83,7 +83,7 @@ Parameter                              | Description                           |
 
     200 { "result": "ok" }}.
 
-    400 { "error": "bad_parameters" } // at least one paremeter is missing or wrong
+    400 { "error": "bad_parameters" } // at least one parameter is missing or wrong
 
     401 { "error": "unauthorized" } // the user is not authorized to disconnect this presence
 
@@ -288,7 +288,7 @@ Parameter                              | Description                           |
 
     201 { "result": "ok" }
 
-    400 { "error": "bad_parameters" } // at least one paremeter is missing or wrong
+    400 { "error": "bad_parameters" } // at least one parameter is missing or wrong
 
     401 { "error": "unauthorized" } // the user is not authorized to create a meeting
 
@@ -312,7 +312,7 @@ Parameter                              | Description                           |
 
     200 { "result": "ok" }
 
-    400 { "error": "bad_parameters" } // at least one paremeter is missing or wrong
+    400 { "error": "bad_parameters" } // at least one parameter is missing or wrong
 
     401 { "error": "unauthorized" } // the user is not authorized to delete the meeting
 
@@ -359,7 +359,7 @@ Parameter                              | Description                           |
 
     200 { "result": "ok" }
 
-    400 { "error": "bad_parameters" } // at least one paremeter is missing or wrong
+    400 { "error": "bad_parameters" } // at least one parameter is missing or wrong
 
     401 { "error": "unauthorized" } // the user is not authorized to join the meeting
 
@@ -381,7 +381,7 @@ Parameter                              | Description                           |
 
     200 { "result": "ok" }
 
-    400 { "error": "bad_parameters" } // at least one paremeter is missing or wrong
+    400 { "error": "bad_parameters" } // at least one parameter is missing or wrong
 
     401 { "error": "unauthorized" } // the user is not authorized to quit the meeting
 
@@ -425,7 +425,7 @@ Parameter                              | Description                           |
                ...
     ]}
 
-    400 { "error": "bad_parameters" } // at least one paremeter is missing or wrong
+    400 { "error": "bad_parameters" } // at least one parameter is missing or wrong
 
     401 { "error": "unauthorized" } // the user is not authorized to list the users of this meeting
 
@@ -453,7 +453,7 @@ Parameter                              | Description                           |
                 }
     ]}
 
-    400 { "error": "bad_parameters" } // at least one paremeter is missing or wrong
+    400 { "error": "bad_parameters" } // at least one parameter is missing or wrong
 
     401 { "error": "unauthorized" } // the user is not authorized to list the meetings
 
@@ -513,7 +513,7 @@ Parameter                              | Description                           |
                 ...
     ]}
 
-    400 { "error": "bad_parameters" } // at least one paremeter is missing or wrong
+    400 { "error": "bad_parameters" } // at least one parameter is missing or wrong
 
     401 { "error": "unauthorized" } // the user is not authorized to list the events of this meeting
 
@@ -577,7 +577,7 @@ Parameter                              | Description                           |
                 ...
     ]}
 
-    400 { "error": "bad_parameters" } // at least one paremeter is missing or wrong
+    400 { "error": "bad_parameters" } // at least one parameter is missing or wrong
 
     401 { "error": "unauthorized" } // the user is not authorized to list the events of this meeting
 
@@ -715,7 +715,7 @@ Parameter                              | Description                            
 
     201 {"result": "24653994823933231622695570265810"}
 
-    400 { "error": "bad_parameters" } // at least one paremeter is missing or wrong
+    400 { "error": "bad_parameters" } // at least one parameter is missing or wrong
 
     401 { "error": "unauthorized" } // the user is not authorized to send events to this meeting
 
@@ -743,7 +743,7 @@ Parameter                              | Description                            
 
     201 {"result": "24653994823933231622695570265810"}
 
-    400 { "error": "bad_parameters" } // at least one paremeter is missing or wrong
+    400 { "error": "bad_parameters" } // at least one parameter is missing or wrong
 
     401 { "error": "unauthorized" } // the user is not authorized to send events to this meeting
 
@@ -770,7 +770,7 @@ Parameter                              | Description                            
 
     201 { "result": "ucengine_4534543543.odp"} // the file id
 
-    400 { "error": "bad_parameters" } // at least one paremeter is missing or wrong
+    400 { "error": "bad_parameters" } // at least one parameter is missing or wrong
 
     401 { "error": "unauthorized" } // the user is not authorized to upload files in this meeting
 
@@ -874,7 +874,7 @@ Parameter                              | Description                           |
 
     201 { "result": "created" } // the role has been successfully added
 
-    400 { "error": "missing_parameters" } // at least one paremeter is missing
+    400 { "error": "missing_parameters" } // at least one parameter is missing
 
     401 { "error": "unauthorized" } // the user is not authorized to add a role
 
@@ -918,7 +918,7 @@ Parameter                              | Description                           |
 
     200 { "result": "ok" } // the access right has been successfully added to the role
 
-    400 { "error": "missing_parameters" } // at least one paremeter is missing
+    400 { "error": "missing_parameters" } // at least one parameter is missing
 
     401 { "error": "unauthorized" } // the user is not authorized to add an access right to this role
 
@@ -947,7 +947,7 @@ Parameter                              | Description                           |
 
     200 { "result": "ok" } // the access right has been successfully deleted from the role
 
-    400 { "error": "missing_parameters" } // at least one paremeter is missing
+    400 { "error": "missing_parameters" } // at least one parameter is missing
 
     401 { "error": "unauthorized" } // the user is not authorized to delete an access right from this role
 
@@ -971,7 +971,7 @@ Parameter                              | Description                            
 
     200 { "result": "ok" } // the role has been successfuly set to the user
 
-    400 { "error": "missing_parameters" } // at least one paremeter is missing
+    400 { "error": "missing_parameters" } // at least one parameter is missing
 
     401 { "error": "unauthorized" } // the user is not authorized to set this role to the user
 
