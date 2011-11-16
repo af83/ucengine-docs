@@ -1,5 +1,27 @@
 # Changelog
 
+## 0.5.1 to 0.6.0
+
+* `/api/0.5` is not available anymore, use `/api/0.6` instead.
+* New push event API with JSON accepted. You can now store json in event's metadata.
+* The internal.meeting.add event is now triggered inside the meeting ([[#13|https://github.com/AF83/ucengine/issues/13]]).
+* Removed the `/infos` endpoint.
+* Add a new config key `register` to switch from open registrations to retricted registrations.
+* Removed metadata on the presence.
+* Removed the token auth backend.
+* Add metadata parameter in the join roster API.
+* *Meeting API*
+ * Removed the `start` and `end` parameters.
+ * Removed the meeting filtering by status.
+* *Live API*
+ * Add a streaming API compatible with [[EventSource|http://dev.w3.org/html5/eventsource/]]
+ * New live entry point for long polling stuff
+ * Renamed `long_polling_timeout` config to `connection_timeout`
+* Uce.js can now choose the best API to retrieve events. Or you can force the transport.
+ * When using a custom API url, `/api` will no more be appended to the path.
+ * Add metadata parameter in the join roster method.
+ * add unbind method
+
 ## 0.5 to 0.5.1
 
 * Fix long polling with nginx (again).
@@ -7,8 +29,8 @@
 * API:
   * Nobody can push 'internal.*' events from API.
   * Now sent metadata when uploading a file can be retrieved through the corresponding internal.file.add event.
-  * Update file upload api to allow metadata in multipart/form-data.
-  * Add *forceContentType* parameter on file upload api.
+  * Update file upload API to allow metadata in multipart/form-data.
+  * Add *forceContentType* parameter on file upload API.
   * Add an *order* parameter when listing files on a meeting.
   * Support of OPTIONS with better CORS handling (thanks elishowk).
   * Support of HEAD method.
@@ -33,8 +55,8 @@
 * ucectl command-line tool have been renamed ucengine-admin.
 * Remove authentication on `/time` end point.
 * Search API:
-  * Fix `totalResults` field in search api.
-  * Add `order` parameter in search api.
+  * Fix `totalResults` field in search API.
+  * Add `order` parameter in search API.
 * Uce.js:
   * add an `options` parameter in `UCEngine.search` and `UCEngine.meeting(name).search`
   * add a `conditions` parameter to `UCEngine.user.can`
@@ -68,7 +90,7 @@
 
 * `/api/0.3` is not available anymore, use `/api/0.4` instead.
 * Vhosts: see [[config]].
-* New search api: see [[Search events in U.C.Engine|api#search-events-in-ucengine]].
+* New search API: see [[Search events in U.C.Engine|api#search-events-in-ucengine]].
 * New entry point to retrieve presence information: see [[Retrieve presence informations|api#retrieve-presence-informations]].
 * Fix long polling with nginx.
 * Refactor [[uce.js library|ucejs]]

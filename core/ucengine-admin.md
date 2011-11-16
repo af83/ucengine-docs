@@ -26,23 +26,13 @@ The following options are available:
 
     The name of the Erlang node (ex. 'node1', 'node1@localhost' or 'node1@myhost.mydomain').
 
-### Domain information
-
-  * `infos` `update`  [`--<metadata>` *value*] ...
-
-    Update the domain *domain* informations with arbitrary values
-
-  * `infos` `get`
-
-    Get informations about the domain *domain*
-
 ### Meetings
 
-  * `meeting` `add` *name* [`--start` *date*] [`--end` *date*] [`--<metadata>` *value*] ... :
+  * `meeting` `add` *name* [`--<metadata>` *value*] ... :
 
-    Create an new meeting with name *name* with optional starting and ending dates (see the FORMAT section for date formatting).
+    Create an new meeting with name *name*.
 
-  * `meeting` `update` *name* [`--start` *date*] [`--end` *date*] [`--<metadata>` *value*] ...
+  * `meeting` `update` *name* [`--<metadata>` *value*] ...
 
     Update the meeting with name *name*.
 
@@ -54,13 +44,13 @@ The following options are available:
 
     Delete the meeting with name *name*.
 
-  * `meeting` `list` *status*
+  * `meeting` `list`
 
-    List all meetings with an optional status *status*, meeting status can be any of: `upcoming`|`opened`|`closed` or `all`
+    List all meetings.
 
 ### Users
 
-  * `user` `add`  *name* *auth* *credential* [`--<metadata>` *value*] ...
+  * `user` `add` *name* *auth* *credential* [`--<metadata>` *value*] ...
 
     Create an new user with the name *name* where <auth> is a method to authenticate (currently only 'password' and 'token' are supported) and <credential> the secret to authenticate the user.
 
@@ -112,9 +102,6 @@ The following options are available:
 
 ## FORMAT
 
-  - `date`:
-    ISO8601 formatted date (ex. '2010-12-25 00:00:01').
-
   - `metadata`:
     meetings can hold an unlimited amount of metadata as a *key*=*value* store. Any arguments of the command line which are not part of the expected parameters are automatically added to the metadata of the object.
 
@@ -141,12 +128,10 @@ Only keep the closed|opened|upcoming meetings:
     ucengine-admin localhost meeting list upcoming
 
 Create a new meeting 'Christmas dinner':
-    ucengine-admin localhost meeting add 'Christmas dinner' --start '2010-24-12 20:30:00'\
-                       --end '2010-25-12 03:00:00' --appetizer 'Chips'
+    ucengine-admin localhost meeting add 'Christmas dinner' --appetizer 'Chips'
 
 Make it frenchier:
-    ucengine-admin localhost meeting update 'Christmas dinner' --start '2010-24-12 20:30:00'\
-                          --end '2010-25-12 07:00:00' --appetizer 'Snails'
+    ucengine-admin localhost meeting update 'Christmas dinner' --appetizer 'Snails'
 
 And delete it:
     ucengine-admin localhost meeting delete 'Christmas dinner'

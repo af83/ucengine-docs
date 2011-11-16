@@ -15,6 +15,19 @@ We only support the following versions:
 
 Please verify the value of `ERL_LIBS` environnement variable. See the [[installations|install]] page about that.
 
+## U.C.Engine is not running! The 'ping' command failed!
+
+We are sorry about that. If you want to help us to fix this issue, you can check log files and increase the `log_level`.
+
+* rel/ucengine/log/ucengine.log
+* rel/ucengine/log/sasl-error.log
+
+## I got a "yaws_server,check_certs,infinity" in logs.
+
+This is an issue with yaws. See [[#14|https://github.com/AF83/ucengine/issues/14]].
+
+The current workaround is to compile [[yaws|https://github.com/klacke/yaws]] from source.
+
 ## I got a "ERROR: Unable to generate spec: read file info /usr/lib/erlang/man/man1/xxx1pm.gz failed"
 
 You can remove the symlink in `/usr/lib/erlang/man`.

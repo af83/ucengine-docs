@@ -57,8 +57,6 @@ of the REST API documentation.
 
 Object         | Action       | Description
 ---------------|--------------|----------------------------------------------------------------------------------------
-infos          | get          | [[Retrieve the current domain informations|api#get-current-domain-informations]]
-infos          | update       | [[Update current domain informations|api#update-current-domain-informations]]
 meeting        | get          | [[Retrieve meeting informations|api#retrieve-meetings-informations]]
 meeting        | list         | [[List the meetings|api#list-the-meetings]]
 meeting        | add          | [[Create a meeting|api#create-a-meeting]]
@@ -75,6 +73,7 @@ event          | list         | [[List events|api#retrieve-the-events]]
 event          | add          | [[Add an event|api#send-an-event-to-ucengine]]
 presence       | add          | [[Login|api#authentification]]
 presence       | delete       | [[Logout|api#disconnect-users]]
+user           | add          | [[Register users|api#register-users]]
 user           | list         | [[List users|api#list-users]]
 user           | update       | [[Updade user informations|api#modify-users-informations]]
 user           | get          | [[Get user informations|api#retrieve-users-informations]]

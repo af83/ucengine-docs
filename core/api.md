@@ -2,7 +2,7 @@
 
 ## General informations about the API
 
-The base URL is `http://demo.ucengine.org/api/0.5/`
+The base URL is `/api/0.6/`
 All the others API URLs are relative to this one.
 
 You have to consider a few conventions :
@@ -37,17 +37,16 @@ Parameter                              | Description                           |
 ---------------------------------------|---------------------------------------|------------------------------------------------------------
 **Encoded Parameters**                 |                                       |
 `name`                                 | User name                             | `ucengine@example.com`
-`credential`                           | Password or token                     | `dWlkXzYzNDQ0MzI2NDQzXzUwMTUwCg`
+`credential`                           | Password                              | `dWlkXzYzNDQ0MzI2NDQzXzUwMTUwCg`
 **Optional Encoded Parameters**        |                                       |
 `timeout`                              | Session timeout value (sec)           | `200`
-`metadata`                             | Array containing metadata             | `metadata[key]=value`
 
 ##### Returned values
 
     200 { "result": {"uid": "91020740579212808535843549778848",
                      "sid": "07462066523652880535592964206583" } // the result is a valid sid
 
-    400 { "error": "bad_parameters" } // at least one paremeter is missing or wrong
+    400 { "error": "bad_parameters" } // at least one parameter is missing or wrong
 
     403 { "error": "bad_credentials" } // the authentification has failed
 
@@ -61,8 +60,7 @@ Parameter                              | Description                           |
 
     200 {"result":{     "id":"409832095702309473209",
                         "domain":"ucengine.org",
-                        "user":91020740579212808535843549778848,
-                        "metadata":{    "nickname":"My nickname"}
+                        "user":91020740579212808535843549778848
                 }}
 
     404 { "error": "not_found" } // the presence resource does not exist
@@ -85,7 +83,7 @@ Parameter                              | Description                           |
 
     200 { "result": "ok" }}.
 
-    400 { "error": "bad_parameters" } // at least one paremeter is missing or wrong
+    400 { "error": "bad_parameters" } // at least one parameter is missing or wrong
 
     401 { "error": "unauthorized" } // the user is not authorized to disconnect this presence
 
@@ -152,15 +150,19 @@ Parameter                              | Description                           |
 ---------------------------------------|---------------------------------------|------------------------------------------------------------
 **Encoded Parameters**                 |                                       |
 `name`                                 | User id                               | `ucengine@example.com`
-`auth`                                 | Authentication method                 | `password` or `token`
-`credential`                           | Password or token                     | `dWlkXzYzNDQ0MzI2NDQzXzUwMTUwCg`
+`auth`                                 | Authentication method                 | `password` or `none
+`credential`                           | Password                              | `dWlkXzYzNDQ0MzI2NDQzXzUwMTUwCg`
 `metadata`                             | Array containing metadata             | `metadata[key]=value`
+
+*Note:* If the config value `register` is `restricted`, you must pass the `uid` and the `sid` of a connected user with `user::add` ACL.
 
 #### Returned values:
 
     201 { "result": "91020740579212808535843549778848" }
 
     401 { "error": "unauthorized" }
+
+    409 { "error": "conflict" }
 
     500 { "error": "unexpected_error" }
 
@@ -175,8 +177,8 @@ Parameter                              | Description                           |
 **URL Parameters**                     |                                       |
 `uid`                                  | User id                               | `91020740579212808535843549778848`
 **Encoded Parameters**                 |                                       |
-`auth`                                 | Authentication method                 | `password`, `token` or `none`
-`credential`                           | Password or token                     | `dWlkXzYzNDQ0MzI2NDQzXzUwMTUwCg`
+`auth`                                 | Authentication method                 | `password` or  `none`
+`credential`                           | Password                              | `dWlkXzYzNDQ0MzI2NDQzXzUwMTUwCg`
 `metadata`                             | Array containing metadata             | `metadata[key]=value`
 
 ### Returned values
@@ -201,13 +203,46 @@ Parameter                              | Description                           |
 #### Returned values
 
      200 {"result": {    "id": "91020740579212808535843549778848",
-                         "name":"romain.gauthier@af83.com",
+                         "name":"jean.roucas@af83.com",
                          "domain":"ucengine.org",
                          "auth":"password",
                          "metadata":{
-                            "nickname":"Romain - el paisano - Gauthier"
+                            "nickname":"Jean Roucas"
                          }
                     }}
+
+    401 { "error": "unauthorized" }
+
+    404 { "error": "not_found" }
+
+    500 { "error": "unexpected_error" }
+
+### Find user's informations
+
+Find user by name or by id.
+
+#### Request
+
+    GET /find/user
+
+Parameter                              | Description                           | Example
+---------------------------------------|---------------------------------------|------------------------------------------------------------
+**URL Parameters**                     |                                       |
+`by_name`                              | User name                             | `romain.gauthier@af83.com`
+`by_uid`                               | User id                               | `91020740579212808535843549778848`
+
+#### Returned values
+
+     200 {"result": {    "id": "91020740579212808535843549778848",
+                         "name":"bernard.menez@af83.com",
+                         "domain":"ucengine.org",
+                         "auth":"password",
+                         "metadata":{
+                            "nickname":"Bernard Menez"
+                         }
+                    }}
+
+    400 { "error": "missing_parameters"}
 
     401 { "error": "unauthorized" }
 
@@ -236,91 +271,48 @@ Parameter                              | Description                           |
 
     500 { "error": "unexpected_error" }
 
-## Infos
-
-### Get current domain informations
-
-#### Request
-
-    GET /infos
-
-#### Returned values
-
-    200 { "result": {"domain": "ucengine.org",
-                     "metadata": [{"description", "an useful description"}]} }
-
-### Update current domain informations
-
-#### Request
-
-    PUT /infos
-
-Parameter                              | Description                           | Example
----------------------------------------|---------------------------------------|------------------------------------------------------------
-**URL Parameters**                     |                                       |
-`metadata`                             | Array containing metadata             | `metadata[key]=value`
-
-#### Returned values
-
-    200 { "result": "ok" }
-
-    400 { "error": "bad_parameters" } // at least one paremeter is missing or wrong
-
-    401 { "error": "unauthorized" } // the user is not authorized to updated informations
-
 ## Meeting
 ### Create a meeting
 
 #### Request
 
-    POST /meeting/all/
+    POST /meeting/
 
 Parameter                              | Description                           | Example
 ---------------------------------------|---------------------------------------|------------------------------------------------------------
 **Optional Encoded Parameters**        |                                       |
 `name`                                 | Meeting id                            | `demo`
-`start`                                | opening Timestamp of the meeting      | `63444430100`
-`end`                                  | ending Timestamp of the meeting       | `63444430800`
 `metadata`                             | Array containing metadata             | `metadata[key]=value`
-
-#### Notes
-
-- The timestamps are the number of milliseconds elapsed since EPOCH (1970-01-01).
-- If the 'end' parameter is missing, the the meeting has no end date.
-- if the 'start' and 'end' parameters are missing, the meeting starts
-  immediatly and has no end date
 
 #### Returned values
 
     201 { "result": "ok" }
 
-    400 { "error": "bad_parameters" } // at least one paremeter is missing or wrong
+    400 { "error": "bad_parameters" } // at least one parameter is missing or wrong
 
     401 { "error": "unauthorized" } // the user is not authorized to create a meeting
 
     409 { "error": "conflict" } : // the meeting already exists
 
 
-### Modify a meeting
+### Update a meeting
 
 #### Request
 
-    PUT /meeting/all/{meeting}
+    PUT /meeting/{meeting}
 
 Parameter                              | Description                           | Example
 ---------------------------------------|---------------------------------------|------------------------------------------------------------
 **URL Parameters**                     |                                       |
 `meeting`                              | Meeting id                            | `demo`
 **Optional Encoded Parameters**        |                                       |
-`start`                                | opening Timestamp of the meeting      | `63444430100`
-`end`                                  | ending Timestamp of the meeting       | `63444430800`
 `metadata`                             | Array containing metadata             | `metadata[key]=value`
 
 #### Returned values
 
     200 { "result": "ok" }
 
-    400 { "error": "bad_parameters" } // at least one paremeter is missing or wrong
+    400 { "error": "bad_parameters" } // at least one parameter is missing or wrong
 
     401 { "error": "unauthorized" } // the user is not authorized to delete the meeting
 
@@ -330,7 +322,7 @@ Parameter                              | Description                           |
 
 #### Request
 
-    GET /meeting/all/{meeting}
+    GET /meeting/{meeting}
 
 #### Parameters
 
@@ -343,9 +335,7 @@ Parameter                              | Description                           |
 
     200 {"result":{     "name":"demo",
                         "domain":"ucengine.org",
-                        "start_date":1284046056927,
-                        "end_date":"never",
-                        "metadata":{    "description":"U.C.Engine demo meetup"}
+                        "metadata":{"description":"U.C.Engine demo meetup"}
                 }}
 
     400 { "error": "bad_parameters" } // at least one paremeter is missing or wrong
@@ -356,20 +346,20 @@ Parameter                              | Description                           |
 
 #### Request
 
-    POST /meeting/all/{meeting}/roster/
+    POST /meeting/{meeting}/roster/
 
 Parameter                              | Description                           | Example
 ---------------------------------------|---------------------------------------|------------------------------------------------------------
 **URL Parameters**                     |                                       |
 `meeting`                              | Meeting id                            | `demo`
 **Encoded Parameters**                 |                                       |
-`uid`                                  | User id                               | `91020740579212808535843549778848`
+`metadata`                             | Metadata associated to the event      |
 
 #### Returned values
 
     200 { "result": "ok" }
 
-    400 { "error": "bad_parameters" } // at least one paremeter is missing or wrong
+    400 { "error": "bad_parameters" } // at least one parameter is missing or wrong
 
     401 { "error": "unauthorized" } // the user is not authorized to join the meeting
 
@@ -379,7 +369,7 @@ Parameter                              | Description                           |
 
 #### Request
 
-    DELETE /meeting/all/{meeting}/roster/{uid}
+    DELETE /meeting/{meeting}/roster/{uid}
 
 Parameter                              | Description                           | Example
 ---------------------------------------|---------------------------------------|------------------------------------------------------------
@@ -391,7 +381,7 @@ Parameter                              | Description                           |
 
     200 { "result": "ok" }
 
-    400 { "error": "bad_parameters" } // at least one paremeter is missing or wrong
+    400 { "error": "bad_parameters" } // at least one parameter is missing or wrong
 
     401 { "error": "unauthorized" } // the user is not authorized to quit the meeting
 
@@ -401,7 +391,7 @@ Parameter                              | Description                           |
 
 #### Request
 
-    GET /meeting/all/{meeting}/roster
+    GET /meeting/{meeting}/roster
 
 Parameter                              | Description                           | Example
 ---------------------------------------|---------------------------------------|------------------------------------------------------------
@@ -435,7 +425,7 @@ Parameter                              | Description                           |
                ...
     ]}
 
-    400 { "error": "bad_parameters" } // at least one paremeter is missing or wrong
+    400 { "error": "bad_parameters" } // at least one parameter is missing or wrong
 
     401 { "error": "unauthorized" } // the user is not authorized to list the users of this meeting
 
@@ -447,37 +437,23 @@ Parameter                              | Description                           |
 
     GET /meeting/
 
-    GET /meeting/{status}
-
-
-Parameter                              | Description                           | Example
----------------------------------------|---------------------------------------|------------------------------------------------------------
-**URL Parameters**                     |                                       |
-`status`                               | Status of the meeting                 | `upcoming` or `opened` or `closed` or `all`
-
 #### Returned values
 
     200 {"result":[{    "name":"demo",
                         "domain":"ucengine.org",
-                        "start_date":1284046056927,
-                        "end_date":"never",
-                        "metadata":{    "description":"U.C.Engine demo meetup"}
+                        "metadata":{"description":"U.C.Engine demo meetup"}
                 },
                 {       "name":"demo2",
                         "domain":"ucengine.org",
-                        "start_date":1284046056928,
-                        "end_date":"never",
                         "metadata":{"description":"Meeting R&D"}
                 },
                 {       "name":"agoroom",
                         "domain":"ucengine.org",
-                        "start_date":1284046056928,
-                        "end_date":1284046056928,
                         "metadata":{"description":"Meeting agoroom"}
                 }
     ]}
 
-    400 { "error": "bad_parameters" } // at least one paremeter is missing or wrong
+    400 { "error": "bad_parameters" } // at least one parameter is missing or wrong
 
     401 { "error": "unauthorized" } // the user is not authorized to list the meetings
 
@@ -505,7 +481,6 @@ Parameter                              | Description                           |
 `order`                                | Sorting order                         | `asc` or `desc`
 `search`                               | Keywords that events should match, using the erlang search backend | `chuck,bruce`
 `parent`                               | Id of the parent event                | `48320948320982309`
-`_async`                               | Method used to retrieve the events    | `no` or `lp`
 
 #### Returned values
 
@@ -538,7 +513,7 @@ Parameter                              | Description                           |
                 ...
     ]}
 
-    400 { "error": "bad_parameters" } // at least one paremeter is missing or wrong
+    400 { "error": "bad_parameters" } // at least one parameter is missing or wrong
 
     401 { "error": "unauthorized" } // the user is not authorized to list the events of this meeting
 
@@ -548,11 +523,79 @@ Parameter                              | Description                           |
 
 'start' and 'end' parameters allow you to frame the events :
 
-- If 'end' is missing: return all the events from `start` to the end of the timeline.
-- If 'start' and 'end' are missing: return all the events of the timeline.
-- The `limit` option can be negative. For instance, `limit=-2` will return the 2 last events of the frame.
-  Limit can also take the `last` value which is equivalent to `limit=-1`
-- The `_async` option allow you to return the events to the client in real time.
+- If `end` is missing: return all the events from `start` to the end of the timeline.
+- If `start` and `end` are missing: return all the events of the timeline.
+
+### Retrieve the events in live
+
+#### Request
+
+    GET /live/
+
+    GET /live/{meeting}
+
+Parameter                              | Description                           | Example
+---------------------------------------|---------------------------------------|------------------------------------------------------------
+**URL Parameters**                     |                                       |
+`meeting`                              | Meeting id                            | `demo`
+**Optional Encoded Parameters**        |                                       |
+`type`                                 | The event's type                      | `internal.meeting.add`
+`start`                                | Start of the event's frame            | `63444430100`
+`from`                                 | The sender of the event               | `91020740579212808535843549778848`
+`search`                               | Keywords that events should match, using the erlang search backend | `chuck,bruce`
+`parent`                               | Id of the parent event                | `48320948320982309`
+`mode`                                 | Mode to retrieve events               | `longpolling` or `eventsource`
+
+#### Returned values with long polling api
+
+    200 {"result": [{   "type":"join_meeting_event",
+                        "domain":"ucengine.org",
+                        "datetime":1284046079374,
+                        "id":"24653994823933231622695570265810",
+                        "location":"demo",
+                        "from":"abel.fournier_1284046072075@af83.com",
+                        "metadata":{}
+                },
+                {       "type":"post_annotation_event",
+                        "domain":"ucengine.org",
+                        "datetime":1284046082844,
+                        "id":"20196912711920626263917946711292",
+                        "location":"demo",
+                        "from":"abel.fournier_1284046072075@af83.com",
+                        "metadata":{    "language":"fr",
+                                        "text":"coucou"}
+                },
+                {       "type":"translate_annotation_event",
+                        "domain":"ucengine.org",
+                        "datetime":1284046083272,
+                        "id":"61614248092678409569587739330424",
+                        "location":"demo",
+                        "from":"abel.fournier_1284046072075@af83.com",
+                        "metadata":{    "traduction":"cuckoo",
+                                        "language":"en"}
+                },
+                ...
+    ]}
+
+    400 { "error": "bad_parameters" } // at least one parameter is missing or wrong
+
+    401 { "error": "unauthorized" } // the user is not authorized to list the events of this meeting
+
+    404 { "error": "not_found" } // the meeting does not exist
+
+#### Returned values with eventsource api
+
+    data: {"type":"join_meeting_event", "domain":"ucengine.org", "datetime":1284046079374, "id":"24653994823933231622695570265810", "location":"demo", "from":"abel.fournier_1284046072075@af83.com", "metadata":{}}
+
+    data: {"type":"join_meeting_event", "domain":"ucengine.org", "datetime":1284046079374, "id":"24653994823933231622695570265810", "location":"demo", "from":"abel.fournier_1284046072075@af83.com", "metadata":{}}
+
+#### Notes
+
+This is the good method to retrieve events in live.
+
+- You have to update the `start` parameter each time you ask te API. You can use the time api or get the datetime of the last event received.
+- Use the `mode` parameter to switch between the longpolling or eventsource api.
+- The eventsource api is compatible with [[EventSource specification|http://dev.w3.org/html5/eventsource/]].
 
 ### Search events in U.C.Engine
 
@@ -648,7 +691,38 @@ used only for this purpose.
 
 ### Send an event to U.C.Engine
 
-#### Request
+#### JSON version
+
+You must set the content-type of the request as *applicaton/json*.
+
+##### Request
+
+    POST /event/
+
+    POST /event/{Meeting}
+
+Parameter                              | Description                                   | Example
+---------------------------------------|-----------------------------------------------|------------------------------------------------------------
+**URL Parameters**                     |                                               |
+`meeting`                              | Meeting id                                    | `demo`
+**JSON Body**                          |                                               |
+`type`                                 | The event's type, cannot be 'internal.*' type | `chat.message.new`
+`to`                                   |                                               |
+`parent`                               |                                               |
+`metadata`                             |                                               |
+
+##### Returned values
+
+    201 {"result": "24653994823933231622695570265810"}
+
+    400 { "error": "bad_parameters" } // at least one parameter is missing or wrong
+
+    401 { "error": "unauthorized" } // the user is not authorized to send events to this meeting
+
+    404 { "error": "not_found" } // the meeting does not exist
+
+#### Old version
+##### Request
 
     POST /event/
 
@@ -661,13 +735,15 @@ Parameter                              | Description                            
 **Encoded Parameters**                 |                                               |
 `type`                                 | The event's type, cannot be 'internal.*' type | `chat.message.new`
 **Optional Encoded Parameters**        |                                               |
-Any other parameter                    | These will be part of the metadata            |
+`to`                                   |                                               |
+`parent`                               |                                               |
+`metadata`                             | These will be part of the metadata            |
 
-#### Returned values
+##### Returned values
 
     201 {"result": "24653994823933231622695570265810"}
 
-    400 { "error": "bad_parameters" } // at least one paremeter is missing or wrong
+    400 { "error": "bad_parameters" } // at least one parameter is missing or wrong
 
     401 { "error": "unauthorized" } // the user is not authorized to send events to this meeting
 
@@ -694,7 +770,7 @@ Parameter                              | Description                            
 
     201 { "result": "ucengine_4534543543.odp"} // the file id
 
-    400 { "error": "bad_parameters" } // at least one paremeter is missing or wrong
+    400 { "error": "bad_parameters" } // at least one parameter is missing or wrong
 
     401 { "error": "unauthorized" } // the user is not authorized to upload files in this meeting
 
@@ -798,7 +874,7 @@ Parameter                              | Description                           |
 
     201 { "result": "created" } // the role has been successfully added
 
-    400 { "error": "missing_parameters" } // at least one paremeter is missing (probably the 'name')
+    400 { "error": "missing_parameters" } // at least one parameter is missing
 
     401 { "error": "unauthorized" } // the user is not authorized to add a role
 
@@ -817,7 +893,7 @@ Parameter                              | Description                           |
 
 #### Returned values
 
-    200 { "result": "ok } // the role has been successfully deleted
+    200 { "result": "ok" } // the role has been successfully deleted
 
     401 { "error": "unauthorized" } // the user is not authorized to delete this role
 
@@ -842,7 +918,7 @@ Parameter                              | Description                           |
 
     200 { "result": "ok" } // the access right has been successfully added to the role
 
-    400 { "error": "missing_parameters" } // at least one paremeter is missing
+    400 { "error": "missing_parameters" } // at least one parameter is missing
 
     401 { "error": "unauthorized" } // the user is not authorized to add an access right to this role
 
@@ -871,7 +947,7 @@ Parameter                              | Description                           |
 
     200 { "result": "ok" } // the access right has been successfully deleted from the role
 
-    400 { "error": "missing_parameters" } // at least one paremeter is missing
+    400 { "error": "missing_parameters" } // at least one parameter is missing
 
     401 { "error": "unauthorized" } // the user is not authorized to delete an access right from this role
 
@@ -895,7 +971,7 @@ Parameter                              | Description                            
 
     200 { "result": "ok" } // the role has been successfuly set to the user
 
-    400 { "error": "missing_parameters" } // at least one paremeter is missing
+    400 { "error": "missing_parameters" } // at least one parameter is missing
 
     401 { "error": "unauthorized" } // the user is not authorized to set this role to the user
 
@@ -915,7 +991,7 @@ If the location parameter is omitted the role will apply on all locations.
 
 Parameter                              | Description                                   | Example
 ---------------------------------------|-----------------------------------------------|------------------------------------------------------------
-**URL Parameters**                     |                                               | 
+**URL Parameters**                     |                                               |
 `uid`                                  | User id                                       | `91020740579212808535843549778848`
 `role`                                 | The role name                                 | `admin`, `speaker`, ...
 `location`                             | The location (meeting) where the role applies | `mymeeting`
@@ -938,7 +1014,7 @@ Parameter                              | Description                            
 
 Parameter                              | Description                                   | Example
 ---------------------------------------|-----------------------------------------------|------------------------------------------------------------
-**URL Parameters**                     |                                               | 
+**URL Parameters**                     |                                               |
 `uid`                                  | User id                                       | `91020740579212808535843549778848`
 `object`                               | The object on which the right apply           | `meeting`  or `event`
 `action`                               | Authorized action for this right              | `add` or `deletè or `join` ...

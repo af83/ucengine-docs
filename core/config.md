@@ -74,6 +74,16 @@ rights. The format of the right is a simple tuple:
 
 For more informations, take a look at the [[ACL overview|acl]].
 
+## Register
+
+Allow direct registration or allowed only for connected users with `user::add` ACL.
+Can be set up by vhost.
+
+```erlang
+{register, open}.
+{register, restricted}.
+```
+
 ## Bricks
 
 The configuration can specify a list of bricks to accept.
@@ -123,15 +133,22 @@ The `data` key allow you to indicate which directory you want to be the reposito
 {data, "data/files"}.
 ```
 
-## Long polling timeout
+## Connection timeout
 
-The `long_polling_timeout` key is usefull when you want to customize the long polling hangup timeout.
+The `connection_timeout` key is usefull when you want to customize the timeout of the live api (longpolling only).
+The connection will be closed if nothing happened during this time.
+
+Value in seconds.
 
 ```erlang
-{long_polling_timeout, 60}.
+{connection_timeout, 60}.
 ```
 
 ## Timeout refresh
+
+The `timeout_refresh` is the interval (in seconds) where the cleanup presences occurs.
+
+Value in seconds.
 
 ```erlang
 {timeout_refresh, 1}.
@@ -139,11 +156,22 @@ The `long_polling_timeout` key is usefull when you want to customize the long po
 
 ## Presence timeout
 
+The `presence_timeout` key allow you to customize the delay of inactivity for one user before being disconnected.
+
+Value in seconds.
+
 ```erlang
 {presence_timeout, 150}.
 ```
 
 ## Cache refresh
+
+The `cache_refresh` is used to customize the `cache_refresh_secs` of yaws.
+Ignore it if you don't serve your assets via U.C.Engine.
+
+A `0` value means there is no cache, and yaws will not cache any files.
+
+Value in seconds.
 
 ```erlang
 {cache_refresh, 0}.
@@ -207,4 +235,12 @@ Level of logs. Values: debug, info, warning, error, critical.
 {search, solr}.
 
 {solr, [{host, "http://localhost:8983/solr"}]}.
+```
+
+## Broadcasting strategy (events)
+
+Any value but `async` will enable the sync mode. Setting this to `async` will enable the async strategy, that is, clients get a key which is not persisted nor broadcasted (for a short time at least).
+
+``` erlang
+{events, async}
 ```

@@ -82,7 +82,7 @@ client.user.register("ucengine@example.com", "p4ssw0rd", {location: 'Paris'}, fu
 Parameter                              | Description
 ---------------------------------------|---------------------------------------
 `name`                                 | User name
-`auth`                                 | The authentification method (token, password, etc.)
+`auth`                                 | The authentification method (password, none, etc.)
 `credential`                           | Password
 `metadata`                             | Metadata attached to the user
 `callback`                             |
@@ -325,39 +325,6 @@ var client = uce.createClient();
 client.attachPresence(JSON.parse(window.localStorage.previousPresence));
 ```
 
-## Get domain informations
-
-*UCEngine.infos.get(callback)*
-
-### Example
-
-```javascript
-var client = uce.createClient();
-client.infos.get(function(err, infos) {
-    // do something with infos
-});
-```
-
-## Update domain informations
-
-*UCEngine.infos.post(metadata, callback)*
-
-### Parameters
-
-Parameter                              | Description
----------------------------------------|---------------------------------------
-`metadata`                             | A flat Object wich represents the metadata attached to the domain
-`callback`                             |
-
-### Example
-
-```javascript
-var client = uce.createClient();
-client.infos.post({description: 'my desc'}, function(err, result) {
-    // Info updated
-});
-```
-
 ## Search events in all meetings
 
 *UCEngine.search(terms, [options, ]callback)*
@@ -400,13 +367,14 @@ var meeting = client.meeting('demo');
 
 ## Join a meeting
 
-*UCEngine.meeting(meeting).join(callback)*
+*UCEngine.meeting(meeting).join(metadata, callback)*
 
 ### Parameters
 
 Parameter                              | Description
 ---------------------------------------|---------------------------------------
 `meeting`                              | The name of the meeting
+`metadata`                             | Metadata associated to the internal.roster.add
 `callback`                             |
 
 ### Example
@@ -537,15 +505,16 @@ meeting.pushTo('recipient@example.com', 'my.event', {property: 'some property'},
 });
 ```
 
-## Start long polling
+## Start retrieving live events
 
-Subscribe to meetings events in long polling.
+Subscribe to meetings events with long polling or streaming api..
 
-*UCEngine.meeting(meeting).startLoop(start)*
+*UCEngine.meeting(meeting).startLoop([start, transports])*
 
 Parameter                              | Description
 ---------------------------------------|---------------------------------------
-`start`                                |
+`start`                                | datetime of last event
+`transports`                           | transports to retrieve events (see waitEvents)
 
 ### Example
 
@@ -559,7 +528,7 @@ meeting.startLoop();
 
 ## Wait events
 
-*UCEngine.meeting(meeting).waitEvents(params, callback, one_shot)*
+*UCEngine.meeting(meeting).waitEvents(params, callback, [one_shot, transports])*
 
 ### Parameters
 
@@ -569,6 +538,7 @@ Parameter                              | Description
 `params`                               | See the [events API of U.C.Engine](/api.html#events)
 `callback`                             |
 `oneshot`                              | Either or not the method should keep looping
+`transports`                           | Transports to retrieve events (*longpolling* or *eventsource*). Default is all transports.
 
 ## Get events
 
