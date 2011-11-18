@@ -50,6 +50,32 @@ Parameter                              | Description                           |
 
     403 { "error": "bad_credentials" } // the authentification has failed
 
+### Connect users with the none backend
+
+If you have user with the auth backend `none`, you can connect user only via user's delegation. You need to provide a valid uid/sid.
+
+#### Request
+
+    POST /presence/
+
+Parameter                              | Description                           | Example
+---------------------------------------|---------------------------------------|------------------------------------------------------------
+**Encoded Parameters**                 |                                       |
+`name`                                 | User name                             | `ucengine@example.com`
+`uid`                                  | User id                               | `938409238490234`
+`sid`                                  | Session id                            | `9238902347t5892`
+**Optional Encoded Parameters**        |                                       |
+`timeout`                              | Session timeout value (sec)           | `200`
+
+##### Returned values
+
+    200 { "result": {"uid": "91020740579212808535843549778848",
+                     "sid": "07462066523652880535592964206583" } // the result is a valid sid
+
+    400 { "error": "bad_parameters" } // at least one parameter is missing or wrong
+
+    401 { "error": "unauthorized" } // the authentification is unauthorized
+
 ### Retrieve presence informations
 
 #### Request

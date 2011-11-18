@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.6.0 to 0.7.0 (not yet released)
+
+* Presence creation:
+  * users with the auth backend `none` can not longer be authenticated directly. You need to provide a valid uid/sid like a root user.
+
 ## 0.5.1 to 0.6.0
 
 * `/api/0.5` is not available anymore, use `/api/0.6` instead.
