@@ -16,7 +16,15 @@ More detail on our [[U.C.Engine by af83 website|http://ucengine.af83.com]].
 
 Companies that integrate U.C.Engine to build custom applications for their customers.
 
+### CommOnEcoute
+
+[[CommOnEcoute|http://commonecoute.fr/]], the concert experience in 2.0 mode. Currently in beta.
+
+<a href="http://commonecoute.fr/"><img class="screenshot" src="static/img/screenshots/commonecoute.png" alt="CommOnEcoute" /></a>
+
 ### Stormz by af83
+
+[[Stormz|https://stormz.me/]], the creative problem solving platform.
 
 <a href="https://stormz.me/"><img class="screenshot" src="static/img/screenshots/stormz.png" alt="Stormz" /></a>
 
