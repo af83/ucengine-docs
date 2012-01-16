@@ -28,10 +28,6 @@ Companies that integrate U.C.Engine to build custom applications for their custo
 
 <a href="https://stormz.me/"><img class="screenshot" src="static/img/screenshots/stormz.png" alt="Stormz" /></a>
 
-### U.C.Engine meeting by af83
-
-<a href="https://meeting.ucengine.com/"><img class="screenshot" src="static/img/screenshots/meeting.png" alt="Meeting distribution" /></a>
-
 ## Distributions based on U.C.Engine
 
 Companies that provide packaged solutions based on U.C.Engine.
