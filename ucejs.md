@@ -113,7 +113,7 @@ Parameter                              | Description
 
 ```javascript
 var client = uce.createClient();
-client.user.addRole("ucengine@example.com", "speaker", "demo", function(err, result) {
+client.user.addRole("91020740579212808535843549778848", "speaker", "demo", function(err, result) {
    // Role added to the user
 });
 ```
@@ -135,7 +135,7 @@ Parameter                              | Description
 
 ```javascript
 var client = uce.createClient();
-client.user.delRole("ucengine@example.com", "speaker", "demo", function(err, result) {
+client.user.delRole("91020740579212808535843549778848", "speaker", "demo", function(err, result) {
    // Role deleted from a user
 });
 ```
